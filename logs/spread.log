@@ -5,12 +5,12 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 2235a5e3-dcf4-405b-a78c-20934cd11ecb
+JOB_ID: 8263eb71-c74d-493d-84fe-d46a7db29aca
 Print job: /var/snap/testflinger-cli/current/job.yaml 
-job_queue: cm3
+job_queue: dragonboard
 global_timeout: 36000
 provision_data:
-    url: http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-cm3.img.xz
+    channel: beta
 test_data:
     test_cmds: |
         #!/bin/bash
@@ -21,12 +21,13 @@ test_data:
         git clone https://git.launchpad.net/snapd-vendor snapd
         (cd snapd && git checkout master)
         . snapd/tests/lib/external/prepare-ssh.sh "{device_ip}" "22" "ubuntu"
-        . snappy-qa-jobs/scripts/utils/register_device.sh "{device_ip}" "22" "test" "ubuntu" ""
-        . snappy-qa-jobs/scripts/utils/refresh_core.sh "{device_ip}" "22" "test" "ubuntu" "stable" "edge"
+        . snappy-qa-jobs/scripts/utils/register_device.sh "{device_ip}" "22" "test" "ubuntu" "sergiocazzolato@yahoo.com.ar"
+        . snappy-qa-jobs/scripts/utils/refresh_core.sh "{device_ip}" "22" "test" "ubuntu" "beta" "edge"
         . snappy-qa-jobs/scripts/utils/run_setup.sh "{device_ip}" "22" "test" "ubuntu" ""
         . snappy-qa-jobs/scripts/utils/get_spread.sh
-        . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-32:tests/" "" "tests/main/auto-refresh"
+        . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-64:tests/" "" "tests/main/auto-refresh,tests/main/failover,tests/main/ubuntu-core-services"
 Showing job data
+This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 ***********************************
 
 * Starting setup phase on cm3-002 *
@@ -35,21 +36,21 @@ Showing job data
 
 Cleaning up container if it exists...
 Error response from daemon: No such container: cm3002
+
 ***************************************
 
 * Starting provision phase on cm3-002 *
-
 ***************************************
 Install python-logstash if you want to use logstash logging
-2018-01-02 04:52:01,606 cm3-001 INFO: BEGIN provision
-2018-01-02 04:52:01,606 cm3-001 INFO: Provisioning device
-2018-01-02 04:52:07,904 cm3-001 INFO: Running snmpset -c private -v1 10.101.48.8 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 2
+2018-01-03 04:42:15,607 cm3-001 INFO: BEGIN provision
+2018-01-03 04:42:15,607 cm3-001 INFO: Provisioning device
+2018-01-03 04:42:22,798 cm3-001 INFO: Running snmpset -c private -v1 10.101.48.8 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 2
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 2
-2018-01-02 04:52:08,022 cm3-001 INFO: Running sleep 10
-2018-01-02 04:52:18,034 cm3-001 INFO: Running snmpset -c private -v1 10.101.48.8 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 1
+2018-01-03 04:42:22,917 cm3-001 INFO: Running sleep 10
+2018-01-03 04:42:32,934 cm3-001 INFO: Running snmpset -c private -v1 10.101.48.8 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 1
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 1
-2018-01-02 04:52:18,152 cm3-001 INFO: Flashing image
-2018-01-02 05:07:18,158 cm3-001 ERROR: exception
+2018-01-03 04:42:33,053 cm3-001 INFO: Flashing image
+2018-01-03 04:57:33,060 cm3-001 ERROR: exception
 Traceback (most recent call last):
   File "/usr/lib/python3.5/subprocess.py", line 695, in run
     stdout, stderr = process.communicate(input, timeout=timeout)
@@ -93,7 +94,6 @@ Traceback (most recent call last):
   File "/usr/lib/python3.5/subprocess.py", line 700, in run
     stderr=stderr)
 subprocess.TimeoutExpired: Command '['ssh', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/dev/null', 'ubuntu@10.101.50.182', 'sudo cm3-installer http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-cm3.img.xz']' timed out after 900 seconds
-
 Traceback (most recent call last):
   File "/usr/lib/python3.5/subprocess.py", line 695, in run
     stdout, stderr = process.communicate(input, timeout=timeout)
