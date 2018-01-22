@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: cabaeaaa-438e-4758-963c-693027544ba4
+JOB_ID: ab37e3b9-ec20-45a7-bd9a-9840974a6d5f
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -33,22 +33,22 @@ This job is currently waiting on a node to become available. You will see no fur
 * Starting setup phase on dragonboard-005 *
 
 *******************************************
+
 Cleaning up container if it exists...
 Error response from daemon: No such container: dragonboard005
 
 ***********************************************
 
 * Starting provision phase on dragonboard-005 *
-
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-01-22 10:20:36,045 dragonboard_005 INFO: BEGIN provision
-2018-01-22 10:20:36,045 dragonboard_005 INFO: Booting Master Image
-2018-01-22 10:20:36,045 dragonboard_005 INFO: Making sure the master image is booted
-2018-01-22 10:20:36,045 dragonboard_005 INFO: Checking if test image booted.
-2018-01-22 10:20:36,863 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
+2018-01-22 10:26:39,033 dragonboard_005 INFO: BEGIN provision
+2018-01-22 10:26:39,033 dragonboard_005 INFO: Booting Master Image
+2018-01-22 10:26:39,033 dragonboard_005 INFO: Making sure the master image is booted
+2018-01-22 10:26:39,033 dragonboard_005 INFO: Checking if test image booted.
+2018-01-22 10:26:39,601 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
 Warning: Permanently added '10.101.51.15' (ECDSA) to the list of known hosts.
-2018-01-22 10:21:36,868 dragonboard_005 ERROR: exception
+2018-01-22 10:27:39,606 dragonboard_005 ERROR: exception
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 84, in setboot
     subprocess.check_call(cmd.split(), timeout=60)
@@ -88,6 +88,7 @@ Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 86, in setboot
     raise ProvisioningError("timeout reaching control host!")
 devices.ProvisioningError: timeout reaching control host!
+
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 84, in setboot
     subprocess.check_call(cmd.split(), timeout=60)
