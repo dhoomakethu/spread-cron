@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 93d6c18b-00cf-4dc5-be89-16d6ec9729f8
+JOB_ID: cabaeaaa-438e-4758-963c-693027544ba4
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -29,223 +29,120 @@ test_data:
 Showing job data
 This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 *******************************************
-* Starting setup phase on dragonboard-002 *
+
+* Starting setup phase on dragonboard-005 *
 
 *******************************************
-
 Cleaning up container if it exists...
-Error response from daemon: No such container: dragonboard002
+Error response from daemon: No such container: dragonboard005
+
 ***********************************************
 
-* Starting provision phase on dragonboard-002 *
+* Starting provision phase on dragonboard-005 *
 
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-01-22 07:52:11,483 dragonboard_002 INFO: BEGIN provision
-2018-01-22 07:52:11,484 dragonboard_002 INFO: Booting Master Image
-2018-01-22 07:52:11,484 dragonboard_002 INFO: Making sure the master image is booted
-2018-01-22 07:52:11,484 dragonboard_002 INFO: Checking if test image booted.
-2018-01-22 07:52:14,487 dragonboard_002 INFO: Checking if master image booted.
-2018-01-22 07:52:17,487 dragonboard_002 INFO: Error checking device state. Forcing reboot...
-2018-01-22 07:52:17,488 dragonboard_002 WARNING: Device is in an unknown state, attempting to recover
-2018-01-22 07:52:17,488 dragonboard_002 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 2
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 2
-2018-01-22 07:52:17,606 dragonboard_002 INFO: Running sleep 10
-2018-01-22 07:52:27,624 dragonboard_002 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 1
-
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 1
-2018-01-22 07:52:37,752 dragonboard_002 INFO: Checking if master image booted.
-2018-01-22 07:52:40,759 dragonboard_002 INFO: Error checking device state. Forcing reboot...
-2018-01-22 07:52:40,760 dragonboard_002 INFO: Checking if test image booted.
-2018-01-22 07:52:53,769 dragonboard_002 INFO: Checking if master image booted.
-2018-01-22 07:52:56,779 dragonboard_002 INFO: Error checking device state. Forcing reboot...
-2018-01-22 07:52:56,780 dragonboard_002 INFO: Checking if test image booted.
-2018-01-22 07:53:09,789 dragonboard_002 INFO: Checking if master image booted.
-
-2018-01-22 07:53:12,799 dragonboard_002 INFO: Error checking device state. Forcing reboot...
-2018-01-22 07:53:12,800 dragonboard_002 INFO: Checking if test image booted.
-2018-01-22 07:53:16,090 dragonboard_002 INFO: Making sure the master image is booted
-2018-01-22 07:53:16,091 dragonboard_002 INFO: Checking if test image booted.
-2018-01-22 07:53:16,609 dragonboard_002 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sgdisk -o /dev/mmcblk1
-Warning: Permanently added '10.101.51.12' (ECDSA) to the list of known hosts.
-Warning: The kernel is still using the old partition table.
-The new table will be used at the next reboot or after you
-run partprobe(8) or kpartx(8)
-The operation has completed successfully.
-2018-01-22 07:53:20,648 dragonboard_002 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sync
-Warning: Permanently added '10.101.51.12' (ECDSA) to the list of known hosts.
-2018-01-22 07:53:23,431 dragonboard_002 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 2
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 2
-2018-01-22 07:53:23,549 dragonboard_002 INFO: Running sleep 10
-2018-01-22 07:53:33,571 dragonboard_002 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 1
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 1
-2018-01-22 07:53:43,699 dragonboard_002 INFO: Checking if master image booted.
-2018-01-22 07:56:15,440 dragonboard_002 INFO: Flashing Test Image
-2018-01-22 07:56:15,837 dragonboard_002 INFO: Running: nc 10.101.50.22 56972| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-01-22 07:57:48,380 dragonboard_002 INFO: Creating Test User
-Warning: Permanently added '10.101.51.12' (ECDSA) to the list of known hosts.
-2018-01-22 07:57:51,089 dragonboard_002 INFO: Booting Test Image
-2018-01-22 07:57:51,089 dragonboard_002 INFO: Booting the test image
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-
-/usr/bin/ssh-copy-id: ERROR: ssh: connect to host 10.101.51.12 port 22: No route to host
-
-2018-01-22 08:03:55,974 dragonboard_002 ERROR: Failed to write image, cleaning up...
-2018-01-22 08:03:58,963 dragonboard_002 ERROR: exception
+2018-01-22 10:20:36,045 dragonboard_005 INFO: BEGIN provision
+2018-01-22 10:20:36,045 dragonboard_005 INFO: Booting Master Image
+2018-01-22 10:20:36,045 dragonboard_005 INFO: Making sure the master image is booted
+2018-01-22 10:20:36,045 dragonboard_005 INFO: Checking if test image booted.
+2018-01-22 10:20:36,863 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
+Warning: Permanently added '10.101.51.15' (ECDSA) to the list of known hosts.
+2018-01-22 10:21:36,868 dragonboard_005 ERROR: exception
 Traceback (most recent call last):
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 84, in setboot
+    subprocess.check_call(cmd.split(), timeout=60)
+  File "/usr/lib/python3.5/subprocess.py", line 576, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "/usr/lib/python3.5/subprocess.py", line 559, in call
+    return p.wait(timeout=timeout)
+  File "/usr/lib/python3.5/subprocess.py", line 1650, in wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['ssh', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/dev/null', 'ubuntu@10.101.51.15', 'sudo', 'sgdisk', '-o', '/dev/mmcblk1']' timed out after 60 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
     return self._dispatch()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
     result = ingredient.dispatch(self.context)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
     return self._dispatch(context, 0)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
     return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
     return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
     return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
     return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
     retval = command.invoked(context)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
     return func(*args, **kwargs)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/__init__.py", line 44, in invoked
-    device.provision()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 380, in provision
-    self.ensure_test_image(test_username, test_password)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 143, in ensure_test_image
-    raise ProvisioningError("Failed to boot test image!")
-devices.ProvisioningError: Failed to boot test image!
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/__init__.py", line 43, in invoked
+    device.ensure_master_image()
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 204, in ensure_master_image
+    self.setboot('master')
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 86, in setboot
+    raise ProvisioningError("timeout reaching control host!")
+devices.ProvisioningError: timeout reaching control host!
 Traceback (most recent call last):
-  File "/srv/testflinger-agent/dragonboard002/env/bin/snappy-device-agent", line 4, in <module>
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 84, in setboot
+    subprocess.check_call(cmd.split(), timeout=60)
+  File "/usr/lib/python3.5/subprocess.py", line 576, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "/usr/lib/python3.5/subprocess.py", line 559, in call
+    return p.wait(timeout=timeout)
+  File "/usr/lib/python3.5/subprocess.py", line 1650, in wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['ssh', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/dev/null', 'ubuntu@10.101.51.15', 'sudo', 'sgdisk', '-o', '/dev/mmcblk1']' timed out after 60 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/dragonboard005/env/bin/snappy-device-agent", line 4, in <module>
     __import__('pkg_resources').run_script('snappy-device-agents==0.0.1', 'snappy-device-agent')
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 719, in run_script
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 719, in run_script
     self.require(requires)[0].run_script(script_name, ns)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1504, in run_script
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1504, in run_script
     exec(code, namespace, namespace)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/EGG-INFO/scripts/snappy-device-agent", line 25, in <module>
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/EGG-INFO/scripts/snappy-device-agent", line 25, in <module>
     main()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 75, in main
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 75, in main
     Agent().main()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 71, in main
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 71, in main
     return AgentCommandRecipe(self).main(argv, exit)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/recipes/__init__.py", line 119, in main
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/recipes/__init__.py", line 119, in main
     retval = bowl.eat(argv)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 254, in eat
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 254, in eat
     self._dispatch_failed()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 310, in _dispatch_failed
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 310, in _dispatch_failed
     ingredient.dispatch_failed(self.context)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
     return self._dispatch()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
     result = ingredient.dispatch(self.context)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
     return self._dispatch(context, 0)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
     return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
     return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
     return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
     return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
     retval = command.invoked(context)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
     return func(*args, **kwargs)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/__init__.py", line 44, in invoked
-    device.provision()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 380, in provision
-    self.ensure_test_image(test_username, test_password)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 143, in ensure_test_image
-    raise ProvisioningError("Failed to boot test image!")
-devices.ProvisioningError: Failed to boot test image!
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/__init__.py", line 43, in invoked
+    device.ensure_master_image()
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 204, in ensure_master_image
+    self.setboot('master')
+  File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 86, in setboot
+    raise ProvisioningError("timeout reaching control host!")
+devices.ProvisioningError: timeout reaching control host!
 complete
