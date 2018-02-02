@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 051db74a-1090-43b8-b19c-4a2c5c305192
+JOB_ID: 8d941601-0af7-4be9-9dfa-95ece8091f5b
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -27,26 +27,27 @@ test_data:
         . snappy-qa-jobs/scripts/utils/get_spread.sh
         . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-64:tests/" "" "tests/main/auto-refresh,tests/main/failover,tests/main/ubuntu-core-services" "-v"
 Showing job data
+This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 *******************************************
 
 * Starting setup phase on dragonboard-003 *
-
 *******************************************
+
 Cleaning up container if it exists...
 Error response from daemon: No such container: dragonboard003
 
 ***********************************************
 
 * Starting provision phase on dragonboard-003 *
-
 ***********************************************
+
 Install python-logstash if you want to use logstash logging
-2018-02-02 20:02:07,114 dragonboard_003 INFO: BEGIN provision
-2018-02-02 20:02:07,114 dragonboard_003 INFO: Booting Master Image
-2018-02-02 20:02:07,114 dragonboard_003 INFO: Making sure the master image is booted
-2018-02-02 20:02:07,114 dragonboard_003 INFO: Checking if test image booted.
-2018-02-02 20:02:07,388 dragonboard_003 INFO: Checking if master image booted.
-2018-02-02 20:02:42,225 dragonboard_003 ERROR: Bad data passed for provisioning
+2018-02-02 20:12:02,118 dragonboard_003 INFO: BEGIN provision
+2018-02-02 20:12:02,118 dragonboard_003 INFO: Booting Master Image
+2018-02-02 20:12:02,118 dragonboard_003 INFO: Making sure the master image is booted
+2018-02-02 20:12:02,118 dragonboard_003 INFO: Checking if test image booted.
+2018-02-02 20:12:02,390 dragonboard_003 INFO: Checking if master image booted.
+2018-02-02 20:12:05,086 dragonboard_003 ERROR: Bad data passed for provisioning
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
     subprocess.check_output(cmd, stderr=subprocess.STDOUT)
@@ -55,8 +56,7 @@ Traceback (most recent call last):
   File "/usr/lib/python3.5/subprocess.py", line 708, in run
     output=stdout, stderr=stderr)
 subprocess.CalledProcessError: Command '['sudo', 'ubuntu-image', '-c', 'beta', '/home/ubuntu/plars/dragon.model', '-o', 'snappy.img']' returned non-zero exit status 1
-
-2018-02-02 20:02:42,226 dragonboard_003 ERROR: exception
+2018-02-02 20:12:05,087 dragonboard_003 ERROR: exception
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
     subprocess.check_output(cmd, stderr=subprocess.STDOUT)
