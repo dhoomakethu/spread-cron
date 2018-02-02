@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: b63fbbe9-3ee1-4fd3-af4d-c2e5a1282285
+JOB_ID: d87d798e-1c5c-42e4-8961-a339e1768883
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -25,1290 +25,137 @@ test_data:
         . snappy-qa-jobs/scripts/utils/refresh_core.sh "{device_ip}" "22" "test" "ubuntu" "beta" "edge"
         . snappy-qa-jobs/scripts/utils/run_setup.sh "{device_ip}" "22" "test" "ubuntu" ""
         . snappy-qa-jobs/scripts/utils/get_spread.sh
-        . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-64:tests/" "" "tests/main/auto-refresh" "-v"
+        . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-64:tests/" "" "tests/main/auto-refresh,tests/main/failover,tests/main/ubuntu-core-services" "-v"
 Showing job data
+This job is currently waiting on a node to become available. You will see no further output until the job starts running.
+*******************************************
+* Starting setup phase on dragonboard-003 *
+
 *******************************************
 
-* Starting setup phase on dragonboard-002 *
-
-*******************************************
 Cleaning up container if it exists...
-Error response from daemon: No such container: dragonboard002
+Error response from daemon: No such container: dragonboard003
 
 ***********************************************
 
-* Starting provision phase on dragonboard-002 *
+* Starting provision phase on dragonboard-003 *
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-02-02 19:28:09,157 dragonboard_002 INFO: BEGIN provision
-2018-02-02 19:28:09,157 dragonboard_002 INFO: Booting Master Image
-2018-02-02 19:28:09,157 dragonboard_002 INFO: Making sure the master image is booted
-2018-02-02 19:28:09,157 dragonboard_002 INFO: Checking if test image booted.
-2018-02-02 19:28:09,932 dragonboard_002 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sgdisk -o /dev/mmcblk1
-Warning: Permanently added '10.101.51.12' (ECDSA) to the list of known hosts.
+2018-02-02 19:59:38,129 dragonboard_003 INFO: BEGIN provision
+2018-02-02 19:59:38,129 dragonboard_003 INFO: Booting Master Image
+2018-02-02 19:59:38,129 dragonboard_003 INFO: Making sure the master image is booted
+2018-02-02 19:59:38,129 dragonboard_003 INFO: Checking if test image booted.
+2018-02-02 19:59:39,027 dragonboard_003 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.13 sudo sgdisk -o /dev/mmcblk1
+Warning: Permanently added '10.101.51.13' (ECDSA) to the list of known hosts.
 Warning: The kernel is still using the old partition table.
 The new table will be used at the next reboot or after you
 run partprobe(8) or kpartx(8)
 The operation has completed successfully.
-2018-02-02 19:28:13,367 dragonboard_002 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sync
-Warning: Permanently added '10.101.51.12' (ECDSA) to the list of known hosts.
-2018-02-02 19:28:14,690 dragonboard_002 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 2
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 2
-2018-02-02 19:28:14,809 dragonboard_002 INFO: Running sleep 10
-2018-02-02 19:28:24,827 dragonboard_002 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 1
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 1
-2018-02-02 19:28:34,955 dragonboard_002 INFO: Checking if master image booted.
-2018-02-02 19:30:42,923 dragonboard_002 INFO: Flashing Test Image
-2018-02-02 19:30:43,306 dragonboard_002 INFO: Running: nc 10.101.50.22 55114| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-02-02 19:32:18,456 dragonboard_002 INFO: Creating Test User
-Warning: Permanently added '10.101.51.12' (ECDSA) to the list of known hosts.
-2018-02-02 19:32:21,094 dragonboard_002 INFO: Booting Test Image
-2018-02-02 19:32:21,095 dragonboard_002 INFO: Booting the test image
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
+2018-02-02 19:59:41,056 dragonboard_003 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.13 sudo sync
+Warning: Permanently added '10.101.51.13' (ECDSA) to the list of known hosts.
+2018-02-02 19:59:41,878 dragonboard_003 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.3 i 2
+iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.3 = INTEGER: 2
+2018-02-02 19:59:41,997 dragonboard_003 INFO: Running sleep 10
+2018-02-02 19:59:52,020 dragonboard_003 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.3 i 1
+iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.3 = INTEGER: 1
+2018-02-02 20:00:02,148 dragonboard_003 INFO: Checking if master image booted.
+2018-02-02 20:00:45,579 dragonboard_003 ERROR: Bad data passed for provisioning
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
+    subprocess.check_output(cmd, stderr=subprocess.STDOUT)
+  File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
+    **kwargs).stdout
+  File "/usr/lib/python3.5/subprocess.py", line 708, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['sudo', 'ubuntu-image', '-c', 'beta', '/home/ubuntu/plars/dragon.model', '-o', 'snappy.img']' returned non-zero exit status 1
 
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
-Warning: Permanently added '10.101.51.12' (ECDSA) to the list of known hosts.
+2018-02-02 20:00:45,600 dragonboard_003 ERROR: exception
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
+    subprocess.check_output(cmd, stderr=subprocess.STDOUT)
+  File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
+    **kwargs).stdout
+  File "/usr/lib/python3.5/subprocess.py", line 708, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['sudo', 'ubuntu-image', '-c', 'beta', '/home/ubuntu/plars/dragon.model', '-o', 'snappy.img']' returned non-zero exit status 1
 
-Number of key(s) added: 1
+During handling of the above exception, another exception occurred:
 
-Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.12'"
-and check to make sure that only the key(s) you wanted were added.
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
+    return self._dispatch()
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
+    result = ingredient.dispatch(self.context)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
+    return self._dispatch(context, 0)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
+    retval = command.invoked(context)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
+    return func(*args, **kwargs)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/__init__.py", line 44, in invoked
+    device.provision()
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 359, in provision
+    raise ProvisioningError("Error copying system-user assertion")
+devices.ProvisioningError: Error copying system-user assertion
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
+    subprocess.check_output(cmd, stderr=subprocess.STDOUT)
+  File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
+    **kwargs).stdout
+  File "/usr/lib/python3.5/subprocess.py", line 708, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['sudo', 'ubuntu-image', '-c', 'beta', '/home/ubuntu/plars/dragon.model', '-o', 'snappy.img']' returned non-zero exit status 1
 
-2018-02-02 19:33:33,142 dragonboard_002 INFO: Checking if test image booted.
-2018-02-02 19:33:33,613 dragonboard_002 INFO: END provision
-******************************************
+During handling of the above exception, another exception occurred:
 
-* Starting test phase on dragonboard-002 *
-
-******************************************
-Install python-logstash if you want to use logstash logging
-2018-02-02 19:33:49,919 dragonboard_002 INFO: BEGIN testrun
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
-Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
-Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]
-Get:4 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [57.3 kB]
-Get:5 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [553 kB]
-Get:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [238 kB]
-Get:8 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
-Get:9 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [252 kB]
-Get:10 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3492 B]
-Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [917 kB]
-Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [13.1 kB]
-Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [745 kB]
-Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.5 kB]
-Get:15 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [5162 B]
-Get:16 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7179 B]
-Fetched 3129 kB in 4s (743 kB/s)
-Reading package lists...
-Building dependency tree...
-Reading state information...
-54 packages can be upgraded. Run 'apt list --upgradable' to see them.
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following additional packages will be installed:
-  git-man ifupdown iproute2 isc-dhcp-client isc-dhcp-common less
-  libasn1-8-heimdal libatm1 libcurl3-gnutls libdns-export162 liberror-perl
-  libgdbm3 libgmp10 libgnutls30 libgssapi3-heimdal libhcrypto4-heimdal
-  libheimbase1-heimdal libheimntlm0-heimdal libhogweed4 libhx509-5-heimdal
-  libisc-export160 libkrb5-26-heimdal libldap-2.4-2 libmnl0 libnettle6
-  libp11-kit0 libperl5.22 libpopt0 libroken18-heimdal librtmp1 libsasl2-2
-  libsasl2-modules libsasl2-modules-db libtasn1-6 libwind0-heimdal
-  libxtables11 netbase patch perl perl-base perl-modules-5.22 rename rsync
-Suggested packages:
-  gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-el git-email
-  git-gui gitk gitweb git-arch git-cvs git-mediawiki git-svn ppp rdnssd
-  iproute2-doc resolvconf avahi-autoipd isc-dhcp-client-ddns apparmor
-  gnutls-bin libsasl2-modules-otp libsasl2-modules-ldap libsasl2-modules-sql
-  libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal ed
-  diffutils-doc perl-doc libterm-readline-gnu-perl
-  | libterm-readline-perl-perl make openssh-server
-The following NEW packages will be installed:
-  curl git git-man ifupdown iproute2 isc-dhcp-client isc-dhcp-common less
-  libasn1-8-heimdal libatm1 libcurl3-gnutls libdns-export162 liberror-perl
-  libgdbm3 libgmp10 libgnutls30 libgssapi3-heimdal libhcrypto4-heimdal
-  libheimbase1-heimdal libheimntlm0-heimdal libhogweed4 libhx509-5-heimdal
-  libisc-export160 libkrb5-26-heimdal libldap-2.4-2 libmnl0 libnettle6
-  libp11-kit0 libperl5.22 libpopt0 libroken18-heimdal librtmp1 libsasl2-2
-  libsasl2-modules libsasl2-modules-db libtasn1-6 libwind0-heimdal
-  libxtables11 netbase patch perl perl-modules-5.22 rename rsync sshpass
-The following packages will be upgraded:
-  perl-base
-1 upgraded, 45 newly installed, 0 to remove and 53 not upgraded.
-Need to get 16.4 MB of archives.
-After this operation, 79.8 MB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl-base amd64 5.22.1-9ubuntu0.2 [1282 kB]
-Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 libatm1 amd64 1:2.5.1-1.5 [24.2 kB]
-Get:3 http://archive.ubuntu.com/ubuntu xenial/main amd64 libmnl0 amd64 1.0.3-5 [12.0 kB]
-Get:4 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpopt0 amd64 1.16-10 [26.0 kB]
-Get:5 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgdbm3 amd64 1.8.3-13.1 [16.9 kB]
-Get:6 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl-modules-5.22 all 5.22.1-9ubuntu0.2 [2661 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libperl5.22 amd64 5.22.1-9ubuntu0.2 [3391 kB]
-
-Get:8 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl amd64 5.22.1-9ubuntu0.2 [237 kB]
-Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 iproute2 amd64 4.3.0-1ubuntu3.16.04.3 [522 kB]
-Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ifupdown amd64 0.8.10ubuntu1.2 [54.9 kB]
-Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libisc-export160 amd64 1:9.10.3.dfsg.P4-8ubuntu1.10 [153 kB]
-Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdns-export162 amd64 1:9.10.3.dfsg.P4-8ubuntu1.10 [666 kB]
-Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 isc-dhcp-client amd64 4.3.3-5ubuntu12.7 [223 kB]
-Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 isc-dhcp-common amd64 4.3.3-5ubuntu12.7 [105 kB]
-Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 less amd64 481-2.1ubuntu0.2 [110 kB]
-Get:16 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgmp10 amd64 2:6.1.0+dfsg-2 [240 kB]
-Get:17 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libnettle6 amd64 3.2-1ubuntu0.16.04.1 [93.5 kB]
-Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhogweed4 amd64 3.2-1ubuntu0.16.04.1 [136 kB]
-Get:19 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libp11-kit0 amd64 0.23.2-5~ubuntu16.04.1 [105 kB]
-Get:20 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtasn1-6 amd64 4.7-3ubuntu0.16.04.3 [43.5 kB]
-Get:21 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgnutls30 amd64 3.4.10-4ubuntu1.4 [548 kB]
-Get:22 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxtables11 amd64 1.6.0-2ubuntu3 [27.2 kB]
-Get:23 http://archive.ubuntu.com/ubuntu xenial/main amd64 netbase all 5.3 [12.9 kB]
-Get:24 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libroken18-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [41.4 kB]
-Get:25 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libasn1-8-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [174 kB]
-Get:26 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhcrypto4-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [85.0 kB]
-Get:27 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libheimbase1-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [29.3 kB]
-Get:28 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libwind0-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [47.8 kB]
-Get:29 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhx509-5-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [107 kB]
-Get:30 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libkrb5-26-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [202 kB]
-Get:31 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libheimntlm0-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [15.1 kB]
-Get:32 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgssapi3-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [96.1 kB]
-Get:33 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsasl2-modules-db amd64 2.1.26.dfsg1-14build1 [14.5 kB]
-Get:34 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsasl2-2 amd64 2.1.26.dfsg1-14build1 [48.7 kB]
-Get:35 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libldap-2.4-2 amd64 2.4.42+dfsg-2ubuntu3.2 [160 kB]
-Get:36 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d-1ubuntu0.1 [54.4 kB]
-Get:37 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcurl3-gnutls amd64 7.47.0-1ubuntu2.6 [184 kB]
-Get:38 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsasl2-modules amd64 2.1.26.dfsg1-14build1 [47.5 kB]
-Get:39 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 rsync amd64 3.1.1-3ubuntu1.2 [329 kB]
-Get:40 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 curl amd64 7.47.0-1ubuntu2.6 [138 kB]
-Get:41 http://archive.ubuntu.com/ubuntu xenial/main amd64 liberror-perl all 0.17-1.2 [19.6 kB]
-Get:42 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 git-man all 1:2.7.4-0ubuntu1.3 [736 kB]
-Get:43 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 git amd64 1:2.7.4-0ubuntu1.3 [3102 kB]
-Get:44 http://archive.ubuntu.com/ubuntu xenial/main amd64 patch amd64 2.7.5-1 [90.4 kB]
-Get:45 http://archive.ubuntu.com/ubuntu xenial/main amd64 rename all 0.20-4 [12.0 kB]
-Get:46 http://archive.ubuntu.com/ubuntu xenial/universe amd64 sshpass amd64 1.05-1 [10.5 kB]
-debconf: delaying package configuration, since apt-utils is not installed
-Fetched 16.4 MB in 8s (2036 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9540 files and directories currently installed.)
-Preparing to unpack .../perl-base_5.22.1-9ubuntu0.2_amd64.deb ...
-Unpacking perl-base (5.22.1-9ubuntu0.2) over (5.22.1-9) ...
-Setting up perl-base (5.22.1-9ubuntu0.2) ...
-Selecting previously unselected package libatm1:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9540 files and directories currently installed.)
-Preparing to unpack .../libatm1_1%3a2.5.1-1.5_amd64.deb ...
-Unpacking libatm1:amd64 (1:2.5.1-1.5) ...
-Selecting previously unselected package libmnl0:amd64.
-Preparing to unpack .../libmnl0_1.0.3-5_amd64.deb ...
-Unpacking libmnl0:amd64 (1.0.3-5) ...
-Selecting previously unselected package libpopt0:amd64.
-Preparing to unpack .../libpopt0_1.16-10_amd64.deb ...
-Unpacking libpopt0:amd64 (1.16-10) ...
-Selecting previously unselected package libgdbm3:amd64.
-Preparing to unpack .../libgdbm3_1.8.3-13.1_amd64.deb ...
-Unpacking libgdbm3:amd64 (1.8.3-13.1) ...
-Selecting previously unselected package perl-modules-5.22.
-Preparing to unpack .../perl-modules-5.22_5.22.1-9ubuntu0.2_all.deb ...
-Unpacking perl-modules-5.22 (5.22.1-9ubuntu0.2) ...
-Selecting previously unselected package libperl5.22:amd64.
-Preparing to unpack .../libperl5.22_5.22.1-9ubuntu0.2_amd64.deb ...
-Unpacking libperl5.22:amd64 (5.22.1-9ubuntu0.2) ...
-Selecting previously unselected package perl.
-Preparing to unpack .../perl_5.22.1-9ubuntu0.2_amd64.deb ...
-Unpacking perl (5.22.1-9ubuntu0.2) ...
-Selecting previously unselected package iproute2.
-Preparing to unpack .../iproute2_4.3.0-1ubuntu3.16.04.3_amd64.deb ...
-Unpacking iproute2 (4.3.0-1ubuntu3.16.04.3) ...
-Selecting previously unselected package ifupdown.
-Preparing to unpack .../ifupdown_0.8.10ubuntu1.2_amd64.deb ...
-Unpacking ifupdown (0.8.10ubuntu1.2) ...
-Selecting previously unselected package libisc-export160.
-Preparing to unpack .../libisc-export160_1%3a9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb ...
-Unpacking libisc-export160 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
-Selecting previously unselected package libdns-export162.
-Preparing to unpack .../libdns-export162_1%3a9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb ...
-Unpacking libdns-export162 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
-Selecting previously unselected package isc-dhcp-client.
-Preparing to unpack .../isc-dhcp-client_4.3.3-5ubuntu12.7_amd64.deb ...
-Unpacking isc-dhcp-client (4.3.3-5ubuntu12.7) ...
-Selecting previously unselected package isc-dhcp-common.
-Preparing to unpack .../isc-dhcp-common_4.3.3-5ubuntu12.7_amd64.deb ...
-Unpacking isc-dhcp-common (4.3.3-5ubuntu12.7) ...
-Selecting previously unselected package less.
-Preparing to unpack .../less_481-2.1ubuntu0.2_amd64.deb ...
-Unpacking less (481-2.1ubuntu0.2) ...
-Selecting previously unselected package libgmp10:amd64.
-Preparing to unpack .../libgmp10_2%3a6.1.0+dfsg-2_amd64.deb ...
-Unpacking libgmp10:amd64 (2:6.1.0+dfsg-2) ...
-Selecting previously unselected package libnettle6:amd64.
-Preparing to unpack .../libnettle6_3.2-1ubuntu0.16.04.1_amd64.deb ...
-Unpacking libnettle6:amd64 (3.2-1ubuntu0.16.04.1) ...
-Selecting previously unselected package libhogweed4:amd64.
-Preparing to unpack .../libhogweed4_3.2-1ubuntu0.16.04.1_amd64.deb ...
-Unpacking libhogweed4:amd64 (3.2-1ubuntu0.16.04.1) ...
-Selecting previously unselected package libp11-kit0:amd64.
-Preparing to unpack .../libp11-kit0_0.23.2-5~ubuntu16.04.1_amd64.deb ...
-Unpacking libp11-kit0:amd64 (0.23.2-5~ubuntu16.04.1) ...
-Selecting previously unselected package libtasn1-6:amd64.
-Preparing to unpack .../libtasn1-6_4.7-3ubuntu0.16.04.3_amd64.deb ...
-Unpacking libtasn1-6:amd64 (4.7-3ubuntu0.16.04.3) ...
-Selecting previously unselected package libgnutls30:amd64.
-Preparing to unpack .../libgnutls30_3.4.10-4ubuntu1.4_amd64.deb ...
-Unpacking libgnutls30:amd64 (3.4.10-4ubuntu1.4) ...
-Selecting previously unselected package libxtables11:amd64.
-Preparing to unpack .../libxtables11_1.6.0-2ubuntu3_amd64.deb ...
-Unpacking libxtables11:amd64 (1.6.0-2ubuntu3) ...
-Selecting previously unselected package netbase.
-Preparing to unpack .../archives/netbase_5.3_all.deb ...
-Unpacking netbase (5.3) ...
-Selecting previously unselected package libroken18-heimdal:amd64.
-Preparing to unpack .../libroken18-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libroken18-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libasn1-8-heimdal:amd64.
-Preparing to unpack .../libasn1-8-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libasn1-8-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libhcrypto4-heimdal:amd64.
-Preparing to unpack .../libhcrypto4-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libhcrypto4-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libheimbase1-heimdal:amd64.
-Preparing to unpack .../libheimbase1-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libheimbase1-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libwind0-heimdal:amd64.
-Preparing to unpack .../libwind0-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libwind0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libhx509-5-heimdal:amd64.
-Preparing to unpack .../libhx509-5-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libhx509-5-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libkrb5-26-heimdal:amd64.
-Preparing to unpack .../libkrb5-26-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libkrb5-26-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libheimntlm0-heimdal:amd64.
-Preparing to unpack .../libheimntlm0-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libheimntlm0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libgssapi3-heimdal:amd64.
-Preparing to unpack .../libgssapi3-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libgssapi3-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libsasl2-modules-db:amd64.
-Preparing to unpack .../libsasl2-modules-db_2.1.26.dfsg1-14build1_amd64.deb ...
-Unpacking libsasl2-modules-db:amd64 (2.1.26.dfsg1-14build1) ...
-Selecting previously unselected package libsasl2-2:amd64.
-Preparing to unpack .../libsasl2-2_2.1.26.dfsg1-14build1_amd64.deb ...
-Unpacking libsasl2-2:amd64 (2.1.26.dfsg1-14build1) ...
-Selecting previously unselected package libldap-2.4-2:amd64.
-Preparing to unpack .../libldap-2.4-2_2.4.42+dfsg-2ubuntu3.2_amd64.deb ...
-Unpacking libldap-2.4-2:amd64 (2.4.42+dfsg-2ubuntu3.2) ...
-Selecting previously unselected package librtmp1:amd64.
-Preparing to unpack .../librtmp1_2.4+20151223.gitfa8646d-1ubuntu0.1_amd64.deb ...
-Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d-1ubuntu0.1) ...
-Selecting previously unselected package libcurl3-gnutls:amd64.
-Preparing to unpack .../libcurl3-gnutls_7.47.0-1ubuntu2.6_amd64.deb ...
-Unpacking libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.6) ...
-Selecting previously unselected package libsasl2-modules:amd64.
-Preparing to unpack .../libsasl2-modules_2.1.26.dfsg1-14build1_amd64.deb ...
-Unpacking libsasl2-modules:amd64 (2.1.26.dfsg1-14build1) ...
-Selecting previously unselected package rsync.
-Preparing to unpack .../rsync_3.1.1-3ubuntu1.2_amd64.deb ...
-Unpacking rsync (3.1.1-3ubuntu1.2) ...
-Selecting previously unselected package curl.
-Preparing to unpack .../curl_7.47.0-1ubuntu2.6_amd64.deb ...
-Unpacking curl (7.47.0-1ubuntu2.6) ...
-Selecting previously unselected package liberror-perl.
-Preparing to unpack .../liberror-perl_0.17-1.2_all.deb ...
-Unpacking liberror-perl (0.17-1.2) ...
-Selecting previously unselected package git-man.
-Preparing to unpack .../git-man_1%3a2.7.4-0ubuntu1.3_all.deb ...
-Unpacking git-man (1:2.7.4-0ubuntu1.3) ...
-Selecting previously unselected package git.
-Preparing to unpack .../git_1%3a2.7.4-0ubuntu1.3_amd64.deb ...
-Unpacking git (1:2.7.4-0ubuntu1.3) ...
-Selecting previously unselected package patch.
-Preparing to unpack .../patch_2.7.5-1_amd64.deb ...
-Unpacking patch (2.7.5-1) ...
-Selecting previously unselected package rename.
-Preparing to unpack .../archives/rename_0.20-4_all.deb ...
-Unpacking rename (0.20-4) ...
-Selecting previously unselected package sshpass.
-Preparing to unpack .../sshpass_1.05-1_amd64.deb ...
-Unpacking sshpass (1.05-1) ...
-Processing triggers for systemd (229-4ubuntu16) ...
-Processing triggers for libc-bin (2.23-0ubuntu7) ...
-Processing triggers for mime-support (3.59ubuntu1) ...
-Setting up libatm1:amd64 (1:2.5.1-1.5) ...
-Setting up libmnl0:amd64 (1.0.3-5) ...
-Setting up libpopt0:amd64 (1.16-10) ...
-Setting up libgdbm3:amd64 (1.8.3-13.1) ...
-Setting up perl-modules-5.22 (5.22.1-9ubuntu0.2) ...
-Setting up libperl5.22:amd64 (5.22.1-9ubuntu0.2) ...
-Setting up perl (5.22.1-9ubuntu0.2) ...
-update-alternatives: using /usr/bin/prename to provide /usr/bin/rename (rename) in auto mode
-Setting up iproute2 (4.3.0-1ubuntu3.16.04.3) ...
-Setting up ifupdown (0.8.10ubuntu1.2) ...
-Creating /etc/network/interfaces.
-Setting up libisc-export160 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
-Setting up libdns-export162 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
-Setting up isc-dhcp-client (4.3.3-5ubuntu12.7) ...
-Setting up isc-dhcp-common (4.3.3-5ubuntu12.7) ...
-Setting up less (481-2.1ubuntu0.2) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
-debconf: falling back to frontend: Readline
-Setting up libgmp10:amd64 (2:6.1.0+dfsg-2) ...
-Setting up libnettle6:amd64 (3.2-1ubuntu0.16.04.1) ...
-Setting up libhogweed4:amd64 (3.2-1ubuntu0.16.04.1) ...
-Setting up libp11-kit0:amd64 (0.23.2-5~ubuntu16.04.1) ...
-Setting up libtasn1-6:amd64 (4.7-3ubuntu0.16.04.3) ...
-Setting up libgnutls30:amd64 (3.4.10-4ubuntu1.4) ...
-Setting up libxtables11:amd64 (1.6.0-2ubuntu3) ...
-Setting up netbase (5.3) ...
-Setting up libroken18-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libasn1-8-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libhcrypto4-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libheimbase1-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libwind0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libhx509-5-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libkrb5-26-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libheimntlm0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libgssapi3-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libsasl2-modules-db:amd64 (2.1.26.dfsg1-14build1) ...
-Setting up libsasl2-2:amd64 (2.1.26.dfsg1-14build1) ...
-Setting up libldap-2.4-2:amd64 (2.4.42+dfsg-2ubuntu3.2) ...
-Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d-1ubuntu0.1) ...
-Setting up libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.6) ...
-Setting up libsasl2-modules:amd64 (2.1.26.dfsg1-14build1) ...
-
-Setting up rsync (3.1.1-3ubuntu1.2) ...
-invoke-rc.d: could not determine current runlevel
-invoke-rc.d: policy-rc.d denied execution of restart.
-Setting up curl (7.47.0-1ubuntu2.6) ...
-Setting up liberror-perl (0.17-1.2) ...
-Setting up git-man (1:2.7.4-0ubuntu1.3) ...
-Setting up git (1:2.7.4-0ubuntu1.3) ...
-Setting up patch (2.7.5-1) ...
-Setting up rename (0.20-4) ...
-update-alternatives: using /usr/bin/file-rename to provide /usr/bin/rename (rename) in auto mode
-Setting up sshpass (1.05-1) ...
-Processing triggers for libc-bin (2.23-0ubuntu7) ...
-Processing triggers for systemd (229-4ubuntu16) ...
-Cloning into 'snappy-qa-jobs'...
-Already on 'master'
-Your branch is up-to-date with 'origin/master'.
-Cloning into 'snapd'...
-Already on 'master'
-Your branch is up-to-date with 'origin/master'.
-++ INSTANCE_IP=10.101.51.12
-++ INSTANCE_PORT=22
-++ USER=ubuntu
-++ execute_remote 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.12 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
-ENTER EXTRAUSERS_GROUP_FILEEXIT EXTRAUSERS_GROUP_FILEENTER EXTRAUSERS_SHADOWGROUP_FILEEXIT EXTRAUSERS_SHADOWGROUP_FILE++ execute_remote 'echo test:ubuntu | sudo chpasswd'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.12 'echo test:ubuntu | sudo chpasswd'
-++ execute_remote 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.12 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
-test ALL=(ALL) NOPASSWD:ALL
-+ . snappy-qa-jobs/scripts/utils/register_device.sh 10.101.51.12 22 test ubuntu sergiocazzolato@yahoo.com.ar
-++ echo 'Register device'
-Register device
-++ '[' 5 -ne 5 ']'
-++ DEVICE_IP=10.101.51.12
-++ DEVICE_PORT=22
-++ USER=test
-++ PASS=ubuntu
-++ EMAIL=sergiocazzolato@yahoo.com.ar
-++ SCRIPT='sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
-++ '[' -z sergiocazzolato@yahoo.com.ar ']'
-++ '[' -z ubuntu ']'
-++ echo 'Registering device (with pass): sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
-Registering device (with pass): sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '.data.auth.users=[]' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )
-++ sshpass -p ubuntu ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 test@10.101.51.12 'sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
-Warning: Permanently added '10.101.51.12' (ECDSA) to the list of known hosts.
-created user "snappytestaccount1"
-+ . snappy-qa-jobs/scripts/utils/refresh_core.sh 10.101.51.12 22 test ubuntu beta edge
-++ echo 'Refresh core on device'
-Refresh core on device
-++ '[' 6 -ne 6 ']'
-++ DEVICE_IP=10.101.51.12
-++ DEVICE_PORT=22
-++ USER=test
-++ PASS=ubuntu
-++ CHANNEL=beta
-++ CORE_CHANNEL=edge
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Doing.*Auto-refresh snap "core"'
-++ '[' -z edge ']'
-++ '[' beta = edge ']'
-++ execute_remote 'sudo snap refresh --edge core'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap refresh --edge core'
-error: cannot refresh "core": cannot refresh snap-declaration for "core": Get
-       https://api.snapcraft.io/api/v1/snaps/assertions/snap-declaration/16/99T7MUlRhtI3U0QFgl5mXXESAiSwt776?max-format=2:
-       net/http: request canceled (Client.Timeout exceeded while awaiting
-       headers)
-++ true
-++ wait_for_ssh 120 2
-++ retries=120
-++ sleep=2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
-++ retry_until 'snap changes' 'Done.*Refresh "core" snap from "edge" channel' 120 2
-++ command='snap changes'
-++ output='Done.*Refresh "core" snap from "edge" channel'
-++ retries=120
-++ sleep=2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=119
-++ '[' 119 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=118
-++ '[' 118 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=117
-++ '[' 117 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=116
-++ '[' 116 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=115
-++ '[' 115 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=114
-++ '[' 114 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=113
-++ '[' 113 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=112
-++ '[' 112 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=111
-++ '[' 111 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=110
-++ '[' 110 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=109
-++ '[' 109 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-
-++ retries=108
-++ '[' 108 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=107
-++ '[' 107 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=106
-++ '[' 106 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=105
-++ '[' 105 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=104
-++ '[' 104 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=103
-++ '[' 103 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=102
-++ '[' 102 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=101
-++ '[' 101 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=100
-++ '[' 100 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=99
-++ '[' 99 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=98
-++ '[' 98 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=97
-++ '[' 97 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=96
-++ '[' 96 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=95
-++ '[' 95 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=94
-++ '[' 94 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=93
-++ '[' 93 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=92
-++ '[' 92 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=91
-++ '[' 91 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=90
-++ '[' 90 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=89
-++ '[' 89 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=88
-++ '[' 88 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=87
-++ '[' 87 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=86
-++ '[' 86 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=85
-++ '[' 85 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=84
-++ '[' 84 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=83
-++ '[' 83 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=82
-++ '[' 82 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=81
-++ '[' 81 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=80
-++ '[' 80 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=79
-++ '[' 79 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=78
-++ '[' 78 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=77
-++ '[' 77 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=76
-++ '[' 76 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=75
-++ '[' 75 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=74
-++ '[' 74 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=73
-++ '[' 73 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=72
-++ '[' 72 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=71
-++ '[' 71 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=70
-++ '[' 70 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=69
-++ '[' 69 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=68
-++ '[' 68 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=67
-++ '[' 67 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=66
-++ '[' 66 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=65
-++ '[' 65 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=64
-++ '[' 64 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=63
-++ '[' 63 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=62
-++ '[' 62 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=61
-++ '[' 61 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=60
-++ '[' 60 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=59
-++ '[' 59 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=58
-++ '[' 58 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=57
-++ '[' 57 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=56
-++ '[' 56 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=55
-++ '[' 55 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=54
-++ '[' 54 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=53
-++ '[' 53 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=52
-++ '[' 52 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=51
-++ '[' 51 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=50
-++ '[' 50 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=49
-++ '[' 49 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=48
-++ '[' 48 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=47
-++ '[' 47 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=46
-++ '[' 46 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=45
-++ '[' 45 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=44
-++ '[' 44 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=43
-++ '[' 43 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=42
-++ '[' 42 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=41
-++ '[' 41 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=40
-++ '[' 40 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=39
-++ '[' 39 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=38
-++ '[' 38 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=37
-++ '[' 37 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=36
-++ '[' 36 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=35
-++ '[' 35 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=34
-++ '[' 34 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=33
-++ '[' 33 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=32
-++ '[' 32 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=31
-++ '[' 31 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=30
-++ '[' 30 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=29
-++ '[' 29 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=28
-++ '[' 28 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=27
-++ '[' 27 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=26
-++ '[' 26 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=25
-++ '[' 25 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=24
-++ '[' 24 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=23
-++ '[' 23 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=22
-++ '[' 22 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=21
-++ '[' 21 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=20
-++ '[' 20 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=19
-++ '[' 19 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=18
-++ '[' 18 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=17
-++ '[' 17 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=16
-++ '[' 16 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=15
-++ '[' 15 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=14
-++ '[' 14 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=13
-++ '[' 13 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=12
-++ '[' 12 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=11
-++ '[' 11 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=10
-++ '[' 10 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=9
-++ '[' 9 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=8
-++ '[' 8 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=7
-++ '[' 7 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=6
-++ '[' 6 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=5
-++ '[' 5 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=4
-++ '[' 4 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ retries=3
-++ '[' 3 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=2
-++ '[' 2 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=1
-++ '[' 1 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=0
-++ '[' 0 -le 0 ']'
-++ echo 'Timed out reached. Aborting!'
-Timed out reached. Aborting!
-++ exit 1
-2018-02-02 19:41:42,157 dragonboard_002 WARNING: Tests failed, rc=1
-2018-02-02 19:41:42,158 dragonboard_002 INFO: END testrun
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/dragonboard003/env/bin/snappy-device-agent", line 4, in <module>
+    __import__('pkg_resources').run_script('snappy-device-agents==0.0.1', 'snappy-device-agent')
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 719, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1504, in run_script
+    exec(code, namespace, namespace)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/EGG-INFO/scripts/snappy-device-agent", line 25, in <module>
+    main()
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 75, in main
+    Agent().main()
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 71, in main
+    return AgentCommandRecipe(self).main(argv, exit)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/recipes/__init__.py", line 119, in main
+    retval = bowl.eat(argv)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 254, in eat
+    self._dispatch_failed()
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 310, in _dispatch_failed
+    ingredient.dispatch_failed(self.context)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
+    return self._dispatch()
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
+    result = ingredient.dispatch(self.context)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
+    return self._dispatch(context, 0)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
+    retval = command.invoked(context)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
+    return func(*args, **kwargs)
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/__init__.py", line 44, in invoked
+    device.provision()
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 359, in provision
+    raise ProvisioningError("Error copying system-user assertion")
+devices.ProvisioningError: Error copying system-user assertion
 complete
