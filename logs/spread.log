@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: d80e7d70-3f56-482a-8e56-d15611371e0f
+JOB_ID: 0178a7b8-6586-4b30-899c-91e1053837f0
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: cm3
 global_timeout: 36000
@@ -27,7 +27,6 @@ test_data:
         . snappy-qa-jobs/scripts/utils/get_spread.sh
         . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-32:tests/" "" "tests/main/auto-refresh" "-v"
 Showing job data
-This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 ***********************************
 
 * Starting setup phase on cm3-002 *
@@ -42,10 +41,11 @@ Error response from daemon: No such container: cm3002
 * Starting provision phase on cm3-002 *
 
 ***************************************
+
 Install python-logstash if you want to use logstash logging
-2018-02-23 19:31:44,933 cm3-001 INFO: BEGIN provision
-2018-02-23 19:31:44,933 cm3-001 INFO: Provisioning device
-2018-02-23 19:31:47,935 cm3-001 ERROR: exception
+2018-02-23 19:41:06,304 cm3-001 INFO: BEGIN provision
+2018-02-23 19:41:06,304 cm3-001 INFO: Provisioning device
+2018-02-23 19:41:09,307 cm3-001 ERROR: exception
 Traceback (most recent call last):
   File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 58, in _run_control
     ssh_cmd, stderr=subprocess.STDOUT, timeout=timeout)
