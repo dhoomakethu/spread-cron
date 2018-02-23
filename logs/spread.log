@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 00965def-e4bd-4df6-897e-fa2093f5d329
+JOB_ID: d80e7d70-3f56-482a-8e56-d15611371e0f
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: cm3
 global_timeout: 36000
@@ -42,11 +42,10 @@ Error response from daemon: No such container: cm3002
 * Starting provision phase on cm3-002 *
 
 ***************************************
-
 Install python-logstash if you want to use logstash logging
-2018-02-23 19:22:22,674 cm3-001 INFO: BEGIN provision
-2018-02-23 19:22:22,674 cm3-001 INFO: Provisioning device
-2018-02-23 19:22:25,678 cm3-001 ERROR: exception
+2018-02-23 19:31:44,933 cm3-001 INFO: BEGIN provision
+2018-02-23 19:31:44,933 cm3-001 INFO: Provisioning device
+2018-02-23 19:31:47,935 cm3-001 ERROR: exception
 Traceback (most recent call last):
   File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 58, in _run_control
     ssh_cmd, stderr=subprocess.STDOUT, timeout=timeout)
