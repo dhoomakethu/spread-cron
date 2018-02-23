@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 0651b2de-1ef7-4c7c-a213-acfcc18adc67
+JOB_ID: 7816fa83-88ba-499c-9f43-e16441b982e6
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: cm3
 global_timeout: 36000
@@ -43,9 +43,9 @@ Error response from daemon: No such container: cm3002
 
 ***************************************
 Install python-logstash if you want to use logstash logging
-2018-02-23 19:21:56,940 cm3-001 INFO: BEGIN provision
-2018-02-23 19:21:56,940 cm3-001 INFO: Provisioning device
-2018-02-23 19:22:14,962 cm3-001 ERROR: exception
+2018-02-23 19:31:55,030 cm3-001 INFO: BEGIN provision
+2018-02-23 19:31:55,030 cm3-001 INFO: Provisioning device
+2018-02-23 19:31:58,035 cm3-001 ERROR: exception
 Traceback (most recent call last):
   File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 58, in _run_control
     ssh_cmd, stderr=subprocess.STDOUT, timeout=timeout)
@@ -83,7 +83,6 @@ Traceback (most recent call last):
   File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 60, in _run_control
     raise ProvisioningError(e.output)
 devices.ProvisioningError: b'ssh: connect to host 10.101.50.182 port 22: No route to host\r\n'
-
 Traceback (most recent call last):
   File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 58, in _run_control
     ssh_cmd, stderr=subprocess.STDOUT, timeout=timeout)
