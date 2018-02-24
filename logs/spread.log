@@ -5,12 +5,12 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 0178a7b8-6586-4b30-899c-91e1053837f0
+JOB_ID: ac41c664-b422-4329-a9b0-9b4a46064d8d
 Print job: /var/snap/testflinger-cli/current/job.yaml 
-job_queue: cm3
+job_queue: dragonboard
 global_timeout: 36000
 provision_data:
-    url: http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-cm3.img.xz
+    channel: stable
 test_data:
     test_cmds: |
         #!/bin/bash
@@ -25,117 +25,1211 @@ test_data:
         . snappy-qa-jobs/scripts/utils/refresh_core.sh "{device_ip}" "22" "test" "ubuntu" "stable" "edge"
         . snappy-qa-jobs/scripts/utils/run_setup.sh "{device_ip}" "22" "test" "ubuntu" ""
         . snappy-qa-jobs/scripts/utils/get_spread.sh
-        . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-32:tests/" "" "tests/main/auto-refresh" "-v"
+        . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-64:tests/" "" "tests/main/auto-refresh" "-v"
 Showing job data
-***********************************
+This job is currently waiting on a node to become available. You will see no further output until the job starts running.
+*******************************************
 
-* Starting setup phase on cm3-002 *
+* Starting setup phase on dragonboard-004 *
 
-***********************************
+*******************************************
 
 Cleaning up container if it exists...
-Error response from daemon: No such container: cm3002
+Error response from daemon: No such container: dragonboard004
 
-***************************************
+***********************************************
 
-* Starting provision phase on cm3-002 *
+* Starting provision phase on dragonboard-004 *
 
-***************************************
-
+***********************************************
 Install python-logstash if you want to use logstash logging
-2018-02-23 19:41:06,304 cm3-001 INFO: BEGIN provision
-2018-02-23 19:41:06,304 cm3-001 INFO: Provisioning device
-2018-02-23 19:41:09,307 cm3-001 ERROR: exception
-Traceback (most recent call last):
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 58, in _run_control
-    ssh_cmd, stderr=subprocess.STDOUT, timeout=timeout)
-  File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
-    **kwargs).stdout
-  File "/usr/lib/python3.5/subprocess.py", line 708, in run
-    output=stdout, stderr=stderr)
-subprocess.CalledProcessError: Command '['ssh', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/dev/null', 'ubuntu@10.101.50.182', 'sudo pi3gpio set high 16']' returned non-zero exit status 255
+2018-02-24 04:41:43,904 dragonboard_004 INFO: BEGIN provision
+2018-02-24 04:41:43,904 dragonboard_004 INFO: Booting Master Image
+2018-02-24 04:41:43,905 dragonboard_004 INFO: Making sure the master image is booted
+2018-02-24 04:41:43,905 dragonboard_004 INFO: Checking if test image booted.
+2018-02-24 04:41:44,762 dragonboard_004 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.14 sudo sgdisk -o /dev/mmcblk1
+Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
+Warning: The kernel is still using the old partition table.
+The new table will be used at the next reboot or after you
+run partprobe(8) or kpartx(8)
+The operation has completed successfully.
+2018-02-24 04:41:46,439 dragonboard_004 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.14 sudo sync
+Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
+2018-02-24 04:41:47,211 dragonboard_004 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 i 2
+iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 = INTEGER: 2
+2018-02-24 04:41:47,329 dragonboard_004 INFO: Running sleep 10
+2018-02-24 04:41:57,350 dragonboard_004 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 i 1
+iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 = INTEGER: 1
+2018-02-24 04:42:07,479 dragonboard_004 INFO: Checking if master image booted.
+2018-02-24 04:42:25,523 dragonboard_004 INFO: Error checking device state. Forcing reboot...
+2018-02-24 04:42:35,534 dragonboard_004 INFO: Checking if master image booted.
+2018-02-24 04:44:00,351 dragonboard_004 INFO: Flashing Test Image
+2018-02-24 04:44:00,772 dragonboard_004 INFO: Running: nc 10.101.50.22 48530| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
+2018-02-24 04:57:31,664 dragonboard_004 INFO: Creating Test User
+Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
+2018-02-24 04:57:34,180 dragonboard_004 INFO: Booting Test Image
+2018-02-24 04:57:34,180 dragonboard_004 INFO: Booting the test image
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
 
-During handling of the above exception, another exception occurred:
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
 
-Traceback (most recent call last):
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
-    return self._dispatch()
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
-    result = ingredient.dispatch(self.context)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
-    return self._dispatch(context, 0)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
-    return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
-    return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
-    return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
-    return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
-    retval = command.invoked(context)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
-    return func(*args, **kwargs)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/__init__.py", line 43, in invoked
-    device.provision()
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 70, in provision
-    self._run_control('sudo pi3gpio set high 16')
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 60, in _run_control
-    raise ProvisioningError(e.output)
-devices.ProvisioningError: b'ssh: connect to host 10.101.50.182 port 22: No route to host\r\n'
-Traceback (most recent call last):
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 58, in _run_control
-    ssh_cmd, stderr=subprocess.STDOUT, timeout=timeout)
-  File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
-    **kwargs).stdout
-  File "/usr/lib/python3.5/subprocess.py", line 708, in run
-    output=stdout, stderr=stderr)
-subprocess.CalledProcessError: Command '['ssh', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/dev/null', 'ubuntu@10.101.50.182', 'sudo pi3gpio set high 16']' returned non-zero exit status 255
+Number of key(s) added: 1
 
-During handling of the above exception, another exception occurred:
+Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.14'"
+and check to make sure that only the key(s) you wanted were added.
 
-Traceback (most recent call last):
-  File "/srv/testflinger-agent/cm3002/env/bin/snappy-device-agent", line 4, in <module>
-    __import__('pkg_resources').run_script('snappy-device-agents==0.0.1', 'snappy-device-agent')
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 719, in run_script
-    self.require(requires)[0].run_script(script_name, ns)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1504, in run_script
-    exec(code, namespace, namespace)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/EGG-INFO/scripts/snappy-device-agent", line 25, in <module>
-    main()
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 75, in main
-    Agent().main()
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 71, in main
-    return AgentCommandRecipe(self).main(argv, exit)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/recipes/__init__.py", line 119, in main
-    retval = bowl.eat(argv)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 254, in eat
-    self._dispatch_failed()
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 310, in _dispatch_failed
-    ingredient.dispatch_failed(self.context)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
-    return self._dispatch()
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
-    result = ingredient.dispatch(self.context)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
-    return self._dispatch(context, 0)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
-    return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
-    return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
-    return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
-    return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
-    retval = command.invoked(context)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
-    return func(*args, **kwargs)
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/__init__.py", line 43, in invoked
-    device.provision()
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 70, in provision
-    self._run_control('sudo pi3gpio set high 16')
-  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 60, in _run_control
-    raise ProvisioningError(e.output)
-devices.ProvisioningError: b'ssh: connect to host 10.101.50.182 port 22: No route to host\r\n'
+2018-02-24 04:58:46,595 dragonboard_004 INFO: Checking if test image booted.
+2018-02-24 04:58:47,080 dragonboard_004 INFO: END provision
+
+******************************************
+
+* Starting test phase on dragonboard-004 *
+
+******************************************
+Install python-logstash if you want to use logstash logging
+2018-02-24 04:58:51,027 dragonboard_004 INFO: BEGIN testrun
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]
+Get:4 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [72.8 kB]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [583 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
+Get:8 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [403 kB]
+Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [240 kB]
+Get:10 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3486 B]
+Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [951 kB]
+Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [13.1 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [760 kB]
+Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.5 kB]
+Get:15 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [5153 B]
+Get:16 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7172 B]
+Fetched 3377 kB in 3s (935 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+56 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  git-man ifupdown iproute2 isc-dhcp-client isc-dhcp-common less
+  libasn1-8-heimdal libatm1 libcurl3-gnutls libdns-export162 liberror-perl
+  libgdbm3 libgmp10 libgnutls30 libgssapi3-heimdal libhcrypto4-heimdal
+  libheimbase1-heimdal libheimntlm0-heimdal libhogweed4 libhx509-5-heimdal
+  libisc-export160 libkrb5-26-heimdal libldap-2.4-2 libmnl0 libnettle6
+  libp11-kit0 libperl5.22 libpopt0 libroken18-heimdal librtmp1 libsasl2-2
+  libsasl2-modules libsasl2-modules-db libtasn1-6 libwind0-heimdal
+  libxtables11 netbase patch perl perl-base perl-modules-5.22 rename rsync
+Suggested packages:
+  gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-el git-email
+  git-gui gitk gitweb git-arch git-cvs git-mediawiki git-svn ppp rdnssd
+  iproute2-doc resolvconf avahi-autoipd isc-dhcp-client-ddns apparmor
+  gnutls-bin libsasl2-modules-otp libsasl2-modules-ldap libsasl2-modules-sql
+  libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal ed
+  diffutils-doc perl-doc libterm-readline-gnu-perl
+  | libterm-readline-perl-perl make openssh-server
+The following NEW packages will be installed:
+  curl git git-man ifupdown iproute2 isc-dhcp-client isc-dhcp-common less
+  libasn1-8-heimdal libatm1 libcurl3-gnutls libdns-export162 liberror-perl
+  libgdbm3 libgmp10 libgnutls30 libgssapi3-heimdal libhcrypto4-heimdal
+  libheimbase1-heimdal libheimntlm0-heimdal libhogweed4 libhx509-5-heimdal
+  libisc-export160 libkrb5-26-heimdal libldap-2.4-2 libmnl0 libnettle6
+  libp11-kit0 libperl5.22 libpopt0 libroken18-heimdal librtmp1 libsasl2-2
+  libsasl2-modules libsasl2-modules-db libtasn1-6 libwind0-heimdal
+  libxtables11 netbase patch perl perl-modules-5.22 rename rsync sshpass
+The following packages will be upgraded:
+  perl-base
+1 upgraded, 45 newly installed, 0 to remove and 55 not upgraded.
+Need to get 16.4 MB of archives.
+After this operation, 79.8 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl-base amd64 5.22.1-9ubuntu0.2 [1282 kB]
+Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 libatm1 amd64 1:2.5.1-1.5 [24.2 kB]
+Get:3 http://archive.ubuntu.com/ubuntu xenial/main amd64 libmnl0 amd64 1.0.3-5 [12.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpopt0 amd64 1.16-10 [26.0 kB]
+Get:5 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgdbm3 amd64 1.8.3-13.1 [16.9 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl-modules-5.22 all 5.22.1-9ubuntu0.2 [2661 kB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libperl5.22 amd64 5.22.1-9ubuntu0.2 [3391 kB]
+Get:8 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl amd64 5.22.1-9ubuntu0.2 [237 kB]
+Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 iproute2 amd64 4.3.0-1ubuntu3.16.04.3 [522 kB]
+Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ifupdown amd64 0.8.10ubuntu1.2 [54.9 kB]
+Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libisc-export160 amd64 1:9.10.3.dfsg.P4-8ubuntu1.10 [153 kB]
+Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdns-export162 amd64 1:9.10.3.dfsg.P4-8ubuntu1.10 [666 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 isc-dhcp-client amd64 4.3.3-5ubuntu12.7 [223 kB]
+Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 isc-dhcp-common amd64 4.3.3-5ubuntu12.7 [105 kB]
+Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 less amd64 481-2.1ubuntu0.2 [110 kB]
+Get:16 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgmp10 amd64 2:6.1.0+dfsg-2 [240 kB]
+Get:17 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libnettle6 amd64 3.2-1ubuntu0.16.04.1 [93.5 kB]
+Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhogweed4 amd64 3.2-1ubuntu0.16.04.1 [136 kB]
+Get:19 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libp11-kit0 amd64 0.23.2-5~ubuntu16.04.1 [105 kB]
+Get:20 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtasn1-6 amd64 4.7-3ubuntu0.16.04.3 [43.5 kB]
+Get:21 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgnutls30 amd64 3.4.10-4ubuntu1.4 [548 kB]
+Get:22 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxtables11 amd64 1.6.0-2ubuntu3 [27.2 kB]
+Get:23 http://archive.ubuntu.com/ubuntu xenial/main amd64 netbase all 5.3 [12.9 kB]
+Get:24 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libroken18-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [41.4 kB]
+Get:25 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libasn1-8-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [174 kB]
+Get:26 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhcrypto4-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [85.0 kB]
+Get:27 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libheimbase1-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [29.3 kB]
+Get:28 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libwind0-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [47.8 kB]
+Get:29 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhx509-5-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [107 kB]
+Get:30 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libkrb5-26-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [202 kB]
+Get:31 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libheimntlm0-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [15.1 kB]
+Get:32 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgssapi3-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [96.1 kB]
+Get:33 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsasl2-modules-db amd64 2.1.26.dfsg1-14build1 [14.5 kB]
+Get:34 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsasl2-2 amd64 2.1.26.dfsg1-14build1 [48.7 kB]
+Get:35 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libldap-2.4-2 amd64 2.4.42+dfsg-2ubuntu3.2 [160 kB]
+Get:36 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d-1ubuntu0.1 [54.4 kB]
+Get:37 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcurl3-gnutls amd64 7.47.0-1ubuntu2.6 [184 kB]
+Get:38 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsasl2-modules amd64 2.1.26.dfsg1-14build1 [47.5 kB]
+Get:39 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 rsync amd64 3.1.1-3ubuntu1.2 [329 kB]
+Get:40 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 curl amd64 7.47.0-1ubuntu2.6 [138 kB]
+Get:41 http://archive.ubuntu.com/ubuntu xenial/main amd64 liberror-perl all 0.17-1.2 [19.6 kB]
+Get:42 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 git-man all 1:2.7.4-0ubuntu1.3 [736 kB]
+Get:43 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 git amd64 1:2.7.4-0ubuntu1.3 [3102 kB]
+Get:44 http://archive.ubuntu.com/ubuntu xenial/main amd64 patch amd64 2.7.5-1 [90.4 kB]
+Get:45 http://archive.ubuntu.com/ubuntu xenial/main amd64 rename all 0.20-4 [12.0 kB]
+Get:46 http://archive.ubuntu.com/ubuntu xenial/universe amd64 sshpass amd64 1.05-1 [10.5 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 16.4 MB in 6s (2400 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9540 files and directories currently installed.)
+Preparing to unpack .../perl-base_5.22.1-9ubuntu0.2_amd64.deb ...
+Unpacking perl-base (5.22.1-9ubuntu0.2) over (5.22.1-9) ...
+Setting up perl-base (5.22.1-9ubuntu0.2) ...
+Selecting previously unselected package libatm1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9540 files and directories currently installed.)
+Preparing to unpack .../libatm1_1%3a2.5.1-1.5_amd64.deb ...
+Unpacking libatm1:amd64 (1:2.5.1-1.5) ...
+Selecting previously unselected package libmnl0:amd64.
+Preparing to unpack .../libmnl0_1.0.3-5_amd64.deb ...
+Unpacking libmnl0:amd64 (1.0.3-5) ...
+Selecting previously unselected package libpopt0:amd64.
+Preparing to unpack .../libpopt0_1.16-10_amd64.deb ...
+Unpacking libpopt0:amd64 (1.16-10) ...
+Selecting previously unselected package libgdbm3:amd64.
+Preparing to unpack .../libgdbm3_1.8.3-13.1_amd64.deb ...
+Unpacking libgdbm3:amd64 (1.8.3-13.1) ...
+Selecting previously unselected package perl-modules-5.22.
+Preparing to unpack .../perl-modules-5.22_5.22.1-9ubuntu0.2_all.deb ...
+Unpacking perl-modules-5.22 (5.22.1-9ubuntu0.2) ...
+Selecting previously unselected package libperl5.22:amd64.
+Preparing to unpack .../libperl5.22_5.22.1-9ubuntu0.2_amd64.deb ...
+Unpacking libperl5.22:amd64 (5.22.1-9ubuntu0.2) ...
+Selecting previously unselected package perl.
+Preparing to unpack .../perl_5.22.1-9ubuntu0.2_amd64.deb ...
+Unpacking perl (5.22.1-9ubuntu0.2) ...
+Selecting previously unselected package iproute2.
+Preparing to unpack .../iproute2_4.3.0-1ubuntu3.16.04.3_amd64.deb ...
+Unpacking iproute2 (4.3.0-1ubuntu3.16.04.3) ...
+Selecting previously unselected package ifupdown.
+Preparing to unpack .../ifupdown_0.8.10ubuntu1.2_amd64.deb ...
+Unpacking ifupdown (0.8.10ubuntu1.2) ...
+Selecting previously unselected package libisc-export160.
+Preparing to unpack .../libisc-export160_1%3a9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb ...
+Unpacking libisc-export160 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
+Selecting previously unselected package libdns-export162.
+Preparing to unpack .../libdns-export162_1%3a9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb ...
+Unpacking libdns-export162 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
+Selecting previously unselected package isc-dhcp-client.
+Preparing to unpack .../isc-dhcp-client_4.3.3-5ubuntu12.7_amd64.deb ...
+Unpacking isc-dhcp-client (4.3.3-5ubuntu12.7) ...
+Selecting previously unselected package isc-dhcp-common.
+Preparing to unpack .../isc-dhcp-common_4.3.3-5ubuntu12.7_amd64.deb ...
+Unpacking isc-dhcp-common (4.3.3-5ubuntu12.7) ...
+Selecting previously unselected package less.
+Preparing to unpack .../less_481-2.1ubuntu0.2_amd64.deb ...
+Unpacking less (481-2.1ubuntu0.2) ...
+Selecting previously unselected package libgmp10:amd64.
+Preparing to unpack .../libgmp10_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmp10:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package libnettle6:amd64.
+Preparing to unpack .../libnettle6_3.2-1ubuntu0.16.04.1_amd64.deb ...
+Unpacking libnettle6:amd64 (3.2-1ubuntu0.16.04.1) ...
+Selecting previously unselected package libhogweed4:amd64.
+Preparing to unpack .../libhogweed4_3.2-1ubuntu0.16.04.1_amd64.deb ...
+Unpacking libhogweed4:amd64 (3.2-1ubuntu0.16.04.1) ...
+Selecting previously unselected package libp11-kit0:amd64.
+Preparing to unpack .../libp11-kit0_0.23.2-5~ubuntu16.04.1_amd64.deb ...
+Unpacking libp11-kit0:amd64 (0.23.2-5~ubuntu16.04.1) ...
+Selecting previously unselected package libtasn1-6:amd64.
+Preparing to unpack .../libtasn1-6_4.7-3ubuntu0.16.04.3_amd64.deb ...
+Unpacking libtasn1-6:amd64 (4.7-3ubuntu0.16.04.3) ...
+Selecting previously unselected package libgnutls30:amd64.
+Preparing to unpack .../libgnutls30_3.4.10-4ubuntu1.4_amd64.deb ...
+Unpacking libgnutls30:amd64 (3.4.10-4ubuntu1.4) ...
+Selecting previously unselected package libxtables11:amd64.
+Preparing to unpack .../libxtables11_1.6.0-2ubuntu3_amd64.deb ...
+Unpacking libxtables11:amd64 (1.6.0-2ubuntu3) ...
+Selecting previously unselected package netbase.
+Preparing to unpack .../archives/netbase_5.3_all.deb ...
+Unpacking netbase (5.3) ...
+Selecting previously unselected package libroken18-heimdal:amd64.
+Preparing to unpack .../libroken18-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+Unpacking libroken18-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Selecting previously unselected package libasn1-8-heimdal:amd64.
+Preparing to unpack .../libasn1-8-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+Unpacking libasn1-8-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Selecting previously unselected package libhcrypto4-heimdal:amd64.
+Preparing to unpack .../libhcrypto4-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+Unpacking libhcrypto4-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Selecting previously unselected package libheimbase1-heimdal:amd64.
+Preparing to unpack .../libheimbase1-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+Unpacking libheimbase1-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Selecting previously unselected package libwind0-heimdal:amd64.
+Preparing to unpack .../libwind0-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+Unpacking libwind0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Selecting previously unselected package libhx509-5-heimdal:amd64.
+Preparing to unpack .../libhx509-5-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+Unpacking libhx509-5-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Selecting previously unselected package libkrb5-26-heimdal:amd64.
+Preparing to unpack .../libkrb5-26-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+Unpacking libkrb5-26-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Selecting previously unselected package libheimntlm0-heimdal:amd64.
+Preparing to unpack .../libheimntlm0-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+Unpacking libheimntlm0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Selecting previously unselected package libgssapi3-heimdal:amd64.
+Preparing to unpack .../libgssapi3-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
+Unpacking libgssapi3-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../libsasl2-modules-db_2.1.26.dfsg1-14build1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.26.dfsg1-14build1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../libsasl2-2_2.1.26.dfsg1-14build1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.26.dfsg1-14build1) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../libldap-2.4-2_2.4.42+dfsg-2ubuntu3.2_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.42+dfsg-2ubuntu3.2) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../librtmp1_2.4+20151223.gitfa8646d-1ubuntu0.1_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d-1ubuntu0.1) ...
+Selecting previously unselected package libcurl3-gnutls:amd64.
+Preparing to unpack .../libcurl3-gnutls_7.47.0-1ubuntu2.6_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.6) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../libsasl2-modules_2.1.26.dfsg1-14build1_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.26.dfsg1-14build1) ...
+Selecting previously unselected package rsync.
+Preparing to unpack .../rsync_3.1.1-3ubuntu1.2_amd64.deb ...
+Unpacking rsync (3.1.1-3ubuntu1.2) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../curl_7.47.0-1ubuntu2.6_amd64.deb ...
+Unpacking curl (7.47.0-1ubuntu2.6) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../liberror-perl_0.17-1.2_all.deb ...
+Unpacking liberror-perl (0.17-1.2) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../git-man_1%3a2.7.4-0ubuntu1.3_all.deb ...
+Unpacking git-man (1:2.7.4-0ubuntu1.3) ...
+Selecting previously unselected package git.
+Preparing to unpack .../git_1%3a2.7.4-0ubuntu1.3_amd64.deb ...
+Unpacking git (1:2.7.4-0ubuntu1.3) ...
+Selecting previously unselected package patch.
+Preparing to unpack .../patch_2.7.5-1_amd64.deb ...
+Unpacking patch (2.7.5-1) ...
+Selecting previously unselected package rename.
+Preparing to unpack .../archives/rename_0.20-4_all.deb ...
+Unpacking rename (0.20-4) ...
+Selecting previously unselected package sshpass.
+Preparing to unpack .../sshpass_1.05-1_amd64.deb ...
+Unpacking sshpass (1.05-1) ...
+Processing triggers for systemd (229-4ubuntu16) ...
+Processing triggers for libc-bin (2.23-0ubuntu7) ...
+Processing triggers for mime-support (3.59ubuntu1) ...
+Setting up libatm1:amd64 (1:2.5.1-1.5) ...
+Setting up libmnl0:amd64 (1.0.3-5) ...
+Setting up libpopt0:amd64 (1.16-10) ...
+Setting up libgdbm3:amd64 (1.8.3-13.1) ...
+Setting up perl-modules-5.22 (5.22.1-9ubuntu0.2) ...
+Setting up libperl5.22:amd64 (5.22.1-9ubuntu0.2) ...
+Setting up perl (5.22.1-9ubuntu0.2) ...
+update-alternatives: using /usr/bin/prename to provide /usr/bin/rename (rename) in auto mode
+Setting up iproute2 (4.3.0-1ubuntu3.16.04.3) ...
+Setting up ifupdown (0.8.10ubuntu1.2) ...
+Creating /etc/network/interfaces.
+Setting up libisc-export160 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
+Setting up libdns-export162 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
+Setting up isc-dhcp-client (4.3.3-5ubuntu12.7) ...
+Setting up isc-dhcp-common (4.3.3-5ubuntu12.7) ...
+Setting up less (481-2.1ubuntu0.2) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+Setting up libgmp10:amd64 (2:6.1.0+dfsg-2) ...
+Setting up libnettle6:amd64 (3.2-1ubuntu0.16.04.1) ...
+Setting up libhogweed4:amd64 (3.2-1ubuntu0.16.04.1) ...
+Setting up libp11-kit0:amd64 (0.23.2-5~ubuntu16.04.1) ...
+Setting up libtasn1-6:amd64 (4.7-3ubuntu0.16.04.3) ...
+Setting up libgnutls30:amd64 (3.4.10-4ubuntu1.4) ...
+Setting up libxtables11:amd64 (1.6.0-2ubuntu3) ...
+Setting up netbase (5.3) ...
+Setting up libroken18-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Setting up libasn1-8-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Setting up libhcrypto4-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Setting up libheimbase1-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Setting up libwind0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Setting up libhx509-5-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Setting up libkrb5-26-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Setting up libheimntlm0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Setting up libgssapi3-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
+Setting up libsasl2-modules-db:amd64 (2.1.26.dfsg1-14build1) ...
+Setting up libsasl2-2:amd64 (2.1.26.dfsg1-14build1) ...
+Setting up libldap-2.4-2:amd64 (2.4.42+dfsg-2ubuntu3.2) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d-1ubuntu0.1) ...
+Setting up libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.6) ...
+Setting up libsasl2-modules:amd64 (2.1.26.dfsg1-14build1) ...
+Setting up rsync (3.1.1-3ubuntu1.2) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of restart.
+Setting up curl (7.47.0-1ubuntu2.6) ...
+Setting up liberror-perl (0.17-1.2) ...
+Setting up git-man (1:2.7.4-0ubuntu1.3) ...
+Setting up git (1:2.7.4-0ubuntu1.3) ...
+Setting up patch (2.7.5-1) ...
+Setting up rename (0.20-4) ...
+update-alternatives: using /usr/bin/file-rename to provide /usr/bin/rename (rename) in auto mode
+Setting up sshpass (1.05-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu7) ...
+Processing triggers for systemd (229-4ubuntu16) ...
+Cloning into 'snappy-qa-jobs'...
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+Cloning into 'snapd'...
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+++ INSTANCE_IP=10.101.51.14
+++ INSTANCE_PORT=22
+++ USER=ubuntu
+++ execute_remote 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
+++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.14 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
+ENTER EXTRAUSERS_GROUP_FILEEXIT EXTRAUSERS_GROUP_FILEENTER EXTRAUSERS_SHADOWGROUP_FILEEXIT EXTRAUSERS_SHADOWGROUP_FILE++ execute_remote 'echo test:ubuntu | sudo chpasswd'
+++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.14 'echo test:ubuntu | sudo chpasswd'
+++ execute_remote 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
+++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.14 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
+test ALL=(ALL) NOPASSWD:ALL
++ . snappy-qa-jobs/scripts/utils/register_device.sh 10.101.51.14 22 test ubuntu sergiocazzolato@yahoo.com.ar
+++ echo 'Register device'
+Register device
+++ '[' 5 -ne 5 ']'
+++ DEVICE_IP=10.101.51.14
+++ DEVICE_PORT=22
+++ USER=test
+++ PASS=ubuntu
+++ EMAIL=sergiocazzolato@yahoo.com.ar
+++ SCRIPT='sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
+++ '[' -z sergiocazzolato@yahoo.com.ar ']'
+++ '[' -z ubuntu ']'
+++ echo 'Registering device (with pass): sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
+Registering device (with pass): sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '.data.auth.users=[]' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )
+++ sshpass -p ubuntu ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 test@10.101.51.14 'sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
+Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
+created user "snappytestaccount1"
++ . snappy-qa-jobs/scripts/utils/refresh_core.sh 10.101.51.14 22 test ubuntu stable edge
+++ echo 'Refresh core on device'
+Refresh core on device
+++ '[' 6 -ne 6 ']'
+++ DEVICE_IP=10.101.51.14
+++ DEVICE_PORT=22
+++ USER=test
+++ PASS=ubuntu
+++ CHANNEL=stable
+++ CORE_CHANNEL=edge
+++ grep -q -E 'Doing.*Auto-refresh snap "core"'
+++ execute_remote 'snap changes'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap changes'
+++ '[' -z edge ']'
+++ '[' stable = edge ']'
+++ execute_remote 'sudo snap refresh --edge core'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'sudo snap refresh --edge core'
+2018-02-24T05:03:45Z INFO Waiting for restart...
+2018-02-24T05:08:49Z INFO Waiting for restart...
+2018-02-24T05:08:53Z INFO Waiting for restart...
+2018-02-24T05:08:55Z INFO Waiting for restart...
+Connection to 10.101.51.14 closed by remote host.
+++ true
+++ wait_for_ssh 120 2
+++ retries=120
+++ sleep=2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=119
+++ '[' 119 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=118
+++ '[' 118 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=117
+++ '[' 117 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=116
+++ '[' 116 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=115
+++ '[' 115 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=114
+++ '[' 114 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=113
+++ '[' 113 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=112
+++ '[' 112 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=111
+++ '[' 111 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=110
+++ '[' 110 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=109
+++ '[' 109 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=108
+++ '[' 108 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=107
+++ '[' 107 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=106
+++ '[' 106 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=105
+++ '[' 105 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=104
+++ '[' 104 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=103
+++ '[' 103 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retry_until 'snap changes' 'Done.*Refresh "core" snap from "edge" channel' 120 2
+++ command='snap changes'
+++ output='Done.*Refresh "core" snap from "edge" channel'
+++ retries=120
+++ sleep=2
+++ execute_remote 'snap changes'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap changes'
+++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
+++ retry_until 'snap info core' 'tracking: +edge' 10 2
+++ command='snap info core'
+++ output='tracking: +edge'
+++ retries=10
+++ sleep=2
+++ execute_remote 'snap info core'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap info core'
+++ grep -q -E 'tracking: +edge'
+++ retry_until 'sudo snap install --devmode jq' 'jq .* installed' 20 10
+++ command='sudo snap install --devmode jq'
+++ output='jq .* installed'
+++ retries=20
+++ sleep=10
+++ execute_remote 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'sudo snap install --devmode jq'
+++ execute_remote 'sudo snap remove jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'sudo snap remove jq'
+jq removed
++ . snappy-qa-jobs/scripts/utils/run_setup.sh 10.101.51.14 22 test ubuntu ''
+++ echo 'Running setup command'
+Running setup command
+++ '[' 5 -ne 5 ']'
+++ DEVICE_IP=10.101.51.14
+++ DEVICE_PORT=22
+++ USER=test
+++ PASS=ubuntu
+++ SETUP=
+++ '[' -z '' ']'
+++ echo 'No setup command to run'
+No setup command to run
++ . snappy-qa-jobs/scripts/utils/get_spread.sh
+++ echo 'Getting spread'
+Getting spread
++++ pwd
+++ export WORKSPACE=/home/ubuntu
+++ WORKSPACE=/home/ubuntu
+++ export SPREAD_DIR=/home/ubuntu/spread
+++ SPREAD_DIR=/home/ubuntu/spread
+++ export PATH=/home/ubuntu/spread:/srv/testflinger-agent/dragonboard004/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/home/ubuntu/spread:/srv/testflinger-agent/dragonboard004/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ '[' -f /home/ubuntu/spread/spread ']'
+++ mkdir -p /home/ubuntu/spread
+++ cd /home/ubuntu/spread
+++ curl -s -O https://niemeyer.s3.amazonaws.com/spread-amd64.tar.gz
+++ tar xzvf spread-amd64.tar.gz
+spread
+++ echo 'Spread downloaded and ready to use'
+Spread downloaded and ready to use
++ . snappy-qa-jobs/scripts/utils/run_spread.sh 10.101.51.14 22 snapd external:ubuntu-core-16-arm-64:tests/ '' tests/main/auto-refresh -v
+++ echo 'Running spread'
+Running spread
+++ '[' 7 -ne 7 ']'
+++ export WORKSPACE=/home/ubuntu
+++ WORKSPACE=/home/ubuntu
+++ DEVICE_IP=10.101.51.14
+++ DEVICE_PORT=22
+++ PROJECT_PATH=snapd
+++ SPREAD_TESTS=external:ubuntu-core-16-arm-64:tests/
+++ SPREAD_ENV=
+++ SKIP_TESTS=tests/main/auto-refresh
+++ SPREAD_PARAMS=-v
+++ '[' -z external:ubuntu-core-16-arm-64:tests/ ']'
+++ '[' '!' -z '' ']'
+++ export SPREAD_EXTERNAL_ADDRESS=10.101.51.14:22
+++ SPREAD_EXTERNAL_ADDRESS=10.101.51.14:22
++++ which spread
+++ [[ -n /home/ubuntu/spread/spread ]]
+++ echo 'Spread found'
+Spread found
+++ cd snapd
+++ echo 'Moving to manual all the tests to skip: tests/main/auto-refresh'
+Moving to manual all the tests to skip: tests/main/auto-refresh
++++ echo tests/main/auto-refresh
++++ tr , ' '
+++ tests_skip=tests/main/auto-refresh
+++ for test in '$tests_skip'
+++ '[' -f tests/main/auto-refresh/task.yaml ']'
+++ cp tests/main/auto-refresh/task.yaml tests/main/auto-refresh/task.yaml.back
+++ echo 'manual: true'
++++ echo -v
++++ tr , ' '
+++ spread_params=-v
+++ echo 'Running command: spread -v external:ubuntu-core-16-arm-64:tests/'
+Running command: spread -v external:ubuntu-core-16-arm-64:tests/
+++ spread -v external:ubuntu-core-16-arm-64:tests/
+2018-02-24 05:14:46 Found /home/ubuntu/snapd/spread.yaml.
+2018-02-24 05:14:48 Project content is packed for delivery (2.43MB).
+2018-02-24 05:14:48 Sequence of jobs produced with -seed=1519449288
+2018-02-24 05:14:48 If killed, discard servers with: spread -reuse-pid=877 -discard
+2018-02-24 05:14:48 Allocating external:ubuntu-core-16-arm-64...
+2018-02-24 05:14:48 Waiting for external:ubuntu-core-16-arm-64 to make SSH available at 10.101.51.14:22...
+2018-02-24 05:14:48 Allocated external:ubuntu-core-16-arm-64.
+2018-02-24 05:14:48 Connecting to external:ubuntu-core-16-arm-64...
+2018-02-24 05:14:48 Connected to external:ubuntu-core-16-arm-64 at 10.101.51.14:22.
+2018-02-24 05:14:48 Sending project content to external:ubuntu-core-16-arm-64...
+2018-02-24 05:14:50 Preparing external:ubuntu-core-16-arm-64...
+2018-02-24 05:14:50 Preparing external:ubuntu-core-16-arm-64:tests/main/...
+2018-02-24 05:19:50 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/) running late. Current output:
+-----
+(... 87 lines above ...)
+
+/boot/uboot/dragonboard-kernel_43.snap:
+dtbs
+initrd.img
+kernel.img
++ BOOT=/boot/uboot/
++ systemctl stop snapd.service snapd.socket
++ tar cf /home/gopath/src/github.com/snapcore/snapd/snapd-state.tar.gz /var/lib/snapd /boot/uboot/ /etc/systemd/system/snap-core-4115.mount /etc/systemd/system/snap-core-4147.mount
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+-----
+.
+2018-02-24 05:20:23 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash...
+2018-02-24 05:24:18 Executing external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash (1/183)...
+2018-02-24 05:29:18 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash) running late. Current output:
+-----
+(... 37 lines above ...)
++ chg_id=14
++ snap change 14
++ grep -q '^Done.*Make snap.*available to the system'
++ sleep 1
++ snap change 14
++ grep -q '^Done.*Make snap.*available to the system'
++ sleep 1
++ snap change 14
++ grep -q '^Done.*Make snap.*available to the system'
++ sleep 1
+-----
+.
+2018-02-24 05:30:21 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash) as requested...
+2018-02-24 05:32:10 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash...
+2018-02-24 05:32:11 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
+2018-02-24 05:34:06 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade (2/183)...
+2018-02-24 05:34:32 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
+2018-02-24 05:35:30 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
+2018-02-24 05:36:38 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
+2018-02-24 05:37:34 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
+2018-02-24 05:38:27 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
+2018-02-24 05:38:27 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
+2018-02-24 05:43:26 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot (3/183)...
+2018-02-24 05:43:27 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot) as requested...
+2018-02-24 05:44:32 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
+2018-02-24 05:44:32 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
+2018-02-24 05:46:02 Executing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd (4/183)...
+2018-02-24 05:51:02 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd) running late. Current output:
+-----
+(... 48 lines above ...)
++ sleep 1
++ snap change 14
++ grep -q '^Done.*Make snap.*available to the system'
++ sleep 1
++ snap change 14
++ grep -q '^Done.*Make snap.*available to the system'
++ sleep 1
++ snap change 14
++ grep -q '^Done.*Make snap.*available to the system'
++ sleep 1
+-----
+.
+2018-02-24 05:52:00 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd) as requested...
+2018-02-24 05:53:35 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
+2018-02-24 05:53:38 Preparing external:ubuntu-core-16-arm-64:tests/main/revert-devmode:fake...
+2018-02-24 05:56:58 Executing external:ubuntu-core-16-arm-64:tests/main/revert-devmode:fake (5/183)...
+2018-02-24 05:56:58 Restoring external:ubuntu-core-16-arm-64:tests/main/revert-devmode:fake...
+2018-02-24 05:56:59 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-fan...
+2018-02-24 05:59:26 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-fan (6/183)...
+2018-02-24 05:59:26 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-fan...
+2018-02-24 05:59:27 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content...
+2018-02-24 06:03:03 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content (7/183)...
+2018-02-24 06:04:53 Error executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content : 
+-----
++ echo 'When a snap declaring a content sharing plug is installed'
+When a snap declaring a content sharing plug is installed
++ snap install --edge test-snapd-content-plug
+test-snapd-content-plug (edge) 1.0 from 'canonical' installed
++ echo 'Then this pulls in the default provider'
+Then this pulls in the default provider
++ snap list
++ MATCH test-snapd-content-slot
+error: pattern not found, got:
+Name                     Version    Rev   Developer  Notes
+core                     16-2.31.1  4115  canonical  core
+test-snapd-content-plug  1.0        5     canonical  -
+-----
+.
+2018-02-24 06:04:53 Debug output for external:ubuntu-core-16-arm-64:tests/main/interfaces-content : 
+-----
++ '[' 1 = 1 ']'
++ echo '# journal messages for snapd'
+# journal messages for snapd
++ journalctl -u snapd
+-- Logs begin at Sat 2018-02-24 05:59:53 UTC, end at Sat 2018-02-24 06:05:19 UTC. --
+Feb 24 05:59:54 localhost.localdomain snapd[1663]: 2018/02/24 05:59:54.793207 daemon.go:233: DEBUG: pid=2117;uid=0;@ GET /v2/snaps 6.37ms 200
+Feb 24 05:59:54 localhost.localdomain snapd[1663]: 2018/02/24 05:59:54.864345 daemon.go:233: DEBUG: pid=2127;uid=0;@ GET /v2/snaps 13.033ms 200
+Feb 24 05:59:54 localhost.localdomain snapd[1663]: 2018/02/24 05:59:54.942908 daemon.go:233: DEBUG: pid=2137;uid=0;@ POST /v2/snaps/manifest.yaml 963µs 400
+Feb 24 05:59:55 localhost.localdomain snapd[1663]: 2018/02/24 05:59:55.015755 daemon.go:233: DEBUG: pid=2144;uid=0;@ POST /v2/snaps/snapcraft.yaml 680µs 400
+Feb 24 05:59:55 localhost.localdomain systemd[1]: Stopping Snappy daemon...
+Feb 24 05:59:55 localhost.localdomain snapd[1663]: 2018/02/24 05:59:55.031536 main.go:78: Exiting on terminated signal.
+Feb 24 05:59:59 localhost.localdomain snapd[1663]: 2018/02/24 05:59:59.868421 taskrunner.go:367: DEBUG: Running task 107 on Do: Generate device key
+Feb 24 06:00:00 localhost.localdomain systemd[1]: Stopped Snappy daemon.
+Feb 24 06:02:45 localhost.localdomain systemd[1]: Starting Snappy daemon...
+Feb 24 06:02:46 localhost.localdomain snapd[2161]: AppArmor status: apparmor is enabled and all features are available
+Feb 24 06:03:18 localhost.localdomain snapd[2161]: 2018/02/24 06:03:18.372495 daemon.go:306: started snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
+Feb 24 06:03:18 localhost.localdomain snapd[2161]: 2018/02/24 06:03:18.377338 main.go:72: DEBUG: activation done in 31.382s
+Feb 24 06:03:18 localhost.localdomain systemd[1]: Started Snappy daemon.
+Feb 24 06:03:19 localhost.localdomain systemd[1]: Stopping Snappy daemon...
+Feb 24 06:03:19 localhost.localdomain snapd[2161]: 2018/02/24 06:03:19.282204 main.go:78: Exiting on terminated signal.
+Feb 24 06:03:21 localhost.localdomain snapd[2161]: 2018/02/24 06:03:21.597295 snapmgr.go:560: DEBUG: Catalog refresh starting now; next scheduled for 2018-02-25 06:03:21.597068 +0000 UTC.
+Feb 24 06:03:21 localhost.localdomain snapd[2161]: 2018/02/24 06:03:21.597938 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/sections, attempt 1, elapsed time=103µs
+Feb 24 06:03:21 localhost.localdomain snapd[2161]: 2018/02/24 06:03:21.606894 logger.go:69: DEBUG: > "GET /api/v1/snaps/sections HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/hal+json\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
+Feb 24 06:03:23 localhost.localdomain snapd[2161]: 2018/02/24 06:03:23.152845 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 266\r\nAge: 1351\r\nCache-Control: public, max-age=3600\r\nContent-Type: application/hal+json\r\nDate: Sat, 24 Feb 2018 05:40:52 GMT\r\nServer: gunicorn/19.7.1\r\nVary: X-Ubuntu-Series\r\nVia: 1.1 juju-7794b8-prod-ols-snap-store-indep-397 (squid/3.5.23)\r\nX-Cache: HIT from juju-7794b8-prod-ols-snap-store-indep-397\r\nX-Cache-Lookup: HIT from juju-7794b8-prod-ols-snap-store-indep-397:3128\r\nX-Request-Id: 8c7bd316-3ec3-4d72-baab-293f70d0c80c\r\nX-Vcs-Revision: 444fefa\r\n\r\n{\"_embedded\": {\"clickindex:sections\": [{\"name\": \"featured\"}, {\"name\": \"games\"}, {\"name\": \"finance\"}, {\"name\": \"developers\"}, {\"name\": \"social-networking\"}, {\"name\": \"video\"}, {\"name\": \"music\"}, {\"name\": \"productivity\"}, {\"name\": \"utilities\"}, {\"name\": \"graphics\"}]}}"
+Feb 24 06:03:23 localhost.localdomain snapd[2161]: 2018/02/24 06:03:23.155200 retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/sections finished after 1 retries, elapsed time=1.557355s, status: 200
+Feb 24 06:03:23 localhost.localdomain snapd[2161]: 2018/02/24 06:03:23.722244 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/names?confinement=strict, attempt 1, elapsed time=88µs
+Feb 24 06:03:23 localhost.localdomain snapd[2161]: 2018/02/24 06:03:23.730764 logger.go:69: DEBUG: > "GET /api/v1/snaps/names?confinement=strict HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/hal+json\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: 2018/02/24 06:03:24.324714 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 40674\r\nAge: 2545\r\nCache-Control: public, max-age=3600\r\nContent-Type: application/hal+json\r\nDate: Sat, 24 Feb 2018 05:21:00 GMT\r\nServer: gunicorn/19.7.1\r\nVary: X-Ubuntu-Store, X-Ubuntu-Series, X-Ubuntu-Architecture\r\nVia: 1.1 juju-7794b8-prod-ols-snap-store-indep-398 (squid/3.5.12)\r\nX-Cache: HIT from juju-7794b8-prod-ols-snap-store-indep-398\r\nX-Cache-Lookup: HIT from juju-7794b8-prod-ols-snap-store-indep-398:3128\r\nX-Request-Id: f71800ad-0796-4990-af3f-78be712e17cc\r\nX-Vcs-Revision: 444fefa\r\n\r\n{\"_embedded\": {\"clickindex:package\": [{\"aliases\": null, \"apps\": [], \"package_name\": \"ab\", \"summary\": \"Test snap with shortest name\", \"title\": \"ab\"}, {\"aliases\": null, \"apps\": [\"acpihelp\", \"acpinames\", \"acpiexec\", \"acpiexamples\", \"acpixtract\", \"acpidump\", \"acpibin\", \"acpisrc\", \"iasl\"], \"package_name\": \"acpi-tools\", \"summary\": \"ACPICA tools\", \"title\": \"acpi-tools\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"ag-mcphail\", \"summary\": \"The Silver Searcher - mcphail's build and upstream git version\", \"title\": \"ag-mcphail\"}, {\"aliases\": [{\"name\": \"aconnect\", \"target\": \"aconnect\"}, {\"name\": \"alsabat\", \"target\": \"alsabat\"}, {\"name\": \"alsactl\", \"target\": \"alsactl\"}, {\"name\": \"alsaloop\", \"target\": \"alsaloop\"}, {\"name\": \"alsamixer\", \"target\": \"alsamixer\"}, {\"name\": \"alsatplg\", \"target\": \"alsatplg\"}, {\"name\": \"alsaucm\", \"target\": \"alsaucm\"}, {\"name\": \"amidi\", \"target\": \"amidi\"}, {\"name\": \"amixer\", \"target\": \"amixer\"}, {\"name\": \"aplay\", \"target\": \"aplay\"}, {\"name\": \"aplaymidi\", \"target\": \"aplaymidi\"}, {\"name\": \"arecord\", \"target\": \"arecord\"}, {\"name\": \"arecordmidi\", \"target\": \"arecordmidi\"}, {\"name\": \"aseqdump\", \"target\": \"aseqdump\"}, {\"name\": \"aseqnet\", \"target\": \"aseqnet\"}, {\"name\": \"iecset\", \"target\": \"iecset\"}, {\"name\": \"spe
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: aker-test\", \"target\": \"speaker-test\"}], \"apps\": [\"aplaymidi\", \"aseqnet\", \"arecordmidi\", \"alsactl\", \"speaker-test\", \"amixer\", \"alsatplg\", \"arecord\", \"alsamixer\", \"aconnect\", \"aplay\", \"alsaucm\", \"aseqdump\", \"amidi\", \"alsaloop\", \"iecset\", \"alsabat\"], \"package_name\": \"alsa-utils\", \"summary\": \"Utilities for configuring and using ALSA\", \"title\": \"alsa-utils\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"apizee-box-1-helmet\", \"summary\": \"Package for box helmet\", \"title\": \"apizee-box-1-helmet\"}, {\"aliases\": null, \"apps\": [\"appx\"], \"package_name\": \"appx\", \"summary\": \"appx tool for Windows Universal Apps\", \"title\": \"appx\"}, {\"aliases\": null, \"apps\": [\"attfeeder\"], \"package_name\": \"attfeeder\", \"summary\": \"Attitude angles feeder\", \"title\": \"attfeeder\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"autopilot-qt\", \"summary\": \"Autopilot QT\", \"title\": \"autopilot-qt\"}, {\"aliases\": null, \"apps\": [\"restart-avahi-daemon\", \"help\"], \"package_name\": \"avahi\", \"summary\": \"avahi-daemon\", \"title\": \"avahi\"}, {\"aliases\": null, \"apps\": [\"resolve-host-name\", \"resolve\", \"browse\", \"publish-service\", \"ping\", \"publish\", \"publish-address\", \"resolve-address\", \"set-host-name\", \"browse-domains\"], \"package_name\": \"avahi-client\", \"summary\": \"Avahi sample client\", \"title\": \"avahi-client\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"basic-amd64\", \"summary\": \"The most simple snap.\", \"title\": \"basic-amd64\"}, {\"aliases\": null, \"apps\": [\"javaflow\", \"pidpersec\", \"syscount\", \"ugc\", \"xfsslower\", \"javacalls\", \"pythongc\", \"cpudist\", \"ext4slower\", \"zfsdist\", \"opensnoop\", \"memleak\", \"tcplife\", \"hardirqs\", \"tcpconnlat\", \"softirqs\", \"funccount\", \"tcpaccept\", \"uthreads\", \"offwaketime\", \"solisten\", \"biosnoop\", \"stackcount\", \"mysqld-qslower\", \"tplist\", \"vfsstat\", \"tcptop\", \"deadlock-detector\", \"phpstat\", \"cobjn
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: ew\", \"funclatency\", \"btrfsdist\", \"sslsniff\", \"ttysnoop\", \"ext4dist\", \"runqlat\", \"nodestat\", \"dcsnoop\", \"bitesize\", \"killsnoop\", \"mdflush\", \"execsnoop\", \"ustat\", \"phpcalls\", \"fileslower\", \"phpflow\", \"rubygc\", \"offcputime\", \"javastat\", \"btrfsslower\", \"gethostlatency\", \"javathreads\", \"nfsslower\", \"pythonstat\", \"syncsnoop\", \"slabratetop\", \"pythoncalls\", \"cachetop\", \"ucalls\", \"vfscount\", \"rubyobjnew\", \"zfsslower\", \"filelife\", \"pythonflow\", \"statsnoop\", \"tcpconnect\", \"runqlen\", \"funcslower\", \"uflow\", \"bpflist\", \"oomkill\", \"uobjnew\", \"cpuunclaimed\", \"dcstat\", \"rubystat\", \"bashreadline\", \"profile\", \"javaobjnew\", \"argdist\", \"trace\", \"cachestat\", \"javagc\", \"filetop\", \"biolatency\", \"dbslower\", \"stacksnoop\", \"nfsdist\", \"nodegc\", \"biotop\", \"wakeuptime\", \"tcptracer\", \"rubycalls\", \"dbstat\", \"rubyflow\", \"tcpretrans\", \"capable\", \"xfsdist\", \"llcstat\", \"mountsnoop\"], \"package_name\": \"bcc\", \"summary\": \"BPF compiler collection\", \"title\": \"bcc\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"beagleblack\", \"summary\": \"OEM Beagle Bone Black\", \"title\": \"beagleblack\"}, {\"aliases\": [{\"name\": \"bluetoothctl\", \"target\": \"bluetoothctl\"}, {\"name\": \"btmgmt\", \"target\": \"btmgmt\"}, {\"name\": \"hciattach\", \"target\": \"hciattach\"}, {\"name\": \"hciconfig\", \"target\": \"hciconfig\"}, {\"name\": \"hcidump\", \"target\": \"hcidump\"}, {\"name\": \"hcitool\", \"target\": \"hcitool\"}, {\"name\": \"obexctl\", \"target\": \"obexctl\"}, {\"name\": \"sdptool\", \"target\": \"sdptool\"}], \"apps\": [\"btmon\", \"sdptool\", \"hciconfig\", \"hcidump\", \"hcitool\", \"bluetoothctl\", \"hciattach\", \"obexctl\", \"btmgmt\"], \"package_name\": \"bluez\", \"summary\": \"Bluez for Ubuntu\", \"title\": \"bluez\"}, {\"aliases\": null, \"apps\": [\"buckle\"], \"package_name\": \"bucklespring\", \"summary\": \"Nostalgia bucklespring keyboard sound\", \"title\": \"bucklespring\"},
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: {\"aliases\": null, \"apps\": [\"caddy\"], \"package_name\": \"caddy-hduran\", \"summary\": \"The HTTP/2 web server with automatic HTTPS\", \"title\": \"caddy-hduran\"}, {\"aliases\": null, \"apps\": [\"alsa-utils\", \"udisks2\", \"run\", \"plainbox\", \"tpm\", \"pulseaudio\", \"network-manager\", \"bluez\", \"wifi-ap\", \"upower\", \"modem-manager\", \"media-hub\", \"wireless-tools\"], \"package_name\": \"canonical-se-engineering-tests\", \"summary\": \"Canonical System Enablement Engineering Test cases\", \"title\": \"canonical-se-engineering-tests\"}, {\"aliases\": null, \"apps\": [\"config\"], \"package_name\": \"captive-redirect\", \"summary\": \"Captive portal redirector snap\", \"title\": \"captive-redirect\"}, {\"aliases\": null, \"apps\": [\"apply\"], \"package_name\": \"cdk-addons\", \"summary\": \"Addons for the Canonical Distribution of Kubernetes\", \"title\": \"cdk-addons\"}, {\"aliases\": null, \"apps\": [\"engineering-tests\", \"snappy-generic-automated\", \"checkbox\", \"configure\", \"plainbox\", \"hw-collection\", \"test-runner\", \"checkbox-cli\", \"smoke-test\", \"sru\", \"python3\"], \"package_name\": \"checkbox-snappy\", \"summary\": \"Testing tool for Snappy Ubuntu Core (best installed with --devmode for the moment)\", \"title\": \"checkbox-snappy\"}, {\"aliases\": null, \"apps\": [\"koch-binary\", \"snowman\", \"christmas-2012\", \"snow\", \"tupper\"], \"package_name\": \"christmas-obfuscated-c\", \"summary\": \"Christmas Obfuscated C programs\", \"title\": \"christmas-obfuscated-c\"}, {\"aliases\": null, \"apps\": [\"chromium\"], \"package_name\": \"chromium\", \"summary\": \"Chromium web browser, open-source version of Chrome\", \"title\": \"Chromium\"}, {\"aliases\": null, \"apps\": [\"cli\"], \"package_name\": \"chuck-norris-webserver\", \"summary\": \"Chuck Norris quotation nodejs server\", \"title\": \"chuck-norris-webserver\"}, {\"aliases\": null, \"apps\": [\"cla-check\"], \"package_name\": \"cla-check\", \"summary\": \"Check if Canonical's Contributor License Agreement has been s
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: igned\", \"title\": \"cla-check\"}, {\"aliases\": null, \"apps\": [\"status\", \"start\", \"stop\", \"restart\"], \"package_name\": \"cntlm-ondra\", \"summary\": \"cntlm proxy authenticator\", \"title\": \"cntlm-ondra\"}, {\"aliases\": null, \"apps\": [\"consul\"], \"package_name\": \"consul\", \"summary\": \"Consul is a tool for service discovery, monitoring and configuration\", \"title\": \"consul\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"core\", \"summary\": \"snapd runtime environment\", \"title\": \"core\"}, {\"aliases\": null, \"apps\": [\"cppcheck\"], \"package_name\": \"cppcheck\", \"summary\": \"A tool for static C/C++ code analysis\", \"title\": \"cppcheck\"}, {\"aliases\": null, \"apps\": [\"cpustat\"], \"package_name\": \"cpustat\", \"summary\": \"periodic cpu utilization statistics\", \"title\": \"cpustat\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"cuberite\", \"summary\": \"Performant open source Minecraft server written in C++.\", \"title\": \"cuberite\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"dash-shell\", \"summary\": \"POSIX-compliant shell\", \"title\": \"dash\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"demo-amd64\", \"summary\": \"AMD64 generic package\", \"title\": \"demo-amd64\"}, {\"aliases\": null, \"apps\": [\"devicetree-compiler\"], \"package_name\": \"devicetree-compiler\", \"summary\": \"Simple snap to provide the devicetree compiler command\", \"title\": \"devicetree-compiler\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"dnsmasq-escoand\", \"summary\": \"Dnsmasq provides network infrastructure for small networks\", \"title\": \"dnsmasq\"}, {\"aliases\": null, \"apps\": [\"dnsmasq\"], \"package_name\": \"dnsmasqd\", \"summary\": \"Network infrastructure swiss-army knife\", \"title\": \"dnsmasqd\"}, {\"aliases\": null, \"apps\": [\"machine\", \"docker\", \"compose\", \"help\"], \"package_name\": \"docker\", \"summary\": \"The docker app deployment mechanism\", \"title\": \"Docker\"}, {\"aliases\": null, \"apps\": []
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: , \"package_name\": \"dragonboard\", \"summary\": \"Dragonbaord support package\", \"title\": \"dragonboard\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"dragonboard-kernel\", \"summary\": \"The canonical snapdragon arm64 kernel\", \"title\": \"dragonboard-kernel\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"dragonboard-turtlebot-kyrofa\", \"summary\": \"Dragonboard gadget for the Turtlebot 2\", \"title\": \"dragonboard-turtlebot-kyrofa\"}, {\"aliases\": null, \"apps\": [\"drive\"], \"package_name\": \"drive\", \"summary\": \"Google Drive client for the commandline\", \"title\": \"drive\"}, {\"aliases\": null, \"apps\": [\"status\", \"show-client\", \"help\", \"add-client\", \"setup\", \"clients\", \"connect-server\", \"revoke-client\"], \"package_name\": \"easy-openvpn\", \"summary\": \"An easy-to-manage OpenVPN deployment.\", \"title\": \"easy-openvpn\"}, {\"aliases\": null, \"apps\": [\"easy2fa\", \"gui\"], \"package_name\": \"easy2fa\", \"summary\": \"Easy to use two-factor-auth client for cli\", \"title\": \"easy2fa\"}, {\"aliases\": null, \"apps\": [\"eatpages\"], \"package_name\": \"eatpages\", \"summary\": \"A tool to consume all available pages for low memory testing\", \"title\": \"eatpages\"}, {\"aliases\": [{\"name\": \"etcdctl\", \"target\": \"etcdctl\"}], \"apps\": [\"etcdctl\"], \"package_name\": \"etcd\", \"summary\": \"Resilient key-value store by CoreOS\", \"title\": \"etcd\"}, {\"aliases\": null, \"apps\": [\"etcdctl\"], \"package_name\": \"etcd-arm64\", \"summary\": \"Resilient key-value store by CoreOS\", \"title\": \"etcd-arm64\"}, {\"aliases\": null, \"apps\": [\"eventstat\"], \"package_name\": \"eventstat\", \"summary\": \"kernel event states monitoring tool\", \"title\": \"eventstat\"}, {\"aliases\": null, \"apps\": [\"expect\"], \"package_name\": \"expect\", \"summary\": \"Automates interactive applications\", \"title\": \"expect\"}, {\"aliases\": null, \"apps\": [\"fcole90-hexgl-webapp\"], \"package_name\": \"fcole90-hexgl-webapp\", \"summary\": \"Webapp for HexG
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: L\", \"title\": \"fcole90-hexgl-webapp\"}, {\"aliases\": null, \"apps\": [\"fiemap\"], \"package_name\": \"fiemap\", \"summary\": \"file extent dumping tool\", \"title\": \"fiemap\"}, {\"aliases\": null, \"apps\": [\"flawfinder\"], \"package_name\": \"flawfinder-static-analyzer\", \"summary\": \"C static analyzer tool\", \"title\": \"flawfinder-static-analyzer\"}, {\"aliases\": null, \"apps\": [\"set\", \"ospf6d-debug\", \"ospfd-debug\", \"ripngd-debug\", \"nhrpd-debug\", \"pimd-debug\", \"isisd-debug\", \"bgpd-debug\", \"vtysh\", \"ripd-debug\", \"version\", \"ldpd-debug\", \"zebra-debug\", \"readme\"], \"package_name\": \"frr\", \"summary\": \"FRRouting BGP/OSPFv2/OSPFv3/ISIS/RIP/RIPng/PIM/LDP routing daemon (Quagga Fork)\", \"title\": \"frr\"}, {\"aliases\": null, \"apps\": [\"fzf\"], \"package_name\": \"fzf-slowday\", \"summary\": \"fzf is a general-purpose command-line fuzzy finder\", \"title\": \"fzf-slowday\"}, {\"aliases\": [{\"name\": \"repo\", \"target\": \"repo\"}], \"apps\": [\"repo\"], \"package_name\": \"git-repo\", \"summary\": \"A tool built on top of Git to manage many Git repositories.\", \"title\": \"git-repo\"}, {\"aliases\": null, \"apps\": [\"gnss-sdr\", \"front-end-cal\", \"volk-gnsssdr-profile\", \"volk-gnsssdr-config-info\"], \"package_name\": \"gnss-sdr-next\", \"summary\": \"GNSS-SDR, 'next' branch\", \"title\": \"gnss-sdr-next\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"go-example-webserver\", \"summary\": \"Minimal Golang webserver for snappy\", \"title\": \"go-example-webserver\"}, {\"aliases\": null, \"apps\": [\"gost\"], \"package_name\": \"gost\", \"summary\": \"GO Simple Tunnel\", \"title\": \"gost\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"healthcheck-toolbox-example\", \"summary\": \"Health checks toolbox example for use as content interfaces\", \"title\": \"healthcheck-toolbox-example\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"hello\", \"summary\": \"GNU Hello, the \\\"hello world\\\" snap\", \"title\": \"hello\"}, {\"aliases\": null
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: , \"apps\": [\"hello\", \"bash\"], \"package_name\": \"hello-architt\", \"summary\": \"Hello world snap\", \"title\": \"hello-architt\"}, {\"aliases\": null, \"apps\": [\"hello\"], \"package_name\": \"hello-ricardokirkner-test2\", \"summary\": \"say hello\", \"title\": \"hello-ricardokirkner-test2\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"hello-securx-snap\", \"summary\": \"Single-line elevator pitch for your amazing snap\", \"title\": \"hello-securx-snap\"}, {\"aliases\": null, \"apps\": [\"hello-takaakisuzuki-aarch\"], \"package_name\": \"hello-takaakisuzuki-aarch\", \"summary\": \"GNU Hello, the \\\"hello world\\\" snap\", \"title\": \"hello-takaakisuzuki-aarch\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"hello-world\", \"summary\": \"The 'hello-world' of snaps\", \"title\": \"hello-world\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"hikey-snappy-gadget\", \"summary\": \"HiKey board support package\", \"title\": \"hikey-snappy-gadget\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"home-assistant-escoand\", \"summary\": \"Open-source home automation platform running on Python 3\", \"title\": \"home-assistant\"}, {\"aliases\": null, \"apps\": [\"hswitch\"], \"package_name\": \"hswitch\", \"summary\": \"hosts file content switcher to modify your static ip addresses\", \"title\": \"hswitch\"}, {\"aliases\": null, \"apps\": [\"htop\"], \"package_name\": \"htop\", \"summary\": \"Interactive processes viewer\", \"title\": \"htop\"}, {\"aliases\": null, \"apps\": [\"http\", \"man\"], \"package_name\": \"http\", \"summary\": \"HTTPie in a snap\", \"title\": \"http\"}, {\"aliases\": null, \"apps\": [\"hugo\"], \"package_name\": \"hugo\", \"summary\": \"A Fast and Flexible Static Site Generator built with love by bep, spf13 and friends in Go.\", \"title\": \"Hugo\"}, {\"aliases\": null, \"apps\": [\"viewer\", \"inkscape\"], \"package_name\": \"inkscape\", \"summary\": \"Vector Graphics Editor\", \"title\": \"Inkscape\"}, {\"aliases\": null, \"apps\": [], \"package_name\"
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: : \"interdenominational-counterintelligences\", \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor elit, blandit non est sed, aliquam mollis velit.\", \"title\": \"Interdenominational Counterintelligences\"}, {\"aliases\": null, \"apps\": [\"ipfs\"], \"package_name\": \"ipfs\", \"summary\": \"global, versioned, peer-to-peer filesystem\", \"title\": \"ipfs\"}, {\"aliases\": [{\"name\": \"john\", \"target\": \"john-the-ripper\"}], \"apps\": [\"putty2john\", \"zip2john\", \"racf2john\", \"opencl\", \"rar2john\", \"john-the-ripper\", \"vncpcap2john\", \"uaf2john\", \"hccap2john\", \"gpg2john\", \"keepass2john\", \"dmg2john\", \"wpapcap2john\"], \"package_name\": \"john-the-ripper\", \"summary\": \"John the Ripper \\\"Jumbo\\\" password cracker\", \"title\": \"john-the-ripper\"}, {\"aliases\": null, \"apps\": [\"jq\"], \"package_name\": \"jq\", \"summary\": \"The jq command\", \"title\": \"jq\"}, {\"aliases\": null, \"apps\": [\"kanagame\"], \"package_name\": \"kanagame\", \"summary\": \"A simple flashcard based game for learning kana.\", \"title\": \"kanagame\"}, {\"aliases\": null, \"apps\": [\"kernelscan\"], \"package_name\": \"kernelscan\", \"summary\": \"fast kernel source error message scanner\", \"title\": \"kernelscan\"}, {\"aliases\": null, \"apps\": [\"kube-apiserver\"], \"package_name\": \"kube-apiserver\", \"summary\": \"kube-apiserver\", \"title\": \"kube-apiserver\"}, {\"aliases\": null, \"apps\": [\"kube-controller-manager\"], \"package_name\": \"kube-controller-manager-arm64\", \"summary\": \"kube-controller-manager\", \"title\": \"kube-controller-manager-arm64\"}, {\"aliases\": null, \"apps\": [\"kube-scheduler\"], \"package_name\": \"kube-scheduler\", \"summary\": \"kube-scheduler controls the Kubernetes cluster manager.\", \"title\": \"kube-scheduler\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"lci\", \"summary\": \"LCI LOLCODE INTERPRETR\", \"title\": \"lci\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"littlewatcher\", \"summary\": \"Cl
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: ient for a distributed monitoring network\", \"title\": \"littlewatcher\"}, {\"aliases\": null, \"apps\": [\"status\", \"list-providers\", \"set\", \"monitor\"], \"package_name\": \"locationd\", \"summary\": \"Location service mediates access to positioning providers.\", \"title\": \"locationd\"}, {\"aliases\": null, \"apps\": [\"lonewolf\"], \"package_name\": \"lonewolf\", \"summary\": \"A role-playing choose-your-own-adventure game\", \"title\": \"Lone Wolf\"}, {\"aliases\": null, \"apps\": [\"lp-build-snap\"], \"package_name\": \"lp-build-snap\", \"summary\": \"Utility to trigger Snap package builds in Launchpad\", \"title\": \"lp-build-snap\"}, {\"aliases\": [{\"name\": \"lxc\", \"target\": \"lxc\"}], \"apps\": [\"lxd\", \"lxc\", \"database\", \"migrate\", \"benchmark\", \"check-kernel\"], \"package_name\": \"lxd\", \"summary\": \"System container manager and API\", \"title\": \"LXD\"}, {\"aliases\": null, \"apps\": [\"configure\", \"database\"], \"package_name\": \"lxd-demo-server\", \"summary\": \"Online software demo sessions using LXD\", \"title\": \"LXD demo server\"}, {\"aliases\": null, \"apps\": [\"magic-device-tool\"], \"package_name\": \"magic-device-tool\", \"summary\": \"magic-device-tool\", \"title\": \"magic-device-tool\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"mdns-hostname\", \"summary\": \"mDNS mini-daemon to published hostname.local\", \"title\": \"mdns-hostname\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"minidlna-escoand\", \"summary\": \"server software with the aim of being fully compliant with DLNA/UPnP clients.\", \"title\": \"minidlna\"}, {\"aliases\": [{\"name\": \"mmcli\", \"target\": \"mmcli\"}], \"apps\": [\"qmicli\", \"mbimcli\", \"qmi-network\", \"mbim-network\", \"mmcli\"], \"package_name\": \"modem-manager\", \"summary\": \"ModemManager is a service which controls mobile broadband\", \"title\": \"modem-manager\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"morse-converter-py\", \"summary\": \"Simple command-line Morse converter\", \"titl
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: e\": \"Morse Converter (Python)\"}, {\"aliases\": null, \"apps\": [\"netdiscover-ondra\"], \"package_name\": \"netdiscover-ondra\", \"summary\": \"netdiscover\", \"title\": \"netdiscover-ondra\"}, {\"aliases\": [{\"name\": \"nmcli\", \"target\": \"nmcli\"}], \"apps\": [\"nmcli\"], \"package_name\": \"network-manager\", \"summary\": \"Network management based on NeworkManager\", \"title\": \"network-manager\"}, {\"aliases\": null, \"apps\": [\"neverbore\"], \"package_name\": \"neverbore\", \"summary\": \"A picture logic puzzle game\", \"title\": \"Neverbore Picross\"}, {\"aliases\": null, \"apps\": [\"mysql-client\", \"occ\", \"enable-https\", \"mysqldump\", \"manual-install\", \"disable-https\"], \"package_name\": \"nextcloud\", \"summary\": \"Nextcloud Server - A safe home for all your data\", \"title\": \"Nextcloud\"}, {\"aliases\": null, \"apps\": [\"configure\", \"noip-client\"], \"package_name\": \"noip-client\", \"summary\": \"No-IP Dynamic DNS Update Client for Linux\", \"title\": \"No-IP Client\"}, {\"aliases\": null, \"apps\": [\"ntpcontrol\"], \"package_name\": \"ntpcontrol\", \"summary\": \"Simple snap to set an ntp server address\", \"title\": \"ntpcontrol\"}, {\"aliases\": null, \"apps\": [\"MeshUpgrader\", \"XMLConverter\", \"SampleBrowser\"], \"package_name\": \"ogre\", \"summary\": \"Object-Oriented Graphics Rendering Engine\", \"title\": \"OGRE Sample Browser\"}, {\"aliases\": null, \"apps\": [\"olam\"], \"package_name\": \"olam\", \"summary\": \"Olam English Malayalam Dictionary\", \"title\": \"Olam\"}, {\"aliases\": null, \"apps\": [\"open-adventure\"], \"package_name\": \"open-adventure\", \"summary\": \"Forward-port of the Crowther/Woods Adventure 2.5 from 1995\", \"title\": \"open-adventure\"}, {\"aliases\": null, \"apps\": [\"status\", \"help\", \"stop\", \"start\", \"client\", \"clean\", \"debug\"], \"package_name\": \"openhab\", \"summary\": \"openHAB smart home server\", \"title\": \"openHAB\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"overlay\", \"summary\": \"Tools for ass
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: isting with debugging read-only squashfs snaps via overlayfs\", \"title\": \"overlay\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"packageproxy\", \"summary\": \"approx based package proxy running on port 9999\", \"title\": \"packageproxy\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"pc\", \"summary\": \"AMD64 generic package\", \"title\": \"pc\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"pi2\", \"summary\": \"Raspberry Pi 2 support package\", \"title\": \"pi2\"}, {\"aliases\": null, \"apps\": [\"youtube-upload\", \"publish-podcast\", \"season-to-youtube\", \"encode-podcast\"], \"package_name\": \"podpublish\", \"summary\": \"A tool for encoding and publishing podcast content and assets\", \"title\": \"PodPublish\"}, {\"aliases\": null, \"apps\": [\"run-pgbouncer\", \"pgbouncer\"], \"package_name\": \"postgresql-pgbouncer\", \"summary\": \"Lightweight connection pooler for PostgreSQL\", \"title\": \"postgresql-pgbouncer\"}, {\"aliases\": null, \"apps\": [\"pgwaldump\", \"pgresetwal\", \"pgdumpall\", \"pgrestore\", \"clusterdb\", \"dropdb\", \"pgarchivecleanup\", \"pgctl\", \"pgisready\", \"dropuser\", \"reindexdb\", \"vacuumdb\", \"pgtesttiming\", \"initdb\", \"oid2name\", \"pgtestfsync\", \"vacuumlo\", \"ecpg\", \"postmaster\", \"pgupgrade\", \"postgres\", \"pgcontroldata\", \"pgrecvlogical\", \"createdb\", \"pgrewind\", \"initialize\", \"pgdump\", \"psql\", \"pgbench\", \"pgconfig\", \"createuser\", \"pgreceivewal\", \"pgbasebackup\"], \"package_name\": \"postgresql10\", \"summary\": \"PostgreSQL is a powerful, open source object-relational database system.\", \"title\": \"postgresql10\"}, {\"aliases\": null, \"apps\": [\"pgstandby\", \"pltclloadmod\", \"createlang\", \"pgdumpall\", \"pgrestore\", \"pltcldelmod\", \"clusterdb\", \"ecpg\", \"pgxlogdump\", \"pgctl\", \"pgisready\", \"dropuser\", \"reindexdb\", \"pgcontroldata\", \"vacuumdb\", \"pgtesttiming\", \"initdb\", \"oid2name\", \"pgtestfsync\", \"vacuumlo\", \"dropdb\", \"postmaster\", \"pgupgrade\", \"postgres\", \"pg
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: archivecleanup\", \"createdb\", \"droplang\", \"initialize\", \"pgdump\", \"pgconfig\", \"psql\", \"pgbench\", \"pgresetxlog\", \"pltcllistmod\", \"pgreceivexlog\", \"createuser\", \"pgbasebackup\"], \"package_name\": \"postgresql93\", \"summary\": \"PostgreSQL is a powerful, open source object-relational database system.\", \"title\": \"postgresql93\"}, {\"aliases\": null, \"apps\": [\"pgstandby\", \"pltclloadmod\", \"createlang\", \"pgdumpall\", \"pgrestore\", \"pltcldelmod\", \"clusterdb\", \"ecpg\", \"pgxlogdump\", \"pgctl\", \"pgisready\", \"dropuser\", \"reindexdb\", \"pgcontroldata\", \"vacuumdb\", \"pgtesttiming\", \"initdb\", \"oid2name\", \"pgtestfsync\", \"dropdb\", \"postmaster\", \"pgupgrade\", \"postgres\", \"pgarchivecleanup\", \"pgrecvlogical\", \"createdb\", \"droplang\", \"initialize\", \"pgdump\", \"pgconfig\", \"psql\", \"pgbench\", \"pgresetxlog\", \"pltcllistmod\", \"pgreceivexlog\", \"createuser\", \"pgbasebackup\"], \"package_name\": \"postgresql94\", \"summary\": \"PostgreSQL is a powerful, open source object-relational database system.\", \"title\": \"postgresql94\"}, {\"aliases\": null, \"apps\": [\"pgstandby\", \"pltclloadmod\", \"createlang\", \"pgdumpall\", \"pgrestore\", \"pltcldelmod\", \"clusterdb\", \"ecpg\", \"pgxlogdump\", \"pgctl\", \"pgisready\", \"dropuser\", \"reindexdb\", \"pgcontroldata\", \"vacuumdb\", \"pgtesttiming\", \"initdb\", \"oid2name\", \"pgtestfsync\", \"vacuumlo\", \"dropdb\", \"postmaster\", \"pgupgrade\", \"postgres\", \"pgarchivecleanup\", \"pgrecvlogical\", \"createdb\", \"pgrewind\", \"droplang\", \"initialize\", \"pgdump\", \"pgconfig\", \"psql\", \"pgbench\", \"pgresetxlog\", \"pltcllistmod\", \"pgreceivexlog\", \"createuser\", \"pgbasebackup\"], \"package_name\": \"postgresql95\", \"summary\": \"PostgreSQL is a powerful, open source object-relational database system.\", \"title\": \"postgresql95\"}, {\"aliases\": null, \"apps\": [\"pg-md5\", \"pcp-detach-node\", \"pcp-pool-status\", \"pcp-node-info\", \"pcp-stop-pgpool\", \"pcp-promote-node\", \"pcp-re
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: covery-node\", \"pcp-watchdog-info\", \"pcp-proc-info\", \"pgpool\", \"pcp-node-count\", \"pcp-proc-count\", \"pcp-attach-node\"], \"package_name\": \"postgresql95-pgpool2-35\", \"summary\": \"pgpool-II is a connection pooler for PostgreSQL.\", \"title\": \"postgresql95-pgpool2-35\"}, {\"aliases\": null, \"apps\": [\"pgpool-setup\", \"pg-md5\", \"pcp-detach-node\", \"pcp-pool-status\", \"pcp-node-info\", \"pcp-stop-pgpool\", \"pcp-promote-node\", \"pcp-recovery-node\", \"pcp-watchdog-info\", \"pcp-proc-info\", \"pgpool\", \"pcp-node-count\", \"watchdog-setup\", \"pcp-proc-count\", \"pcp-attach-node\"], \"package_name\": \"postgresql95-pgpool2-36\", \"summary\": \"pgpool-II is a connection pooler for PostgreSQL.\", \"title\": \"postgresql95-pgpool2-36\"}, {\"aliases\": null, \"apps\": [\"pgstandby\", \"pltclloadmod\", \"createlang\", \"pgdumpall\", \"pgrestore\", \"pltcldelmod\", \"clusterdb\", \"ecpg\", \"pgxlogdump\", \"pgctl\", \"pgisready\", \"dropuser\", \"reindexdb\", \"pgcontroldata\", \"vacuumdb\", \"pgtesttiming\", \"initdb\", \"oid2name\", \"pgtestfsync\", \"vacuumlo\", \"dropdb\", \"postmaster\", \"pgupgrade\", \"postgres\", \"pgarchivecleanup\", \"pgrecvlogical\", \"createdb\", \"pgrewind\", \"droplang\", \"initialize\", \"pgdump\", \"pgconfig\", \"psql\", \"pgbench\", \"pgresetxlog\", \"pltcllistmod\", \"pgreceivexlog\", \"createuser\", \"pgbasebackup\"], \"package_name\": \"postgresql96\", \"summary\": \"PostgreSQL is a powerful, open source object-relational database system.\", \"title\": \"postgresql96\"}, {\"aliases\": null, \"apps\": [\"psst\"], \"package_name\": \"psst\", \"summary\": \"power stress and shaping tool\", \"title\": \"psst\"}, {\"aliases\": [{\"name\": \"pactl\", \"target\": \"pactl\"}, {\"name\": \"paplay\", \"target\": \"paplay\"}, {\"name\": \"parec\", \"target\": \"parec\"}], \"apps\": [\"config\", \"paplay\", \"parec\", \"pactl\"], \"package_name\": \"pulseaudio\", \"summary\": \"PulseAudio sound server\", \"title\": \"pulseaudio\"}, {\"aliases\": null, \"apps\": [], \"package
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: _name\": \"pwgen-tyhicks\", \"summary\": \"Password generator\", \"title\": \"pwgen\"}, {\"aliases\": null, \"apps\": [\"qcheckers\"], \"package_name\": \"qcheckers\", \"summary\": \"Checkers game\", \"title\": \"qcheckers\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"qimo-wallpapers\", \"summary\": \"Wallpapers from Qimo 2.0\", \"title\": \"qimo-wallpapers\"}, {\"aliases\": null, \"apps\": [\"qownnotes\"], \"package_name\": \"qownnotes\", \"summary\": \"Plain-text file notepad with markdown support and ownCloud / Nextcloud integration\", \"title\": \"QOwnNotes\"}, {\"aliases\": null, \"apps\": [\"ospf6d-debug\", \"isisd-debug\", \"zebra-debug\", \"ospfd-debug\", \"ripngd-debug\", \"pimd-debug\", \"ripd-debug\", \"bgpd-debug\", \"vtysh\", \"version\", \"readme\"], \"package_name\": \"quagga-lool\", \"summary\": \"Quagga BGP/OSPFv2/OSPFv3/ISIS/RIP/RIPng/PIM routing daemon\", \"title\": \"quagga-lool\"}, {\"aliases\": null, \"apps\": [\"rawpty\"], \"package_name\": \"rawpty\", \"summary\": \"execute a command on raw pty over ssh\", \"title\": \"rawpty\"}, {\"aliases\": null, \"apps\": [\"rclone\"], \"package_name\": \"rclone\", \"summary\": \"\\\"rsync for cloud storage\\\"  \", \"title\": \"rclone\"}, {\"aliases\": null, \"apps\": [\"rclone\"], \"package_name\": \"rclone-dev\", \"summary\": \"rsync for cloud storage\", \"title\": \"rclone-dev\"}, {\"aliases\": null, \"apps\": [\"pi-stress\", \"cyclictest\", \"pip-stress\", \"sigwaittest\", \"rt-migrate-test\", \"pmqtest\", \"ptsematest\", \"svsematest\", \"sendme\", \"signaltest\"], \"package_name\": \"realtime-tests\", \"summary\": \"Suite of real-time tests\", \"title\": \"realtime-tests\"}, {\"aliases\": null, \"apps\": [\"winpr-hash\", \"remmina\", \"winpr-makecert\"], \"package_name\": \"remmina\", \"summary\": \"The GTK+ Remote Desktop Client\", \"title\": \"Remmina\"}, {\"aliases\": null, \"apps\": [\"rssnotify\"], \"package_name\": \"rssnotify\", \"summary\": \"E-mail updates to a list of RSS Feeds (usually with a cron job).\", \"title\": \"rss
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: notify\"}, {\"aliases\": null, \"apps\": [\"sensors-unity\"], \"package_name\": \"sensors-unity\", \"summary\": \"A simple sensors GUI for the Unity Desktop\", \"title\": \"Sensors Unity\"}, {\"aliases\": null, \"apps\": [\"sslocal\", \"ssserver\"], \"package_name\": \"shadowsocks\", \"summary\": \"A fast tunnel proxy that helps you bypass firewalls\", \"title\": \"shadowsocks\"}, {\"aliases\": null, \"apps\": [\"sluice\"], \"package_name\": \"sluice\", \"summary\": \"rate limiting data piping tool\", \"title\": \"sluice\"}, {\"aliases\": null, \"apps\": [\"busybox\"], \"package_name\": \"snapd-hacker-toolbelt\", \"summary\": \"Collection of tools useful for developers hacking on snapd\", \"title\": \"snapd-hacker-toolbelt\"}, {\"aliases\": null, \"apps\": [\"security\"], \"package_name\": \"snappy-debug\", \"summary\": \"Debug tools for ubuntu-core\", \"title\": \"snappy-debug\"}, {\"aliases\": null, \"apps\": [\"snappy-discover\"], \"package_name\": \"snappy-discover\", \"summary\": \"Discover snappy devices on the local network\", \"title\": \"snappy-discover\"}, {\"aliases\": null, \"apps\": [\"generate-token\"], \"package_name\": \"snapweb\", \"summary\": \"Beautiful and functional interface for snap management\", \"title\": \"snapweb\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"snow-on-me\", \"summary\": \"A simple webserver serving christmas snow on demand\", \"title\": \"snow-on-me\"}, {\"aliases\": null, \"apps\": [\"solc\"], \"package_name\": \"solc\", \"summary\": \"The Solidity Contract-Oriented Programming Language\", \"title\": \"solc\"}, {\"aliases\": null, \"apps\": [\"special-delivery-start\"], \"package_name\": \"special-delivery\", \"summary\": \"Example app on Mir stack\", \"title\": \"special-delivery\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"spreedme\", \"summary\": \"Spreed.ME audio/video calls and conferences feature for the Nextcloud Snap\", \"title\": \"spreedme\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"sshesame\", \"summary\": \"Fake SSH serv
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: er that lets everyone in and logs their activity\", \"title\": \"sshesame\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"sshguard-robertliu\", \"summary\": \"Protects from brute force attacks against ssh\", \"title\": \"sshguard-robertliu\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"stats\", \"summary\": \"Gathers numbers in repeated text\", \"title\": \"stats\"}, {\"aliases\": null, \"apps\": [\"storjshare\"], \"package_name\": \"storjshare\", \"summary\": \"farm data on the Storj network.\", \"title\": \"storjshare\"}, {\"aliases\": null, \"apps\": [\"strace-static\"], \"package_name\": \"strace-static\", \"summary\": \"diagnostic, debugging and instructional userspace utility\", \"title\": \"strace-static\"}, {\"aliases\": null, \"apps\": [\"stress-ng\"], \"package_name\": \"stress-ng\", \"summary\": \"tool to load and stress a computer\", \"title\": \"stress-ng\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"sudo\", \"summary\": \"not sudo\", \"title\": \"sudo\"}, {\"aliases\": null, \"apps\": [\"syncthing\"], \"package_name\": \"syncthing\", \"summary\": \"Open Source Continuous File Synchronization\", \"title\": \"syncthing\"}, {\"aliases\": null, \"apps\": [\"teatime\"], \"package_name\": \"teatime\", \"summary\": \"Simple egg timer application for the Unity Desktop\", \"title\": \"Teatime\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"telecom-tower-fireworks\", \"summary\": \"Telecom Tower Fireworks\", \"title\": \"telecom-tower-fireworks\"}, {\"aliases\": null, \"apps\": [\"telegram-cli\"], \"package_name\": \"telegram-cli\", \"summary\": \"Command-line interface for Telegram. Uses the readline interface.\", \"title\": \"telegram-cli\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-assumes\", \"summary\": \"Test snap for snapd\", \"title\": \"test-assumes\"}, {\"aliases\": [{\"name\": \"test_snapd_wellknown1\", \"target\": \"wellknown1\"}, {\"name\": \"test_snapd_wellknown2\", \"target\": \"wellknown2\"}], \"apps\": [\"wellknown1\", \"wellknown2\
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: "], \"package_name\": \"test-snapd-auto-aliases\", \"summary\": \"\", \"title\": \"test-snapd-auto-aliases\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-base-bare\", \"summary\": \"Empty base snap for snapd testing\", \"title\": \"test-snapd-base-bare\"}, {\"aliases\": null, \"apps\": [\"content-plug\"], \"package_name\": \"test-snapd-content-circular1\", \"summary\": \"\", \"title\": \"test-snapd-content-circular1\"}, {\"aliases\": null, \"apps\": [\"content-plug\"], \"package_name\": \"test-snapd-content-circular2\", \"summary\": \"\", \"title\": \"test-snapd-content-circular2\"}, {\"aliases\": null, \"apps\": [\"content-plug\"], \"package_name\": \"test-snapd-content-plug\", \"summary\": \"\", \"title\": \"test-snapd-content-plug\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-content-slot\", \"summary\": \"\", \"title\": \"test-snapd-content-slot\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-content-slot-no-content-attr\", \"summary\": \"\", \"title\": \"test-snapd-content-slot-no-content-attr\"}, {\"aliases\": null, \"apps\": [\"list\", \"install\"], \"package_name\": \"test-snapd-control-consumer\", \"summary\": \"Basic snapd-control consumer snap\", \"title\": \"test-snapd-control-consumer\"}, {\"aliases\": null, \"apps\": [\"lpr\"], \"package_name\": \"test-snapd-cups-control-consumer\", \"summary\": \"Basic cups-control consumer snap\", \"title\": \"test-snapd-cups-control-consumer\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-delta-refresh\", \"summary\": \"\", \"title\": \"test-snapd-delta-refresh\"}, {\"aliases\": null, \"apps\": [\"create\"], \"package_name\": \"test-snapd-fuse-consumer\", \"summary\": \"Basic fuse consumer snap\", \"title\": \"test-snapd-fuse-consumer\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-go-webserver\", \"summary\": \"Minimal Golang webserver for snappy\", \"title\": \"test-snapd-go-webserver\"}, {\"aliases\": null, \"apps\": [\"gpiomem\"], \"package_name\": \"te
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: st-snapd-gpio-memory-control\", \"summary\": \"Basic gpio-memory-control snap\", \"title\": \"test-snapd-gpio-memory-control\"}, {\"aliases\": null, \"apps\": [\"gsettings\"], \"package_name\": \"test-snapd-gsettings\", \"summary\": \"Basic gsettings test snap\", \"title\": \"test-snapd-gsettings\"}, {\"aliases\": null, \"apps\": [\"consumer\", \"provider\"], \"package_name\": \"test-snapd-location-control-provider\", \"summary\": \"Basic location control provider snap\", \"title\": \"test-snapd-location-control-provider\"}, {\"aliases\": null, \"apps\": [\"consumer\"], \"package_name\": \"test-snapd-network-status-consumer\", \"summary\": \"Basic network status consumer snap\", \"title\": \"test-snapd-network-status-consumer\"}, {\"aliases\": null, \"apps\": [\"consumer\", \"provider\"], \"package_name\": \"test-snapd-network-status-provider\", \"summary\": \"Basic network status provider snap\", \"title\": \"test-snapd-network-status-provider\"}, {\"aliases\": null, \"apps\": [\"random-uuid\"], \"package_name\": \"test-snapd-openvswitch-support\", \"summary\": \"Basic openvsiwtch support snap\", \"title\": \"test-snapd-openvswitch-support\"}, {\"aliases\": null, \"apps\": [\"physical-mem\"], \"package_name\": \"test-snapd-physical-memory-control\", \"summary\": \"Basic physical-memory-control snap\", \"title\": \"test-snapd-physical-memory-control\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-public\", \"summary\": \"Basic snap to be published as public\", \"title\": \"test-snapd-public\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-python-webserver\", \"summary\": \"Python based example webserver\", \"title\": \"test-snapd-python-webserver\"}, {\"aliases\": null, \"apps\": [\"head\", \"success\", \"cmd\", \"cat\", \"sh\", \"env\", \"fail\", \"echo\", \"block\"], \"package_name\": \"test-snapd-tools\", \"summary\": \"Tools for testing the snapd application\", \"title\": \"test-snapd-tools\"}, {\"aliases\": null, \"apps\": [\"test-device\"], \"package_name\": \"test-s
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: napd-uhid\", \"summary\": \"Basic snap declaring a plug on the uhid interface\", \"title\": \"test-snapd-uhid\"}, {\"aliases\": null, \"apps\": [\"upower\"], \"package_name\": \"test-snapd-upower-observe-consumer\", \"summary\": \"Basic upower-observe consumer snap\", \"title\": \"test-snapd-upower-observe-consumer\"}, {\"aliases\": null, \"apps\": [\"testflinger-cli\"], \"package_name\": \"testflinger-cli\", \"summary\": \"testflinger-cli\", \"title\": \"testflinger-cli\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"thinger-maker-server\", \"summary\": \"Thinger.io Internet Of Things Server\", \"title\": \"Thinger.io Maker Server\"}, {\"aliases\": null, \"apps\": [\"configure\", \"monitor\"], \"package_name\": \"tor-middle-relay\", \"summary\": \"Infrastructure node for other people's use of Tor network\", \"title\": \"Tor middle relay\"}, {\"aliases\": null, \"apps\": [\"tor\", \"gencert\", \"resolve\", \"torify\"], \"package_name\": \"tor-mkg20001\", \"summary\": \"Defend yourself against network surveillance and traffic analysis\", \"title\": \"Tor\"}, {\"aliases\": [{\"name\": \"tpm2_activatecredential\", \"target\": \"activatecredential\"}, {\"name\": \"tpm2_akparse\", \"target\": \"akparse\"}, {\"name\": \"tpm2_certify\", \"target\": \"certify\"}, {\"name\": \"tpm2_create\", \"target\": \"create\"}, {\"name\": \"tpm2_createprimary\", \"target\": \"createprimary\"}, {\"name\": \"tpm2_encryptdecrypt\", \"target\": \"encryptdecrypt\"}, {\"name\": \"tpm2_evictcontrol\", \"target\": \"evictcontrol\"}, {\"name\": \"tpm2_getmanufec\", \"target\": \"getmanufec\"}, {\"name\": \"tpm2_getpubak\", \"target\": \"getpubak\"}, {\"name\": \"tpm2_getpubek\", \"target\": \"getpubek\"}, {\"name\": \"tpm2_getrandom\", \"target\": \"getrandom\"}, {\"name\": \"tpm2_hash\", \"target\": \"hash\"}, {\"name\": \"tpm2_hmac\", \"target\": \"hmac\"}, {\"name\": \"tpm2_listpcrs\", \"target\": \"listpcrs\"}, {\"name\": \"tpm2_load\", \"target\": \"load\"}, {\"name\": \"tpm2_loadexternal\", \"target\": \"loadexternal\"}, {\"na
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: me\": \"tpm2_makecredential\", \"target\": \"makecredential\"}, {\"name\": \"tpm2_nvdefine\", \"target\": \"nvdefine\"}, {\"name\": \"tpm2_nvlist\", \"target\": \"nvlist\"}, {\"name\": \"tpm2_nvread\", \"target\": \"nvread\"}, {\"name\": \"tpm2_nvrelease\", \"target\": \"nvrelease\"}, {\"name\": \"tpm2_nvwrite\", \"target\": \"nvwrite\"}, {\"name\": \"tpm2_quote\", \"target\": \"quote\"}, {\"name\": \"tpm2_rc_decode\", \"target\": \"rc-decode\"}, {\"name\": \"tpm2_readpublic\", \"target\": \"readpublic\"}, {\"name\": \"tpm2_rsadecrypt\", \"target\": \"rsadecrypt\"}, {\"name\": \"tpm2_rsaencrypt\", \"target\": \"rsaencrypt\"}, {\"name\": \"tpm2_sign\", \"target\": \"sign\"}, {\"name\": \"tpm2_takeownership\", \"target\": \"takeownership\"}, {\"name\": \"tpm2_unseal\", \"target\": \"unseal\"}, {\"name\": \"tpm2_verifysignature\", \"target\": \"verifysignature\"}], \"apps\": [\"load\", \"makecredential\", \"nvrelease\", \"sign\", \"encryptdecrypt\", \"nvwrite\", \"rc-decode\", \"getmanufec\", \"readpublic\", \"activatecredential\", \"unseal\", \"akparse\", \"certify\", \"listpcrs\", \"loadexternal\", \"verifysignature\", \"nvdefine\", \"nvlist\", \"hash\", \"getrandom\", \"quote\", \"rsaencrypt\", \"rsadecrypt\", \"takeownership\", \"getpubak\", \"createprimary\", \"nvread\", \"hmac\", \"getpubek\", \"evictcontrol\", \"create\"], \"package_name\": \"tpm2\", \"summary\": \"TPM 2.0 utilities\", \"title\": \"tpm2\"}, {\"aliases\": null, \"apps\": [\"tree\"], \"package_name\": \"tree\", \"summary\": \"This is an initial minimail snap of `tree`\", \"title\": \"tree\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"turtlebot-demo-kyrofa\", \"summary\": \"Turtlebot ROS Demo\", \"title\": \"Turtlebot ROS Demo\"}, {\"aliases\": null, \"apps\": [\"test\"], \"package_name\": \"u1test-snap-with-tracks\", \"summary\": \"Summary of the most simple snap\", \"title\": \"u1test-snap-with-tracks\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"u1test20160920\", \"summary\": \"Summary of the most simple snap\", \"titl
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: e\": \"u1test20160920\"}, {\"aliases\": null, \"apps\": [\"ubuntu-calculator-app\"], \"package_name\": \"ubuntu-calculator-app\", \"summary\": \"Ubuntu Calculator application for the Unity 7 desktop\", \"title\": \"Calculator (Unity 7)\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"ubuntu-core\", \"summary\": \"The ubuntu-core OS snap\", \"title\": \"ubuntu-core\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"ubuntu-core-slides\", \"summary\": \"Ubuntu core set of slides\", \"title\": \"ubuntu-core-slides\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"ubuntu-demo-websites\", \"summary\": \"Demo websites configuration for Ubuntu Demo manager\", \"title\": \"ubuntu-demo-websites\"}, {\"aliases\": [{\"name\": \"udisksctl\", \"target\": \"udisksctl\"}], \"apps\": [\"udisksctl\"], \"package_name\": \"udisks2\", \"summary\": \"D-Bus service to access and manipulate storage devices\", \"title\": \"udisks2\"}, {\"aliases\": null, \"apps\": [\"init\", \"shell\", \"ipset\", \"doc\", \"ufw\"], \"package_name\": \"ufw\", \"summary\": \"ufw (Uncomplicated Firewall) for Ubuntu Core\", \"title\": \"ufw\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"upnp-server\", \"summary\": \"upload files with WebDAV and serve them via DLNA/UPnP\", \"title\": \"upnp-server\"}, {\"aliases\": null, \"apps\": [\"upower\"], \"package_name\": \"upower\", \"summary\": \"UPower Power Source Monitoring daemon\", \"title\": \"upower\"}, {\"aliases\": null, \"apps\": [\"v-top\"], \"package_name\": \"v-top\", \"summary\": \"This is a snap for vtop\", \"title\": \"v-top\"}, {\"aliases\": null, \"apps\": [\"vanitygen\"], \"package_name\": \"vanitygen\", \"summary\": \"Vanitygen is a command-line vanity bitcoin address generator\", \"title\": \"vanitygen\"}, {\"aliases\": null, \"apps\": [\"volleyball2d\"], \"package_name\": \"volleyball2d\", \"summary\": \"A 2d volleyball game\", \"title\": \"volleyball2d\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"vsslagent\", \"summary\": \"VSSL REST api.\", \"tit
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: le\": \"vsslagent\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"wallpapers-poland-late-summer\", \"summary\": \"Collection of wallpapers with photos from late summer in Poland\", \"title\": \"Late summer in Poland - wallpapers\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"webdm\", \"summary\": \"# Snappyd\", \"title\": \"webdm\"}, {\"aliases\": null, \"apps\": [\"status\", \"config\", \"setup-wizard\"], \"package_name\": \"wifi-ap\", \"summary\": \"WiFi Access Point based on hostapd\", \"title\": \"wifi-ap\"}, {\"aliases\": null, \"apps\": [\"iwspy\", \"iwconfig\", \"rfkill\", \"iwgetid\", \"iwpriv\", \"iw\", \"iwevent\"], \"package_name\": \"wireless-tools\", \"summary\": \"Tools for manipulating Linux Wireless Extensions\", \"title\": \"wireless-tools\"}, {\"aliases\": [{\"name\": \"wpa_cli\", \"target\": \"wpa-cli\"}], \"apps\": [\"wpa-cli\"], \"package_name\": \"wpa-supplicant\", \"summary\": \"WPA supplicant provides client support for WPA and WPA2 (IEEE 802.11i)\", \"title\": \"wpa-supplicant\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"xkcd-webserver\", \"summary\": \"Show random XKCD compic via a build-in webserver\", \"title\": \"xkcd-webserver\"}, {\"aliases\": null, \"apps\": [\"tor\", \"zeronet\"], \"package_name\": \"zeronet\", \"summary\": \"Open, free and uncensorable websites\", \"title\": \"ZeroNet\"}]}}"
+Feb 24 06:03:24 localhost.localdomain snapd[2161]: 2018/02/24 06:03:24.365118 retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/names?confinement=strict finished after 1 retries, elapsed time=642.992ms, status: 200
+Feb 24 06:03:26 localhost.localdomain snapd[2161]: 2018/02/24 06:03:26.961585 taskrunner.go:367: DEBUG: Running task 107 on Do: Generate device key
+Feb 24 06:03:28 localhost.localdomain systemd[1]: Stopped Snappy daemon.
+Feb 24 06:03:28 localhost.localdomain systemd[1]: Starting Snappy daemon...
+Feb 24 06:03:28 localhost.localdomain snapd[2189]: AppArmor status: apparmor is enabled and all features are available
+Feb 24 06:03:29 localhost.localdomain snapd[2189]: 2018/02/24 06:03:29.383514 daemon.go:306: started snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
+Feb 24 06:03:29 localhost.localdomain snapd[2189]: 2018/02/24 06:03:29.385322 main.go:72: DEBUG: activation done in 600ms
+Feb 24 06:03:29 localhost.localdomain systemd[1]: Started Snappy daemon.
+Feb 24 06:03:29 localhost.localdomain snapd[2189]: 2018/02/24 06:03:29.400175 snapmgr.go:560: DEBUG: Catalog refresh starting now; next scheduled for 2018-02-25 06:03:29.394385 +0000 UTC.
+Feb 24 06:03:29 localhost.localdomain snapd[2189]: 2018/02/24 06:03:29.401084 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/sections, attempt 1, elapsed time=125µs
+Feb 24 06:03:29 localhost.localdomain snapd[2189]: 2018/02/24 06:03:29.408073 logger.go:69: DEBUG: > "GET /api/v1/snaps/sections HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/hal+json\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
+Feb 24 06:03:30 localhost.localdomain snapd[2189]: 2018/02/24 06:03:30.425089 api.go:957: Installing snap "test-snapd-content-plug" revision unset
+Feb 24 06:03:30 localhost.localdomain snapd[2189]: 2018/02/24 06:03:30.425387 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/details/test-snapd-content-plug?channel=edge&fields=anon_download_url%2Carchitecture%2Cchannel%2Cdownload_sha3_384%2Csummary%2Cdescription%2Cdeltas%2Cbinary_filesize%2Cdownload_url%2Cepoch%2Cicon_url%2Clast_updated%2Cpackage_name%2Cprices%2Cpublisher%2Cratings_average%2Crevision%2Cscreenshot_urls%2Csnap_id%2Clicense%2Cbase%2Csupport_url%2Ccontact%2Ctitle%2Ccontent%2Cversion%2Corigin%2Cdeveloper_id%2Cprivate%2Cconfinement%2Cchannel_maps_list, attempt 1, elapsed time=32µs
+Feb 24 06:03:30 localhost.localdomain snapd[2189]: 2018/02/24 06:03:30.426685 logger.go:69: DEBUG: > "GET /api/v1/snaps/details/test-snapd-content-plug?channel=edge&fields=anon_download_url%2Carchitecture%2Cchannel%2Cdownload_sha3_384%2Csummary%2Cdescription%2Cdeltas%2Cbinary_filesize%2Cdownload_url%2Cepoch%2Cicon_url%2Clast_updated%2Cpackage_name%2Cprices%2Cpublisher%2Cratings_average%2Crevision%2Cscreenshot_urls%2Csnap_id%2Clicense%2Cbase%2Csupport_url%2Ccontact%2Ctitle%2Ccontent%2Cversion%2Corigin%2Cdeveloper_id%2Cprivate%2Cconfinement%2Cchannel_maps_list HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/hal+json\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
+Feb 24 06:03:30 localhost.localdomain snapd[2189]: 2018/02/24 06:03:30.737945 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 266\r\nAge: 1358\r\nCache-Control: public, max-age=3600\r\nContent-Type: application/hal+json\r\nDate: Sat, 24 Feb 2018 05:40:52 GMT\r\nServer: gunicorn/19.7.1\r\nVary: X-Ubuntu-Series\r\nVia: 1.1 juju-7794b8-prod-ols-snap-store-indep-397 (squid/3.5.23)\r\nX-Cache: HIT from juju-7794b8-prod-ols-snap-store-indep-397\r\nX-Cache-Lookup: HIT from juju-7794b8-prod-ols-snap-store-indep-397:3128\r\nX-Request-Id: 8c7bd316-3ec3-4d72-baab-293f70d0c80c\r\nX-Vcs-Revision: 444fefa\r\n\r\n{\"_embedded\": {\"clickindex:sections\": [{\"name\": \"featured\"}, {\"name\": \"games\"}, {\"name\": \"finance\"}, {\"name\": \"developers\"}, {\"name\": \"social-networking\"}, {\"name\": \"video\"}, {\"name\": \"music\"}, {\"name\": \"productivity\"}, {\"name\": \"utilities\"}, {\"name\": \"graphics\"}]}}"
+Feb 24 06:03:30 localhost.localdomain snapd[2189]: 2018/02/24 06:03:30.739559 retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/sections finished after 1 retries, elapsed time=1.338679s, status: 200
+Feb 24 06:03:31 localhost.localdomain snapd[2189]: 2018/02/24 06:03:31.065920 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 1498\r\nContent-Type: application/json\r\nDate: Sat, 24 Feb 2018 06:03:30 GMT\r\nServer: gunicorn/19.7.1\r\nX-Request-Id: fbccae7f-076c-4b31-8283-de99e8858560\r\nX-Vcs-Revision: 444fefa\r\n\r\n{\"anon_download_url\":\"https://api.snapcraft.io/api/v1/snaps/download/n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX_5.snap\",\"architecture\":[\"all\"],\"binary_filesize\":4096,\"channel\":\"edge\",\"channel_maps_list\":[{\"architecture\":\"arm64\",\"map\":[{\"binary_filesize\":4096,\"channel\":\"stable\",\"confinement\":\"strict\",\"epoch\":\"0\",\"info\":\"released\",\"revision\":5,\"version\":\"1.0\"},{\"channel\":\"candidate\",\"info\":null},{\"binary_filesize\":4096,\"channel\":\"beta\",\"confinement\":\"strict\",\"epoch\":\"0\",\"info\":\"released\",\"revision\":4,\"version\":\"1.0\"},{\"binary_filesize\":4096,\"channel\":\"edge\",\"confinement\":\"strict\",\"epoch\":\"0\",\"info\":\"released\",\"revision\":5,\"version\":\"1.0\"}],\"track\":\"latest\"}],\"confinement\":\"strict\",\"contact\":\"mailto:snappy-canonical-storeaccount@canonical.com\",\"content\":\"application\",\"deltas\":[],\"description\":\"\",\"developer_id\":\"canonical\",\"download_sha3_384\":\"5337e12480dcd40d38c543736c0130beedbf682793dc5c4ebe8e6db0a146d95f59cecb0afd921a122440161f1174dbac\",\"download_url\":\"https://api.snapcraft.io/api/v1/snaps/download/n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX_5.snap\",\"epoch\":\"0\",\"icon_url\":null,\"last_updated\":\"2017-09-25T21:29:22.518898+00:00\",\"license\":\"Other Open Source\",\"origin\":\"canonical\",\"package_name\":\"test-snapd-content-plug\",\"prices\":{},\"private\":false,\"publisher\":\"Canonical\",\"ratings_average\":0.0,\"revision\":5,\"screenshot_urls\":[],\"snap_id\":\"n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX\",\"summary\":\"\",\"support_url\":\"mailto:snappy-canonical-storeaccount@canonical.com\",\"title\":\"test-snapd-content-plug\",\"version\":\"1.0\"}\n"
+Feb 24 06:03:31 localhost.localdomain snapd[2189]: 2018/02/24 06:03:31.069510 retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/details/test-snapd-content-plug?channel=edge&fields=anon_download_url%2Carchitecture%2Cchannel%2Cdownload_sha3_384%2Csummary%2Cdescription%2Cdeltas%2Cbinary_filesize%2Cdownload_url%2Cepoch%2Cicon_url%2Clast_updated%2Cpackage_name%2Cprices%2Cpublisher%2Cratings_average%2Crevision%2Cscreenshot_urls%2Csnap_id%2Clicense%2Cbase%2Csupport_url%2Ccontact%2Ctitle%2Ccontent%2Cversion%2Corigin%2Cdeveloper_id%2Cprivate%2Cconfinement%2Cchannel_maps_list finished after 1 retries, elapsed time=644.129ms, status: 200
+Feb 24 06:03:31 localhost.localdomain snapd[2189]: 2018/02/24 06:03:31.414066 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/names?confinement=strict, attempt 1, elapsed time=47µs
+Feb 24 06:03:31 localhost.localdomain snapd[2189]: 2018/02/24 06:03:31.640393 daemon.go:233: DEBUG: pid=2207;uid=0;@ POST /v2/snaps/test-snapd-content-plug 1.215528s 202
+Feb 24 06:03:31 localhost.localdomain snapd[2189]: 2018/02/24 06:03:31.643958 logger.go:69: DEBUG: > "GET /api/v1/snaps/names?confinement=strict HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/hal+json\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: 2018/02/24 06:03:32.227496 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 40674\r\nAge: 2553\r\nCache-Control: public, max-age=3600\r\nContent-Type: application/hal+json\r\nDate: Sat, 24 Feb 2018 05:21:00 GMT\r\nServer: gunicorn/19.7.1\r\nVary: X-Ubuntu-Store, X-Ubuntu-Series, X-Ubuntu-Architecture\r\nVia: 1.1 juju-7794b8-prod-ols-snap-store-indep-398 (squid/3.5.12)\r\nX-Cache: HIT from juju-7794b8-prod-ols-snap-store-indep-398\r\nX-Cache-Lookup: HIT from juju-7794b8-prod-ols-snap-store-indep-398:3128\r\nX-Request-Id: f71800ad-0796-4990-af3f-78be712e17cc\r\nX-Vcs-Revision: 444fefa\r\n\r\n{\"_embedded\": {\"clickindex:package\": [{\"aliases\": null, \"apps\": [], \"package_name\": \"ab\", \"summary\": \"Test snap with shortest name\", \"title\": \"ab\"}, {\"aliases\": null, \"apps\": [\"acpihelp\", \"acpinames\", \"acpiexec\", \"acpiexamples\", \"acpixtract\", \"acpidump\", \"acpibin\", \"acpisrc\", \"iasl\"], \"package_name\": \"acpi-tools\", \"summary\": \"ACPICA tools\", \"title\": \"acpi-tools\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"ag-mcphail\", \"summary\": \"The Silver Searcher - mcphail's build and upstream git version\", \"title\": \"ag-mcphail\"}, {\"aliases\": [{\"name\": \"aconnect\", \"target\": \"aconnect\"}, {\"name\": \"alsabat\", \"target\": \"alsabat\"}, {\"name\": \"alsactl\", \"target\": \"alsactl\"}, {\"name\": \"alsaloop\", \"target\": \"alsaloop\"}, {\"name\": \"alsamixer\", \"target\": \"alsamixer\"}, {\"name\": \"alsatplg\", \"target\": \"alsatplg\"}, {\"name\": \"alsaucm\", \"target\": \"alsaucm\"}, {\"name\": \"amidi\", \"target\": \"amidi\"}, {\"name\": \"amixer\", \"target\": \"amixer\"}, {\"name\": \"aplay\", \"target\": \"aplay\"}, {\"name\": \"aplaymidi\", \"target\": \"aplaymidi\"}, {\"name\": \"arecord\", \"target\": \"arecord\"}, {\"name\": \"arecordmidi\", \"target\": \"arecordmidi\"}, {\"name\": \"aseqdump\", \"target\": \"aseqdump\"}, {\"name\": \"aseqnet\", \"target\": \"aseqnet\"}, {\"name\": \"iecset\", \"target\": \"iecset\"}, {\"name\": \"spe
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: aker-test\", \"target\": \"speaker-test\"}], \"apps\": [\"aplaymidi\", \"aseqnet\", \"arecordmidi\", \"alsactl\", \"speaker-test\", \"amixer\", \"alsatplg\", \"arecord\", \"alsamixer\", \"aconnect\", \"aplay\", \"alsaucm\", \"aseqdump\", \"amidi\", \"alsaloop\", \"iecset\", \"alsabat\"], \"package_name\": \"alsa-utils\", \"summary\": \"Utilities for configuring and using ALSA\", \"title\": \"alsa-utils\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"apizee-box-1-helmet\", \"summary\": \"Package for box helmet\", \"title\": \"apizee-box-1-helmet\"}, {\"aliases\": null, \"apps\": [\"appx\"], \"package_name\": \"appx\", \"summary\": \"appx tool for Windows Universal Apps\", \"title\": \"appx\"}, {\"aliases\": null, \"apps\": [\"attfeeder\"], \"package_name\": \"attfeeder\", \"summary\": \"Attitude angles feeder\", \"title\": \"attfeeder\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"autopilot-qt\", \"summary\": \"Autopilot QT\", \"title\": \"autopilot-qt\"}, {\"aliases\": null, \"apps\": [\"restart-avahi-daemon\", \"help\"], \"package_name\": \"avahi\", \"summary\": \"avahi-daemon\", \"title\": \"avahi\"}, {\"aliases\": null, \"apps\": [\"resolve-host-name\", \"resolve\", \"browse\", \"publish-service\", \"ping\", \"publish\", \"publish-address\", \"resolve-address\", \"set-host-name\", \"browse-domains\"], \"package_name\": \"avahi-client\", \"summary\": \"Avahi sample client\", \"title\": \"avahi-client\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"basic-amd64\", \"summary\": \"The most simple snap.\", \"title\": \"basic-amd64\"}, {\"aliases\": null, \"apps\": [\"javaflow\", \"pidpersec\", \"syscount\", \"ugc\", \"xfsslower\", \"javacalls\", \"pythongc\", \"cpudist\", \"ext4slower\", \"zfsdist\", \"opensnoop\", \"memleak\", \"tcplife\", \"hardirqs\", \"tcpconnlat\", \"softirqs\", \"funccount\", \"tcpaccept\", \"uthreads\", \"offwaketime\", \"solisten\", \"biosnoop\", \"stackcount\", \"mysqld-qslower\", \"tplist\", \"vfsstat\", \"tcptop\", \"deadlock-detector\", \"phpstat\", \"cobjn
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: ew\", \"funclatency\", \"btrfsdist\", \"sslsniff\", \"ttysnoop\", \"ext4dist\", \"runqlat\", \"nodestat\", \"dcsnoop\", \"bitesize\", \"killsnoop\", \"mdflush\", \"execsnoop\", \"ustat\", \"phpcalls\", \"fileslower\", \"phpflow\", \"rubygc\", \"offcputime\", \"javastat\", \"btrfsslower\", \"gethostlatency\", \"javathreads\", \"nfsslower\", \"pythonstat\", \"syncsnoop\", \"slabratetop\", \"pythoncalls\", \"cachetop\", \"ucalls\", \"vfscount\", \"rubyobjnew\", \"zfsslower\", \"filelife\", \"pythonflow\", \"statsnoop\", \"tcpconnect\", \"runqlen\", \"funcslower\", \"uflow\", \"bpflist\", \"oomkill\", \"uobjnew\", \"cpuunclaimed\", \"dcstat\", \"rubystat\", \"bashreadline\", \"profile\", \"javaobjnew\", \"argdist\", \"trace\", \"cachestat\", \"javagc\", \"filetop\", \"biolatency\", \"dbslower\", \"stacksnoop\", \"nfsdist\", \"nodegc\", \"biotop\", \"wakeuptime\", \"tcptracer\", \"rubycalls\", \"dbstat\", \"rubyflow\", \"tcpretrans\", \"capable\", \"xfsdist\", \"llcstat\", \"mountsnoop\"], \"package_name\": \"bcc\", \"summary\": \"BPF compiler collection\", \"title\": \"bcc\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"beagleblack\", \"summary\": \"OEM Beagle Bone Black\", \"title\": \"beagleblack\"}, {\"aliases\": [{\"name\": \"bluetoothctl\", \"target\": \"bluetoothctl\"}, {\"name\": \"btmgmt\", \"target\": \"btmgmt\"}, {\"name\": \"hciattach\", \"target\": \"hciattach\"}, {\"name\": \"hciconfig\", \"target\": \"hciconfig\"}, {\"name\": \"hcidump\", \"target\": \"hcidump\"}, {\"name\": \"hcitool\", \"target\": \"hcitool\"}, {\"name\": \"obexctl\", \"target\": \"obexctl\"}, {\"name\": \"sdptool\", \"target\": \"sdptool\"}], \"apps\": [\"btmon\", \"sdptool\", \"hciconfig\", \"hcidump\", \"hcitool\", \"bluetoothctl\", \"hciattach\", \"obexctl\", \"btmgmt\"], \"package_name\": \"bluez\", \"summary\": \"Bluez for Ubuntu\", \"title\": \"bluez\"}, {\"aliases\": null, \"apps\": [\"buckle\"], \"package_name\": \"bucklespring\", \"summary\": \"Nostalgia bucklespring keyboard sound\", \"title\": \"bucklespring\"},
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: {\"aliases\": null, \"apps\": [\"caddy\"], \"package_name\": \"caddy-hduran\", \"summary\": \"The HTTP/2 web server with automatic HTTPS\", \"title\": \"caddy-hduran\"}, {\"aliases\": null, \"apps\": [\"alsa-utils\", \"udisks2\", \"run\", \"plainbox\", \"tpm\", \"pulseaudio\", \"network-manager\", \"bluez\", \"wifi-ap\", \"upower\", \"modem-manager\", \"media-hub\", \"wireless-tools\"], \"package_name\": \"canonical-se-engineering-tests\", \"summary\": \"Canonical System Enablement Engineering Test cases\", \"title\": \"canonical-se-engineering-tests\"}, {\"aliases\": null, \"apps\": [\"config\"], \"package_name\": \"captive-redirect\", \"summary\": \"Captive portal redirector snap\", \"title\": \"captive-redirect\"}, {\"aliases\": null, \"apps\": [\"apply\"], \"package_name\": \"cdk-addons\", \"summary\": \"Addons for the Canonical Distribution of Kubernetes\", \"title\": \"cdk-addons\"}, {\"aliases\": null, \"apps\": [\"engineering-tests\", \"snappy-generic-automated\", \"checkbox\", \"configure\", \"plainbox\", \"hw-collection\", \"test-runner\", \"checkbox-cli\", \"smoke-test\", \"sru\", \"python3\"], \"package_name\": \"checkbox-snappy\", \"summary\": \"Testing tool for Snappy Ubuntu Core (best installed with --devmode for the moment)\", \"title\": \"checkbox-snappy\"}, {\"aliases\": null, \"apps\": [\"koch-binary\", \"snowman\", \"christmas-2012\", \"snow\", \"tupper\"], \"package_name\": \"christmas-obfuscated-c\", \"summary\": \"Christmas Obfuscated C programs\", \"title\": \"christmas-obfuscated-c\"}, {\"aliases\": null, \"apps\": [\"chromium\"], \"package_name\": \"chromium\", \"summary\": \"Chromium web browser, open-source version of Chrome\", \"title\": \"Chromium\"}, {\"aliases\": null, \"apps\": [\"cli\"], \"package_name\": \"chuck-norris-webserver\", \"summary\": \"Chuck Norris quotation nodejs server\", \"title\": \"chuck-norris-webserver\"}, {\"aliases\": null, \"apps\": [\"cla-check\"], \"package_name\": \"cla-check\", \"summary\": \"Check if Canonical's Contributor License Agreement has been s
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: igned\", \"title\": \"cla-check\"}, {\"aliases\": null, \"apps\": [\"status\", \"start\", \"stop\", \"restart\"], \"package_name\": \"cntlm-ondra\", \"summary\": \"cntlm proxy authenticator\", \"title\": \"cntlm-ondra\"}, {\"aliases\": null, \"apps\": [\"consul\"], \"package_name\": \"consul\", \"summary\": \"Consul is a tool for service discovery, monitoring and configuration\", \"title\": \"consul\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"core\", \"summary\": \"snapd runtime environment\", \"title\": \"core\"}, {\"aliases\": null, \"apps\": [\"cppcheck\"], \"package_name\": \"cppcheck\", \"summary\": \"A tool for static C/C++ code analysis\", \"title\": \"cppcheck\"}, {\"aliases\": null, \"apps\": [\"cpustat\"], \"package_name\": \"cpustat\", \"summary\": \"periodic cpu utilization statistics\", \"title\": \"cpustat\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"cuberite\", \"summary\": \"Performant open source Minecraft server written in C++.\", \"title\": \"cuberite\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"dash-shell\", \"summary\": \"POSIX-compliant shell\", \"title\": \"dash\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"demo-amd64\", \"summary\": \"AMD64 generic package\", \"title\": \"demo-amd64\"}, {\"aliases\": null, \"apps\": [\"devicetree-compiler\"], \"package_name\": \"devicetree-compiler\", \"summary\": \"Simple snap to provide the devicetree compiler command\", \"title\": \"devicetree-compiler\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"dnsmasq-escoand\", \"summary\": \"Dnsmasq provides network infrastructure for small networks\", \"title\": \"dnsmasq\"}, {\"aliases\": null, \"apps\": [\"dnsmasq\"], \"package_name\": \"dnsmasqd\", \"summary\": \"Network infrastructure swiss-army knife\", \"title\": \"dnsmasqd\"}, {\"aliases\": null, \"apps\": [\"machine\", \"docker\", \"compose\", \"help\"], \"package_name\": \"docker\", \"summary\": \"The docker app deployment mechanism\", \"title\": \"Docker\"}, {\"aliases\": null, \"apps\": []
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: , \"package_name\": \"dragonboard\", \"summary\": \"Dragonbaord support package\", \"title\": \"dragonboard\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"dragonboard-kernel\", \"summary\": \"The canonical snapdragon arm64 kernel\", \"title\": \"dragonboard-kernel\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"dragonboard-turtlebot-kyrofa\", \"summary\": \"Dragonboard gadget for the Turtlebot 2\", \"title\": \"dragonboard-turtlebot-kyrofa\"}, {\"aliases\": null, \"apps\": [\"drive\"], \"package_name\": \"drive\", \"summary\": \"Google Drive client for the commandline\", \"title\": \"drive\"}, {\"aliases\": null, \"apps\": [\"status\", \"show-client\", \"help\", \"add-client\", \"setup\", \"clients\", \"connect-server\", \"revoke-client\"], \"package_name\": \"easy-openvpn\", \"summary\": \"An easy-to-manage OpenVPN deployment.\", \"title\": \"easy-openvpn\"}, {\"aliases\": null, \"apps\": [\"easy2fa\", \"gui\"], \"package_name\": \"easy2fa\", \"summary\": \"Easy to use two-factor-auth client for cli\", \"title\": \"easy2fa\"}, {\"aliases\": null, \"apps\": [\"eatpages\"], \"package_name\": \"eatpages\", \"summary\": \"A tool to consume all available pages for low memory testing\", \"title\": \"eatpages\"}, {\"aliases\": [{\"name\": \"etcdctl\", \"target\": \"etcdctl\"}], \"apps\": [\"etcdctl\"], \"package_name\": \"etcd\", \"summary\": \"Resilient key-value store by CoreOS\", \"title\": \"etcd\"}, {\"aliases\": null, \"apps\": [\"etcdctl\"], \"package_name\": \"etcd-arm64\", \"summary\": \"Resilient key-value store by CoreOS\", \"title\": \"etcd-arm64\"}, {\"aliases\": null, \"apps\": [\"eventstat\"], \"package_name\": \"eventstat\", \"summary\": \"kernel event states monitoring tool\", \"title\": \"eventstat\"}, {\"aliases\": null, \"apps\": [\"expect\"], \"package_name\": \"expect\", \"summary\": \"Automates interactive applications\", \"title\": \"expect\"}, {\"aliases\": null, \"apps\": [\"fcole90-hexgl-webapp\"], \"package_name\": \"fcole90-hexgl-webapp\", \"summary\": \"Webapp for HexG
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: L\", \"title\": \"fcole90-hexgl-webapp\"}, {\"aliases\": null, \"apps\": [\"fiemap\"], \"package_name\": \"fiemap\", \"summary\": \"file extent dumping tool\", \"title\": \"fiemap\"}, {\"aliases\": null, \"apps\": [\"flawfinder\"], \"package_name\": \"flawfinder-static-analyzer\", \"summary\": \"C static analyzer tool\", \"title\": \"flawfinder-static-analyzer\"}, {\"aliases\": null, \"apps\": [\"set\", \"ospf6d-debug\", \"ospfd-debug\", \"ripngd-debug\", \"nhrpd-debug\", \"pimd-debug\", \"isisd-debug\", \"bgpd-debug\", \"vtysh\", \"ripd-debug\", \"version\", \"ldpd-debug\", \"zebra-debug\", \"readme\"], \"package_name\": \"frr\", \"summary\": \"FRRouting BGP/OSPFv2/OSPFv3/ISIS/RIP/RIPng/PIM/LDP routing daemon (Quagga Fork)\", \"title\": \"frr\"}, {\"aliases\": null, \"apps\": [\"fzf\"], \"package_name\": \"fzf-slowday\", \"summary\": \"fzf is a general-purpose command-line fuzzy finder\", \"title\": \"fzf-slowday\"}, {\"aliases\": [{\"name\": \"repo\", \"target\": \"repo\"}], \"apps\": [\"repo\"], \"package_name\": \"git-repo\", \"summary\": \"A tool built on top of Git to manage many Git repositories.\", \"title\": \"git-repo\"}, {\"aliases\": null, \"apps\": [\"gnss-sdr\", \"front-end-cal\", \"volk-gnsssdr-profile\", \"volk-gnsssdr-config-info\"], \"package_name\": \"gnss-sdr-next\", \"summary\": \"GNSS-SDR, 'next' branch\", \"title\": \"gnss-sdr-next\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"go-example-webserver\", \"summary\": \"Minimal Golang webserver for snappy\", \"title\": \"go-example-webserver\"}, {\"aliases\": null, \"apps\": [\"gost\"], \"package_name\": \"gost\", \"summary\": \"GO Simple Tunnel\", \"title\": \"gost\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"healthcheck-toolbox-example\", \"summary\": \"Health checks toolbox example for use as content interfaces\", \"title\": \"healthcheck-toolbox-example\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"hello\", \"summary\": \"GNU Hello, the \\\"hello world\\\" snap\", \"title\": \"hello\"}, {\"aliases\": null
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: , \"apps\": [\"hello\", \"bash\"], \"package_name\": \"hello-architt\", \"summary\": \"Hello world snap\", \"title\": \"hello-architt\"}, {\"aliases\": null, \"apps\": [\"hello\"], \"package_name\": \"hello-ricardokirkner-test2\", \"summary\": \"say hello\", \"title\": \"hello-ricardokirkner-test2\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"hello-securx-snap\", \"summary\": \"Single-line elevator pitch for your amazing snap\", \"title\": \"hello-securx-snap\"}, {\"aliases\": null, \"apps\": [\"hello-takaakisuzuki-aarch\"], \"package_name\": \"hello-takaakisuzuki-aarch\", \"summary\": \"GNU Hello, the \\\"hello world\\\" snap\", \"title\": \"hello-takaakisuzuki-aarch\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"hello-world\", \"summary\": \"The 'hello-world' of snaps\", \"title\": \"hello-world\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"hikey-snappy-gadget\", \"summary\": \"HiKey board support package\", \"title\": \"hikey-snappy-gadget\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"home-assistant-escoand\", \"summary\": \"Open-source home automation platform running on Python 3\", \"title\": \"home-assistant\"}, {\"aliases\": null, \"apps\": [\"hswitch\"], \"package_name\": \"hswitch\", \"summary\": \"hosts file content switcher to modify your static ip addresses\", \"title\": \"hswitch\"}, {\"aliases\": null, \"apps\": [\"htop\"], \"package_name\": \"htop\", \"summary\": \"Interactive processes viewer\", \"title\": \"htop\"}, {\"aliases\": null, \"apps\": [\"http\", \"man\"], \"package_name\": \"http\", \"summary\": \"HTTPie in a snap\", \"title\": \"http\"}, {\"aliases\": null, \"apps\": [\"hugo\"], \"package_name\": \"hugo\", \"summary\": \"A Fast and Flexible Static Site Generator built with love by bep, spf13 and friends in Go.\", \"title\": \"Hugo\"}, {\"aliases\": null, \"apps\": [\"viewer\", \"inkscape\"], \"package_name\": \"inkscape\", \"summary\": \"Vector Graphics Editor\", \"title\": \"Inkscape\"}, {\"aliases\": null, \"apps\": [], \"package_name\"
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: : \"interdenominational-counterintelligences\", \"summary\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor elit, blandit non est sed, aliquam mollis velit.\", \"title\": \"Interdenominational Counterintelligences\"}, {\"aliases\": null, \"apps\": [\"ipfs\"], \"package_name\": \"ipfs\", \"summary\": \"global, versioned, peer-to-peer filesystem\", \"title\": \"ipfs\"}, {\"aliases\": [{\"name\": \"john\", \"target\": \"john-the-ripper\"}], \"apps\": [\"putty2john\", \"zip2john\", \"racf2john\", \"opencl\", \"rar2john\", \"john-the-ripper\", \"vncpcap2john\", \"uaf2john\", \"hccap2john\", \"gpg2john\", \"keepass2john\", \"dmg2john\", \"wpapcap2john\"], \"package_name\": \"john-the-ripper\", \"summary\": \"John the Ripper \\\"Jumbo\\\" password cracker\", \"title\": \"john-the-ripper\"}, {\"aliases\": null, \"apps\": [\"jq\"], \"package_name\": \"jq\", \"summary\": \"The jq command\", \"title\": \"jq\"}, {\"aliases\": null, \"apps\": [\"kanagame\"], \"package_name\": \"kanagame\", \"summary\": \"A simple flashcard based game for learning kana.\", \"title\": \"kanagame\"}, {\"aliases\": null, \"apps\": [\"kernelscan\"], \"package_name\": \"kernelscan\", \"summary\": \"fast kernel source error message scanner\", \"title\": \"kernelscan\"}, {\"aliases\": null, \"apps\": [\"kube-apiserver\"], \"package_name\": \"kube-apiserver\", \"summary\": \"kube-apiserver\", \"title\": \"kube-apiserver\"}, {\"aliases\": null, \"apps\": [\"kube-controller-manager\"], \"package_name\": \"kube-controller-manager-arm64\", \"summary\": \"kube-controller-manager\", \"title\": \"kube-controller-manager-arm64\"}, {\"aliases\": null, \"apps\": [\"kube-scheduler\"], \"package_name\": \"kube-scheduler\", \"summary\": \"kube-scheduler controls the Kubernetes cluster manager.\", \"title\": \"kube-scheduler\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"lci\", \"summary\": \"LCI LOLCODE INTERPRETR\", \"title\": \"lci\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"littlewatcher\", \"summary\": \"Cl
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: ient for a distributed monitoring network\", \"title\": \"littlewatcher\"}, {\"aliases\": null, \"apps\": [\"status\", \"list-providers\", \"set\", \"monitor\"], \"package_name\": \"locationd\", \"summary\": \"Location service mediates access to positioning providers.\", \"title\": \"locationd\"}, {\"aliases\": null, \"apps\": [\"lonewolf\"], \"package_name\": \"lonewolf\", \"summary\": \"A role-playing choose-your-own-adventure game\", \"title\": \"Lone Wolf\"}, {\"aliases\": null, \"apps\": [\"lp-build-snap\"], \"package_name\": \"lp-build-snap\", \"summary\": \"Utility to trigger Snap package builds in Launchpad\", \"title\": \"lp-build-snap\"}, {\"aliases\": [{\"name\": \"lxc\", \"target\": \"lxc\"}], \"apps\": [\"lxd\", \"lxc\", \"database\", \"migrate\", \"benchmark\", \"check-kernel\"], \"package_name\": \"lxd\", \"summary\": \"System container manager and API\", \"title\": \"LXD\"}, {\"aliases\": null, \"apps\": [\"configure\", \"database\"], \"package_name\": \"lxd-demo-server\", \"summary\": \"Online software demo sessions using LXD\", \"title\": \"LXD demo server\"}, {\"aliases\": null, \"apps\": [\"magic-device-tool\"], \"package_name\": \"magic-device-tool\", \"summary\": \"magic-device-tool\", \"title\": \"magic-device-tool\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"mdns-hostname\", \"summary\": \"mDNS mini-daemon to published hostname.local\", \"title\": \"mdns-hostname\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"minidlna-escoand\", \"summary\": \"server software with the aim of being fully compliant with DLNA/UPnP clients.\", \"title\": \"minidlna\"}, {\"aliases\": [{\"name\": \"mmcli\", \"target\": \"mmcli\"}], \"apps\": [\"qmicli\", \"mbimcli\", \"qmi-network\", \"mbim-network\", \"mmcli\"], \"package_name\": \"modem-manager\", \"summary\": \"ModemManager is a service which controls mobile broadband\", \"title\": \"modem-manager\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"morse-converter-py\", \"summary\": \"Simple command-line Morse converter\", \"titl
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: e\": \"Morse Converter (Python)\"}, {\"aliases\": null, \"apps\": [\"netdiscover-ondra\"], \"package_name\": \"netdiscover-ondra\", \"summary\": \"netdiscover\", \"title\": \"netdiscover-ondra\"}, {\"aliases\": [{\"name\": \"nmcli\", \"target\": \"nmcli\"}], \"apps\": [\"nmcli\"], \"package_name\": \"network-manager\", \"summary\": \"Network management based on NeworkManager\", \"title\": \"network-manager\"}, {\"aliases\": null, \"apps\": [\"neverbore\"], \"package_name\": \"neverbore\", \"summary\": \"A picture logic puzzle game\", \"title\": \"Neverbore Picross\"}, {\"aliases\": null, \"apps\": [\"mysql-client\", \"occ\", \"enable-https\", \"mysqldump\", \"manual-install\", \"disable-https\"], \"package_name\": \"nextcloud\", \"summary\": \"Nextcloud Server - A safe home for all your data\", \"title\": \"Nextcloud\"}, {\"aliases\": null, \"apps\": [\"configure\", \"noip-client\"], \"package_name\": \"noip-client\", \"summary\": \"No-IP Dynamic DNS Update Client for Linux\", \"title\": \"No-IP Client\"}, {\"aliases\": null, \"apps\": [\"ntpcontrol\"], \"package_name\": \"ntpcontrol\", \"summary\": \"Simple snap to set an ntp server address\", \"title\": \"ntpcontrol\"}, {\"aliases\": null, \"apps\": [\"MeshUpgrader\", \"XMLConverter\", \"SampleBrowser\"], \"package_name\": \"ogre\", \"summary\": \"Object-Oriented Graphics Rendering Engine\", \"title\": \"OGRE Sample Browser\"}, {\"aliases\": null, \"apps\": [\"olam\"], \"package_name\": \"olam\", \"summary\": \"Olam English Malayalam Dictionary\", \"title\": \"Olam\"}, {\"aliases\": null, \"apps\": [\"open-adventure\"], \"package_name\": \"open-adventure\", \"summary\": \"Forward-port of the Crowther/Woods Adventure 2.5 from 1995\", \"title\": \"open-adventure\"}, {\"aliases\": null, \"apps\": [\"status\", \"help\", \"stop\", \"start\", \"client\", \"clean\", \"debug\"], \"package_name\": \"openhab\", \"summary\": \"openHAB smart home server\", \"title\": \"openHAB\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"overlay\", \"summary\": \"Tools for ass
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: isting with debugging read-only squashfs snaps via overlayfs\", \"title\": \"overlay\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"packageproxy\", \"summary\": \"approx based package proxy running on port 9999\", \"title\": \"packageproxy\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"pc\", \"summary\": \"AMD64 generic package\", \"title\": \"pc\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"pi2\", \"summary\": \"Raspberry Pi 2 support package\", \"title\": \"pi2\"}, {\"aliases\": null, \"apps\": [\"youtube-upload\", \"publish-podcast\", \"season-to-youtube\", \"encode-podcast\"], \"package_name\": \"podpublish\", \"summary\": \"A tool for encoding and publishing podcast content and assets\", \"title\": \"PodPublish\"}, {\"aliases\": null, \"apps\": [\"run-pgbouncer\", \"pgbouncer\"], \"package_name\": \"postgresql-pgbouncer\", \"summary\": \"Lightweight connection pooler for PostgreSQL\", \"title\": \"postgresql-pgbouncer\"}, {\"aliases\": null, \"apps\": [\"pgwaldump\", \"pgresetwal\", \"pgdumpall\", \"pgrestore\", \"clusterdb\", \"dropdb\", \"pgarchivecleanup\", \"pgctl\", \"pgisready\", \"dropuser\", \"reindexdb\", \"vacuumdb\", \"pgtesttiming\", \"initdb\", \"oid2name\", \"pgtestfsync\", \"vacuumlo\", \"ecpg\", \"postmaster\", \"pgupgrade\", \"postgres\", \"pgcontroldata\", \"pgrecvlogical\", \"createdb\", \"pgrewind\", \"initialize\", \"pgdump\", \"psql\", \"pgbench\", \"pgconfig\", \"createuser\", \"pgreceivewal\", \"pgbasebackup\"], \"package_name\": \"postgresql10\", \"summary\": \"PostgreSQL is a powerful, open source object-relational database system.\", \"title\": \"postgresql10\"}, {\"aliases\": null, \"apps\": [\"pgstandby\", \"pltclloadmod\", \"createlang\", \"pgdumpall\", \"pgrestore\", \"pltcldelmod\", \"clusterdb\", \"ecpg\", \"pgxlogdump\", \"pgctl\", \"pgisready\", \"dropuser\", \"reindexdb\", \"pgcontroldata\", \"vacuumdb\", \"pgtesttiming\", \"initdb\", \"oid2name\", \"pgtestfsync\", \"vacuumlo\", \"dropdb\", \"postmaster\", \"pgupgrade\", \"postgres\", \"pg
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: archivecleanup\", \"createdb\", \"droplang\", \"initialize\", \"pgdump\", \"pgconfig\", \"psql\", \"pgbench\", \"pgresetxlog\", \"pltcllistmod\", \"pgreceivexlog\", \"createuser\", \"pgbasebackup\"], \"package_name\": \"postgresql93\", \"summary\": \"PostgreSQL is a powerful, open source object-relational database system.\", \"title\": \"postgresql93\"}, {\"aliases\": null, \"apps\": [\"pgstandby\", \"pltclloadmod\", \"createlang\", \"pgdumpall\", \"pgrestore\", \"pltcldelmod\", \"clusterdb\", \"ecpg\", \"pgxlogdump\", \"pgctl\", \"pgisready\", \"dropuser\", \"reindexdb\", \"pgcontroldata\", \"vacuumdb\", \"pgtesttiming\", \"initdb\", \"oid2name\", \"pgtestfsync\", \"dropdb\", \"postmaster\", \"pgupgrade\", \"postgres\", \"pgarchivecleanup\", \"pgrecvlogical\", \"createdb\", \"droplang\", \"initialize\", \"pgdump\", \"pgconfig\", \"psql\", \"pgbench\", \"pgresetxlog\", \"pltcllistmod\", \"pgreceivexlog\", \"createuser\", \"pgbasebackup\"], \"package_name\": \"postgresql94\", \"summary\": \"PostgreSQL is a powerful, open source object-relational database system.\", \"title\": \"postgresql94\"}, {\"aliases\": null, \"apps\": [\"pgstandby\", \"pltclloadmod\", \"createlang\", \"pgdumpall\", \"pgrestore\", \"pltcldelmod\", \"clusterdb\", \"ecpg\", \"pgxlogdump\", \"pgctl\", \"pgisready\", \"dropuser\", \"reindexdb\", \"pgcontroldata\", \"vacuumdb\", \"pgtesttiming\", \"initdb\", \"oid2name\", \"pgtestfsync\", \"vacuumlo\", \"dropdb\", \"postmaster\", \"pgupgrade\", \"postgres\", \"pgarchivecleanup\", \"pgrecvlogical\", \"createdb\", \"pgrewind\", \"droplang\", \"initialize\", \"pgdump\", \"pgconfig\", \"psql\", \"pgbench\", \"pgresetxlog\", \"pltcllistmod\", \"pgreceivexlog\", \"createuser\", \"pgbasebackup\"], \"package_name\": \"postgresql95\", \"summary\": \"PostgreSQL is a powerful, open source object-relational database system.\", \"title\": \"postgresql95\"}, {\"aliases\": null, \"apps\": [\"pg-md5\", \"pcp-detach-node\", \"pcp-pool-status\", \"pcp-node-info\", \"pcp-stop-pgpool\", \"pcp-promote-node\", \"pcp-re
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: covery-node\", \"pcp-watchdog-info\", \"pcp-proc-info\", \"pgpool\", \"pcp-node-count\", \"pcp-proc-count\", \"pcp-attach-node\"], \"package_name\": \"postgresql95-pgpool2-35\", \"summary\": \"pgpool-II is a connection pooler for PostgreSQL.\", \"title\": \"postgresql95-pgpool2-35\"}, {\"aliases\": null, \"apps\": [\"pgpool-setup\", \"pg-md5\", \"pcp-detach-node\", \"pcp-pool-status\", \"pcp-node-info\", \"pcp-stop-pgpool\", \"pcp-promote-node\", \"pcp-recovery-node\", \"pcp-watchdog-info\", \"pcp-proc-info\", \"pgpool\", \"pcp-node-count\", \"watchdog-setup\", \"pcp-proc-count\", \"pcp-attach-node\"], \"package_name\": \"postgresql95-pgpool2-36\", \"summary\": \"pgpool-II is a connection pooler for PostgreSQL.\", \"title\": \"postgresql95-pgpool2-36\"}, {\"aliases\": null, \"apps\": [\"pgstandby\", \"pltclloadmod\", \"createlang\", \"pgdumpall\", \"pgrestore\", \"pltcldelmod\", \"clusterdb\", \"ecpg\", \"pgxlogdump\", \"pgctl\", \"pgisready\", \"dropuser\", \"reindexdb\", \"pgcontroldata\", \"vacuumdb\", \"pgtesttiming\", \"initdb\", \"oid2name\", \"pgtestfsync\", \"vacuumlo\", \"dropdb\", \"postmaster\", \"pgupgrade\", \"postgres\", \"pgarchivecleanup\", \"pgrecvlogical\", \"createdb\", \"pgrewind\", \"droplang\", \"initialize\", \"pgdump\", \"pgconfig\", \"psql\", \"pgbench\", \"pgresetxlog\", \"pltcllistmod\", \"pgreceivexlog\", \"createuser\", \"pgbasebackup\"], \"package_name\": \"postgresql96\", \"summary\": \"PostgreSQL is a powerful, open source object-relational database system.\", \"title\": \"postgresql96\"}, {\"aliases\": null, \"apps\": [\"psst\"], \"package_name\": \"psst\", \"summary\": \"power stress and shaping tool\", \"title\": \"psst\"}, {\"aliases\": [{\"name\": \"pactl\", \"target\": \"pactl\"}, {\"name\": \"paplay\", \"target\": \"paplay\"}, {\"name\": \"parec\", \"target\": \"parec\"}], \"apps\": [\"config\", \"paplay\", \"parec\", \"pactl\"], \"package_name\": \"pulseaudio\", \"summary\": \"PulseAudio sound server\", \"title\": \"pulseaudio\"}, {\"aliases\": null, \"apps\": [], \"package
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: _name\": \"pwgen-tyhicks\", \"summary\": \"Password generator\", \"title\": \"pwgen\"}, {\"aliases\": null, \"apps\": [\"qcheckers\"], \"package_name\": \"qcheckers\", \"summary\": \"Checkers game\", \"title\": \"qcheckers\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"qimo-wallpapers\", \"summary\": \"Wallpapers from Qimo 2.0\", \"title\": \"qimo-wallpapers\"}, {\"aliases\": null, \"apps\": [\"qownnotes\"], \"package_name\": \"qownnotes\", \"summary\": \"Plain-text file notepad with markdown support and ownCloud / Nextcloud integration\", \"title\": \"QOwnNotes\"}, {\"aliases\": null, \"apps\": [\"ospf6d-debug\", \"isisd-debug\", \"zebra-debug\", \"ospfd-debug\", \"ripngd-debug\", \"pimd-debug\", \"ripd-debug\", \"bgpd-debug\", \"vtysh\", \"version\", \"readme\"], \"package_name\": \"quagga-lool\", \"summary\": \"Quagga BGP/OSPFv2/OSPFv3/ISIS/RIP/RIPng/PIM routing daemon\", \"title\": \"quagga-lool\"}, {\"aliases\": null, \"apps\": [\"rawpty\"], \"package_name\": \"rawpty\", \"summary\": \"execute a command on raw pty over ssh\", \"title\": \"rawpty\"}, {\"aliases\": null, \"apps\": [\"rclone\"], \"package_name\": \"rclone\", \"summary\": \"\\\"rsync for cloud storage\\\"  \", \"title\": \"rclone\"}, {\"aliases\": null, \"apps\": [\"rclone\"], \"package_name\": \"rclone-dev\", \"summary\": \"rsync for cloud storage\", \"title\": \"rclone-dev\"}, {\"aliases\": null, \"apps\": [\"pi-stress\", \"cyclictest\", \"pip-stress\", \"sigwaittest\", \"rt-migrate-test\", \"pmqtest\", \"ptsematest\", \"svsematest\", \"sendme\", \"signaltest\"], \"package_name\": \"realtime-tests\", \"summary\": \"Suite of real-time tests\", \"title\": \"realtime-tests\"}, {\"aliases\": null, \"apps\": [\"winpr-hash\", \"remmina\", \"winpr-makecert\"], \"package_name\": \"remmina\", \"summary\": \"The GTK+ Remote Desktop Client\", \"title\": \"Remmina\"}, {\"aliases\": null, \"apps\": [\"rssnotify\"], \"package_name\": \"rssnotify\", \"summary\": \"E-mail updates to a list of RSS Feeds (usually with a cron job).\", \"title\": \"rss
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: notify\"}, {\"aliases\": null, \"apps\": [\"sensors-unity\"], \"package_name\": \"sensors-unity\", \"summary\": \"A simple sensors GUI for the Unity Desktop\", \"title\": \"Sensors Unity\"}, {\"aliases\": null, \"apps\": [\"sslocal\", \"ssserver\"], \"package_name\": \"shadowsocks\", \"summary\": \"A fast tunnel proxy that helps you bypass firewalls\", \"title\": \"shadowsocks\"}, {\"aliases\": null, \"apps\": [\"sluice\"], \"package_name\": \"sluice\", \"summary\": \"rate limiting data piping tool\", \"title\": \"sluice\"}, {\"aliases\": null, \"apps\": [\"busybox\"], \"package_name\": \"snapd-hacker-toolbelt\", \"summary\": \"Collection of tools useful for developers hacking on snapd\", \"title\": \"snapd-hacker-toolbelt\"}, {\"aliases\": null, \"apps\": [\"security\"], \"package_name\": \"snappy-debug\", \"summary\": \"Debug tools for ubuntu-core\", \"title\": \"snappy-debug\"}, {\"aliases\": null, \"apps\": [\"snappy-discover\"], \"package_name\": \"snappy-discover\", \"summary\": \"Discover snappy devices on the local network\", \"title\": \"snappy-discover\"}, {\"aliases\": null, \"apps\": [\"generate-token\"], \"package_name\": \"snapweb\", \"summary\": \"Beautiful and functional interface for snap management\", \"title\": \"snapweb\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"snow-on-me\", \"summary\": \"A simple webserver serving christmas snow on demand\", \"title\": \"snow-on-me\"}, {\"aliases\": null, \"apps\": [\"solc\"], \"package_name\": \"solc\", \"summary\": \"The Solidity Contract-Oriented Programming Language\", \"title\": \"solc\"}, {\"aliases\": null, \"apps\": [\"special-delivery-start\"], \"package_name\": \"special-delivery\", \"summary\": \"Example app on Mir stack\", \"title\": \"special-delivery\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"spreedme\", \"summary\": \"Spreed.ME audio/video calls and conferences feature for the Nextcloud Snap\", \"title\": \"spreedme\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"sshesame\", \"summary\": \"Fake SSH serv
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: er that lets everyone in and logs their activity\", \"title\": \"sshesame\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"sshguard-robertliu\", \"summary\": \"Protects from brute force attacks against ssh\", \"title\": \"sshguard-robertliu\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"stats\", \"summary\": \"Gathers numbers in repeated text\", \"title\": \"stats\"}, {\"aliases\": null, \"apps\": [\"storjshare\"], \"package_name\": \"storjshare\", \"summary\": \"farm data on the Storj network.\", \"title\": \"storjshare\"}, {\"aliases\": null, \"apps\": [\"strace-static\"], \"package_name\": \"strace-static\", \"summary\": \"diagnostic, debugging and instructional userspace utility\", \"title\": \"strace-static\"}, {\"aliases\": null, \"apps\": [\"stress-ng\"], \"package_name\": \"stress-ng\", \"summary\": \"tool to load and stress a computer\", \"title\": \"stress-ng\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"sudo\", \"summary\": \"not sudo\", \"title\": \"sudo\"}, {\"aliases\": null, \"apps\": [\"syncthing\"], \"package_name\": \"syncthing\", \"summary\": \"Open Source Continuous File Synchronization\", \"title\": \"syncthing\"}, {\"aliases\": null, \"apps\": [\"teatime\"], \"package_name\": \"teatime\", \"summary\": \"Simple egg timer application for the Unity Desktop\", \"title\": \"Teatime\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"telecom-tower-fireworks\", \"summary\": \"Telecom Tower Fireworks\", \"title\": \"telecom-tower-fireworks\"}, {\"aliases\": null, \"apps\": [\"telegram-cli\"], \"package_name\": \"telegram-cli\", \"summary\": \"Command-line interface for Telegram. Uses the readline interface.\", \"title\": \"telegram-cli\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-assumes\", \"summary\": \"Test snap for snapd\", \"title\": \"test-assumes\"}, {\"aliases\": [{\"name\": \"test_snapd_wellknown1\", \"target\": \"wellknown1\"}, {\"name\": \"test_snapd_wellknown2\", \"target\": \"wellknown2\"}], \"apps\": [\"wellknown1\", \"wellknown2\
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: "], \"package_name\": \"test-snapd-auto-aliases\", \"summary\": \"\", \"title\": \"test-snapd-auto-aliases\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-base-bare\", \"summary\": \"Empty base snap for snapd testing\", \"title\": \"test-snapd-base-bare\"}, {\"aliases\": null, \"apps\": [\"content-plug\"], \"package_name\": \"test-snapd-content-circular1\", \"summary\": \"\", \"title\": \"test-snapd-content-circular1\"}, {\"aliases\": null, \"apps\": [\"content-plug\"], \"package_name\": \"test-snapd-content-circular2\", \"summary\": \"\", \"title\": \"test-snapd-content-circular2\"}, {\"aliases\": null, \"apps\": [\"content-plug\"], \"package_name\": \"test-snapd-content-plug\", \"summary\": \"\", \"title\": \"test-snapd-content-plug\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-content-slot\", \"summary\": \"\", \"title\": \"test-snapd-content-slot\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-content-slot-no-content-attr\", \"summary\": \"\", \"title\": \"test-snapd-content-slot-no-content-attr\"}, {\"aliases\": null, \"apps\": [\"list\", \"install\"], \"package_name\": \"test-snapd-control-consumer\", \"summary\": \"Basic snapd-control consumer snap\", \"title\": \"test-snapd-control-consumer\"}, {\"aliases\": null, \"apps\": [\"lpr\"], \"package_name\": \"test-snapd-cups-control-consumer\", \"summary\": \"Basic cups-control consumer snap\", \"title\": \"test-snapd-cups-control-consumer\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-delta-refresh\", \"summary\": \"\", \"title\": \"test-snapd-delta-refresh\"}, {\"aliases\": null, \"apps\": [\"create\"], \"package_name\": \"test-snapd-fuse-consumer\", \"summary\": \"Basic fuse consumer snap\", \"title\": \"test-snapd-fuse-consumer\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-go-webserver\", \"summary\": \"Minimal Golang webserver for snappy\", \"title\": \"test-snapd-go-webserver\"}, {\"aliases\": null, \"apps\": [\"gpiomem\"], \"package_name\": \"te
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: st-snapd-gpio-memory-control\", \"summary\": \"Basic gpio-memory-control snap\", \"title\": \"test-snapd-gpio-memory-control\"}, {\"aliases\": null, \"apps\": [\"gsettings\"], \"package_name\": \"test-snapd-gsettings\", \"summary\": \"Basic gsettings test snap\", \"title\": \"test-snapd-gsettings\"}, {\"aliases\": null, \"apps\": [\"consumer\", \"provider\"], \"package_name\": \"test-snapd-location-control-provider\", \"summary\": \"Basic location control provider snap\", \"title\": \"test-snapd-location-control-provider\"}, {\"aliases\": null, \"apps\": [\"consumer\"], \"package_name\": \"test-snapd-network-status-consumer\", \"summary\": \"Basic network status consumer snap\", \"title\": \"test-snapd-network-status-consumer\"}, {\"aliases\": null, \"apps\": [\"consumer\", \"provider\"], \"package_name\": \"test-snapd-network-status-provider\", \"summary\": \"Basic network status provider snap\", \"title\": \"test-snapd-network-status-provider\"}, {\"aliases\": null, \"apps\": [\"random-uuid\"], \"package_name\": \"test-snapd-openvswitch-support\", \"summary\": \"Basic openvsiwtch support snap\", \"title\": \"test-snapd-openvswitch-support\"}, {\"aliases\": null, \"apps\": [\"physical-mem\"], \"package_name\": \"test-snapd-physical-memory-control\", \"summary\": \"Basic physical-memory-control snap\", \"title\": \"test-snapd-physical-memory-control\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-public\", \"summary\": \"Basic snap to be published as public\", \"title\": \"test-snapd-public\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"test-snapd-python-webserver\", \"summary\": \"Python based example webserver\", \"title\": \"test-snapd-python-webserver\"}, {\"aliases\": null, \"apps\": [\"head\", \"success\", \"cmd\", \"cat\", \"sh\", \"env\", \"fail\", \"echo\", \"block\"], \"package_name\": \"test-snapd-tools\", \"summary\": \"Tools for testing the snapd application\", \"title\": \"test-snapd-tools\"}, {\"aliases\": null, \"apps\": [\"test-device\"], \"package_name\": \"test-s
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: napd-uhid\", \"summary\": \"Basic snap declaring a plug on the uhid interface\", \"title\": \"test-snapd-uhid\"}, {\"aliases\": null, \"apps\": [\"upower\"], \"package_name\": \"test-snapd-upower-observe-consumer\", \"summary\": \"Basic upower-observe consumer snap\", \"title\": \"test-snapd-upower-observe-consumer\"}, {\"aliases\": null, \"apps\": [\"testflinger-cli\"], \"package_name\": \"testflinger-cli\", \"summary\": \"testflinger-cli\", \"title\": \"testflinger-cli\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"thinger-maker-server\", \"summary\": \"Thinger.io Internet Of Things Server\", \"title\": \"Thinger.io Maker Server\"}, {\"aliases\": null, \"apps\": [\"configure\", \"monitor\"], \"package_name\": \"tor-middle-relay\", \"summary\": \"Infrastructure node for other people's use of Tor network\", \"title\": \"Tor middle relay\"}, {\"aliases\": null, \"apps\": [\"tor\", \"gencert\", \"resolve\", \"torify\"], \"package_name\": \"tor-mkg20001\", \"summary\": \"Defend yourself against network surveillance and traffic analysis\", \"title\": \"Tor\"}, {\"aliases\": [{\"name\": \"tpm2_activatecredential\", \"target\": \"activatecredential\"}, {\"name\": \"tpm2_akparse\", \"target\": \"akparse\"}, {\"name\": \"tpm2_certify\", \"target\": \"certify\"}, {\"name\": \"tpm2_create\", \"target\": \"create\"}, {\"name\": \"tpm2_createprimary\", \"target\": \"createprimary\"}, {\"name\": \"tpm2_encryptdecrypt\", \"target\": \"encryptdecrypt\"}, {\"name\": \"tpm2_evictcontrol\", \"target\": \"evictcontrol\"}, {\"name\": \"tpm2_getmanufec\", \"target\": \"getmanufec\"}, {\"name\": \"tpm2_getpubak\", \"target\": \"getpubak\"}, {\"name\": \"tpm2_getpubek\", \"target\": \"getpubek\"}, {\"name\": \"tpm2_getrandom\", \"target\": \"getrandom\"}, {\"name\": \"tpm2_hash\", \"target\": \"hash\"}, {\"name\": \"tpm2_hmac\", \"target\": \"hmac\"}, {\"name\": \"tpm2_listpcrs\", \"target\": \"listpcrs\"}, {\"name\": \"tpm2_load\", \"target\": \"load\"}, {\"name\": \"tpm2_loadexternal\", \"target\": \"loadexternal\"}, {\"na
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: me\": \"tpm2_makecredential\", \"target\": \"makecredential\"}, {\"name\": \"tpm2_nvdefine\", \"target\": \"nvdefine\"}, {\"name\": \"tpm2_nvlist\", \"target\": \"nvlist\"}, {\"name\": \"tpm2_nvread\", \"target\": \"nvread\"}, {\"name\": \"tpm2_nvrelease\", \"target\": \"nvrelease\"}, {\"name\": \"tpm2_nvwrite\", \"target\": \"nvwrite\"}, {\"name\": \"tpm2_quote\", \"target\": \"quote\"}, {\"name\": \"tpm2_rc_decode\", \"target\": \"rc-decode\"}, {\"name\": \"tpm2_readpublic\", \"target\": \"readpublic\"}, {\"name\": \"tpm2_rsadecrypt\", \"target\": \"rsadecrypt\"}, {\"name\": \"tpm2_rsaencrypt\", \"target\": \"rsaencrypt\"}, {\"name\": \"tpm2_sign\", \"target\": \"sign\"}, {\"name\": \"tpm2_takeownership\", \"target\": \"takeownership\"}, {\"name\": \"tpm2_unseal\", \"target\": \"unseal\"}, {\"name\": \"tpm2_verifysignature\", \"target\": \"verifysignature\"}], \"apps\": [\"load\", \"makecredential\", \"nvrelease\", \"sign\", \"encryptdecrypt\", \"nvwrite\", \"rc-decode\", \"getmanufec\", \"readpublic\", \"activatecredential\", \"unseal\", \"akparse\", \"certify\", \"listpcrs\", \"loadexternal\", \"verifysignature\", \"nvdefine\", \"nvlist\", \"hash\", \"getrandom\", \"quote\", \"rsaencrypt\", \"rsadecrypt\", \"takeownership\", \"getpubak\", \"createprimary\", \"nvread\", \"hmac\", \"getpubek\", \"evictcontrol\", \"create\"], \"package_name\": \"tpm2\", \"summary\": \"TPM 2.0 utilities\", \"title\": \"tpm2\"}, {\"aliases\": null, \"apps\": [\"tree\"], \"package_name\": \"tree\", \"summary\": \"This is an initial minimail snap of `tree`\", \"title\": \"tree\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"turtlebot-demo-kyrofa\", \"summary\": \"Turtlebot ROS Demo\", \"title\": \"Turtlebot ROS Demo\"}, {\"aliases\": null, \"apps\": [\"test\"], \"package_name\": \"u1test-snap-with-tracks\", \"summary\": \"Summary of the most simple snap\", \"title\": \"u1test-snap-with-tracks\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"u1test20160920\", \"summary\": \"Summary of the most simple snap\", \"titl
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: e\": \"u1test20160920\"}, {\"aliases\": null, \"apps\": [\"ubuntu-calculator-app\"], \"package_name\": \"ubuntu-calculator-app\", \"summary\": \"Ubuntu Calculator application for the Unity 7 desktop\", \"title\": \"Calculator (Unity 7)\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"ubuntu-core\", \"summary\": \"The ubuntu-core OS snap\", \"title\": \"ubuntu-core\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"ubuntu-core-slides\", \"summary\": \"Ubuntu core set of slides\", \"title\": \"ubuntu-core-slides\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"ubuntu-demo-websites\", \"summary\": \"Demo websites configuration for Ubuntu Demo manager\", \"title\": \"ubuntu-demo-websites\"}, {\"aliases\": [{\"name\": \"udisksctl\", \"target\": \"udisksctl\"}], \"apps\": [\"udisksctl\"], \"package_name\": \"udisks2\", \"summary\": \"D-Bus service to access and manipulate storage devices\", \"title\": \"udisks2\"}, {\"aliases\": null, \"apps\": [\"init\", \"shell\", \"ipset\", \"doc\", \"ufw\"], \"package_name\": \"ufw\", \"summary\": \"ufw (Uncomplicated Firewall) for Ubuntu Core\", \"title\": \"ufw\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"upnp-server\", \"summary\": \"upload files with WebDAV and serve them via DLNA/UPnP\", \"title\": \"upnp-server\"}, {\"aliases\": null, \"apps\": [\"upower\"], \"package_name\": \"upower\", \"summary\": \"UPower Power Source Monitoring daemon\", \"title\": \"upower\"}, {\"aliases\": null, \"apps\": [\"v-top\"], \"package_name\": \"v-top\", \"summary\": \"This is a snap for vtop\", \"title\": \"v-top\"}, {\"aliases\": null, \"apps\": [\"vanitygen\"], \"package_name\": \"vanitygen\", \"summary\": \"Vanitygen is a command-line vanity bitcoin address generator\", \"title\": \"vanitygen\"}, {\"aliases\": null, \"apps\": [\"volleyball2d\"], \"package_name\": \"volleyball2d\", \"summary\": \"A 2d volleyball game\", \"title\": \"volleyball2d\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"vsslagent\", \"summary\": \"VSSL REST api.\", \"tit
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: le\": \"vsslagent\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"wallpapers-poland-late-summer\", \"summary\": \"Collection of wallpapers with photos from late summer in Poland\", \"title\": \"Late summer in Poland - wallpapers\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"webdm\", \"summary\": \"# Snappyd\", \"title\": \"webdm\"}, {\"aliases\": null, \"apps\": [\"status\", \"config\", \"setup-wizard\"], \"package_name\": \"wifi-ap\", \"summary\": \"WiFi Access Point based on hostapd\", \"title\": \"wifi-ap\"}, {\"aliases\": null, \"apps\": [\"iwspy\", \"iwconfig\", \"rfkill\", \"iwgetid\", \"iwpriv\", \"iw\", \"iwevent\"], \"package_name\": \"wireless-tools\", \"summary\": \"Tools for manipulating Linux Wireless Extensions\", \"title\": \"wireless-tools\"}, {\"aliases\": [{\"name\": \"wpa_cli\", \"target\": \"wpa-cli\"}], \"apps\": [\"wpa-cli\"], \"package_name\": \"wpa-supplicant\", \"summary\": \"WPA supplicant provides client support for WPA and WPA2 (IEEE 802.11i)\", \"title\": \"wpa-supplicant\"}, {\"aliases\": null, \"apps\": [], \"package_name\": \"xkcd-webserver\", \"summary\": \"Show random XKCD compic via a build-in webserver\", \"title\": \"xkcd-webserver\"}, {\"aliases\": null, \"apps\": [\"tor\", \"zeronet\"], \"package_name\": \"zeronet\", \"summary\": \"Open, free and uncensorable websites\", \"title\": \"ZeroNet\"}]}}"
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: 2018/02/24 06:03:32.258061 retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/names?confinement=strict finished after 1 retries, elapsed time=844.031ms, status: 200
+Feb 24 06:03:32 localhost.localdomain snapd[2189]: 2018/02/24 06:03:32.821430 taskrunner.go:367: DEBUG: Running task 1 on Do: Ensure prerequisites for "test-snapd-content-plug" are available
+Feb 24 06:04:00 localhost.localdomain snapd[2189]: 2018/02/24 06:04:00.503100 taskrunner.go:367: DEBUG: Running task 14 on Do: Ensure prerequisites for "core" are available
+Feb 24 06:04:01 localhost.localdomain snapd[2189]: 2018/02/24 06:04:01.715550 taskrunner.go:367: DEBUG: Running task 15 on Do: Prepare snap "/var/lib/snapd/seed/snaps/core_4115.snap" (4115)
+Feb 24 06:04:03 localhost.localdomain snapd[2189]: 2018/02/24 06:04:03.726083 taskrunner.go:367: DEBUG: Running task 16 on Do: Mount snap "core" (4115)
+Feb 24 06:04:12 localhost.localdomain snapd[2189]: 2018/02/24 06:04:12.105306 taskrunner.go:367: DEBUG: Running task 17 on Do: Copy snap "core" data
+Feb 24 06:04:13 localhost.localdomain snapd[2189]: 2018/02/24 06:04:13.302521 taskrunner.go:367: DEBUG: Running task 18 on Do: Setup snap "core" (4115) security profiles
+Feb 24 06:04:17 localhost.localdomain snapd[2189]: 2018/02/24 06:04:17.503604 taskrunner.go:367: DEBUG: Running task 19 on Do: Make snap "core" (4115) available to the system
+Feb 24 06:04:21 localhost.localdomain snapd[2189]: 2018/02/24 06:04:21.204528 task.go:303: DEBUG: 2018-02-24T06:04:21Z INFO Requested system restart.
+Feb 24 06:04:21 localhost.localdomain snapd[2189]: 2018/02/24 06:04:21.949186 taskrunner.go:367: DEBUG: Running task 20 on Do: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:04:22 localhost.localdomain snapd[2189]: 2018/02/24 06:04:22.567132 task.go:303: DEBUG: 2018-02-24T06:04:22Z INFO Waiting for restart...
+Feb 24 06:04:29 localhost.localdomain snapd[2189]: 2018/02/24 06:04:29.906006 taskrunner.go:367: DEBUG: Running task 1 on Doing: Ensure prerequisites for "test-snapd-content-plug" are available
+Feb 24 06:04:30 localhost.localdomain snapd[2189]: 2018/02/24 06:04:30.514052 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:04:31 localhost.localdomain snapd[2189]: 2018/02/24 06:04:31.732038 task.go:303: DEBUG: 2018-02-24T06:04:31Z INFO Waiting for restart...
+Feb 24 06:04:32 localhost.localdomain snapd[2189]: 2018/02/24 06:04:32.340371 taskrunner.go:367: DEBUG: Running task 2 on Do: Download snap "test-snapd-content-plug" (5) from channel "edge"
+Feb 24 06:04:32 localhost.localdomain snapd[2189]: 2018/02/24 06:04:32.965042 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:04:33 localhost.localdomain snapd[2189]: 2018/02/24 06:04:33.674850 task.go:303: DEBUG: 2018-02-24T06:04:33Z INFO Waiting for restart...
+Feb 24 06:04:34 localhost.localdomain snapd[2189]: 2018/02/24 06:04:34.281904 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/download/n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX_5.snap, attempt 1, elapsed time=145µs
+Feb 24 06:04:34 localhost.localdomain snapd[2189]: 2018/02/24 06:04:34.291326 logger.go:69: DEBUG: > "GET /api/v1/snaps/download/n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX_5.snap HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: \r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
+Feb 24 06:04:35 localhost.localdomain snapd[2189]: 2018/02/24 06:04:35.649853 logger.go:76: DEBUG: < "HTTP/1.1 302 FOUND\r\nContent-Length: 533\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sat, 24 Feb 2018 06:04:35 GMT\r\nLocation: https://068ed04f23.site.internapcdn.net/download-snap/n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX_5.snap?t=2018-02-24T10:00:00Z&h=9b2c6542612e3ff5a10da8ac92e274f712316c46\r\nServer: gunicorn/19.7.1\r\nX-Request-Id: 39155929-7f6b-40e7-90f0-413cbb6f7be6\r\nX-Vcs-Revision: 444fefa\r\n\r\n"
+Feb 24 06:04:35 localhost.localdomain snapd[2189]: 2018/02/24 06:04:35.651822 logger.go:69: DEBUG: > "GET /download-snap/n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX_5.snap?t=2018-02-24T10:00:00Z&h=9b2c6542612e3ff5a10da8ac92e274f712316c46 HTTP/1.1\r\nHost: 068ed04f23.site.internapcdn.net\r\nUser-Agent: snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: \r\nReferer: https://api.snapcraft.io/api/v1/snaps/download/n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX_5.snap\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
+Feb 24 06:04:36 localhost.localdomain snapd[2189]: 2018/02/24 06:04:36.161853 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 4096\r\nAccept-Ranges: bytes\r\nCache-Control: max-age=86400\r\nConnection: keep-alive\r\nContent-Disposition: attachment; filename=n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX_5.snap\r\nContent-Type: application/octet-stream\r\nDate: Sat, 24 Feb 2018 06:04:36 GMT\r\nEtag: 0ea184ab-99e8-44fd-9e94-0bc8fc4579cb\r\nLast-Modified: Sat, 24 Feb 2018 04:17:20 GMT\r\nServer: CDCE\r\nStrict-Transport-Security: max-age=2592000\r\nVary: Accept-Encoding\r\nX-Bzr-Revision-Number: 7458\r\nX-Inap-Cache-Status: HIT\r\nX-Inap-Server: cdce-hkg002-001.hkg002.internap.com\r\nX-Request-Id: WpDnUH8AAQEAACxdM7oAAAAb1\r\n\r\n"
+Feb 24 06:04:38 localhost.localdomain snapd[2189]: 2018/02/24 06:04:38.873523 taskrunner.go:367: DEBUG: Running task 3 on Do: Fetch and check assertions for snap "test-snapd-content-plug" (5)
+Feb 24 06:04:39 localhost.localdomain snapd[2189]: 2018/02/24 06:04:39.478003 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:04:40 localhost.localdomain snapd[2189]: 2018/02/24 06:04:40.095515 task.go:303: DEBUG: 2018-02-24T06:04:40Z INFO Waiting for restart...
+Feb 24 06:04:40 localhost.localdomain snapd[2189]: 2018/02/24 06:04:40.770371 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/assertions/snap-revision/UzfhJIDc1A04xUNzbAEwvu2_aCeT3FxOvo5tsKFG2V9ZzssK_ZIaEiRAFh8RdNus?max-format=0, attempt 1, elapsed time=127µs
+Feb 24 06:04:40 localhost.localdomain snapd[2189]: 2018/02/24 06:04:40.794687 logger.go:69: DEBUG: > "GET /api/v1/snaps/assertions/snap-revision/UzfhJIDc1A04xUNzbAEwvu2_aCeT3FxOvo5tsKFG2V9ZzssK_ZIaEiRAFh8RdNus?max-format=0 HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/x.ubuntu.assertion\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 2018/02/24 06:04:42.005645 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 1069\r\nContent-Type: application/x.ubuntu.assertion\r\nDate: Sat, 24 Feb 2018 06:04:41 GMT\r\nServer: gunicorn/19.7.1\r\nX-Request-Id: d975758f-fb37-4a31-8d5c-71e0b0596d30\r\nX-Vcs-Revision: 444fefa\r\n\r\ntype: snap-revision\nauthority-id: canonical\nsnap-sha3-384: UzfhJIDc1A04xUNzbAEwvu2_aCeT3FxOvo5tsKFG2V9ZzssK_ZIaEiRAFh8RdNus\ndeveloper-id: canonical\nsnap-id: n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX\nsnap-revision: 5\nsnap-size: 4096\ntimestamp: 2017-09-25T21:29:23.647680Z\nsign-key-sha3-384: BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul\n\nAcLBUgQAAQoABgUCWcl1NAAA9HMQAIGcZl8ymxr37tgLL5nnrg25aKiISJRk5XiCf2cfemptvHJL\n4swzu0u1QnrpWBN7ksXVdwUG/OMBJmmjmkaZcenPSpssDlw6J1wzloCrCHfyB8LGscugfcxr0wTE\nQTRs5MUEkzjpnTb3/n7nV9H2xpYzGhqB5yB1wuoHqNsRBrxKgKqAK6a9CUG3d4WK1KqiTILcUOUY\nPf3crZ6jZAxcYSEQqSbyFhwDzDVZj8dOgEsyXIQ3q5PrFLe08T/LEYJd2K+q36d6b6ai2hpzYJkj\nYn30cfgloFsTwO97IDvx7u/9FOi3p0NBVz8FaTL8bAaxc0KyyvrzHUANcXdmvqxwRBhHWhDGvrgg\nJJsQR+z+BrNAg9t7AoTsDUwotWqzmXPWypCTnyZOHNgannPmifCD+DvoNMTG7uOfJs7yUJ5nM9zj\nmp2KMyOH/oprchLgD2Or3V+js9x9tFm3/KMw7Nic9uS8IUdOx0SwsSp/LSARWzHOu5fVTi2RRZlx\ni12OBAZYOwqBeKwhcby56QMSIHrtc8X6TWQdQ2SuE7IomAGhVPhKJH2lhf7g2qPNWpdNTF550C1a\n+mPnt+OwrbRZDtoFuVo+36c54UEJNYrGWilmuJmEBI12XbC/0c/G/M+r4r9739lazV1RbhZhz3W/\nvTFhBxrDkOrdBm4+bvxTzmF0hzdb\n"
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 2018/02/24 06:04:42.006444 retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/assertions/snap-revision/UzfhJIDc1A04xUNzbAEwvu2_aCeT3FxOvo5tsKFG2V9ZzssK_ZIaEiRAFh8RdNus?max-format=0 finished after 1 retries, elapsed time=1.236439s, status: 200
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 2018/02/24 06:04:42.006808 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/assertions/snap-declaration/16/n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX?max-format=2, attempt 1, elapsed time=34µs
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 2018/02/24 06:04:42.010355 logger.go:69: DEBUG: > "GET /api/v1/snaps/assertions/snap-declaration/16/n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX?max-format=2 HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/x.ubuntu.assertion\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 2018/02/24 06:04:42.288217 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 1005\r\nContent-Type: application/x.ubuntu.assertion\r\nDate: Sat, 24 Feb 2018 06:04:42 GMT\r\nServer: gunicorn/19.7.1\r\nX-Request-Id: 709eeb30-5628-4e10-b3d4-60a18b56d011\r\nX-Vcs-Revision: 444fefa\r\n\r\ntype: snap-declaration\nauthority-id: canonical\nseries: 16\nsnap-id: n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX\npublisher-id: canonical\nsnap-name: test-snapd-content-plug\ntimestamp: 2016-10-04T15:45:55.730863Z\nsign-key-sha3-384: BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul\n\nAcLBUgQAAQoABgUCV/POswAAwLkQADsD34LZpyxhsfMq4lRmf3/GU84JOeAzooqJo3tA5yNodzUu\nkWGAlp9SgPC8X+arUH+ybkdECCE+m+uONbAUREwB9mjkPy7PgIf1lbX3TiAtwIpZHE83mZsG6lKK\nWzCtW5QSlGHfNTbUuk3DZMAOa5L+p4GkWQfb0tzTCfaoeZBLSVZ+l9ffeq7N52Jfg1NQNgxOwb2m\njgp83HhQLl7alS0AVDKABO1O+c2C4QFhM0EKGI9qYEk62/SJiV1bweqrYqjaOBZ2lJU7O11EF/OP\nE2FIohxuzXfnJiRifG43cCDo7NKTSHew3CWVARniqLq7033BzPD1kPMGSS8TwoIrD/YU/3dRvJsB\nqUfShvOrKCOKO5pAD8mkc+5jhyUES96QI8HWa+Qzw+Jkj7RnwXQHm+G/8++/JzWTahM7BFAN7Yp8\ntYJhHHuGd/x19SF82tuVkcZqhZwD3L84m4UsOeLWv+/nLJOWG4tT2l3Qz35lSGVu2ZBxI95XdymE\ngaNABNBjXBGqNrn240SDaAebvab2bQiSqwXLrkIJdiJvTEe/oDvZbzFoaY0ysdaue4W1R0YJGtb4\ntqL1seiJfdXwtwpPjWO1fPIdTjSAwXlES97enh3TVgVKXUyaNKrLzmcNPZZ0fng0Qv/t4vNKAxXG\nBQlxkCQn7apX1Ypablildrot4iIH\n"
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 2018/02/24 06:04:42.290551 retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/assertions/snap-declaration/16/n45IUmCI3hPO4XgXZRsFHnaxBNQ1YPtX?max-format=2 finished after 1 retries, elapsed time=283.686ms, status: 200
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 2018/02/24 06:04:42.291438 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/assertions/account-key/BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul?max-format=0, attempt 1, elapsed time=75µs
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 2018/02/24 06:04:42.299458 logger.go:69: DEBUG: > "GET /api/v1/snaps/assertions/account-key/BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul?max-format=0 HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.29.4.2 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/x.ubuntu.assertion\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 2018/02/24 06:04:42.580950 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 2452\r\nContent-Type: application/x.ubuntu.assertion\r\nDate: Sat, 24 Feb 2018 06:04:42 GMT\r\nServer: gunicorn/19.7.1\r\nX-Request-Id: d278ca06-f9fa-43bd-b4df-bc8a663541a4\r\nX-Vcs-Revision: 444fefa\r\n\r\ntype: account-key\nauthority-id: canonical\nrevision: 2\npublic-key-sha3-384: BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul\naccount-id: canonical\nname: store\nsince: 2016-04-01T00:00:00.0Z\nbody-length: 717\nsign-key-sha3-384: -CvQKAwRQ5h3Ffn10FILJoEZUXOv6km9FwA80-Rcj-f-6jadQ89VRswHNiEB9Lxk\n\nAcbBTQRWhcGAARAA0KKYYQWuHOrsFVi4p4l7ZzSvX7kLgJFFeFgOkzdWKBTHEnsMKjl5mefFe9ji\nqe8NlmJdfY7BenP7XeBtwKp700H/t9lLrZbpTNAPHXYxEWFJp5bPqIcJYBZ+29oLVLN1Tc5X482R\nvCiDqL8+pPYqBrK2fNlyPlNNSum9wI70rDDL4r6FVvr+osTnGejibdV8JphWX+lrSQDnRSdM8KJi\nUM43vTgLGTi9W54oRhsA2OFexRfRksTrnqGoonCjqX5wO3OFSaMDzMsO2MJ/hPfLgDqw53qjzuKL\nIec9OL3k5basvu2cj5u9tKwVFDsCKK2GbKUsWWpx2KTpOifmhmiAbzkTHbH9KaoMS7p0kJwhTQGA\no9aJ9VMTWHJc/NCBx7eu451u6d46sBPCXS/OMUh2766fQmoRtO1OwCTxsRKG2kkjbMn54UdFULl9\nVfzvyghMNRKIezsEkmM8wueTqGUGZWa6CEZqZKwhe/PROxOPYzqtDH18XZknbU1n5lNb7vNfem9F\n2ai+3+JyFnW9UhfvpVF7gzAgdyCqNli4C6BIN43uwoS8HkykocZS/+Gv52aUQ/NZ8BKOHLw+7ant\nQ0o8W9ltSLZbEMxFIPSN0stiZlkXAp6DLyvh1Y4wXSynDjUondTpej2fSvSlCz/W5v5V7qA4nIcG\nvUvV7RjVzv17ut0AEQEAAQ==\n\nAcLDXAQAAQoABgUCV83k9QAKCRDUpVvql9g3IBT8IACKZ7XpiBZ3W4lqbPssY6On81WmxQLtvsMV\nWTp6zZpl/wWOSt2vMNUk9pvcmrNq1jG9CuhDfWFLGXEjcrrmVkN3YuCOajMSPFCGrxsIBLSRt/bP\nnrKykdLAAzMfG8rP1d82bjFFiIieE+urQ0Kcv09Jtdvavq3JT1Tek5mFyyfhHNlQEKOzWqmRWiLg\n3c3VOZUs1ZD8TSlnuq/x+5T0X0YtOyGjSlVxk7UybbyMNd6MZfNaMpIG4x+mxD3KHFtBAC7O6kLe\neX3i6j5nCY5UABfA3DZEAkWP4zlmdBEOvZ9t293NaDdOpzsUHRkoi0Zez/9BHQ/kwx/uNc2WqrYm\ninCmu16JGNeXqsyinnLl7Ghn2RwhvDMlLxF6RTx8xdx1yk6p3PBTwhZMUvuZGjUtN/AG8BmVJQ19\nrsGSRkkSywvnhVJRB2sudnrMBmNS2goJbzSbmJnOlBrd2WsV0T9SgNMWZBiov3LvU4o2SmAb6b+k\nrYwh8H5QHcuuYJuxDjFhPswIp6Wes5T6hUicf3SWtObcDS4HSkVS4ImBjjX9YgCuFy7QdnooOWEY\naPvkRw3XCVeYq0K6w9GRsk1YFErD4XmXXZjDYY650MX9v42Sz5MmphHV8jdIY5ssbadwFSe2rCQI\n6UX08zy
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 7RsIb19hTndE6ncvSNDChUR9eEnCm73eYaWTWTnq1cxdVP/s52r8uss++OYOkPWqh5nOu\nhaRn7INjH/yZX4qXjNXlTjo0PnHH0q08vNKDwLhxS+D9du+70FeacXFyLIbcWllSbJ7DmbumGpFo\nyYbtj3FDDPzachFQdIG3lSt+cSUGeyfSs6wVtc3cIPka/2Urx7RprfmoWSI6+a5NcLdj0u2z8O96\nHxeIgxDpg/3gT8ZIuFKePMcLDM19Fh/p0ysCsX+84B9chNWtsMSmIaE57V+959MVtsLu7SLb9gi7\nskrju0pQCwsu2wHMLTNd1f3PTHmrr49hxetTus07HSQUApMtAGKzQilF5zqFjbyaTd4xgQbd+PKW\nCjFyzQTDOcUhXpuUGt/IzlqiFfsCsmbj2K4KdSNYMlqIgZ3Azu8KvZLIhsyN7v5vNIZSPfEbjdeu\nClU9r0VRiJmtYBUjcSghD9LWn+yRLwOxhfQVjm0cBwIt5R/yPF/qC76yIVuWUtM5Y2/zJR1J8OFq\nqWchvlImHtvDzS9FQeLyzJAOjvZ2CnWp2gILgUz0WQdOk1Dq8ax7KS9BQ42zxw9EZAEPw3PEFqRy\nIQsRTONp+iVS8YxSmoYZjDlCgRMWUmawez/Fv5b9Fb/XkO5Eq4e+KfrpUujXItaipb+tV8h5v3tr\noG3Ie3WOHrVjCLXIdYslpL1O4nadqR6Xv58pHj6k\n"
+Feb 24 06:04:42 localhost.localdomain snapd[2189]: 2018/02/24 06:04:42.582922 retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/assertions/account-key/BWDEoaqyr25nF5SNCvEv2v7QnM9QsfCc0PBMYD_i2NGSQ32EF2d4D0hqUel3m8ul?max-format=0 finished after 1 retries, elapsed time=291.551ms, status: 200
+Feb 24 06:04:44 localhost.localdomain snapd[2189]: 2018/02/24 06:04:44.845926 taskrunner.go:367: DEBUG: Running task 4 on Do: Mount snap "test-snapd-content-plug" (5)
+Feb 24 06:04:45 localhost.localdomain snapd[2189]: 2018/02/24 06:04:45.488650 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:04:46 localhost.localdomain snapd[2189]: 2018/02/24 06:04:46.149755 task.go:303: DEBUG: 2018-02-24T06:04:46Z INFO Waiting for restart...
+Feb 24 06:04:50 localhost.localdomain snapd[2189]: 2018/02/24 06:04:50.019431 taskrunner.go:367: DEBUG: Running task 5 on Do: Copy snap "test-snapd-content-plug" data
+Feb 24 06:04:50 localhost.localdomain snapd[2189]: 2018/02/24 06:04:50.788271 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:04:51 localhost.localdomain snapd[2189]: 2018/02/24 06:04:51.467488 task.go:303: DEBUG: 2018-02-24T06:04:51Z INFO Waiting for restart...
+Feb 24 06:04:52 localhost.localdomain snapd[2189]: 2018/02/24 06:04:52.878537 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:04:54 localhost.localdomain snapd[2189]: 2018/02/24 06:04:54.336081 task.go:303: DEBUG: 2018-02-24T06:04:54Z INFO Waiting for restart...
+Feb 24 06:04:55 localhost.localdomain snapd[2189]: 2018/02/24 06:04:55.603255 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:04:56 localhost.localdomain snapd[2189]: 2018/02/24 06:04:56.726941 task.go:303: DEBUG: 2018-02-24T06:04:56Z INFO Waiting for restart...
+Feb 24 06:04:57 localhost.localdomain snapd[2189]: 2018/02/24 06:04:57.836422 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:04:58 localhost.localdomain snapd[2189]: 2018/02/24 06:04:58.627176 task.go:303: DEBUG: 2018-02-24T06:04:58Z INFO Waiting for restart...
+Feb 24 06:04:59 localhost.localdomain snapd[2189]: 2018/02/24 06:04:59.231291 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:04:59 localhost.localdomain snapd[2189]: 2018/02/24 06:04:59.840948 task.go:303: DEBUG: 2018-02-24T06:04:59Z INFO Waiting for restart...
+Feb 24 06:05:00 localhost.localdomain snapd[2189]: 2018/02/24 06:05:00.427533 taskrunner.go:367: DEBUG: Running task 6 on Do: Setup snap "test-snapd-content-plug" (5) security profiles
+Feb 24 06:05:04 localhost.localdomain snapd[2189]: 2018/02/24 06:05:04.938603 taskrunner.go:367: DEBUG: Running task 7 on Do: Make snap "test-snapd-content-plug" (5) available to the system
+Feb 24 06:05:05 localhost.localdomain snapd[2189]: 2018/02/24 06:05:05.654482 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:05:07 localhost.localdomain snapd[2189]: 2018/02/24 06:05:07.460427 task.go:303: DEBUG: 2018-02-24T06:05:07Z INFO Waiting for restart...
+Feb 24 06:05:08 localhost.localdomain snapd[2189]: 2018/02/24 06:05:08.048232 taskrunner.go:367: DEBUG: Running task 8 on Do: Set automatic aliases for snap "test-snapd-content-plug"
+Feb 24 06:05:08 localhost.localdomain snapd[2189]: 2018/02/24 06:05:08.767400 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:05:09 localhost.localdomain snapd[2189]: 2018/02/24 06:05:09.401746 task.go:303: DEBUG: 2018-02-24T06:05:09Z INFO Waiting for restart...
+Feb 24 06:05:11 localhost.localdomain snapd[2189]: 2018/02/24 06:05:11.197764 taskrunner.go:367: DEBUG: Running task 9 on Do: Setup snap "test-snapd-content-plug" aliases
+Feb 24 06:05:13 localhost.localdomain snapd[2189]: 2018/02/24 06:05:13.001620 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:05:13 localhost.localdomain snapd[2189]: 2018/02/24 06:05:13.610320 taskrunner.go:367: DEBUG: Running task 10 on Do: Run install hook of "test-snapd-content-plug" snap if present
+Feb 24 06:05:14 localhost.localdomain snapd[2189]: 2018/02/24 06:05:14.253923 task.go:303: DEBUG: 2018-02-24T06:05:14Z INFO Waiting for restart...
+Feb 24 06:05:15 localhost.localdomain snapd[2189]: 2018/02/24 06:05:15.468284 taskrunner.go:367: DEBUG: Running task 11 on Do: Start snap "test-snapd-content-plug" (5) services
+Feb 24 06:05:16 localhost.localdomain snapd[2189]: 2018/02/24 06:05:16.054644 taskrunner.go:367: DEBUG: Running task 20 on Doing: Setup snap "core" (4115) security profiles (phase 2)
+Feb 24 06:05:17 localhost.localdomain snapd[2189]: 2018/02/24 06:05:17.252202 taskrunner.go:367: DEBUG: Running task 12 on Do: Run configure hook of "test-snapd-content-plug" snap if present
+Feb 24 06:05:17 localhost.localdomain snapd[2189]: 2018/02/24 06:05:17.873776 task.go:303: DEBUG: 2018-02-24T06:05:17Z INFO Waiting for restart...
+Feb 24 06:05:19 localhost.localdomain snapd[2189]: 2018/02/24 06:05:19.471047 daemon.go:233: DEBUG: pid=2207;uid=0;@ GET /v2/snaps?snaps=test-snapd-content-plug 14.63ms 200
+Feb 24 06:05:19 localhost.localdomain snapd[2189]: 2018/02/24 06:05:19.740048 daemon.go:233: DEBUG: pid=2443;uid=0;@ GET /v2/snaps 11.419ms 200
++ echo '# apparmor denials '
+# apparmor denials 
++ dmesg --ctime
++ grep DENIED
++ true
++ echo '# seccomp denials (kills) '
+# seccomp denials (kills) 
++ dmesg --ctime
++ grep type=1326
++ true
++ echo '# snap interfaces'
+# snap interfaces
++ snap interfaces
+Slot                      Plug
+:account-control          -
+:alsa                     -
+:autopilot-introspection  -
+:bluetooth-control        -
+:broadcom-asic-control    -
+:browser-support          -
+:camera                   -
+:classic-support          -
+:core-support             core:core-support-plug
+:dcdbas-control           -
+:docker-support           -
+:firewall-control         -
+:framebuffer              -
+:fuse-support             -
+:greengrass-support       -
+:hardware-observe         -
+:hardware-random-control  -
+:hardware-random-observe  -
+:home                     -
+:io-ports-control         -
+:joystick                 -
+:kernel-module-control    -
+:kubernetes-support       -
+:kvm                      -
+:log-observe              -
+:lxd-support              -
+:mount-observe            -
+:netlink-audit            -
+:netlink-connector        -
+:network                  -
+:network-bind             -
+:network-control          -
+:network-observe          -
+:network-setup-control    -
+:network-setup-observe    -
+:opengl                   -
+:openvswitch-support      -
+:physical-memory-control  -
+:physical-memory-observe  -
+:ppp                      -
+:process-control          -
+:raw-usb                  -
+:removable-media          -
+:shutdown                 -
+:snapd-control            -
+:system-observe           -
+:system-trace             -
+:time-control             -
+:timeserver-control       -
+:timezone-control         -
+:tpm                      -
+:uhid                     -
+-                         test-snapd-content-plug:shared-content-plug
+-----
+.
+2018-02-24 06:04:53 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content...
+2018-02-24 06:04:53 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-empty-content-attr...
+2018-02-24 06:09:53 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/interfaces-content-empty-content-attr) running late. Current output:
+-----
+(... 224 lines above ...)
+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps.sh
+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/pkgdb.sh
++++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/quiet.sh
+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
++++ GRUB_EDITENV=grub-editenv
++++ case "$SPREAD_SYSTEM" in
++ [[ ubuntu-core-16-arm-64 != ubuntu-core-16-* ]]
++ echo 'Given a snap declaring a content sharing slot is installed'
+Given a snap declaring a content sharing slot is installed
++ snap install --edge test-snapd-content-slot-no-content-attr
+-----
+.
+2018-02-24 06:10:53 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-empty-content-attr (8/183)...
+2018-02-24 06:11:18 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content-empty-content-attr...
+2018-02-24 06:11:19 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted...
+2018-02-24 06:14:04 Error preparing external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted : 
+-----
++ /home/gopath/src/github.com/snapcore/snapd/tests/lib/prepare-restore.sh --prepare-project-each
++ set -e
++ set -o pipefail
++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/quiet.sh
++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
+++ GRUB_EDITENV=grub-editenv
+++ case "$SPREAD_SYSTEM" in
++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/dirs.sh
+++ export SNAP_MOUNT_DIR=/snap
+++ SNAP_MOUNT_DIR=/snap
+++ export LIBEXECDIR=/usr/lib
+++ LIBEXECDIR=/usr/lib
+++ case "$SPREAD_SYSTEM" in
++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/pkgdb.sh
+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/quiet.sh
++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/random.sh
++ case "$1" in
++ prepare_project_each
++ case "$SPREAD_SYSTEM" in
++ journalctl --sync
++ journalctl --rotate
++ sleep .1
++ journalctl --vacuum-time=1ms
+Deleted archived journal /run/log/journal/a870a86ee44243b6babd0149011a502b/system@f1b2f9c0f8cd4c5fbd3ab0e5c78e11f5-000000000000045e-000565ef0fcea0f5.journal (1012.0K).
+Vacuuming done, freed 1012.0K of archived journals on disk.
++ dmesg -c
++ fixup_dev_random
++ mv /dev/random /dev/random.orig
++ mknod /dev/random c 1 9
++ kill_gpg_agent
++ pkill -9 -e gpg-agent
++ true
++ /home/gopath/src/github.com/snapcore/snapd/tests/lib/reset.sh --reuse-core
++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/dirs.sh
+++ export SNAP_MOUNT_DIR=/snap
+++ SNAP_MOUNT_DIR=/snap
+++ export LIBEXECDIR=/usr/lib
+++ LIBEXECDIR=/usr/lib
+++ case "$SPREAD_SYSTEM" in
++ [[ ubuntu-core-16-arm-64 == ubuntu-core-16-* ]]
++ reset_all_snap --reuse-core
++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/names.sh
++++ snap list
++++ grep 'gadget$'
++++ awk '{ print $1 }'
+++ gadget_name=dragonboard
++++ snap list
++++ grep 'kernel$'
++++ awk '{ print $1 }'
+++ kernel_name=dragonboard-kernel
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=README
++ case "$snap" in
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=bin
++ case "$snap" in
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=core
++ case "$snap" in
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=dragonboard
++ case "$snap" in
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=dragonboard-kernel
++ case "$snap" in
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=manifest.yaml
++ case "$snap" in
++ systemctl status snapd.service snapd.socket
+● snapd.service - Snappy daemon
+   Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
+  Drop-In: /etc/systemd/system/snapd.service.d
+           └─local.conf
+   Active: active (running) since Sat 2018-02-24 06:09:55 UTC; 1min 50s ago
+ Main PID: 2610 (snapd)
+   CGroup: /system.slice/snapd.service
+           └─2610 /usr/lib/snapd/snapd
+
+Feb 24 06:11:45 localhost.localdomain snapd[2610]: 2018/02/24 06:11:45.876047 daemon.go:233: DEBUG: pid=2946;uid=0;@ GET /v2/snaps 14.772ms 200
+Feb 24 06:11:46 localhost.localdomain snapd[2610]: 2018/02/24 06:11:46.022020 daemon.go:233: DEBUG: pid=2955;uid=0;@ GET /v2/snaps 14.36ms 200
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
+
+● snapd.socket - Socket activation for snappy daemon
+   Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
+  Drop-In: /etc/systemd/system/snapd.socket.d
+           └─local.conf
+   Active: active (running) since Sat 2018-02-24 06:09:29 UTC; 2min 16s ago
+   Listen: /run/snapd.socket (Stream)
+           /run/snapd-snap.socket (Stream)
+
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
++ snap remove manifest.yaml
+snap "manifest.yaml" is not installed
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=snapcraft.yaml
++ case "$snap" in
++ systemctl status snapd.service snapd.socket
+● snapd.service - Snappy daemon
+   Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
+  Drop-In: /etc/systemd/system/snapd.service.d
+           └─local.conf
+   Active: active (running) since Sat 2018-02-24 06:09:55 UTC; 1min 50s ago
+ Main PID: 2610 (snapd)
+   CGroup: /system.slice/snapd.service
+           └─2610 /usr/lib/snapd/snapd
+
+Feb 24 06:11:45 localhost.localdomain snapd[2610]: 2018/02/24 06:11:45.876047 daemon.go:233: DEBUG: pid=2946;uid=0;@ GET /v2/snaps 14.772ms 200
+Feb 24 06:11:46 localhost.localdomain snapd[2610]: 2018/02/24 06:11:46.022020 daemon.go:233: DEBUG: pid=2955;uid=0;@ GET /v2/snaps 14.36ms 200
+Feb 24 06:11:46 localhost.localdomain snapd[2610]: 2018/02/24 06:11:46.167934 daemon.go:233: DEBUG: pid=2964;uid=0;@ POST /v2/snaps/manifest.yaml 1.583ms 400
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
+
+● snapd.socket - Socket activation for snappy daemon
+   Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
+  Drop-In: /etc/systemd/system/snapd.socket.d
+           └─local.conf
+   Active: active (running) since Sat 2018-02-24 06:09:29 UTC; 2min 16s ago
+   Listen: /run/snapd.socket (Stream)
+           /run/snapd-snap.socket (Stream)
+
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
++ snap remove snapcraft.yaml
+snap "snapcraft.yaml" is not installed
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=test-snapd-content-plug-no-content-attr
++ case "$snap" in
++ systemctl status snapd.service snapd.socket
+● snapd.service - Snappy daemon
+   Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
+  Drop-In: /etc/systemd/system/snapd.service.d
+           └─local.conf
+   Active: active (running) since Sat 2018-02-24 06:09:55 UTC; 1min 50s ago
+ Main PID: 2610 (snapd)
+   CGroup: /system.slice/snapd.service
+           └─2610 /usr/lib/snapd/snapd
+
+Feb 24 06:11:45 localhost.localdomain snapd[2610]: 2018/02/24 06:11:45.876047 daemon.go:233: DEBUG: pid=2946;uid=0;@ GET /v2/snaps 14.772ms 200
+Feb 24 06:11:46 localhost.localdomain snapd[2610]: 2018/02/24 06:11:46.022020 daemon.go:233: DEBUG: pid=2955;uid=0;@ GET /v2/snaps 14.36ms 200
+Feb 24 06:11:46 localhost.localdomain snapd[2610]: 2018/02/24 06:11:46.167934 daemon.go:233: DEBUG: pid=2964;uid=0;@ POST /v2/snaps/manifest.yaml 1.583ms 400
+Feb 24 06:11:46 localhost.localdomain snapd[2610]: 2018/02/24 06:11:46.256557 daemon.go:233: DEBUG: pid=2972;uid=0;@ POST /v2/snaps/snapcraft.yaml 838µs 400
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
+
+● snapd.socket - Socket activation for snappy daemon
+   Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
+  Drop-In: /etc/systemd/system/snapd.socket.d
+           └─local.conf
+   Active: active (running) since Sat 2018-02-24 06:09:29 UTC; 2min 16s ago
+   Listen: /run/snapd.socket (Stream)
+           /run/snapd-snap.socket (Stream)
+
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
++ snap remove test-snapd-content-plug-no-content-attr
+test-snapd-content-plug-no-content-attr removed
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=test-snapd-content-slot-no-content-attr
++ case "$snap" in
++ systemctl status snapd.service snapd.socket
+● snapd.service - Snappy daemon
+   Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
+  Drop-In: /etc/systemd/system/snapd.service.d
+           └─local.conf
+   Active: active (running) since Sat 2018-02-24 06:09:55 UTC; 2min 10s ago
+ Main PID: 2610 (snapd)
+   CGroup: /system.slice/snapd.service
+           └─2610 /usr/lib/snapd/snapd
+
+Feb 24 06:11:46 localhost.localdomain snapd[2610]: 2018/02/24 06:11:46.936399 daemon.go:233: DEBUG: pid=2979;uid=0;@ POST /v2/snaps/test-snapd-content-plug-no-content-attr 602.033ms 202
+Feb 24 06:11:47 localhost.localdomain snapd[2610]: 2018/02/24 06:11:47.645972 taskrunner.go:367: DEBUG: Running task 140 on Do: Stop snap "test-snapd-content-plug-no-content-attr" services
+Feb 24 06:11:49 localhost.localdomain snapd[2610]: 2018/02/24 06:11:49.825445 taskrunner.go:367: DEBUG: Running task 139 on Do: Run remove hook of "test-snapd-content-plug-no-content-attr" snap if present
+Feb 24 06:11:51 localhost.localdomain snapd[2610]: 2018/02/24 06:11:51.284076 taskrunner.go:367: DEBUG: Running task 141 on Do: Remove aliases for snap "test-snapd-content-plug-no-content-attr"
+Feb 24 06:11:53 localhost.localdomain snapd[2610]: 2018/02/24 06:11:53.388843 taskrunner.go:367: DEBUG: Running task 142 on Do: Make snap "test-snapd-content-plug-no-content-attr" unavailable to the system
+Feb 24 06:11:55 localhost.localdomain snapd[2610]: 2018/02/24 06:11:55.745695 taskrunner.go:367: DEBUG: Running task 143 on Do: Remove security profile for snap "test-snapd-content-plug-no-content-attr" (1)
+Feb 24 06:11:57 localhost.localdomain snapd[2610]: 2018/02/24 06:11:57.212906 taskrunner.go:367: DEBUG: Running task 144 on Do: Remove data for snap "test-snapd-content-plug-no-content-attr" (1)
+Feb 24 06:11:58 localhost.localdomain snapd[2610]: 2018/02/24 06:11:58.569553 taskrunner.go:367: DEBUG: Running task 145 on Do: Remove snap "test-snapd-content-plug-no-content-attr" (1) from the system
+Feb 24 06:12:00 localhost.localdomain snapd[2610]: 2018/02/24 06:12:00.893499 cmd.go:133: exe doesn't have snap mount dir prefix: "/usr/lib/snapd/snapd" vs "/snap"
+Feb 24 06:12:02 localhost.localdomain snapd[2610]: 2018/02/24 06:12:02.429118 taskrunner.go:367: DEBUG: Running task 146 on Do: Discard interface connections for snap "test-snapd-content-plug-no-content-attr" (1)
+
+● snapd.socket - Socket activation for snappy daemon
+   Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
+  Drop-In: /etc/systemd/system/snapd.socket.d
+           └─local.conf
+   Active: active (running) since Sat 2018-02-24 06:09:29 UTC; 2min 36s ago
+   Listen: /run/snapd.socket (Stream)
+           /run/snapd-snap.socket (Stream)
+
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
++ snap remove test-snapd-content-slot-no-content-attr
+test-snapd-content-slot-no-content-attr removed
++ systemctl stop snapd.service snapd.socket
++ rm -rf /var/lib/snapd/apparmor /var/lib/snapd/assertions /var/lib/snapd/auto-import /var/lib/snapd/cache /var/lib/snapd/cookie /var/lib/snapd/desktop /var/lib/snapd/device /var/lib/snapd/environment /var/lib/snapd/firstboot /var/lib/snapd/hostfs /var/lib/snapd/lib /var/lib/snapd/mount /var/lib/snapd/seccomp /var/lib/snapd/seed /var/lib/snapd/snaps /var/lib/snapd/state.json /var/lib/snapd/void
++ tar -C/ -xf /home/gopath/src/github.com/snapcore/snapd/snapd-state.tar.gz
+-----
+.
+2018-02-24 06:14:05 Error debugging external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted : EOF
+2018-02-24 06:14:05 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted...
+2018-02-24 06:14:05 Error restoring external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted : EOF
+2018-02-24 06:14:05 Restoring external:ubuntu-core-16-arm-64:tests/main/...
+2018-02-24 06:14:05 Error restoring external:ubuntu-core-16-arm-64:tests/main/ : EOF
+2018-02-24 06:14:05 Restoring external:ubuntu-core-16-arm-64...
+2018-02-24 06:14:05 Error restoring external:ubuntu-core-16-arm-64 : EOF
+2018-02-24 06:14:05 Discarding external:ubuntu-core-16-arm-64...
+2018-02-24 06:14:05 Successful tasks: 7
+2018-02-24 06:14:05 Aborted tasks: 175
+2018-02-24 06:14:05 Failed tasks: 1
+    - external:ubuntu-core-16-arm-64:tests/main/interfaces-content
+2018-02-24 06:14:05 Failed task prepare: 1
+    - external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted
+2018-02-24 06:14:05 Failed task restore: 1
+    - external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted
+2018-02-24 06:14:05 Failed suite restore: 1
+    - external:ubuntu-core-16-arm-64:tests/main/
+2018-02-24 06:14:05 Failed project restore: 1
+    - external:ubuntu-core-16-arm-64:project
+error: unsuccessful run
+2018-02-24 06:14:05,050 dragonboard_004 WARNING: Tests failed, rc=1
+2018-02-24 06:14:05,051 dragonboard_004 INFO: END testrun
 complete
