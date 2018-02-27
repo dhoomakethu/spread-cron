@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 280bb6cd-1f1e-45d2-8a2c-34da7d1c2977
+JOB_ID: 5ce4857b-1117-4179-b0b3-f0049fd27798
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -36,36 +36,36 @@ This job is currently waiting on a node to become available. You will see no fur
 
 Cleaning up container if it exists...
 Error response from daemon: No such container: dragonboard004
+
 ***********************************************
 
 * Starting provision phase on dragonboard-004 *
-
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-02-26 04:41:48,266 dragonboard_004 INFO: BEGIN provision
-2018-02-26 04:41:48,266 dragonboard_004 INFO: Booting Master Image
-2018-02-26 04:41:48,266 dragonboard_004 INFO: Making sure the master image is booted
-2018-02-26 04:41:48,266 dragonboard_004 INFO: Checking if test image booted.
-2018-02-26 04:41:49,449 dragonboard_004 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.14 sudo sgdisk -o /dev/mmcblk1
+2018-02-27 18:46:46,833 dragonboard_004 INFO: BEGIN provision
+2018-02-27 18:46:46,833 dragonboard_004 INFO: Booting Master Image
+2018-02-27 18:46:46,833 dragonboard_004 INFO: Making sure the master image is booted
+2018-02-27 18:46:46,833 dragonboard_004 INFO: Checking if test image booted.
+2018-02-27 18:46:47,527 dragonboard_004 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.14 sudo sgdisk -o /dev/mmcblk1
 Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
 Warning: The kernel is still using the old partition table.
 The new table will be used at the next reboot or after you
 run partprobe(8) or kpartx(8)
 The operation has completed successfully.
-2018-02-26 04:41:51,579 dragonboard_004 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.14 sudo sync
+2018-02-27 18:46:49,455 dragonboard_004 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.14 sudo sync
 Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
-2018-02-26 04:41:52,502 dragonboard_004 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 i 2
+2018-02-27 18:46:50,227 dragonboard_004 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 i 2
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 = INTEGER: 2
-2018-02-26 04:41:52,621 dragonboard_004 INFO: Running sleep 10
-2018-02-26 04:42:02,645 dragonboard_004 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 i 1
+2018-02-27 18:46:50,346 dragonboard_004 INFO: Running sleep 10
+2018-02-27 18:47:00,371 dragonboard_004 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 i 1
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 = INTEGER: 1
-2018-02-26 04:42:12,774 dragonboard_004 INFO: Checking if master image booted.
-2018-02-26 04:44:08,977 dragonboard_004 INFO: Flashing Test Image
-2018-02-26 04:44:09,412 dragonboard_004 INFO: Running: nc 10.101.50.22 54819| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-02-26 04:49:55,835 dragonboard_004 INFO: Creating Test User
+2018-02-27 18:47:10,500 dragonboard_004 INFO: Checking if master image booted.
+2018-02-27 18:50:19,432 dragonboard_004 INFO: Flashing Test Image
+2018-02-27 18:50:19,793 dragonboard_004 INFO: Running: nc 10.101.50.22 58349| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
+2018-02-27 19:03:47,702 dragonboard_004 INFO: Creating Test User
 Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
-2018-02-26 04:49:58,298 dragonboard_004 INFO: Booting Test Image
-2018-02-26 04:49:58,299 dragonboard_004 INFO: Booting the test image
+2018-02-27 19:03:50,207 dragonboard_004 INFO: Booting Test Image
+2018-02-27 19:03:50,208 dragonboard_004 INFO: Booting the test image
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
 
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
@@ -77,40 +77,39 @@ Number of key(s) added: 1
 Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.14'"
 and check to make sure that only the key(s) you wanted were added.
 
-2018-02-26 04:51:09,853 dragonboard_004 INFO: Checking if test image booted.
-2018-02-26 04:51:10,338 dragonboard_004 INFO: END provision
-
+2018-02-27 19:05:01,604 dragonboard_004 INFO: Checking if test image booted.
+2018-02-27 19:05:02,092 dragonboard_004 INFO: END provision
 ******************************************
 
 * Starting test phase on dragonboard-004 *
 
 ******************************************
 Install python-logstash if you want to use logstash logging
-2018-02-26 04:51:15,276 dragonboard_004 INFO: BEGIN testrun
+2018-02-27 19:05:06,121 dragonboard_004 INFO: BEGIN testrun
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://archive.ubuntu.com/ubuntu xenial InRelease
-Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
 Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]
 Get:4 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [72.8 kB]
-Get:5 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]
-Get:6 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [583 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [240 kB]
-Get:8 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [951 kB]
-Get:9 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
-Get:10 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [403 kB]
-Get:11 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3486 B]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [584 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
+Get:8 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [403 kB]
+Get:9 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3486 B]
+Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [240 kB]
+Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [951 kB]
 Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [13.1 kB]
 Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [760 kB]
 Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.5 kB]
 Get:15 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [5153 B]
 Get:16 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7172 B]
-Fetched 3376 kB in 3s (919 kB/s)
+Fetched 3377 kB in 3s (906 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-56 packages can be upgraded. Run 'apt list --upgradable' to see them.
+57 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -145,7 +144,7 @@ The following NEW packages will be installed:
   libxtables11 netbase patch perl perl-modules-5.22 rename rsync sshpass
 The following packages will be upgraded:
   perl-base
-1 upgraded, 45 newly installed, 0 to remove and 55 not upgraded.
+1 upgraded, 45 newly installed, 0 to remove and 56 not upgraded.
 Need to get 16.4 MB of archives.
 After this operation, 79.8 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl-base amd64 5.22.1-9ubuntu0.2 [1282 kB]
@@ -195,7 +194,7 @@ Get:44 http://archive.ubuntu.com/ubuntu xenial/main amd64 patch amd64 2.7.5-1 [9
 Get:45 http://archive.ubuntu.com/ubuntu xenial/main amd64 rename all 0.20-4 [12.0 kB]
 Get:46 http://archive.ubuntu.com/ubuntu xenial/universe amd64 sshpass amd64 1.05-1 [10.5 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 16.4 MB in 6s (2501 kB/s)
+Fetched 16.4 MB in 9s (1824 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9540 files and directories currently installed.)
 Preparing to unpack .../perl-base_5.22.1-9ubuntu0.2_amd64.deb ...
 Unpacking perl-base (5.22.1-9ubuntu0.2) over (5.22.1-9) ...
@@ -446,11 +445,10 @@ Refresh core on device
 ++ execute_remote 'sudo snap refresh --edge core'
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'sudo snap refresh --edge core'
-2018-02-26T04:54:33Z INFO Waiting for restart...
-2018-02-26T04:59:35Z INFO Waiting for restart...
-2018-02-26T04:59:37Z INFO Waiting for restart...
-2018-02-26T04:59:43Z INFO Waiting for restart...
-2018-02-26T05:01:20Z INFO Waiting for restart...
+2018-02-27T19:08:46Z INFO Waiting for restart...
+2018-02-27T19:13:46Z INFO Waiting for restart...
+2018-02-27T19:13:49Z INFO Waiting for restart...
+2018-02-27T19:15:12Z INFO Waiting for restart...
 Connection to 10.101.51.14 closed by remote host.
 ++ true
 ++ wait_for_ssh 120 2
@@ -525,11 +523,43 @@ Connection to 10.101.51.14 closed by remote host.
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=108
+++ '[' 108 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=107
+++ '[' 107 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
+++ retries=106
+++ '[' 106 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
 ++ retry_until 'snap changes' 'Done.*Refresh "core" snap from "edge" channel' 120 2
 ++ command='snap changes'
 ++ output='Done.*Refresh "core" snap from "edge" channel'
 ++ retries=120
 ++ sleep=2
+++ execute_remote 'snap changes'
+++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap changes'
+++ retries=119
+++ '[' 119 -le 0 ']'
+++ sleep 2
+++ execute_remote 'snap changes'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap changes'
+++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
+++ retries=118
+++ '[' 118 -le 0 ']'
+++ sleep 2
 ++ execute_remote 'snap changes'
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap changes'
@@ -548,17 +578,6 @@ Connection to 10.101.51.14 closed by remote host.
 ++ output='jq .* installed'
 ++ retries=20
 ++ sleep=10
-++ execute_remote 'sudo snap install --devmode jq'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'sudo snap install --devmode jq'
-++ grep -q -E 'jq .* installed'
-error: cannot install "jq": Get
-       https://api.snapcraft.io/api/v1/snaps/details/jq?channel=stable&fields=anon_download_url%2Carchitecture%2Cchannel%2Cdownload_sha3_384%2Csummary%2Cdescription%2Cdeltas%2Cbinary_filesize%2Cdownload_url%2Cepoch%2Cicon_url%2Clast_updated%2Cpackage_name%2Cprices%2Cpublisher%2Cratings_average%2Crevision%2Cscreenshot_urls%2Csnap_id%2Csnap_yaml_raw%2Clicense%2Cbase%2Csupport_url%2Ccontact%2Ctitle%2Ccontent%2Cversion%2Corigin%2Cdeveloper_id%2Cprivate%2Cconfinement%2Cchannel_maps_list:
-       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
-       [::1]:35572->[::1]:53: read: connection refused
-++ retries=19
-++ '[' 19 -le 0 ']'
-++ sleep 10
 ++ execute_remote 'sudo snap install --devmode jq'
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'sudo snap install --devmode jq'
@@ -634,422 +653,56 @@ Moving to manual all the tests to skip: tests/main/auto-refresh
 ++ echo 'Running command: spread -v external:ubuntu-core-16-arm-64:tests/'
 Running command: spread -v external:ubuntu-core-16-arm-64:tests/
 ++ spread -v external:ubuntu-core-16-arm-64:tests/
-2018-02-26 05:05:41 Found /home/ubuntu/snapd/spread.yaml.
-2018-02-26 05:05:43 Project content is packed for delivery (2.43MB).
-2018-02-26 05:05:43 Sequence of jobs produced with -seed=1519621543
-2018-02-26 05:05:43 If killed, discard servers with: spread -reuse-pid=865 -discard
-2018-02-26 05:05:43 Allocating external:ubuntu-core-16-arm-64...
-2018-02-26 05:05:43 Waiting for external:ubuntu-core-16-arm-64 to make SSH available at 10.101.51.14:22...
-2018-02-26 05:05:43 Allocated external:ubuntu-core-16-arm-64.
-2018-02-26 05:05:43 Connecting to external:ubuntu-core-16-arm-64...
-2018-02-26 05:05:43 Connected to external:ubuntu-core-16-arm-64 at 10.101.51.14:22.
-2018-02-26 05:05:43 Sending project content to external:ubuntu-core-16-arm-64...
-2018-02-26 05:05:44 Preparing external:ubuntu-core-16-arm-64...
-2018-02-26 05:05:45 Preparing external:ubuntu-core-16-arm-64:tests/main/...
-2018-02-26 05:08:56 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
-2018-02-26 05:13:00 Executing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd (1/183)...
-2018-02-26 05:18:00 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd) running late. Current output:
+2018-02-27 19:19:35 Found /home/ubuntu/snapd/spread.yaml.
+2018-02-27 19:19:37 Project content is packed for delivery (2.44MB).
+2018-02-27 19:19:37 Sequence of jobs produced with -seed=1519759177
+2018-02-27 19:19:37 If killed, discard servers with: spread -reuse-pid=879 -discard
+2018-02-27 19:19:37 Allocating external:ubuntu-core-16-arm-64...
+2018-02-27 19:19:37 Waiting for external:ubuntu-core-16-arm-64 to make SSH available at 10.101.51.14:22...
+2018-02-27 19:19:37 Allocated external:ubuntu-core-16-arm-64.
+2018-02-27 19:19:38 Connecting to external:ubuntu-core-16-arm-64...
+2018-02-27 19:19:38 Connected to external:ubuntu-core-16-arm-64 at 10.101.51.14:22.
+2018-02-27 19:19:38 Sending project content to external:ubuntu-core-16-arm-64...
+2018-02-27 19:19:39 Preparing external:ubuntu-core-16-arm-64...
+2018-02-27 19:19:39 Preparing external:ubuntu-core-16-arm-64:tests/main/...
+2018-02-27 19:21:08 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash...
+2018-02-27 19:22:44 Executing external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash (1/184)...
+2018-02-27 19:27:36 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash) as requested...
+2018-02-27 19:29:22 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash...
+2018-02-27 19:29:24 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
+2018-02-27 19:32:40 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot (2/184)...
+2018-02-27 19:32:40 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot) as requested...
+2018-02-27 19:33:40 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
+2018-02-27 19:33:41 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
+2018-02-27 19:35:37 Executing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd (3/184)...
+2018-02-27 19:39:57 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd) as requested...
+2018-02-27 19:41:28 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
+2018-02-27 19:41:30 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
+2018-02-27 19:44:29 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade (4/184)...
+2018-02-27 19:44:53 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
+2018-02-27 19:45:52 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
+2018-02-27 19:47:03 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
+2018-02-27 19:48:00 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
+2018-02-27 19:48:54 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
+2018-02-27 19:48:54 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1...
+2018-02-27 19:50:33 Executing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1 (5/184)...
+2018-02-27 19:50:34 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1...
+2018-02-27 19:50:35 Preparing external:ubuntu-core-16-arm-64:tests/main/install-socket-activation...
+2018-02-27 19:54:55 Executing external:ubuntu-core-16-arm-64:tests/main/install-socket-activation (6/184)...
+2018-02-27 19:54:56 Restoring external:ubuntu-core-16-arm-64:tests/main/install-socket-activation...
+2018-02-27 19:54:57 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe...
+2018-02-27 19:59:48 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe (7/184)...
+2018-02-27 20:00:18 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe...
+2018-02-27 20:00:19 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content...
+2018-02-27 20:04:19 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content (8/184)...
+2018-02-27 20:08:44 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content...
+2018-02-27 20:08:44 Preparing external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1...
+2018-02-27 20:13:44 Executing external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1 (9/184)...
+2018-02-27 20:14:38 Restoring external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1...
+2018-02-27 20:14:38 Preparing external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot...
+2018-02-27 20:16:12 Error preparing external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot : 
 -----
-(... 35 lines above ...)
-++ snap install --dangerous failing.snap --no-wait
-+ chg_id=14
-+ snap change 14
-+ grep -q '^Done.*Make snap.*available to the system'
-+ sleep 1
-+ snap change 14
-+ grep -q '^Done.*Make snap.*available to the system'
-+ sleep 1
-+ snap change 14
-+ grep -q '^Done.*Make snap.*available to the system'
------
-.
-2018-02-26 05:19:09 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd) as requested...
-2018-02-26 05:22:13 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
-2018-02-26 05:22:15 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
-2018-02-26 05:25:26 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade (2/183)...
-2018-02-26 05:26:00 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-02-26 05:26:59 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-02-26 05:28:13 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-02-26 05:29:09 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-02-26 05:30:01 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
-2018-02-26 05:30:01 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash...
-2018-02-26 05:31:54 Executing external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash (3/183)...
-2018-02-26 05:36:14 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash) as requested...
-2018-02-26 05:37:55 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash...
-2018-02-26 05:37:56 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
-2018-02-26 05:41:50 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot (4/183)...
-2018-02-26 05:41:51 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot) as requested...
-2018-02-26 05:42:55 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
-2018-02-26 05:42:55 Preparing external:ubuntu-core-16-arm-64:tests/main/unhandled-task...
-2018-02-26 05:44:34 Executing external:ubuntu-core-16-arm-64:tests/main/unhandled-task (5/183)...
-2018-02-26 05:44:37 Restoring external:ubuntu-core-16-arm-64:tests/main/unhandled-task...
-2018-02-26 05:44:37 Preparing external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:remote...
-2018-02-26 05:46:22 Executing external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:remote (6/183)...
-2018-02-26 05:46:39 Restoring external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:remote...
-2018-02-26 05:46:39 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks...
-2018-02-26 05:51:39 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks) running late. Current output:
------
-(... 173 lines above ...)
-+ [[ ubuntu-core-16-arm-64 != ubuntu-core-16-* ]]
-+ echo 'Build test hooks package'
-Build test hooks package
-+ snap pack /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/basic-iface-hooks-consumer
-built: basic-iface-hooks-consumer_1.0_all.snap
-+ snap pack /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/basic-iface-hooks-producer
-built: basic-iface-hooks-producer_1.0_all.snap
-+ snap install --dangerous basic-iface-hooks-consumer_1.0_all.snap
-basic-iface-hooks-consumer 1.0 installed
-+ snap install --dangerous basic-iface-hooks-producer_1.0_all.snap
------
-.
-2018-02-26 05:51:54 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks (7/183)...
-2018-02-26 05:52:18 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks...
-2018-02-26 05:52:19 Preparing external:ubuntu-core-16-arm-64:tests/main/snapctl-from-snap...
-2018-02-26 05:57:19 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/snapctl-from-snap) running late. Current output:
------
-(... 211 lines above ...)
-+++ LIBEXECDIR=/usr/lib
-+++ case "$SPREAD_SYSTEM" in
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/pkgdb.sh
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/quiet.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-+++ GRUB_EDITENV=grub-editenv
-+++ case "$SPREAD_SYSTEM" in
-+ [[ ubuntu-core-16-arm-64 != ubuntu-core-16-* ]]
-+ snap install --devmode jq
------
-.
-2018-02-26 05:57:22 Executing external:ubuntu-core-16-arm-64:tests/main/snapctl-from-snap (8/183)...
-2018-02-26 06:00:23 Restoring external:ubuntu-core-16-arm-64:tests/main/snapctl-from-snap...
-2018-02-26 06:00:23 Preparing external:ubuntu-core-16-arm-64:tests/main/help:remove...
-2018-02-26 06:04:21 Executing external:ubuntu-core-16-arm-64:tests/main/help:remove (9/183)...
-2018-02-26 06:04:22 Restoring external:ubuntu-core-16-arm-64:tests/main/help:remove...
-2018-02-26 06:04:22 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-timezone-control...
-2018-02-26 06:09:22 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/interfaces-timezone-control) running late. Current output:
------
-(... 160 lines above ...)
-++ shift
-++ local SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-timedate-control-consumer/test-snapd-timedate-control-consumer_1.0_all.snap
-++ local SNAP_DIR
-+++ dirname /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-timedate-control-consumer/test-snapd-timedate-control-consumer_1.0_all.snap
-++ SNAP_DIR=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-timedate-control-consumer
-++ '[' '!' -f /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-timedate-control-consumer/test-snapd-timedate-control-consumer_1.0_all.snap ']'
-++ snap pack /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-timedate-control-consumer /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-timedate-control-consumer
-++ echo /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-timedate-control-consumer/test-snapd-timedate-control-consumer_1.0_all.snap
-+ SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-timedate-control-consumer/test-snapd-timedate-control-consumer_1.0_all.snap
-+ snap install --dangerous /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-timedate-control-consumer/test-snapd-timedate-control-consumer_1.0_all.snap
------
-.
-2018-02-26 06:09:28 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-timezone-control (10/183)...
-2018-02-26 06:09:58 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-timezone-control...
-2018-02-26 06:09:58 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-create-user...
-2018-02-26 06:13:59 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-create-user (11/183)...
-2018-02-26 06:14:00 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-create-user...
-2018-02-26 06:14:01 Preparing external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_tools...
-2018-02-26 06:18:10 Executing external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_tools (12/183)...
-2018-02-26 06:19:42 Restoring external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_tools...
-2018-02-26 06:19:42 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control...
-2018-02-26 06:24:42 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control) running late. Current output:
------
-(... 137 lines above ...)
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/pkgdb.sh
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/quiet.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-+++ GRUB_EDITENV=grub-editenv
-+++ case "$SPREAD_SYSTEM" in
-+ [[ ubuntu-core-16-arm-64 != ubuntu-core-16-* ]]
-+ echo 'Given a snap declaring a plug on the snapd-control interface is installed'
-Given a snap declaring a plug on the snapd-control interface is installed
-+ snap install --edge test-snapd-control-consumer
------
-.
-2018-02-26 06:24:52 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control (13/183)...
-2018-02-26 06:26:13 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control...
-2018-02-26 06:26:14 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-mount-observe...
-2018-02-26 06:28:14 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-mount-observe (14/183)...
-2018-02-26 06:28:33 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-mount-observe...
-2018-02-26 06:28:33 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:kernelimg...
-2018-02-26 06:29:58 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:kernelimg (15/183)...
-2018-02-26 06:29:58 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:kernelimg...
-2018-02-26 06:29:58 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-set...
-2018-02-26 06:31:41 Executing external:ubuntu-core-16-arm-64:tests/main/snap-set (16/183)...
-2018-02-26 06:31:53 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-set...
-2018-02-26 06:31:53 Preparing external:ubuntu-core-16-arm-64:tests/main/snapctl-services...
-2018-02-26 06:33:21 Executing external:ubuntu-core-16-arm-64:tests/main/snapctl-services (17/183)...
-2018-02-26 06:37:19 Restoring external:ubuntu-core-16-arm-64:tests/main/snapctl-services...
-2018-02-26 06:37:19 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-multi-service-failing...
-2018-02-26 06:41:44 Executing external:ubuntu-core-16-arm-64:tests/main/snap-multi-service-failing (18/183)...
-2018-02-26 06:41:46 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-multi-service-failing...
-2018-02-26 06:41:46 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-apt...
-2018-02-26 06:43:34 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-apt (19/183)...
-2018-02-26 06:43:35 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-apt...
-2018-02-26 06:43:35 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-bluetooth-control...
-2018-02-26 06:45:19 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-bluetooth-control (20/183)...
-2018-02-26 06:45:26 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-bluetooth-control...
-2018-02-26 06:45:26 Preparing external:ubuntu-core-16-arm-64:tests/main/help:abort...
-2018-02-26 06:47:19 Executing external:ubuntu-core-16-arm-64:tests/main/help:abort (21/183)...
-2018-02-26 06:47:23 Restoring external:ubuntu-core-16-arm-64:tests/main/help:abort...
-2018-02-26 06:47:23 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-audit...
-2018-02-26 06:52:23 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-audit) running late. Current output:
------
-(... 152 lines above ...)
-++ shift
-++ local SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-netlink-audit/test-snapd-netlink-audit_1.0_all.snap
-++ local SNAP_DIR
-+++ dirname /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-netlink-audit/test-snapd-netlink-audit_1.0_all.snap
-++ SNAP_DIR=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-netlink-audit
-++ '[' '!' -f /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-netlink-audit/test-snapd-netlink-audit_1.0_all.snap ']'
-++ snap pack /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-netlink-audit /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-netlink-audit
-++ echo /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-netlink-audit/test-snapd-netlink-audit_1.0_all.snap
-+ SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-netlink-audit/test-snapd-netlink-audit_1.0_all.snap
-+ snap install --dangerous /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-netlink-audit/test-snapd-netlink-audit_1.0_all.snap
------
-.
-2018-02-26 06:52:29 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-audit (22/183)...
-2018-02-26 06:52:55 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-audit...
-2018-02-26 06:52:56 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-kvm...
-2018-02-26 06:57:56 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/interfaces-kvm) running late. Current output:
------
-(... 180 lines above ...)
-++ shift
-++ local SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-kvm/test-snapd-kvm_1.0_all.snap
-++ local SNAP_DIR
-+++ dirname /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-kvm/test-snapd-kvm_1.0_all.snap
-++ SNAP_DIR=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-kvm
-++ '[' '!' -f /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-kvm/test-snapd-kvm_1.0_all.snap ']'
-++ snap pack /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-kvm /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-kvm
-++ echo /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-kvm/test-snapd-kvm_1.0_all.snap
-+ SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-kvm/test-snapd-kvm_1.0_all.snap
-+ snap install --dangerous /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-kvm/test-snapd-kvm_1.0_all.snap
------
-.
-2018-02-26 06:57:58 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-kvm (23/183)...
-2018-02-26 06:58:22 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-kvm...
-2018-02-26 06:58:22 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-service-refresh-mode...
-2018-02-26 07:00:12 Executing external:ubuntu-core-16-arm-64:tests/main/snap-service-refresh-mode (24/183)...
-2018-02-26 07:01:41 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-service-refresh-mode...
-2018-02-26 07:01:41 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks-misbehaving...
-2018-02-26 07:03:07 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks-misbehaving (25/183)...
-2018-02-26 07:03:19 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks-misbehaving...
-2018-02-26 07:03:19 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec0...
-2018-02-26 07:06:48 Executing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec0 (26/183)...
-2018-02-26 07:06:54 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec0...
-2018-02-26 07:06:55 Preparing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-jailmode...
-2018-02-26 07:11:55 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-jailmode) running late. Current output:
------
-(... 195 lines above ...)
-++ shift
-++ local SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-devmode-cgroup/test-devmode-cgroup_1.0_all.snap
-++ local SNAP_DIR
-+++ dirname /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-devmode-cgroup/test-devmode-cgroup_1.0_all.snap
-++ SNAP_DIR=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-devmode-cgroup
-++ '[' '!' -f /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-devmode-cgroup/test-devmode-cgroup_1.0_all.snap ']'
-++ snap pack /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-devmode-cgroup /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-devmode-cgroup
-++ echo /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-devmode-cgroup/test-devmode-cgroup_1.0_all.snap
-+ SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-devmode-cgroup/test-devmode-cgroup_1.0_all.snap
-+ snap install --dangerous --jailmode /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-devmode-cgroup/test-devmode-cgroup_1.0_all.snap
------
-.
-2018-02-26 07:12:01 Executing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-jailmode (27/183)...
-2018-02-26 07:12:41 Restoring external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-jailmode...
-2018-02-26 07:12:42 Preparing external:ubuntu-core-16-arm-64:tests/main/listing...
-2018-02-26 07:17:42 WARNING: external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/listing) running late. Current output:
------
-(... 179 lines above ...)
-++ local SNAP_NAME=test-snapd-tools
-++ shift
-++ local SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-tools/test-snapd-tools_1.0_all.snap
-++ local SNAP_DIR
-+++ dirname /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-tools/test-snapd-tools_1.0_all.snap
-++ SNAP_DIR=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-tools
-++ '[' '!' -f /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-tools/test-snapd-tools_1.0_all.snap ']'
-++ echo /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-tools/test-snapd-tools_1.0_all.snap
-+ SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-tools/test-snapd-tools_1.0_all.snap
-+ snap install --dangerous /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-tools/test-snapd-tools_1.0_all.snap
------
-.
-2018-02-26 07:17:55 Executing external:ubuntu-core-16-arm-64:tests/main/listing (28/183)...
-2018-02-26 07:18:58 Restoring external:ubuntu-core-16-arm-64:tests/main/listing...
-2018-02-26 07:18:58 Preparing external:ubuntu-core-16-arm-64:tests/main/snapctl...
-2018-02-26 07:23:42 Executing external:ubuntu-core-16-arm-64:tests/main/snapctl (29/183)...
-2018-02-26 07:23:43 Restoring external:ubuntu-core-16-arm-64:tests/main/snapctl...
-2018-02-26 07:23:43 Preparing external:ubuntu-core-16-arm-64:tests/main/help:install...
-2018-02-26 07:25:00 Executing external:ubuntu-core-16-arm-64:tests/main/help:install (30/183)...
-2018-02-26 07:25:01 Restoring external:ubuntu-core-16-arm-64:tests/main/help:install...
-2018-02-26 07:25:01 Preparing external:ubuntu-core-16-arm-64:tests/main/remove-errors...
-2018-02-26 07:26:26 Executing external:ubuntu-core-16-arm-64:tests/main/remove-errors (31/183)...
-2018-02-26 07:26:49 Restoring external:ubuntu-core-16-arm-64:tests/main/remove-errors...
-2018-02-26 07:26:49 Preparing external:ubuntu-core-16-arm-64:tests/main/searching...
-2018-02-26 07:28:10 Executing external:ubuntu-core-16-arm-64:tests/main/searching (32/183)...
-2018-02-26 07:28:11 Error executing external:ubuntu-core-16-arm-64:tests/main/searching : 
------
-+ echo 'List all featured snaps'
-List all featured snaps
-+ expected='(?s).*Name +Version +Developer +Notes +Summary *\n(.*?\n)?.*'
-+ snap find
-No matching snaps for "" in section "featured"
-+ grep -Pzq '(?s).*Name +Version +Developer +Notes +Summary *\n(.*?\n)?.*'
-+ echo 'expected out put (?s).*Name +Version +Developer +Notes +Summary *\n(.*?\n)?.* not found in:'
-expected out put (?s).*Name +Version +Developer +Notes +Summary *\n(.*?\n)?.* not found in:
-+ cat featured.txt
-+ exit 1
------
-.
-2018-02-26 07:28:12 Debug output for external:ubuntu-core-16-arm-64:tests/main/searching : 
------
-+ '[' 1 = 1 ']'
-+ echo '# journal messages for snapd'
-# journal messages for snapd
-+ journalctl -u snapd
--- Logs begin at Mon 2018-02-26 07:27:16 UTC, end at Mon 2018-02-26 07:28:38 UTC. --
-Feb 26 07:27:17 localhost.localdomain snapd[19575]: 2018/02/26 07:27:17.095233 daemon.go:251: DEBUG: pid=19875;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps 7.723ms 200
-Feb 26 07:27:17 localhost.localdomain snapd[19575]: 2018/02/26 07:27:17.172530 daemon.go:251: DEBUG: pid=19884;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps 7.636ms 200
-Feb 26 07:27:17 localhost.localdomain snapd[19575]: 2018/02/26 07:27:17.266483 daemon.go:251: DEBUG: pid=19893;uid=0;socket=/run/snapd.socket;@ POST /v2/snaps/manifest.yaml 757µs 400
-Feb 26 07:27:17 localhost.localdomain snapd[19575]: 2018/02/26 07:27:17.351931 daemon.go:251: DEBUG: pid=19900;uid=0;socket=/run/snapd.socket;@ POST /v2/snaps/snapcraft.yaml 818µs 400
-Feb 26 07:27:17 localhost.localdomain snapd[19575]: 2018/02/26 07:27:17.500394 daemon.go:251: DEBUG: pid=19907;uid=0;socket=/run/snapd.socket;@ POST /v2/snaps/test-snapd-tools 63.172ms 202
-Feb 26 07:27:17 localhost.localdomain snapd[19575]: 2018/02/26 07:27:17.575234 taskrunner.go:403: DEBUG: Running task 125 on Do: Stop snap "test-snapd-tools" services
-Feb 26 07:27:17 localhost.localdomain snapd[19575]: 2018/02/26 07:27:17.832560 taskrunner.go:403: DEBUG: Running task 124 on Do: Run remove hook of "test-snapd-tools" snap if present
-Feb 26 07:27:17 localhost.localdomain snapd[19575]: 2018/02/26 07:27:17.930480 taskrunner.go:403: DEBUG: Running task 126 on Do: Remove aliases for snap "test-snapd-tools"
-Feb 26 07:27:18 localhost.localdomain snapd[19575]: 2018/02/26 07:27:18.236782 taskrunner.go:403: DEBUG: Running task 127 on Do: Make snap "test-snapd-tools" unavailable to the system
-Feb 26 07:27:18 localhost.localdomain snapd[19575]: 2018/02/26 07:27:18.498509 taskrunner.go:403: DEBUG: Running task 128 on Do: Remove security profile for snap "test-snapd-tools" (x1)
-Feb 26 07:27:18 localhost.localdomain snapd[19575]: 2018/02/26 07:27:18.852656 taskrunner.go:403: DEBUG: Running task 129 on Do: Remove data for snap "test-snapd-tools" (x1)
-Feb 26 07:27:18 localhost.localdomain snapd[19575]: 2018/02/26 07:27:18.983938 taskrunner.go:403: DEBUG: Running task 130 on Do: Remove snap "test-snapd-tools" (x1) from the system
-Feb 26 07:27:20 localhost.localdomain snapd[19575]: 2018/02/26 07:27:20.413479 taskrunner.go:403: DEBUG: Running task 131 on Do: Discard interface connections for snap "test-snapd-tools" (x1)
-Feb 26 07:27:20 localhost.localdomain systemd[1]: Stopping Snappy daemon...
-Feb 26 07:27:20 localhost.localdomain snapd[19575]: 2018/02/26 07:27:20.580591 main.go:78: Exiting on terminated signal.
-Feb 26 07:27:20 localhost.localdomain systemd[1]: Stopped Snappy daemon.
-Feb 26 07:28:36 localhost.localdomain systemd[1]: Starting Snappy daemon...
-Feb 26 07:28:36 localhost.localdomain snapd[19974]: AppArmor status: apparmor is enabled and all features are available
-Feb 26 07:28:36 localhost.localdomain snapd[19974]: 2018/02/26 07:28:36.802206 daemon.go:322: started snapd/2.31.1+git593.da27fef~ubuntu16.04.1 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
-Feb 26 07:28:36 localhost.localdomain systemd[1]: Started Snappy daemon.
-Feb 26 07:28:36 localhost.localdomain snapd[19974]: 2018/02/26 07:28:36.804235 main.go:72: DEBUG: activation done in 76ms
-Feb 26 07:28:36 localhost.localdomain snapd[19974]: 2018/02/26 07:28:36.808802 catalogrefresh.go:70: DEBUG: Catalog refresh starting now; next scheduled for 2018-02-27 07:28:36.808691 +0000 UTC.
-Feb 26 07:28:36 localhost.localdomain snapd[19974]: 2018/02/26 07:28:36.809259 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/sections, attempt 1, elapsed time=37µs
-Feb 26 07:28:36 localhost.localdomain snapd[19974]: 2018/02/26 07:28:36.811714 logger.go:69: DEBUG: > "GET /api/v1/snaps/sections HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.31.1+git593.da27fef~ubuntu16.04.1 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/hal+json\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
-Feb 26 07:28:37 localhost.localdomain snapd[19974]: 2018/02/26 07:28:37.762499 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/search?confinement=strict&fields=anon_download_url%2Carchitecture%2Cchannel%2Cdownload_sha3_384%2Csummary%2Cdescription%2Cdeltas%2Cbinary_filesize%2Cdownload_url%2Cepoch%2Cicon_url%2Clast_updated%2Cpackage_name%2Cprices%2Cpublisher%2Cratings_average%2Crevision%2Cscreenshot_urls%2Csnap_id%2Csnap_yaml_raw%2Clicense%2Cbase%2Csupport_url%2Ccontact%2Ctitle%2Ccontent%2Cversion%2Corigin%2Cdeveloper_id%2Cprivate%2Cconfinement%2Cchannel_maps_list&q=&section=featured, attempt 1, elapsed time=28µs
-Feb 26 07:28:37 localhost.localdomain snapd[19974]: 2018/02/26 07:28:37.771980 logger.go:69: DEBUG: > "GET /api/v1/snaps/search?confinement=strict&fields=anon_download_url%2Carchitecture%2Cchannel%2Cdownload_sha3_384%2Csummary%2Cdescription%2Cdeltas%2Cbinary_filesize%2Cdownload_url%2Cepoch%2Cicon_url%2Clast_updated%2Cpackage_name%2Cprices%2Cpublisher%2Cratings_average%2Crevision%2Cscreenshot_urls%2Csnap_id%2Csnap_yaml_raw%2Clicense%2Cbase%2Csupport_url%2Ccontact%2Ctitle%2Ccontent%2Cversion%2Corigin%2Cdeveloper_id%2Cprivate%2Cconfinement%2Cchannel_maps_list&q=&section=featured HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.31.1+git593.da27fef~ubuntu16.04.1 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/hal+json\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
-Feb 26 07:28:38 localhost.localdomain snapd[19974]: 2018/02/26 07:28:38.235122 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 266\r\nAge: 2866\r\nCache-Control: public, max-age=3600\r\nContent-Type: application/hal+json\r\nDate: Mon, 26 Feb 2018 06:40:52 GMT\r\nServer: gunicorn/19.7.1\r\nVary: X-Ubuntu-Series\r\nVia: 1.1 juju-7794b8-prod-ols-snap-store-indep-397 (squid/3.5.23)\r\nX-Cache: HIT from juju-7794b8-prod-ols-snap-store-indep-397\r\nX-Cache-Lookup: HIT from juju-7794b8-prod-ols-snap-store-indep-397:3128\r\nX-Request-Id: edf207cc-5e9e-4242-9cc6-27b1146f1bc9\r\nX-Vcs-Revision: 444fefa\r\n\r\n{\"_embedded\": {\"clickindex:sections\": [{\"name\": \"featured\"}, {\"name\": \"games\"}, {\"name\": \"finance\"}, {\"name\": \"developers\"}, {\"name\": \"social-networking\"}, {\"name\": \"video\"}, {\"name\": \"music\"}, {\"name\": \"productivity\"}, {\"name\": \"utilities\"}, {\"name\": \"graphics\"}]}}"
-Feb 26 07:28:38 localhost.localdomain snapd[19974]: 2018/02/26 07:28:38.236278 retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/sections finished after 1 retries, elapsed time=1.427025s, status: 200
-Feb 26 07:28:38 localhost.localdomain snapd[19974]: 2018/02/26 07:28:38.306044 retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/names?confinement=strict, attempt 1, elapsed time=49µs
-Feb 26 07:28:38 localhost.localdomain snapd[19974]: 2018/02/26 07:28:38.310766 logger.go:69: DEBUG: > "GET /api/v1/snaps/names?confinement=strict HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.31.1+git593.da27fef~ubuntu16.04.1 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon\r\nAccept: application/hal+json\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-No-Cdn: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
-Feb 26 07:28:38 localhost.localdomain snapd[19974]: 2018/02/26 07:28:38.585601 logger.go:76: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 573\r\nContent-Type: application/hal+json\r\nDate: Mon, 26 Feb 2018 07:28:38 GMT\r\nServer: gunicorn/19.7.1\r\nX-Request-Id: 48bf665b-2dd1-4036-b815-b99e6f891562\r\nX-Vcs-Revision: 444fefa\r\n\r\n{\"_embedded\": {\"clickindex:package\": []}, \"_links\": {\"self\": {\"href\": \"http://api.snapcraft.io/api/v1/snaps/search?confinement=strict&fields=anon_download_url%2Carchitecture%2Cchannel%2Cdownload_sha3_384%2Csummary%2Cdescription%2Cdeltas%2Cbinary_filesize%2Cdownload_url%2Cepoch%2Cicon_url%2Clast_updated%2Cpackage_name%2Cprices%2Cpublisher%2Cratings_average%2Crevision%2Cscreenshot_urls%2Csnap_id%2Csnap_yaml_raw%2Clicense%2Cbase%2Csupport_url%2Ccontact%2Ctitle%2Ccontent%2Cversion%2Corigin%2Cdeveloper_id%2Cprivate%2Cconfinement%2Cchannel_maps_list&q=&section=featured\"}}}"
-Feb 26 07:28:38 localhost.localdomain snapd[19974]: 2018/02/26 07:28:38.586439 retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/search?confinement=strict&fields=anon_download_url%2Carchitecture%2Cchannel%2Cdownload_sha3_384%2Csummary%2Cdescription%2Cdeltas%2Cbinary_filesize%2Cdownload_url%2Cepoch%2Cicon_url%2Clast_updated%2Cpackage_name%2Cprices%2Cpublisher%2Cratings_average%2Crevision%2Cscreenshot_urls%2Csnap_id%2Csnap_yaml_raw%2Clicense%2Cbase%2Csupport_url%2Ccontact%2Ctitle%2Ccontent%2Cversion%2Corigin%2Cdeveloper_id%2Cprivate%2Cconfinement%2Cchannel_maps_list&q=&section=featured finished after 1 retries, elapsed time=823.941ms, status: 200
-Feb 26 07:28:38 localhost.localdomain snapd[19974]: 2018/02/26 07:28:38.587917 daemon.go:251: DEBUG: pid=19990;uid=0;socket=/run/snapd.socket;@ GET /v2/find?q=&section=featured 825.841ms 200
-+ echo '# apparmor denials '
-# apparmor denials 
-+ dmesg --ctime
-+ grep DENIED
-+ true
-+ echo '# seccomp denials (kills) '
-# seccomp denials (kills) 
-+ dmesg --ctime
-+ grep type=1326
-+ true
-+ echo '# snap interfaces'
-# snap interfaces
-+ snap interfaces
-Slot                      Plug
-:account-control          -
-:alsa                     -
-:autopilot-introspection  -
-:bluetooth-control        -
-:broadcom-asic-control    -
-:browser-support          -
-:camera                   -
-:classic-support          -
-:core-support             core:core-support-plug
-:dcdbas-control           -
-:docker-support           -
-:firewall-control         -
-:framebuffer              -
-:fuse-support             -
-:gpg-keys                 -
-:gpg-public-keys          -
-:gpio-memory-control      -
-:greengrass-support       -
-:hardware-observe         -
-:hardware-random-control  -
-:hardware-random-observe  -
-:home                     -
-:io-ports-control         -
-:joystick                 -
-:kernel-module-control    -
-:kubernetes-support       -
-:kvm                      -
-:log-observe              -
-:lxd-support              -
-:mount-observe            -
-:netlink-audit            -
-:netlink-connector        -
-:network                  -
-:network-bind             -
-:network-control          -
-:network-observe          -
-:network-setup-control    -
-:network-setup-observe    -
-:opengl                   -
-:openvswitch-support      -
-:physical-memory-control  -
-:physical-memory-observe  -
-:ppp                      -
-:process-control          -
-:raw-usb                  -
-:removable-media          -
-:shutdown                 -
-:snapd-control            -
-:ssh-keys                 -
-:ssh-public-keys          -
-:system-observe           -
-:system-trace             -
-:time-control             -
-:timeserver-control       -
-:timezone-control         -
-:tpm                      -
-:uhid                     -
------
-.
-2018-02-26 07:28:12 Restoring external:ubuntu-core-16-arm-64:tests/main/searching...
-2018-02-26 07:28:12 Preparing external:ubuntu-core-16-arm-64:tests/main/lxd...
-2018-02-26 07:29:31 Executing external:ubuntu-core-16-arm-64:tests/main/lxd (33/183)...
-2018-02-26 07:29:31 Restoring external:ubuntu-core-16-arm-64:tests/main/lxd...
-2018-02-26 07:29:31 Preparing external:ubuntu-core-16-arm-64:tests/main/media-sharing...
-2018-02-26 07:34:23 Executing external:ubuntu-core-16-arm-64:tests/main/media-sharing (34/183)...
-2018-02-26 07:34:24 Restoring external:ubuntu-core-16-arm-64:tests/main/media-sharing...
-2018-02-26 07:34:24 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted...
-2018-02-26 07:38:16 Executing external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted (35/183)...
-2018-02-26 07:39:59 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted...
-2018-02-26 07:40:00 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-process-control...
-2018-02-26 07:42:24 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-process-control (36/183)...
-2018-02-26 07:42:30 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-process-control...
-2018-02-26 07:42:30 Preparing external:ubuntu-core-16-arm-64:tests/main/revert:remote...
-2018-02-26 07:44:10 Executing external:ubuntu-core-16-arm-64:tests/main/revert:remote (37/183)...
-2018-02-26 07:44:54 Restoring external:ubuntu-core-16-arm-64:tests/main/revert:remote...
-2018-02-26 07:44:54 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:snap...
-2018-02-26 07:46:35 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:snap (38/183)...
-2018-02-26 07:46:43 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:snap...
-2018-02-26 07:46:43 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-uhid...
-2018-02-26 07:48:22 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-uhid (39/183)...
-2018-02-26 07:48:25 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-uhid...
-2018-02-26 07:48:25 Preparing external:ubuntu-core-16-arm-64:tests/main/cmdline...
-2018-02-26 07:51:24 Executing external:ubuntu-core-16-arm-64:tests/main/cmdline (40/183)...
-2018-02-26 07:51:25 Restoring external:ubuntu-core-16-arm-64:tests/main/cmdline...
-2018-02-26 07:51:26 Preparing external:ubuntu-core-16-arm-64:tests/main/econnreset...
-2018-02-26 07:55:25 Executing external:ubuntu-core-16-arm-64:tests/main/econnreset (41/183)...
-2018-02-26 07:55:39 Restoring external:ubuntu-core-16-arm-64:tests/main/econnreset...
-2018-02-26 07:55:39 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content...
-2018-02-26 07:59:50 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content (42/183)...
-2018-02-26 08:04:07 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content...
-2018-02-26 08:04:07 Preparing external:ubuntu-core-16-arm-64:tests/main/revert-devmode:remote...
-2018-02-26 08:05:54 Executing external:ubuntu-core-16-arm-64:tests/main/revert-devmode:remote (43/183)...
-2018-02-26 08:06:50 Restoring external:ubuntu-core-16-arm-64:tests/main/revert-devmode:remote...
-2018-02-26 08:06:51 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-firewall-control...
-2018-02-26 08:08:40 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-firewall-control (44/183)...
-2018-02-26 08:08:50 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-firewall-control...
-2018-02-26 08:08:50 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1...
-2018-02-26 08:12:27 Error preparing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1 : 
------
+
 + /home/gopath/src/github.com/snapcore/snapd/tests/lib/prepare-restore.sh --prepare-project-each
 + set -e
 + set -o pipefail
@@ -1073,7 +726,7 @@ Slot                      Plug
 + journalctl --rotate
 + sleep .1
 + journalctl --vacuum-time=1ms
-Deleted archived journal /run/log/journal/ba4d3ca2f11d4e03acf7043b8e8550ae/system@fa515a00278c4e3ca49108ccb9ed710d-00000000000024c6-00056618ffa9557d.journal (1012.0K).
+Deleted archived journal /run/log/journal/ef040e0adae849d7b8967d3b83c94ca7/system@53bf4bea678e4135bad8cf718b286cb2-000000000000052d-00056637333b7e8a.journal (1012.0K).
 Vacuuming done, freed 1012.0K of archived journals on disk.
 + dmesg -c
 + fixup_dev_random
@@ -1110,39 +763,39 @@ Vacuuming done, freed 1012.0K of archived journals on disk.
 + snap=core
 + case "$snap" in
 + for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=dragonboard
-+ case "$snap" in
-+ for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=dragonboard-kernel
-+ case "$snap" in
-+ for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=firewall-control-consumer
++ snap=data-writer
 + case "$snap" in
 + systemctl status snapd.service snapd.socket
 ● snapd.service - Snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
   Drop-In: /etc/systemd/system/snapd.service.d
            └─local.conf
-   Active: active (running) since Mon 2018-02-26 08:08:41 UTC; 36s ago
- Main PID: 25021 (snapd)
+   Active: active (running) since Tue 2018-02-27 20:14:10 UTC; 56s ago
+ Main PID: 3729 (snapd)
    CGroup: /system.slice/snapd.service
-           └─25021 /usr/lib/snapd/snapd
+           └─3729 /usr/lib/snapd/snapd
 
-Feb 26 08:09:18 localhost.localdomain snapd[25021]: 2018/02/26 08:09:18.094431 daemon.go:251: DEBUG: pid=25481;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps 16.819ms 200
-Feb 26 08:09:18 localhost.localdomain snapd[25021]: 2018/02/26 08:09:18.233256 daemon.go:251: DEBUG: pid=25490;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps 11.979ms 200
+Feb 27 20:15:06 localhost.localdomain snapd[3729]: 2018/02/27 20:15:06.652946 daemon.go:251: DEBUG: pid=4038;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps 51.405ms 200
+Feb 27 20:15:06 localhost.localdomain snapd[3729]: 2018/02/27 20:15:06.807925 daemon.go:251: DEBUG: pid=4048;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps 44.934ms 200
 Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
 
 ● snapd.socket - Socket activation for snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
   Drop-In: /etc/systemd/system/snapd.socket.d
            └─local.conf
-   Active: active (running) since Mon 2018-02-26 08:08:40 UTC; 38s ago
+   Active: active (running) since Tue 2018-02-27 20:14:07 UTC; 59s ago
    Listen: /run/snapd.socket (Stream)
            /run/snapd-snap.socket (Stream)
 
 Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
-+ snap remove firewall-control-consumer
-firewall-control-consumer removed
++ snap remove data-writer
+data-writer removed
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=dragonboard
++ case "$snap" in
++ for snap in '"$SNAP_MOUNT_DIR"/*'
++ snap=dragonboard-kernel
++ case "$snap" in
 + for snap in '"$SNAP_MOUNT_DIR"/*'
 + snap=manifest.yaml
 + case "$snap" in
@@ -1151,27 +804,27 @@ firewall-control-consumer removed
    Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
   Drop-In: /etc/systemd/system/snapd.service.d
            └─local.conf
-   Active: active (running) since Mon 2018-02-26 08:08:41 UTC; 39s ago
- Main PID: 25021 (snapd)
+   Active: active (running) since Tue 2018-02-27 20:14:10 UTC; 1min 19s ago
+ Main PID: 3729 (snapd)
    CGroup: /system.slice/snapd.service
-           └─25021 /usr/lib/snapd/snapd
+           └─3729 /usr/lib/snapd/snapd
 
-Feb 26 08:09:18 localhost.localdomain snapd[25021]: 2018/02/26 08:09:18.445580 daemon.go:251: DEBUG: pid=25500;uid=0;socket=/run/snapd.socket;@ POST /v2/snaps/firewall-control-consumer 65.618ms 202
-Feb 26 08:09:18 localhost.localdomain snapd[25021]: 2018/02/26 08:09:18.449377 taskrunner.go:403: DEBUG: Running task 131 on Do: Stop snap "firewall-control-consumer" services
-Feb 26 08:09:18 localhost.localdomain snapd[25021]: 2018/02/26 08:09:18.599673 taskrunner.go:403: DEBUG: Running task 130 on Do: Run remove hook of "firewall-control-consumer" snap if present
-Feb 26 08:09:18 localhost.localdomain snapd[25021]: 2018/02/26 08:09:18.837218 taskrunner.go:403: DEBUG: Running task 132 on Do: Remove aliases for snap "firewall-control-consumer"
-Feb 26 08:09:19 localhost.localdomain snapd[25021]: 2018/02/26 08:09:19.135372 taskrunner.go:403: DEBUG: Running task 133 on Do: Make snap "firewall-control-consumer" unavailable to the system
-Feb 26 08:09:19 localhost.localdomain snapd[25021]: 2018/02/26 08:09:19.344035 taskrunner.go:403: DEBUG: Running task 134 on Do: Remove security profile for snap "firewall-control-consumer" (x1)
-Feb 26 08:09:19 localhost.localdomain snapd[25021]: 2018/02/26 08:09:19.514029 taskrunner.go:403: DEBUG: Running task 135 on Do: Remove data for snap "firewall-control-consumer" (x1)
-Feb 26 08:09:19 localhost.localdomain snapd[25021]: 2018/02/26 08:09:19.630269 taskrunner.go:403: DEBUG: Running task 136 on Do: Remove snap "firewall-control-consumer" (x1) from the system
-Feb 26 08:09:20 localhost.localdomain snapd[25021]: 2018/02/26 08:09:20.909582 cmd.go:133: DEBUG: exe doesn't have snap mount dir prefix: "/usr/lib/snapd/snapd" vs "/snap"
-Feb 26 08:09:21 localhost.localdomain snapd[25021]: 2018/02/26 08:09:21.079796 taskrunner.go:403: DEBUG: Running task 137 on Do: Discard interface connections for snap "firewall-control-consumer" (x1)
+Feb 27 20:15:08 localhost.localdomain snapd[3729]: 2018/02/27 20:15:08.189002 taskrunner.go:403: DEBUG: Running task 125 on Do: Stop snap "data-writer" services
+Feb 27 20:15:09 localhost.localdomain snapd[3729]: 2018/02/27 20:15:09.584725 services.go:221: DEBUG: StopServices called for [%!q(*snap.AppInfo=&{0x48203a7600 service [] bin/write-data from-service oneshot 0    never    map[] map[] map[] {[] map[]} [] [] <nil>})], reason: remove
+Feb 27 20:15:12 localhost.localdomain snapd[3729]: 2018/02/27 20:15:12.642385 taskrunner.go:403: DEBUG: Running task 124 on Do: Run remove hook of "data-writer" snap if present
+Feb 27 20:15:15 localhost.localdomain snapd[3729]: 2018/02/27 20:15:15.434107 taskrunner.go:403: DEBUG: Running task 126 on Do: Remove aliases for snap "data-writer"
+Feb 27 20:15:17 localhost.localdomain snapd[3729]: 2018/02/27 20:15:17.687830 taskrunner.go:403: DEBUG: Running task 127 on Do: Make snap "data-writer" unavailable to the system
+Feb 27 20:15:20 localhost.localdomain snapd[3729]: 2018/02/27 20:15:20.924319 taskrunner.go:403: DEBUG: Running task 128 on Do: Remove security profile for snap "data-writer" (x1)
+Feb 27 20:15:22 localhost.localdomain snapd[3729]: 2018/02/27 20:15:22.265623 taskrunner.go:403: DEBUG: Running task 129 on Do: Remove data for snap "data-writer" (x1)
+Feb 27 20:15:23 localhost.localdomain snapd[3729]: 2018/02/27 20:15:23.690755 taskrunner.go:403: DEBUG: Running task 130 on Do: Remove snap "data-writer" (x1) from the system
+Feb 27 20:15:25 localhost.localdomain snapd[3729]: 2018/02/27 20:15:25.902634 cmd.go:133: DEBUG: exe doesn't have snap mount dir prefix: "/usr/lib/snapd/snapd" vs "/snap"
+Feb 27 20:15:27 localhost.localdomain snapd[3729]: 2018/02/27 20:15:27.246759 taskrunner.go:403: DEBUG: Running task 131 on Do: Discard interface connections for snap "data-writer" (x1)
 
 ● snapd.socket - Socket activation for snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
   Drop-In: /etc/systemd/system/snapd.socket.d
            └─local.conf
-   Active: active (running) since Mon 2018-02-26 08:08:40 UTC; 40s ago
+   Active: active (running) since Tue 2018-02-27 20:14:07 UTC; 1min 21s ago
    Listen: /run/snapd.socket (Stream)
            /run/snapd-snap.socket (Stream)
 
@@ -1186,27 +839,27 @@ snap "manifest.yaml" is not installed
    Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
   Drop-In: /etc/systemd/system/snapd.service.d
            └─local.conf
-   Active: active (running) since Mon 2018-02-26 08:08:41 UTC; 39s ago
- Main PID: 25021 (snapd)
+   Active: active (running) since Tue 2018-02-27 20:14:10 UTC; 1min 19s ago
+ Main PID: 3729 (snapd)
    CGroup: /system.slice/snapd.service
-           └─25021 /usr/lib/snapd/snapd
+           └─3729 /usr/lib/snapd/snapd
 
-Feb 26 08:09:18 localhost.localdomain snapd[25021]: 2018/02/26 08:09:18.449377 taskrunner.go:403: DEBUG: Running task 131 on Do: Stop snap "firewall-control-consumer" services
-Feb 26 08:09:18 localhost.localdomain snapd[25021]: 2018/02/26 08:09:18.599673 taskrunner.go:403: DEBUG: Running task 130 on Do: Run remove hook of "firewall-control-consumer" snap if present
-Feb 26 08:09:18 localhost.localdomain snapd[25021]: 2018/02/26 08:09:18.837218 taskrunner.go:403: DEBUG: Running task 132 on Do: Remove aliases for snap "firewall-control-consumer"
-Feb 26 08:09:19 localhost.localdomain snapd[25021]: 2018/02/26 08:09:19.135372 taskrunner.go:403: DEBUG: Running task 133 on Do: Make snap "firewall-control-consumer" unavailable to the system
-Feb 26 08:09:19 localhost.localdomain snapd[25021]: 2018/02/26 08:09:19.344035 taskrunner.go:403: DEBUG: Running task 134 on Do: Remove security profile for snap "firewall-control-consumer" (x1)
-Feb 26 08:09:19 localhost.localdomain snapd[25021]: 2018/02/26 08:09:19.514029 taskrunner.go:403: DEBUG: Running task 135 on Do: Remove data for snap "firewall-control-consumer" (x1)
-Feb 26 08:09:19 localhost.localdomain snapd[25021]: 2018/02/26 08:09:19.630269 taskrunner.go:403: DEBUG: Running task 136 on Do: Remove snap "firewall-control-consumer" (x1) from the system
-Feb 26 08:09:20 localhost.localdomain snapd[25021]: 2018/02/26 08:09:20.909582 cmd.go:133: DEBUG: exe doesn't have snap mount dir prefix: "/usr/lib/snapd/snapd" vs "/snap"
-Feb 26 08:09:21 localhost.localdomain snapd[25021]: 2018/02/26 08:09:21.079796 taskrunner.go:403: DEBUG: Running task 137 on Do: Discard interface connections for snap "firewall-control-consumer" (x1)
-Feb 26 08:09:21 localhost.localdomain snapd[25021]: 2018/02/26 08:09:21.296239 daemon.go:251: DEBUG: pid=25550;uid=0;socket=/run/snapd.socket;@ POST /v2/snaps/manifest.yaml 954µs 400
+Feb 27 20:15:09 localhost.localdomain snapd[3729]: 2018/02/27 20:15:09.584725 services.go:221: DEBUG: StopServices called for [%!q(*snap.AppInfo=&{0x48203a7600 service [] bin/write-data from-service oneshot 0    never    map[] map[] map[] {[] map[]} [] [] <nil>})], reason: remove
+Feb 27 20:15:12 localhost.localdomain snapd[3729]: 2018/02/27 20:15:12.642385 taskrunner.go:403: DEBUG: Running task 124 on Do: Run remove hook of "data-writer" snap if present
+Feb 27 20:15:15 localhost.localdomain snapd[3729]: 2018/02/27 20:15:15.434107 taskrunner.go:403: DEBUG: Running task 126 on Do: Remove aliases for snap "data-writer"
+Feb 27 20:15:17 localhost.localdomain snapd[3729]: 2018/02/27 20:15:17.687830 taskrunner.go:403: DEBUG: Running task 127 on Do: Make snap "data-writer" unavailable to the system
+Feb 27 20:15:20 localhost.localdomain snapd[3729]: 2018/02/27 20:15:20.924319 taskrunner.go:403: DEBUG: Running task 128 on Do: Remove security profile for snap "data-writer" (x1)
+Feb 27 20:15:22 localhost.localdomain snapd[3729]: 2018/02/27 20:15:22.265623 taskrunner.go:403: DEBUG: Running task 129 on Do: Remove data for snap "data-writer" (x1)
+Feb 27 20:15:23 localhost.localdomain snapd[3729]: 2018/02/27 20:15:23.690755 taskrunner.go:403: DEBUG: Running task 130 on Do: Remove snap "data-writer" (x1) from the system
+Feb 27 20:15:25 localhost.localdomain snapd[3729]: 2018/02/27 20:15:25.902634 cmd.go:133: DEBUG: exe doesn't have snap mount dir prefix: "/usr/lib/snapd/snapd" vs "/snap"
+Feb 27 20:15:27 localhost.localdomain snapd[3729]: 2018/02/27 20:15:27.246759 taskrunner.go:403: DEBUG: Running task 131 on Do: Discard interface connections for snap "data-writer" (x1)
+Feb 27 20:15:29 localhost.localdomain snapd[3729]: 2018/02/27 20:15:29.619881 daemon.go:251: DEBUG: pid=4148;uid=0;socket=/run/snapd.socket;@ POST /v2/snaps/manifest.yaml 3.496ms 400
 
 ● snapd.socket - Socket activation for snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
   Drop-In: /etc/systemd/system/snapd.socket.d
            └─local.conf
-   Active: active (running) since Mon 2018-02-26 08:08:40 UTC; 41s ago
+   Active: active (running) since Tue 2018-02-27 20:14:07 UTC; 1min 22s ago
    Listen: /run/snapd.socket (Stream)
            /run/snapd-snap.socket (Stream)
 
@@ -1216,53 +869,27 @@ snap "snapcraft.yaml" is not installed
 + systemctl stop snapd.service snapd.socket
 + rm -rf /var/lib/snapd/apparmor /var/lib/snapd/assertions /var/lib/snapd/auto-import /var/lib/snapd/cache /var/lib/snapd/cookie /var/lib/snapd/desktop /var/lib/snapd/device /var/lib/snapd/environment /var/lib/snapd/firstboot /var/lib/snapd/hostfs /var/lib/snapd/lib /var/lib/snapd/mount /var/lib/snapd/seccomp /var/lib/snapd/seed /var/lib/snapd/snaps /var/lib/snapd/state.json /var/lib/snapd/system-key /var/lib/snapd/void
 + tar -C/ -xf /home/gopath/src/github.com/snapcore/snapd/snapd-state.tar.gz
-+ rm -rf /root/.snap
-+ '[' --reuse-core '!=' --keep-stopped ']'
-+ systemctl start snapd.service snapd.socket
-+ '[' production = staging ']'
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/prepare.sh
-++ set -eux
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/dirs.sh
-+++ export SNAP_MOUNT_DIR=/snap
-+++ SNAP_MOUNT_DIR=/snap
-+++ export LIBEXECDIR=/usr/lib
-+++ LIBEXECDIR=/usr/lib
-+++ case "$SPREAD_SYSTEM" in
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/pkgdb.sh
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/quiet.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-+++ GRUB_EDITENV=grub-editenv
-+++ case "$SPREAD_SYSTEM" in
-+ [[ ubuntu-core-16-arm-64 != ubuntu-core-16-* ]]
-+ echo 'Build test hooks package'
-Build test hooks package
-+ snap pack /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/basic-hooks
-built: basic-hooks_1.0_all.snap
-+ snap install --dangerous basic-hooks_1.0_all.snap
 -----
 .
-2018-02-26 08:12:27 Error debugging external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1 : EOF
-2018-02-26 08:12:27 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1...
-2018-02-26 08:12:27 Error restoring external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1 : EOF
-2018-02-26 08:12:27 Restoring external:ubuntu-core-16-arm-64:tests/main/...
-2018-02-26 08:12:27 Error restoring external:ubuntu-core-16-arm-64:tests/main/ : EOF
-2018-02-26 08:12:27 Restoring external:ubuntu-core-16-arm-64...
-2018-02-26 08:12:27 Error restoring external:ubuntu-core-16-arm-64 : EOF
-2018-02-26 08:12:27 Discarding external:ubuntu-core-16-arm-64...
-2018-02-26 08:12:27 Successful tasks: 43
-2018-02-26 08:12:27 Aborted tasks: 139
-2018-02-26 08:12:27 Failed tasks: 1
-    - external:ubuntu-core-16-arm-64:tests/main/searching
-2018-02-26 08:12:27 Failed task prepare: 1
-    - external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1
-2018-02-26 08:12:27 Failed task restore: 1
-    - external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1
-2018-02-26 08:12:27 Failed suite restore: 1
+2018-02-27 20:16:12 Error debugging external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot : EOF
+2018-02-27 20:16:12 Restoring external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot...
+2018-02-27 20:16:12 Error restoring external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot : EOF
+2018-02-27 20:16:12 Restoring external:ubuntu-core-16-arm-64:tests/main/...
+2018-02-27 20:16:12 Error restoring external:ubuntu-core-16-arm-64:tests/main/ : EOF
+2018-02-27 20:16:12 Restoring external:ubuntu-core-16-arm-64...
+2018-02-27 20:16:12 Error restoring external:ubuntu-core-16-arm-64 : EOF
+2018-02-27 20:16:12 Discarding external:ubuntu-core-16-arm-64...
+2018-02-27 20:16:12 Successful tasks: 9
+2018-02-27 20:16:12 Aborted tasks: 175
+2018-02-27 20:16:12 Failed task prepare: 1
+    - external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot
+2018-02-27 20:16:12 Failed task restore: 1
+    - external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot
+2018-02-27 20:16:12 Failed suite restore: 1
     - external:ubuntu-core-16-arm-64:tests/main/
-2018-02-26 08:12:27 Failed project restore: 1
+2018-02-27 20:16:12 Failed project restore: 1
     - external:ubuntu-core-16-arm-64:project
 error: unsuccessful run
-2018-02-26 08:12:27,756 dragonboard_004 WARNING: Tests failed, rc=1
-2018-02-26 08:12:27,756 dragonboard_004 INFO: END testrun
+2018-02-27 20:16:12,961 dragonboard_004 WARNING: Tests failed, rc=1
+2018-02-27 20:16:12,961 dragonboard_004 INFO: END testrun
 complete
