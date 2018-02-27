@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: e59ee519-a5aa-4c16-b793-00ece96f44a0
+JOB_ID: 53b7db2f-43d9-4790-b4f7-8ba9a15744ab
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -43,15 +43,15 @@ Error response from daemon: No such container: dragonboard005
 
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-02-26 04:41:45,242 dragonboard_005 INFO: BEGIN provision
-2018-02-26 04:41:45,242 dragonboard_005 INFO: Booting Master Image
-2018-02-26 04:41:45,242 dragonboard_005 INFO: Making sure the master image is booted
-2018-02-26 04:41:45,242 dragonboard_005 INFO: Checking if test image booted.
-2018-02-26 04:41:46,076 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
+2018-02-27 18:46:44,877 dragonboard_005 INFO: BEGIN provision
+2018-02-27 18:46:44,877 dragonboard_005 INFO: Booting Master Image
+2018-02-27 18:46:44,877 dragonboard_005 INFO: Making sure the master image is booted
+2018-02-27 18:46:44,877 dragonboard_005 INFO: Checking if test image booted.
+2018-02-27 18:46:45,710 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
 Warning: Permanently added '10.101.51.15' (ECDSA) to the list of known hosts.
 sudo: unable to execute /sbin/sgdisk: Input/output error
 
-2018-02-26 04:41:57,002 dragonboard_005 ERROR: exception
+2018-02-27 18:46:56,540 dragonboard_005 ERROR: exception
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard005/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 84, in setboot
     subprocess.check_call(cmd.split(), timeout=60)
