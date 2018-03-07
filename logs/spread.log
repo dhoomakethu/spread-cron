@@ -5,12 +5,12 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 5ce4857b-1117-4179-b0b3-f0049fd27798
+JOB_ID: 6a4f6ed8-bdc0-4580-ac6d-9a4c49019c3f
 Print job: /var/snap/testflinger-cli/current/job.yaml 
-job_queue: dragonboard
+job_queue: cm3
 global_timeout: 36000
 provision_data:
-    channel: stable
+    url: http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-cm3.img.xz
 test_data:
     test_cmds: |
         #!/bin/bash
@@ -25,871 +25,118 @@ test_data:
         . snappy-qa-jobs/scripts/utils/refresh_core.sh "{device_ip}" "22" "test" "ubuntu" "stable" "edge"
         . snappy-qa-jobs/scripts/utils/run_setup.sh "{device_ip}" "22" "test" "ubuntu" ""
         . snappy-qa-jobs/scripts/utils/get_spread.sh
-        . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-64:tests/" "" "tests/main/auto-refresh" "-v"
+        . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-32:tests/" "" "tests/main/auto-refresh" "-v"
 Showing job data
 This job is currently waiting on a node to become available. You will see no further output until the job starts running.
-*******************************************
+***********************************
 
-* Starting setup phase on dragonboard-004 *
+* Starting setup phase on cm3-002 *
 
-*******************************************
+***********************************
 
 Cleaning up container if it exists...
-Error response from daemon: No such container: dragonboard004
+Error response from daemon: No such container: cm3002
 
-***********************************************
+***************************************
 
-* Starting provision phase on dragonboard-004 *
-***********************************************
+* Starting provision phase on cm3-002 *
+
+***************************************
+
 Install python-logstash if you want to use logstash logging
-2018-02-27 18:46:46,833 dragonboard_004 INFO: BEGIN provision
-2018-02-27 18:46:46,833 dragonboard_004 INFO: Booting Master Image
-2018-02-27 18:46:46,833 dragonboard_004 INFO: Making sure the master image is booted
-2018-02-27 18:46:46,833 dragonboard_004 INFO: Checking if test image booted.
-2018-02-27 18:46:47,527 dragonboard_004 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.14 sudo sgdisk -o /dev/mmcblk1
-Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
-Warning: The kernel is still using the old partition table.
-The new table will be used at the next reboot or after you
-run partprobe(8) or kpartx(8)
-The operation has completed successfully.
-2018-02-27 18:46:49,455 dragonboard_004 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.14 sudo sync
-Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
-2018-02-27 18:46:50,227 dragonboard_004 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 i 2
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 = INTEGER: 2
-2018-02-27 18:46:50,346 dragonboard_004 INFO: Running sleep 10
-2018-02-27 18:47:00,371 dragonboard_004 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 i 1
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.4 = INTEGER: 1
-2018-02-27 18:47:10,500 dragonboard_004 INFO: Checking if master image booted.
-2018-02-27 18:50:19,432 dragonboard_004 INFO: Flashing Test Image
-2018-02-27 18:50:19,793 dragonboard_004 INFO: Running: nc 10.101.50.22 58349| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-02-27 19:03:47,702 dragonboard_004 INFO: Creating Test User
-Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
-2018-02-27 19:03:50,207 dragonboard_004 INFO: Booting Test Image
-2018-02-27 19:03:50,208 dragonboard_004 INFO: Booting the test image
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
+2018-03-07 04:41:40,741 cm3-001 INFO: BEGIN provision
+2018-03-07 04:41:40,741 cm3-001 INFO: Provisioning device
+2018-03-07 04:41:43,743 cm3-001 ERROR: exception
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 58, in _run_control
+    ssh_cmd, stderr=subprocess.STDOUT, timeout=timeout)
+  File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
+    **kwargs).stdout
+  File "/usr/lib/python3.5/subprocess.py", line 708, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['ssh', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/dev/null', 'ubuntu@10.101.50.182', 'sudo pi3gpio set high 16']' returned non-zero exit status 255
 
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
-Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
+During handling of the above exception, another exception occurred:
 
-Number of key(s) added: 1
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
+    return self._dispatch()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
+    result = ingredient.dispatch(self.context)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
+    return self._dispatch(context, 0)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
+    retval = command.invoked(context)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
+    return func(*args, **kwargs)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/__init__.py", line 43, in invoked
+    device.provision()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 70, in provision
+    self._run_control('sudo pi3gpio set high 16')
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 60, in _run_control
+    raise ProvisioningError(e.output)
+devices.ProvisioningError: b'ssh: connect to host 10.101.50.182 port 22: No route to host\r\n'
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 58, in _run_control
+    ssh_cmd, stderr=subprocess.STDOUT, timeout=timeout)
+  File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
+    **kwargs).stdout
+  File "/usr/lib/python3.5/subprocess.py", line 708, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['ssh', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/dev/null', 'ubuntu@10.101.50.182', 'sudo pi3gpio set high 16']' returned non-zero exit status 255
 
-Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.14'"
-and check to make sure that only the key(s) you wanted were added.
+During handling of the above exception, another exception occurred:
 
-2018-02-27 19:05:01,604 dragonboard_004 INFO: Checking if test image booted.
-2018-02-27 19:05:02,092 dragonboard_004 INFO: END provision
-******************************************
-
-* Starting test phase on dragonboard-004 *
-
-******************************************
-Install python-logstash if you want to use logstash logging
-2018-02-27 19:05:06,121 dragonboard_004 INFO: BEGIN testrun
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
-Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
-Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]
-Get:4 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [72.8 kB]
-Get:5 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [584 kB]
-Get:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]
-Get:7 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
-Get:8 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [403 kB]
-Get:9 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3486 B]
-Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [240 kB]
-Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [951 kB]
-Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [13.1 kB]
-Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [760 kB]
-Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.5 kB]
-Get:15 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [5153 B]
-Get:16 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7172 B]
-Fetched 3377 kB in 3s (906 kB/s)
-Reading package lists...
-Building dependency tree...
-Reading state information...
-57 packages can be upgraded. Run 'apt list --upgradable' to see them.
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following additional packages will be installed:
-  git-man ifupdown iproute2 isc-dhcp-client isc-dhcp-common less
-  libasn1-8-heimdal libatm1 libcurl3-gnutls libdns-export162 liberror-perl
-  libgdbm3 libgmp10 libgnutls30 libgssapi3-heimdal libhcrypto4-heimdal
-  libheimbase1-heimdal libheimntlm0-heimdal libhogweed4 libhx509-5-heimdal
-  libisc-export160 libkrb5-26-heimdal libldap-2.4-2 libmnl0 libnettle6
-  libp11-kit0 libperl5.22 libpopt0 libroken18-heimdal librtmp1 libsasl2-2
-  libsasl2-modules libsasl2-modules-db libtasn1-6 libwind0-heimdal
-  libxtables11 netbase patch perl perl-base perl-modules-5.22 rename rsync
-Suggested packages:
-  gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-el git-email
-  git-gui gitk gitweb git-arch git-cvs git-mediawiki git-svn ppp rdnssd
-  iproute2-doc resolvconf avahi-autoipd isc-dhcp-client-ddns apparmor
-  gnutls-bin libsasl2-modules-otp libsasl2-modules-ldap libsasl2-modules-sql
-  libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal ed
-  diffutils-doc perl-doc libterm-readline-gnu-perl
-  | libterm-readline-perl-perl make openssh-server
-The following NEW packages will be installed:
-  curl git git-man ifupdown iproute2 isc-dhcp-client isc-dhcp-common less
-  libasn1-8-heimdal libatm1 libcurl3-gnutls libdns-export162 liberror-perl
-  libgdbm3 libgmp10 libgnutls30 libgssapi3-heimdal libhcrypto4-heimdal
-  libheimbase1-heimdal libheimntlm0-heimdal libhogweed4 libhx509-5-heimdal
-  libisc-export160 libkrb5-26-heimdal libldap-2.4-2 libmnl0 libnettle6
-  libp11-kit0 libperl5.22 libpopt0 libroken18-heimdal librtmp1 libsasl2-2
-  libsasl2-modules libsasl2-modules-db libtasn1-6 libwind0-heimdal
-  libxtables11 netbase patch perl perl-modules-5.22 rename rsync sshpass
-The following packages will be upgraded:
-  perl-base
-1 upgraded, 45 newly installed, 0 to remove and 56 not upgraded.
-Need to get 16.4 MB of archives.
-After this operation, 79.8 MB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl-base amd64 5.22.1-9ubuntu0.2 [1282 kB]
-Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 libatm1 amd64 1:2.5.1-1.5 [24.2 kB]
-Get:3 http://archive.ubuntu.com/ubuntu xenial/main amd64 libmnl0 amd64 1.0.3-5 [12.0 kB]
-Get:4 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpopt0 amd64 1.16-10 [26.0 kB]
-Get:5 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgdbm3 amd64 1.8.3-13.1 [16.9 kB]
-Get:6 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl-modules-5.22 all 5.22.1-9ubuntu0.2 [2661 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libperl5.22 amd64 5.22.1-9ubuntu0.2 [3391 kB]
-Get:8 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl amd64 5.22.1-9ubuntu0.2 [237 kB]
-Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 iproute2 amd64 4.3.0-1ubuntu3.16.04.3 [522 kB]
-Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ifupdown amd64 0.8.10ubuntu1.2 [54.9 kB]
-Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libisc-export160 amd64 1:9.10.3.dfsg.P4-8ubuntu1.10 [153 kB]
-Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdns-export162 amd64 1:9.10.3.dfsg.P4-8ubuntu1.10 [666 kB]
-Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 isc-dhcp-client amd64 4.3.3-5ubuntu12.7 [223 kB]
-Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 isc-dhcp-common amd64 4.3.3-5ubuntu12.7 [105 kB]
-Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 less amd64 481-2.1ubuntu0.2 [110 kB]
-Get:16 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgmp10 amd64 2:6.1.0+dfsg-2 [240 kB]
-Get:17 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libnettle6 amd64 3.2-1ubuntu0.16.04.1 [93.5 kB]
-Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhogweed4 amd64 3.2-1ubuntu0.16.04.1 [136 kB]
-Get:19 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libp11-kit0 amd64 0.23.2-5~ubuntu16.04.1 [105 kB]
-Get:20 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtasn1-6 amd64 4.7-3ubuntu0.16.04.3 [43.5 kB]
-Get:21 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgnutls30 amd64 3.4.10-4ubuntu1.4 [548 kB]
-Get:22 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxtables11 amd64 1.6.0-2ubuntu3 [27.2 kB]
-Get:23 http://archive.ubuntu.com/ubuntu xenial/main amd64 netbase all 5.3 [12.9 kB]
-Get:24 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libroken18-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [41.4 kB]
-Get:25 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libasn1-8-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [174 kB]
-Get:26 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhcrypto4-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [85.0 kB]
-Get:27 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libheimbase1-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [29.3 kB]
-Get:28 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libwind0-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [47.8 kB]
-Get:29 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhx509-5-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [107 kB]
-Get:30 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libkrb5-26-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [202 kB]
-Get:31 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libheimntlm0-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [15.1 kB]
-Get:32 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgssapi3-heimdal amd64 1.7~git20150920+dfsg-4ubuntu1.16.04.1 [96.1 kB]
-Get:33 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsasl2-modules-db amd64 2.1.26.dfsg1-14build1 [14.5 kB]
-Get:34 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsasl2-2 amd64 2.1.26.dfsg1-14build1 [48.7 kB]
-Get:35 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libldap-2.4-2 amd64 2.4.42+dfsg-2ubuntu3.2 [160 kB]
-Get:36 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d-1ubuntu0.1 [54.4 kB]
-Get:37 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcurl3-gnutls amd64 7.47.0-1ubuntu2.6 [184 kB]
-Get:38 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsasl2-modules amd64 2.1.26.dfsg1-14build1 [47.5 kB]
-Get:39 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 rsync amd64 3.1.1-3ubuntu1.2 [329 kB]
-Get:40 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 curl amd64 7.47.0-1ubuntu2.6 [138 kB]
-Get:41 http://archive.ubuntu.com/ubuntu xenial/main amd64 liberror-perl all 0.17-1.2 [19.6 kB]
-Get:42 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 git-man all 1:2.7.4-0ubuntu1.3 [736 kB]
-Get:43 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 git amd64 1:2.7.4-0ubuntu1.3 [3102 kB]
-Get:44 http://archive.ubuntu.com/ubuntu xenial/main amd64 patch amd64 2.7.5-1 [90.4 kB]
-Get:45 http://archive.ubuntu.com/ubuntu xenial/main amd64 rename all 0.20-4 [12.0 kB]
-Get:46 http://archive.ubuntu.com/ubuntu xenial/universe amd64 sshpass amd64 1.05-1 [10.5 kB]
-debconf: delaying package configuration, since apt-utils is not installed
-Fetched 16.4 MB in 9s (1824 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9540 files and directories currently installed.)
-Preparing to unpack .../perl-base_5.22.1-9ubuntu0.2_amd64.deb ...
-Unpacking perl-base (5.22.1-9ubuntu0.2) over (5.22.1-9) ...
-Setting up perl-base (5.22.1-9ubuntu0.2) ...
-Selecting previously unselected package libatm1:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9540 files and directories currently installed.)
-Preparing to unpack .../libatm1_1%3a2.5.1-1.5_amd64.deb ...
-Unpacking libatm1:amd64 (1:2.5.1-1.5) ...
-Selecting previously unselected package libmnl0:amd64.
-Preparing to unpack .../libmnl0_1.0.3-5_amd64.deb ...
-Unpacking libmnl0:amd64 (1.0.3-5) ...
-Selecting previously unselected package libpopt0:amd64.
-Preparing to unpack .../libpopt0_1.16-10_amd64.deb ...
-Unpacking libpopt0:amd64 (1.16-10) ...
-Selecting previously unselected package libgdbm3:amd64.
-Preparing to unpack .../libgdbm3_1.8.3-13.1_amd64.deb ...
-Unpacking libgdbm3:amd64 (1.8.3-13.1) ...
-Selecting previously unselected package perl-modules-5.22.
-Preparing to unpack .../perl-modules-5.22_5.22.1-9ubuntu0.2_all.deb ...
-Unpacking perl-modules-5.22 (5.22.1-9ubuntu0.2) ...
-Selecting previously unselected package libperl5.22:amd64.
-Preparing to unpack .../libperl5.22_5.22.1-9ubuntu0.2_amd64.deb ...
-Unpacking libperl5.22:amd64 (5.22.1-9ubuntu0.2) ...
-Selecting previously unselected package perl.
-Preparing to unpack .../perl_5.22.1-9ubuntu0.2_amd64.deb ...
-Unpacking perl (5.22.1-9ubuntu0.2) ...
-Selecting previously unselected package iproute2.
-Preparing to unpack .../iproute2_4.3.0-1ubuntu3.16.04.3_amd64.deb ...
-Unpacking iproute2 (4.3.0-1ubuntu3.16.04.3) ...
-Selecting previously unselected package ifupdown.
-Preparing to unpack .../ifupdown_0.8.10ubuntu1.2_amd64.deb ...
-Unpacking ifupdown (0.8.10ubuntu1.2) ...
-Selecting previously unselected package libisc-export160.
-Preparing to unpack .../libisc-export160_1%3a9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb ...
-Unpacking libisc-export160 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
-Selecting previously unselected package libdns-export162.
-Preparing to unpack .../libdns-export162_1%3a9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb ...
-Unpacking libdns-export162 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
-Selecting previously unselected package isc-dhcp-client.
-Preparing to unpack .../isc-dhcp-client_4.3.3-5ubuntu12.7_amd64.deb ...
-Unpacking isc-dhcp-client (4.3.3-5ubuntu12.7) ...
-Selecting previously unselected package isc-dhcp-common.
-Preparing to unpack .../isc-dhcp-common_4.3.3-5ubuntu12.7_amd64.deb ...
-Unpacking isc-dhcp-common (4.3.3-5ubuntu12.7) ...
-Selecting previously unselected package less.
-Preparing to unpack .../less_481-2.1ubuntu0.2_amd64.deb ...
-Unpacking less (481-2.1ubuntu0.2) ...
-Selecting previously unselected package libgmp10:amd64.
-Preparing to unpack .../libgmp10_2%3a6.1.0+dfsg-2_amd64.deb ...
-Unpacking libgmp10:amd64 (2:6.1.0+dfsg-2) ...
-Selecting previously unselected package libnettle6:amd64.
-Preparing to unpack .../libnettle6_3.2-1ubuntu0.16.04.1_amd64.deb ...
-Unpacking libnettle6:amd64 (3.2-1ubuntu0.16.04.1) ...
-Selecting previously unselected package libhogweed4:amd64.
-Preparing to unpack .../libhogweed4_3.2-1ubuntu0.16.04.1_amd64.deb ...
-Unpacking libhogweed4:amd64 (3.2-1ubuntu0.16.04.1) ...
-Selecting previously unselected package libp11-kit0:amd64.
-Preparing to unpack .../libp11-kit0_0.23.2-5~ubuntu16.04.1_amd64.deb ...
-Unpacking libp11-kit0:amd64 (0.23.2-5~ubuntu16.04.1) ...
-Selecting previously unselected package libtasn1-6:amd64.
-Preparing to unpack .../libtasn1-6_4.7-3ubuntu0.16.04.3_amd64.deb ...
-Unpacking libtasn1-6:amd64 (4.7-3ubuntu0.16.04.3) ...
-Selecting previously unselected package libgnutls30:amd64.
-Preparing to unpack .../libgnutls30_3.4.10-4ubuntu1.4_amd64.deb ...
-Unpacking libgnutls30:amd64 (3.4.10-4ubuntu1.4) ...
-Selecting previously unselected package libxtables11:amd64.
-Preparing to unpack .../libxtables11_1.6.0-2ubuntu3_amd64.deb ...
-Unpacking libxtables11:amd64 (1.6.0-2ubuntu3) ...
-Selecting previously unselected package netbase.
-Preparing to unpack .../archives/netbase_5.3_all.deb ...
-Unpacking netbase (5.3) ...
-Selecting previously unselected package libroken18-heimdal:amd64.
-Preparing to unpack .../libroken18-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libroken18-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libasn1-8-heimdal:amd64.
-Preparing to unpack .../libasn1-8-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libasn1-8-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libhcrypto4-heimdal:amd64.
-Preparing to unpack .../libhcrypto4-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libhcrypto4-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libheimbase1-heimdal:amd64.
-Preparing to unpack .../libheimbase1-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libheimbase1-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libwind0-heimdal:amd64.
-Preparing to unpack .../libwind0-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libwind0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libhx509-5-heimdal:amd64.
-Preparing to unpack .../libhx509-5-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libhx509-5-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libkrb5-26-heimdal:amd64.
-Preparing to unpack .../libkrb5-26-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libkrb5-26-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libheimntlm0-heimdal:amd64.
-Preparing to unpack .../libheimntlm0-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libheimntlm0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libgssapi3-heimdal:amd64.
-Preparing to unpack .../libgssapi3-heimdal_1.7~git20150920+dfsg-4ubuntu1.16.04.1_amd64.deb ...
-Unpacking libgssapi3-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Selecting previously unselected package libsasl2-modules-db:amd64.
-Preparing to unpack .../libsasl2-modules-db_2.1.26.dfsg1-14build1_amd64.deb ...
-Unpacking libsasl2-modules-db:amd64 (2.1.26.dfsg1-14build1) ...
-Selecting previously unselected package libsasl2-2:amd64.
-Preparing to unpack .../libsasl2-2_2.1.26.dfsg1-14build1_amd64.deb ...
-Unpacking libsasl2-2:amd64 (2.1.26.dfsg1-14build1) ...
-Selecting previously unselected package libldap-2.4-2:amd64.
-Preparing to unpack .../libldap-2.4-2_2.4.42+dfsg-2ubuntu3.2_amd64.deb ...
-Unpacking libldap-2.4-2:amd64 (2.4.42+dfsg-2ubuntu3.2) ...
-Selecting previously unselected package librtmp1:amd64.
-Preparing to unpack .../librtmp1_2.4+20151223.gitfa8646d-1ubuntu0.1_amd64.deb ...
-Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d-1ubuntu0.1) ...
-Selecting previously unselected package libcurl3-gnutls:amd64.
-Preparing to unpack .../libcurl3-gnutls_7.47.0-1ubuntu2.6_amd64.deb ...
-Unpacking libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.6) ...
-Selecting previously unselected package libsasl2-modules:amd64.
-Preparing to unpack .../libsasl2-modules_2.1.26.dfsg1-14build1_amd64.deb ...
-Unpacking libsasl2-modules:amd64 (2.1.26.dfsg1-14build1) ...
-Selecting previously unselected package rsync.
-Preparing to unpack .../rsync_3.1.1-3ubuntu1.2_amd64.deb ...
-Unpacking rsync (3.1.1-3ubuntu1.2) ...
-Selecting previously unselected package curl.
-Preparing to unpack .../curl_7.47.0-1ubuntu2.6_amd64.deb ...
-Unpacking curl (7.47.0-1ubuntu2.6) ...
-Selecting previously unselected package liberror-perl.
-Preparing to unpack .../liberror-perl_0.17-1.2_all.deb ...
-Unpacking liberror-perl (0.17-1.2) ...
-Selecting previously unselected package git-man.
-Preparing to unpack .../git-man_1%3a2.7.4-0ubuntu1.3_all.deb ...
-Unpacking git-man (1:2.7.4-0ubuntu1.3) ...
-Selecting previously unselected package git.
-Preparing to unpack .../git_1%3a2.7.4-0ubuntu1.3_amd64.deb ...
-Unpacking git (1:2.7.4-0ubuntu1.3) ...
-Selecting previously unselected package patch.
-Preparing to unpack .../patch_2.7.5-1_amd64.deb ...
-Unpacking patch (2.7.5-1) ...
-Selecting previously unselected package rename.
-Preparing to unpack .../archives/rename_0.20-4_all.deb ...
-Unpacking rename (0.20-4) ...
-Selecting previously unselected package sshpass.
-Preparing to unpack .../sshpass_1.05-1_amd64.deb ...
-Unpacking sshpass (1.05-1) ...
-Processing triggers for systemd (229-4ubuntu16) ...
-Processing triggers for libc-bin (2.23-0ubuntu7) ...
-Processing triggers for mime-support (3.59ubuntu1) ...
-Setting up libatm1:amd64 (1:2.5.1-1.5) ...
-Setting up libmnl0:amd64 (1.0.3-5) ...
-Setting up libpopt0:amd64 (1.16-10) ...
-Setting up libgdbm3:amd64 (1.8.3-13.1) ...
-Setting up perl-modules-5.22 (5.22.1-9ubuntu0.2) ...
-Setting up libperl5.22:amd64 (5.22.1-9ubuntu0.2) ...
-Setting up perl (5.22.1-9ubuntu0.2) ...
-update-alternatives: using /usr/bin/prename to provide /usr/bin/rename (rename) in auto mode
-Setting up iproute2 (4.3.0-1ubuntu3.16.04.3) ...
-Setting up ifupdown (0.8.10ubuntu1.2) ...
-Creating /etc/network/interfaces.
-Setting up libisc-export160 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
-Setting up libdns-export162 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
-Setting up isc-dhcp-client (4.3.3-5ubuntu12.7) ...
-Setting up isc-dhcp-common (4.3.3-5ubuntu12.7) ...
-Setting up less (481-2.1ubuntu0.2) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
-debconf: falling back to frontend: Readline
-Setting up libgmp10:amd64 (2:6.1.0+dfsg-2) ...
-Setting up libnettle6:amd64 (3.2-1ubuntu0.16.04.1) ...
-Setting up libhogweed4:amd64 (3.2-1ubuntu0.16.04.1) ...
-Setting up libp11-kit0:amd64 (0.23.2-5~ubuntu16.04.1) ...
-Setting up libtasn1-6:amd64 (4.7-3ubuntu0.16.04.3) ...
-Setting up libgnutls30:amd64 (3.4.10-4ubuntu1.4) ...
-Setting up libxtables11:amd64 (1.6.0-2ubuntu3) ...
-Setting up netbase (5.3) ...
-Setting up libroken18-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libasn1-8-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libhcrypto4-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libheimbase1-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libwind0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libhx509-5-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libkrb5-26-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libheimntlm0-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libgssapi3-heimdal:amd64 (1.7~git20150920+dfsg-4ubuntu1.16.04.1) ...
-Setting up libsasl2-modules-db:amd64 (2.1.26.dfsg1-14build1) ...
-Setting up libsasl2-2:amd64 (2.1.26.dfsg1-14build1) ...
-Setting up libldap-2.4-2:amd64 (2.4.42+dfsg-2ubuntu3.2) ...
-Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d-1ubuntu0.1) ...
-Setting up libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.6) ...
-Setting up libsasl2-modules:amd64 (2.1.26.dfsg1-14build1) ...
-Setting up rsync (3.1.1-3ubuntu1.2) ...
-invoke-rc.d: could not determine current runlevel
-invoke-rc.d: policy-rc.d denied execution of restart.
-Setting up curl (7.47.0-1ubuntu2.6) ...
-Setting up liberror-perl (0.17-1.2) ...
-Setting up git-man (1:2.7.4-0ubuntu1.3) ...
-Setting up git (1:2.7.4-0ubuntu1.3) ...
-Setting up patch (2.7.5-1) ...
-Setting up rename (0.20-4) ...
-update-alternatives: using /usr/bin/file-rename to provide /usr/bin/rename (rename) in auto mode
-Setting up sshpass (1.05-1) ...
-Processing triggers for libc-bin (2.23-0ubuntu7) ...
-Processing triggers for systemd (229-4ubuntu16) ...
-Cloning into 'snappy-qa-jobs'...
-Already on 'master'
-Your branch is up-to-date with 'origin/master'.
-Cloning into 'snapd'...
-Already on 'master'
-Your branch is up-to-date with 'origin/master'.
-++ INSTANCE_IP=10.101.51.14
-++ INSTANCE_PORT=22
-++ USER=ubuntu
-++ execute_remote 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.14 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
-ENTER EXTRAUSERS_GROUP_FILEEXIT EXTRAUSERS_GROUP_FILEENTER EXTRAUSERS_SHADOWGROUP_FILEEXIT EXTRAUSERS_SHADOWGROUP_FILE++ execute_remote 'echo test:ubuntu | sudo chpasswd'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.14 'echo test:ubuntu | sudo chpasswd'
-++ execute_remote 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.14 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
-test ALL=(ALL) NOPASSWD:ALL
-+ . snappy-qa-jobs/scripts/utils/register_device.sh 10.101.51.14 22 test ubuntu sergiocazzolato@yahoo.com.ar
-++ echo 'Register device'
-Register device
-++ '[' 5 -ne 5 ']'
-++ DEVICE_IP=10.101.51.14
-++ DEVICE_PORT=22
-++ USER=test
-++ PASS=ubuntu
-++ EMAIL=sergiocazzolato@yahoo.com.ar
-++ SCRIPT='sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
-++ '[' -z sergiocazzolato@yahoo.com.ar ']'
-++ '[' -z ubuntu ']'
-++ echo 'Registering device (with pass): sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
-Registering device (with pass): sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '.data.auth.users=[]' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )
-++ sshpass -p ubuntu ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 test@10.101.51.14 'sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
-Warning: Permanently added '10.101.51.14' (ECDSA) to the list of known hosts.
-created user "snappytestaccount1"
-+ . snappy-qa-jobs/scripts/utils/refresh_core.sh 10.101.51.14 22 test ubuntu stable edge
-++ echo 'Refresh core on device'
-Refresh core on device
-++ '[' 6 -ne 6 ']'
-++ DEVICE_IP=10.101.51.14
-++ DEVICE_PORT=22
-++ USER=test
-++ PASS=ubuntu
-++ CHANNEL=stable
-++ CORE_CHANNEL=edge
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap changes'
-++ grep -q -E 'Doing.*Auto-refresh snap "core"'
-++ '[' -z edge ']'
-++ '[' stable = edge ']'
-++ execute_remote 'sudo snap refresh --edge core'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'sudo snap refresh --edge core'
-2018-02-27T19:08:46Z INFO Waiting for restart...
-2018-02-27T19:13:46Z INFO Waiting for restart...
-2018-02-27T19:13:49Z INFO Waiting for restart...
-2018-02-27T19:15:12Z INFO Waiting for restart...
-Connection to 10.101.51.14 closed by remote host.
-++ true
-++ wait_for_ssh 120 2
-++ retries=120
-++ sleep=2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=119
-++ '[' 119 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=118
-++ '[' 118 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=117
-++ '[' 117 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=116
-++ '[' 116 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=115
-++ '[' 115 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=114
-++ '[' 114 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=113
-++ '[' 113 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=112
-++ '[' 112 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=111
-++ '[' 111 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=110
-++ '[' 110 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=109
-++ '[' 109 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=108
-++ '[' 108 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=107
-++ '[' 107 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retries=106
-++ '[' 106 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 true
-++ retry_until 'snap changes' 'Done.*Refresh "core" snap from "edge" channel' 120 2
-++ command='snap changes'
-++ output='Done.*Refresh "core" snap from "edge" channel'
-++ retries=120
-++ sleep=2
-++ execute_remote 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap changes'
-++ retries=119
-++ '[' 119 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retries=118
-++ '[' 118 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap changes'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap changes'
-++ grep -q -E 'Done.*Refresh "core" snap from "edge" channel'
-++ retry_until 'snap info core' 'tracking: +edge' 10 2
-++ command='snap info core'
-++ output='tracking: +edge'
-++ retries=10
-++ sleep=2
-++ execute_remote 'snap info core'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'snap info core'
-++ grep -q -E 'tracking: +edge'
-++ retry_until 'sudo snap install --devmode jq' 'jq .* installed' 20 10
-++ command='sudo snap install --devmode jq'
-++ output='jq .* installed'
-++ retries=20
-++ sleep=10
-++ execute_remote 'sudo snap install --devmode jq'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'sudo snap install --devmode jq'
-++ grep -q -E 'jq .* installed'
-++ execute_remote 'sudo snap remove jq'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.14 'sudo snap remove jq'
-jq removed
-+ . snappy-qa-jobs/scripts/utils/run_setup.sh 10.101.51.14 22 test ubuntu ''
-++ echo 'Running setup command'
-Running setup command
-++ '[' 5 -ne 5 ']'
-++ DEVICE_IP=10.101.51.14
-++ DEVICE_PORT=22
-++ USER=test
-++ PASS=ubuntu
-++ SETUP=
-++ '[' -z '' ']'
-++ echo 'No setup command to run'
-No setup command to run
-+ . snappy-qa-jobs/scripts/utils/get_spread.sh
-++ echo 'Getting spread'
-Getting spread
-+++ pwd
-++ export WORKSPACE=/home/ubuntu
-++ WORKSPACE=/home/ubuntu
-++ export SPREAD_DIR=/home/ubuntu/spread
-++ SPREAD_DIR=/home/ubuntu/spread
-++ export PATH=/home/ubuntu/spread:/srv/testflinger-agent/dragonboard004/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-++ PATH=/home/ubuntu/spread:/srv/testflinger-agent/dragonboard004/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-++ '[' -f /home/ubuntu/spread/spread ']'
-++ mkdir -p /home/ubuntu/spread
-++ cd /home/ubuntu/spread
-++ curl -s -O https://niemeyer.s3.amazonaws.com/spread-amd64.tar.gz
-++ tar xzvf spread-amd64.tar.gz
-spread
-++ echo 'Spread downloaded and ready to use'
-Spread downloaded and ready to use
-+ . snappy-qa-jobs/scripts/utils/run_spread.sh 10.101.51.14 22 snapd external:ubuntu-core-16-arm-64:tests/ '' tests/main/auto-refresh -v
-++ echo 'Running spread'
-Running spread
-++ '[' 7 -ne 7 ']'
-++ export WORKSPACE=/home/ubuntu
-++ WORKSPACE=/home/ubuntu
-++ DEVICE_IP=10.101.51.14
-++ DEVICE_PORT=22
-++ PROJECT_PATH=snapd
-++ SPREAD_TESTS=external:ubuntu-core-16-arm-64:tests/
-++ SPREAD_ENV=
-++ SKIP_TESTS=tests/main/auto-refresh
-++ SPREAD_PARAMS=-v
-++ '[' -z external:ubuntu-core-16-arm-64:tests/ ']'
-++ '[' '!' -z '' ']'
-++ export SPREAD_EXTERNAL_ADDRESS=10.101.51.14:22
-++ SPREAD_EXTERNAL_ADDRESS=10.101.51.14:22
-+++ which spread
-++ [[ -n /home/ubuntu/spread/spread ]]
-++ echo 'Spread found'
-Spread found
-++ cd snapd
-++ echo 'Moving to manual all the tests to skip: tests/main/auto-refresh'
-Moving to manual all the tests to skip: tests/main/auto-refresh
-+++ echo tests/main/auto-refresh
-+++ tr , ' '
-++ tests_skip=tests/main/auto-refresh
-++ for test in '$tests_skip'
-++ '[' -f tests/main/auto-refresh/task.yaml ']'
-++ cp tests/main/auto-refresh/task.yaml tests/main/auto-refresh/task.yaml.back
-++ echo 'manual: true'
-+++ echo -v
-+++ tr , ' '
-++ spread_params=-v
-++ echo 'Running command: spread -v external:ubuntu-core-16-arm-64:tests/'
-Running command: spread -v external:ubuntu-core-16-arm-64:tests/
-++ spread -v external:ubuntu-core-16-arm-64:tests/
-2018-02-27 19:19:35 Found /home/ubuntu/snapd/spread.yaml.
-2018-02-27 19:19:37 Project content is packed for delivery (2.44MB).
-2018-02-27 19:19:37 Sequence of jobs produced with -seed=1519759177
-2018-02-27 19:19:37 If killed, discard servers with: spread -reuse-pid=879 -discard
-2018-02-27 19:19:37 Allocating external:ubuntu-core-16-arm-64...
-2018-02-27 19:19:37 Waiting for external:ubuntu-core-16-arm-64 to make SSH available at 10.101.51.14:22...
-2018-02-27 19:19:37 Allocated external:ubuntu-core-16-arm-64.
-2018-02-27 19:19:38 Connecting to external:ubuntu-core-16-arm-64...
-2018-02-27 19:19:38 Connected to external:ubuntu-core-16-arm-64 at 10.101.51.14:22.
-2018-02-27 19:19:38 Sending project content to external:ubuntu-core-16-arm-64...
-2018-02-27 19:19:39 Preparing external:ubuntu-core-16-arm-64...
-2018-02-27 19:19:39 Preparing external:ubuntu-core-16-arm-64:tests/main/...
-2018-02-27 19:21:08 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash...
-2018-02-27 19:22:44 Executing external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash (1/184)...
-2018-02-27 19:27:36 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash) as requested...
-2018-02-27 19:29:22 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash...
-2018-02-27 19:29:24 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
-2018-02-27 19:32:40 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot (2/184)...
-2018-02-27 19:32:40 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot) as requested...
-2018-02-27 19:33:40 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
-2018-02-27 19:33:41 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
-2018-02-27 19:35:37 Executing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd (3/184)...
-2018-02-27 19:39:57 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd) as requested...
-2018-02-27 19:41:28 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
-2018-02-27 19:41:30 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
-2018-02-27 19:44:29 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade (4/184)...
-2018-02-27 19:44:53 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-02-27 19:45:52 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-02-27 19:47:03 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-02-27 19:48:00 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-02-27 19:48:54 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
-2018-02-27 19:48:54 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1...
-2018-02-27 19:50:33 Executing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1 (5/184)...
-2018-02-27 19:50:34 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1...
-2018-02-27 19:50:35 Preparing external:ubuntu-core-16-arm-64:tests/main/install-socket-activation...
-2018-02-27 19:54:55 Executing external:ubuntu-core-16-arm-64:tests/main/install-socket-activation (6/184)...
-2018-02-27 19:54:56 Restoring external:ubuntu-core-16-arm-64:tests/main/install-socket-activation...
-2018-02-27 19:54:57 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe...
-2018-02-27 19:59:48 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe (7/184)...
-2018-02-27 20:00:18 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe...
-2018-02-27 20:00:19 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content...
-2018-02-27 20:04:19 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content (8/184)...
-2018-02-27 20:08:44 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content...
-2018-02-27 20:08:44 Preparing external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1...
-2018-02-27 20:13:44 Executing external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1 (9/184)...
-2018-02-27 20:14:38 Restoring external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1...
-2018-02-27 20:14:38 Preparing external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot...
-2018-02-27 20:16:12 Error preparing external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot : 
------
-
-+ /home/gopath/src/github.com/snapcore/snapd/tests/lib/prepare-restore.sh --prepare-project-each
-+ set -e
-+ set -o pipefail
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/quiet.sh
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-++ GRUB_EDITENV=grub-editenv
-++ case "$SPREAD_SYSTEM" in
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/dirs.sh
-++ export SNAP_MOUNT_DIR=/snap
-++ SNAP_MOUNT_DIR=/snap
-++ export LIBEXECDIR=/usr/lib
-++ LIBEXECDIR=/usr/lib
-++ case "$SPREAD_SYSTEM" in
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/pkgdb.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/quiet.sh
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/random.sh
-+ case "$1" in
-+ prepare_project_each
-+ case "$SPREAD_SYSTEM" in
-+ journalctl --sync
-+ journalctl --rotate
-+ sleep .1
-+ journalctl --vacuum-time=1ms
-Deleted archived journal /run/log/journal/ef040e0adae849d7b8967d3b83c94ca7/system@53bf4bea678e4135bad8cf718b286cb2-000000000000052d-00056637333b7e8a.journal (1012.0K).
-Vacuuming done, freed 1012.0K of archived journals on disk.
-+ dmesg -c
-+ fixup_dev_random
-+ mv /dev/random /dev/random.orig
-+ mknod /dev/random c 1 9
-+ kill_gpg_agent
-+ pkill -9 -e gpg-agent
-+ true
-+ /home/gopath/src/github.com/snapcore/snapd/tests/lib/reset.sh --reuse-core
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/dirs.sh
-++ export SNAP_MOUNT_DIR=/snap
-++ SNAP_MOUNT_DIR=/snap
-++ export LIBEXECDIR=/usr/lib
-++ LIBEXECDIR=/usr/lib
-++ case "$SPREAD_SYSTEM" in
-+ [[ ubuntu-core-16-arm-64 == ubuntu-core-16-* ]]
-+ reset_all_snap --reuse-core
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/names.sh
-+++ snap list
-+++ grep 'gadget$'
-+++ awk '{ print $1 }'
-++ gadget_name=dragonboard
-+++ snap list
-+++ grep 'kernel$'
-+++ awk '{ print $1 }'
-++ kernel_name=dragonboard-kernel
-+ for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=README
-+ case "$snap" in
-+ for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=bin
-+ case "$snap" in
-+ for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=core
-+ case "$snap" in
-+ for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=data-writer
-+ case "$snap" in
-+ systemctl status snapd.service snapd.socket
-● snapd.service - Snappy daemon
-   Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
-  Drop-In: /etc/systemd/system/snapd.service.d
-           └─local.conf
-   Active: active (running) since Tue 2018-02-27 20:14:10 UTC; 56s ago
- Main PID: 3729 (snapd)
-   CGroup: /system.slice/snapd.service
-           └─3729 /usr/lib/snapd/snapd
-
-Feb 27 20:15:06 localhost.localdomain snapd[3729]: 2018/02/27 20:15:06.652946 daemon.go:251: DEBUG: pid=4038;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps 51.405ms 200
-Feb 27 20:15:06 localhost.localdomain snapd[3729]: 2018/02/27 20:15:06.807925 daemon.go:251: DEBUG: pid=4048;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps 44.934ms 200
-Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
-
-● snapd.socket - Socket activation for snappy daemon
-   Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
-  Drop-In: /etc/systemd/system/snapd.socket.d
-           └─local.conf
-   Active: active (running) since Tue 2018-02-27 20:14:07 UTC; 59s ago
-   Listen: /run/snapd.socket (Stream)
-           /run/snapd-snap.socket (Stream)
-
-Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
-+ snap remove data-writer
-data-writer removed
-+ for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=dragonboard
-+ case "$snap" in
-+ for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=dragonboard-kernel
-+ case "$snap" in
-+ for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=manifest.yaml
-+ case "$snap" in
-+ systemctl status snapd.service snapd.socket
-● snapd.service - Snappy daemon
-   Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
-  Drop-In: /etc/systemd/system/snapd.service.d
-           └─local.conf
-   Active: active (running) since Tue 2018-02-27 20:14:10 UTC; 1min 19s ago
- Main PID: 3729 (snapd)
-   CGroup: /system.slice/snapd.service
-           └─3729 /usr/lib/snapd/snapd
-
-Feb 27 20:15:08 localhost.localdomain snapd[3729]: 2018/02/27 20:15:08.189002 taskrunner.go:403: DEBUG: Running task 125 on Do: Stop snap "data-writer" services
-Feb 27 20:15:09 localhost.localdomain snapd[3729]: 2018/02/27 20:15:09.584725 services.go:221: DEBUG: StopServices called for [%!q(*snap.AppInfo=&{0x48203a7600 service [] bin/write-data from-service oneshot 0    never    map[] map[] map[] {[] map[]} [] [] <nil>})], reason: remove
-Feb 27 20:15:12 localhost.localdomain snapd[3729]: 2018/02/27 20:15:12.642385 taskrunner.go:403: DEBUG: Running task 124 on Do: Run remove hook of "data-writer" snap if present
-Feb 27 20:15:15 localhost.localdomain snapd[3729]: 2018/02/27 20:15:15.434107 taskrunner.go:403: DEBUG: Running task 126 on Do: Remove aliases for snap "data-writer"
-Feb 27 20:15:17 localhost.localdomain snapd[3729]: 2018/02/27 20:15:17.687830 taskrunner.go:403: DEBUG: Running task 127 on Do: Make snap "data-writer" unavailable to the system
-Feb 27 20:15:20 localhost.localdomain snapd[3729]: 2018/02/27 20:15:20.924319 taskrunner.go:403: DEBUG: Running task 128 on Do: Remove security profile for snap "data-writer" (x1)
-Feb 27 20:15:22 localhost.localdomain snapd[3729]: 2018/02/27 20:15:22.265623 taskrunner.go:403: DEBUG: Running task 129 on Do: Remove data for snap "data-writer" (x1)
-Feb 27 20:15:23 localhost.localdomain snapd[3729]: 2018/02/27 20:15:23.690755 taskrunner.go:403: DEBUG: Running task 130 on Do: Remove snap "data-writer" (x1) from the system
-Feb 27 20:15:25 localhost.localdomain snapd[3729]: 2018/02/27 20:15:25.902634 cmd.go:133: DEBUG: exe doesn't have snap mount dir prefix: "/usr/lib/snapd/snapd" vs "/snap"
-Feb 27 20:15:27 localhost.localdomain snapd[3729]: 2018/02/27 20:15:27.246759 taskrunner.go:403: DEBUG: Running task 131 on Do: Discard interface connections for snap "data-writer" (x1)
-
-● snapd.socket - Socket activation for snappy daemon
-   Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
-  Drop-In: /etc/systemd/system/snapd.socket.d
-           └─local.conf
-   Active: active (running) since Tue 2018-02-27 20:14:07 UTC; 1min 21s ago
-   Listen: /run/snapd.socket (Stream)
-           /run/snapd-snap.socket (Stream)
-
-Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
-+ snap remove manifest.yaml
-snap "manifest.yaml" is not installed
-+ for snap in '"$SNAP_MOUNT_DIR"/*'
-+ snap=snapcraft.yaml
-+ case "$snap" in
-+ systemctl status snapd.service snapd.socket
-● snapd.service - Snappy daemon
-   Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
-  Drop-In: /etc/systemd/system/snapd.service.d
-           └─local.conf
-   Active: active (running) since Tue 2018-02-27 20:14:10 UTC; 1min 19s ago
- Main PID: 3729 (snapd)
-   CGroup: /system.slice/snapd.service
-           └─3729 /usr/lib/snapd/snapd
-
-Feb 27 20:15:09 localhost.localdomain snapd[3729]: 2018/02/27 20:15:09.584725 services.go:221: DEBUG: StopServices called for [%!q(*snap.AppInfo=&{0x48203a7600 service [] bin/write-data from-service oneshot 0    never    map[] map[] map[] {[] map[]} [] [] <nil>})], reason: remove
-Feb 27 20:15:12 localhost.localdomain snapd[3729]: 2018/02/27 20:15:12.642385 taskrunner.go:403: DEBUG: Running task 124 on Do: Run remove hook of "data-writer" snap if present
-Feb 27 20:15:15 localhost.localdomain snapd[3729]: 2018/02/27 20:15:15.434107 taskrunner.go:403: DEBUG: Running task 126 on Do: Remove aliases for snap "data-writer"
-Feb 27 20:15:17 localhost.localdomain snapd[3729]: 2018/02/27 20:15:17.687830 taskrunner.go:403: DEBUG: Running task 127 on Do: Make snap "data-writer" unavailable to the system
-Feb 27 20:15:20 localhost.localdomain snapd[3729]: 2018/02/27 20:15:20.924319 taskrunner.go:403: DEBUG: Running task 128 on Do: Remove security profile for snap "data-writer" (x1)
-Feb 27 20:15:22 localhost.localdomain snapd[3729]: 2018/02/27 20:15:22.265623 taskrunner.go:403: DEBUG: Running task 129 on Do: Remove data for snap "data-writer" (x1)
-Feb 27 20:15:23 localhost.localdomain snapd[3729]: 2018/02/27 20:15:23.690755 taskrunner.go:403: DEBUG: Running task 130 on Do: Remove snap "data-writer" (x1) from the system
-Feb 27 20:15:25 localhost.localdomain snapd[3729]: 2018/02/27 20:15:25.902634 cmd.go:133: DEBUG: exe doesn't have snap mount dir prefix: "/usr/lib/snapd/snapd" vs "/snap"
-Feb 27 20:15:27 localhost.localdomain snapd[3729]: 2018/02/27 20:15:27.246759 taskrunner.go:403: DEBUG: Running task 131 on Do: Discard interface connections for snap "data-writer" (x1)
-Feb 27 20:15:29 localhost.localdomain snapd[3729]: 2018/02/27 20:15:29.619881 daemon.go:251: DEBUG: pid=4148;uid=0;socket=/run/snapd.socket;@ POST /v2/snaps/manifest.yaml 3.496ms 400
-
-● snapd.socket - Socket activation for snappy daemon
-   Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
-  Drop-In: /etc/systemd/system/snapd.socket.d
-           └─local.conf
-   Active: active (running) since Tue 2018-02-27 20:14:07 UTC; 1min 22s ago
-   Listen: /run/snapd.socket (Stream)
-           /run/snapd-snap.socket (Stream)
-
-Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
-+ snap remove snapcraft.yaml
-snap "snapcraft.yaml" is not installed
-+ systemctl stop snapd.service snapd.socket
-+ rm -rf /var/lib/snapd/apparmor /var/lib/snapd/assertions /var/lib/snapd/auto-import /var/lib/snapd/cache /var/lib/snapd/cookie /var/lib/snapd/desktop /var/lib/snapd/device /var/lib/snapd/environment /var/lib/snapd/firstboot /var/lib/snapd/hostfs /var/lib/snapd/lib /var/lib/snapd/mount /var/lib/snapd/seccomp /var/lib/snapd/seed /var/lib/snapd/snaps /var/lib/snapd/state.json /var/lib/snapd/system-key /var/lib/snapd/void
-+ tar -C/ -xf /home/gopath/src/github.com/snapcore/snapd/snapd-state.tar.gz
------
-.
-2018-02-27 20:16:12 Error debugging external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot : EOF
-2018-02-27 20:16:12 Restoring external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot...
-2018-02-27 20:16:12 Error restoring external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot : EOF
-2018-02-27 20:16:12 Restoring external:ubuntu-core-16-arm-64:tests/main/...
-2018-02-27 20:16:12 Error restoring external:ubuntu-core-16-arm-64:tests/main/ : EOF
-2018-02-27 20:16:12 Restoring external:ubuntu-core-16-arm-64...
-2018-02-27 20:16:12 Error restoring external:ubuntu-core-16-arm-64 : EOF
-2018-02-27 20:16:12 Discarding external:ubuntu-core-16-arm-64...
-2018-02-27 20:16:12 Successful tasks: 9
-2018-02-27 20:16:12 Aborted tasks: 175
-2018-02-27 20:16:12 Failed task prepare: 1
-    - external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot
-2018-02-27 20:16:12 Failed task restore: 1
-    - external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot
-2018-02-27 20:16:12 Failed suite restore: 1
-    - external:ubuntu-core-16-arm-64:tests/main/
-2018-02-27 20:16:12 Failed project restore: 1
-    - external:ubuntu-core-16-arm-64:project
-error: unsuccessful run
-2018-02-27 20:16:12,961 dragonboard_004 WARNING: Tests failed, rc=1
-2018-02-27 20:16:12,961 dragonboard_004 INFO: END testrun
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/cm3002/env/bin/snappy-device-agent", line 4, in <module>
+    __import__('pkg_resources').run_script('snappy-device-agents==0.0.1', 'snappy-device-agent')
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 719, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1504, in run_script
+    exec(code, namespace, namespace)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/EGG-INFO/scripts/snappy-device-agent", line 25, in <module>
+    main()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 75, in main
+    Agent().main()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 71, in main
+    return AgentCommandRecipe(self).main(argv, exit)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/recipes/__init__.py", line 119, in main
+    retval = bowl.eat(argv)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 254, in eat
+    self._dispatch_failed()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 310, in _dispatch_failed
+    ingredient.dispatch_failed(self.context)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
+    return self._dispatch()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
+    result = ingredient.dispatch(self.context)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
+    return self._dispatch(context, 0)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
+    retval = command.invoked(context)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
+    return func(*args, **kwargs)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/__init__.py", line 43, in invoked
+    device.provision()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 70, in provision
+    self._run_control('sudo pi3gpio set high 16')
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 60, in _run_control
+    raise ProvisioningError(e.output)
+devices.ProvisioningError: b'ssh: connect to host 10.101.50.182 port 22: No route to host\r\n'
 complete
