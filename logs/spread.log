@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: Unable to communicate with specified server.
+JOB_ID: 060babcb-3ba4-48c7-a958-028848de4682
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: cm3
 global_timeout: 36000
@@ -27,3 +27,115 @@ test_data:
         . snappy-qa-jobs/scripts/utils/get_spread.sh
         . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-32:tests/" "" "tests/main/auto-refresh" "-v"
 Showing job data
+This job is currently waiting on a node to become available. You will see no further output until the job starts running.
+***********************************
+
+* Starting setup phase on cm3-002 *
+
+***********************************
+
+Cleaning up container if it exists...
+Error response from daemon: No such container: cm3002
+
+***************************************
+
+* Starting provision phase on cm3-002 *
+
+***************************************
+Install python-logstash if you want to use logstash logging
+2018-03-09 08:31:40,240 cm3-001 INFO: BEGIN provision
+2018-03-09 08:31:40,240 cm3-001 INFO: Provisioning device
+2018-03-09 08:31:43,243 cm3-001 ERROR: exception
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 58, in _run_control
+    ssh_cmd, stderr=subprocess.STDOUT, timeout=timeout)
+  File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
+    **kwargs).stdout
+  File "/usr/lib/python3.5/subprocess.py", line 708, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['ssh', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/dev/null', 'ubuntu@10.101.50.182', 'sudo pi3gpio set high 16']' returned non-zero exit status 255
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
+    return self._dispatch()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
+    result = ingredient.dispatch(self.context)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
+    return self._dispatch(context, 0)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
+    retval = command.invoked(context)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
+    return func(*args, **kwargs)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/__init__.py", line 43, in invoked
+    device.provision()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 70, in provision
+    self._run_control('sudo pi3gpio set high 16')
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 60, in _run_control
+    raise ProvisioningError(e.output)
+devices.ProvisioningError: b'ssh: connect to host 10.101.50.182 port 22: No route to host\r\n'
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 58, in _run_control
+    ssh_cmd, stderr=subprocess.STDOUT, timeout=timeout)
+  File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
+    **kwargs).stdout
+  File "/usr/lib/python3.5/subprocess.py", line 708, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['ssh', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/dev/null', 'ubuntu@10.101.50.182', 'sudo pi3gpio set high 16']' returned non-zero exit status 255
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/srv/testflinger-agent/cm3002/env/bin/snappy-device-agent", line 4, in <module>
+    __import__('pkg_resources').run_script('snappy-device-agents==0.0.1', 'snappy-device-agent')
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 719, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1504, in run_script
+    exec(code, namespace, namespace)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/EGG-INFO/scripts/snappy-device-agent", line 25, in <module>
+    main()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 75, in main
+    Agent().main()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 71, in main
+    return AgentCommandRecipe(self).main(argv, exit)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/recipes/__init__.py", line 119, in main
+    retval = bowl.eat(argv)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 254, in eat
+    self._dispatch_failed()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 310, in _dispatch_failed
+    ingredient.dispatch_failed(self.context)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
+    return self._dispatch()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
+    result = ingredient.dispatch(self.context)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
+    return self._dispatch(context, 0)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+    return self._dispatch_None(context, level, retval, command)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+    return self._dispatch(context, level + 1)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
+    retval = command.invoked(context)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
+    return func(*args, **kwargs)
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/__init__.py", line 43, in invoked
+    device.provision()
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 70, in provision
+    self._run_control('sudo pi3gpio set high 16')
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/cm3/cm3.py", line 60, in _run_control
+    raise ProvisioningError(e.output)
+devices.ProvisioningError: b'ssh: connect to host 10.101.50.182 port 22: No route to host\r\n'
+complete
