@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 3c4f3b43-2e54-4bb3-a365-db996b917fc0
+JOB_ID: c2db0c52-92a4-4b6b-b0bc-949ee0d3b77b
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -43,49 +43,30 @@ Error response from daemon: No such container: dragonboard005
 
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-03-31 21:11:36,479 dragonboard_005 INFO: BEGIN provision
-2018-03-31 21:11:36,479 dragonboard_005 INFO: Booting Master Image
-2018-03-31 21:11:36,479 dragonboard_005 INFO: Making sure the master image is booted
-2018-03-31 21:11:36,479 dragonboard_005 INFO: Checking if test image booted.
-2018-03-31 21:11:39,483 dragonboard_005 INFO: Checking if master image booted.
-2018-03-31 21:11:42,483 dragonboard_005 INFO: Error checking device state. Forcing reboot...
-2018-03-31 21:11:42,484 dragonboard_005 WARNING: Device is in an unknown state, attempting to recover
-2018-03-31 21:11:42,484 dragonboard_005 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 2
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 = INTEGER: 2
-2018-03-31 21:11:42,603 dragonboard_005 INFO: Running sleep 10
-2018-03-31 21:11:52,630 dragonboard_005 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 1
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 = INTEGER: 1
-2018-03-31 21:12:02,759 dragonboard_005 INFO: Checking if master image booted.
-2018-03-31 21:12:05,767 dragonboard_005 INFO: Error checking device state. Forcing reboot...
-2018-03-31 21:12:05,768 dragonboard_005 INFO: Checking if test image booted.
-2018-03-31 21:12:18,777 dragonboard_005 INFO: Checking if master image booted.
-2018-03-31 21:12:21,787 dragonboard_005 INFO: Error checking device state. Forcing reboot...
-2018-03-31 21:12:21,788 dragonboard_005 INFO: Checking if test image booted.
-2018-03-31 21:12:34,797 dragonboard_005 INFO: Checking if master image booted.
-2018-03-31 21:12:37,807 dragonboard_005 INFO: Error checking device state. Forcing reboot...
-2018-03-31 21:12:37,808 dragonboard_005 INFO: Checking if test image booted.
-2018-03-31 21:12:38,487 dragonboard_005 INFO: Making sure the master image is booted
-2018-03-31 21:12:38,488 dragonboard_005 INFO: Checking if test image booted.
-2018-03-31 21:12:38,982 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
+2018-04-01 04:41:37,032 dragonboard_005 INFO: BEGIN provision
+2018-04-01 04:41:37,032 dragonboard_005 INFO: Booting Master Image
+2018-04-01 04:41:37,032 dragonboard_005 INFO: Making sure the master image is booted
+2018-04-01 04:41:37,032 dragonboard_005 INFO: Checking if test image booted.
+2018-04-01 04:41:37,871 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
 Warning: Permanently added '10.101.51.15' (ECDSA) to the list of known hosts.
 Warning: The kernel is still using the old partition table.
 The new table will be used at the next reboot or after you
 run partprobe(8) or kpartx(8)
 The operation has completed successfully.
-2018-03-31 21:12:40,808 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sync
+2018-04-01 04:41:39,900 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sync
 Warning: Permanently added '10.101.51.15' (ECDSA) to the list of known hosts.
-2018-03-31 21:12:41,327 dragonboard_005 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 2
+2018-04-01 04:41:40,671 dragonboard_005 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 2
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 = INTEGER: 2
-2018-03-31 21:12:41,446 dragonboard_005 INFO: Running sleep 10
-2018-03-31 21:12:51,498 dragonboard_005 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 1
+2018-04-01 04:41:40,790 dragonboard_005 INFO: Running sleep 10
+2018-04-01 04:41:50,811 dragonboard_005 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 1
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 = INTEGER: 1
-2018-03-31 21:13:01,624 dragonboard_005 INFO: Checking if master image booted.
-2018-03-31 21:15:18,494 dragonboard_005 INFO: Flashing Test Image
-2018-03-31 21:15:18,901 dragonboard_005 INFO: Running: nc 10.101.50.22 44089| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-03-31 21:17:49,646 dragonboard_005 INFO: Creating Test User
+2018-04-01 04:42:00,942 dragonboard_005 INFO: Checking if master image booted.
+2018-04-01 04:44:05,852 dragonboard_005 INFO: Flashing Test Image
+2018-04-01 04:44:06,311 dragonboard_005 INFO: Running: nc 10.101.50.22 60252| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
+2018-04-01 04:46:42,576 dragonboard_005 INFO: Creating Test User
 Warning: Permanently added '10.101.51.15' (ECDSA) to the list of known hosts.
-2018-03-31 21:17:52,098 dragonboard_005 INFO: Booting Test Image
-2018-03-31 21:17:52,098 dragonboard_005 INFO: Booting the test image
+2018-04-01 04:46:44,901 dragonboard_005 INFO: Booting Test Image
+2018-04-01 04:46:44,901 dragonboard_005 INFO: Booting the test image
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
 
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
@@ -97,36 +78,35 @@ Number of key(s) added: 1
 Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.15'"
 and check to make sure that only the key(s) you wanted were added.
 
-2018-03-31 21:19:04,382 dragonboard_005 INFO: Checking if test image booted.
-2018-03-31 21:19:04,860 dragonboard_005 INFO: END provision
+2018-04-01 04:47:56,322 dragonboard_005 INFO: Checking if test image booted.
+2018-04-01 04:47:56,820 dragonboard_005 INFO: END provision
 
 ******************************************
-
 * Starting test phase on dragonboard-005 *
 
 ******************************************
 Install python-logstash if you want to use logstash logging
-2018-03-31 21:19:08,863 dragonboard_005 INFO: BEGIN testrun
+2018-04-01 04:48:00,906 dragonboard_005 INFO: BEGIN testrun
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Hit:1 http://archive.ubuntu.com/ubuntu xenial InRelease
 Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
 Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]
-Get:4 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]
-Get:5 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [77.2 kB]
-Get:6 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [250 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [962 kB]
-Get:8 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [593 kB]
-Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [13.1 kB]
-Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [792 kB]
-Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.5 kB]
-Get:12 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [5153 B]
-Get:13 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7734 B]
-Get:14 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
-Get:15 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [427 kB]
-Get:16 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3492 B]
-Fetched 3468 kB in 3s (1038 kB/s)
+Get:4 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [77.2 kB]
+Get:5 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]
+Get:6 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [593 kB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [250 kB]
+Get:8 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [962 kB]
+Get:9 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
+Get:10 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [427 kB]
+Get:11 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3492 B]
+Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [13.1 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [792 kB]
+Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.5 kB]
+Get:15 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [5153 B]
+Get:16 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7734 B]
+Fetched 3468 kB in 3s (923 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -215,7 +195,7 @@ Get:44 http://archive.ubuntu.com/ubuntu xenial/main amd64 patch amd64 2.7.5-1 [9
 Get:45 http://archive.ubuntu.com/ubuntu xenial/main amd64 rename all 0.20-4 [12.0 kB]
 Get:46 http://archive.ubuntu.com/ubuntu xenial/universe amd64 sshpass amd64 1.05-1 [10.5 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 16.4 MB in 6s (2441 kB/s)
+Fetched 16.4 MB in 6s (2717 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9540 files and directories currently installed.)
 Preparing to unpack .../perl-base_5.22.1-9ubuntu0.2_amd64.deb ...
 Unpacking perl-base (5.22.1-9ubuntu0.2) over (5.22.1-9) ...
@@ -458,18 +438,18 @@ Refresh core on device
 ++ CHANNEL=stable
 ++ CORE_CHANNEL=edge
 ++ execute_remote 'snap changes'
-++ grep -q -E 'Doing.*Auto-refresh snap "core"'
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap changes'
+++ grep -q -E 'Doing.*Auto-refresh snap "core"'
 ++ '[' -z edge ']'
 ++ '[' stable = edge ']'
 ++ execute_remote 'sudo snap refresh --edge core'
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'sudo snap refresh --edge core'
-2018-03-31T21:22:02Z INFO Waiting for restart...
-2018-03-31T21:27:02Z INFO Waiting for restart...
-2018-03-31T21:27:06Z INFO Waiting for restart...
-2018-03-31T21:29:23Z INFO Waiting for restart...
+2018-04-01T04:51:01Z INFO Waiting for restart...
+2018-04-01T04:56:02Z INFO Waiting for restart...
+2018-04-01T04:56:05Z INFO Waiting for restart...
+2018-04-01T04:58:17Z INFO Waiting for restart...
 Connection to 10.101.51.15 closed by remote host.
 ++ true
 ++ wait_for_ssh 120 2
@@ -576,10 +556,10 @@ Connection to 10.101.51.15 closed by remote host.
 ++ output='tracking: +edge'
 ++ retries=10
 ++ sleep=2
+++ grep -q -E 'tracking: +edge'
 ++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ grep -q -E 'tracking: +edge'
 ++ retry_until 'sudo snap install --devmode jq' 'jq .* installed' 20 10
 ++ command='sudo snap install --devmode jq'
 ++ output='jq .* installed'
@@ -592,7 +572,7 @@ Connection to 10.101.51.15 closed by remote host.
 error: cannot install "jq": Get
        https://api.snapcraft.io/api/v1/snaps/details/jq?channel=stable&fields=anon_download_url%2Carchitecture%2Cchannel%2Cdownload_sha3_384%2Csummary%2Cdescription%2Cdeltas%2Cbinary_filesize%2Cdownload_url%2Cepoch%2Cicon_url%2Clast_updated%2Cpackage_name%2Cprices%2Cpublisher%2Cratings_average%2Crevision%2Cscreenshot_urls%2Csnap_id%2Clicense%2Cbase%2Csupport_url%2Ccontact%2Ctitle%2Ccontent%2Cversion%2Corigin%2Cdeveloper_id%2Cprivate%2Cconfinement%2Cchannel_maps_list%2Csnap_yaml_raw:
        dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
-       [::1]:37235->[::1]:53: read: connection refused
+       [::1]:40436->[::1]:53: read: connection refused
 ++ retries=19
 ++ '[' 19 -le 0 ']'
 ++ sleep 10
@@ -665,25 +645,25 @@ Moving to manual all the tests to skip: tests/main/auto-refresh
 ++ '[' -f tests/main/auto-refresh/task.yaml ']'
 ++ cp tests/main/auto-refresh/task.yaml tests/main/auto-refresh/task.yaml.back
 ++ echo 'manual: true'
-+++ tr , ' '
 +++ echo -v
++++ tr , ' '
 ++ spread_params=-v
 ++ echo 'Running command: spread -v external:ubuntu-core-16-arm-64:tests/'
 Running command: spread -v external:ubuntu-core-16-arm-64:tests/
 ++ spread -v external:ubuntu-core-16-arm-64:tests/
-2018-03-31 21:32:52 Found /home/ubuntu/snapd/spread.yaml.
-2018-03-31 21:32:55 Project content is packed for delivery (2.50MB).
-2018-03-31 21:32:55 Sequence of jobs produced with -seed=1522531975
-2018-03-31 21:32:55 If killed, discard servers with: spread -reuse-pid=874 -discard
-2018-03-31 21:32:55 Allocating external:ubuntu-core-16-arm-64...
-2018-03-31 21:32:55 Waiting for external:ubuntu-core-16-arm-64 to make SSH available at 10.101.51.15:22...
-2018-03-31 21:32:55 Allocated external:ubuntu-core-16-arm-64.
-2018-03-31 21:32:55 Connecting to external:ubuntu-core-16-arm-64...
-2018-03-31 21:32:55 Connected to external:ubuntu-core-16-arm-64 at 10.101.51.15:22.
-2018-03-31 21:32:55 Sending project content to external:ubuntu-core-16-arm-64...
-2018-03-31 21:32:56 Preparing external:ubuntu-core-16-arm-64...
-2018-03-31 21:32:57 Preparing external:ubuntu-core-16-arm-64:tests/main/...
-2018-03-31 21:33:07 Error preparing external:ubuntu-core-16-arm-64:tests/main/ : 
+2018-04-01 05:01:57 Found /home/ubuntu/snapd/spread.yaml.
+2018-04-01 05:02:00 Project content is packed for delivery (2.50MB).
+2018-04-01 05:02:00 Sequence of jobs produced with -seed=1522558920
+2018-04-01 05:02:00 If killed, discard servers with: spread -reuse-pid=874 -discard
+2018-04-01 05:02:00 Allocating external:ubuntu-core-16-arm-64...
+2018-04-01 05:02:00 Waiting for external:ubuntu-core-16-arm-64 to make SSH available at 10.101.51.15:22...
+2018-04-01 05:02:00 Allocated external:ubuntu-core-16-arm-64.
+2018-04-01 05:02:00 Connecting to external:ubuntu-core-16-arm-64...
+2018-04-01 05:02:00 Connected to external:ubuntu-core-16-arm-64 at 10.101.51.15:22.
+2018-04-01 05:02:00 Sending project content to external:ubuntu-core-16-arm-64...
+2018-04-01 05:02:01 Preparing external:ubuntu-core-16-arm-64...
+2018-04-01 05:02:02 Preparing external:ubuntu-core-16-arm-64:tests/main/...
+2018-04-01 05:02:16 Error preparing external:ubuntu-core-16-arm-64:tests/main/ : 
 -----
 + /home/gopath/src/github.com/snapcore/snapd/tests/lib/prepare-restore.sh --prepare-suite
 + set -e
@@ -731,10 +711,10 @@ Running command: spread -v external:ubuntu-core-16-arm-64:tests/
 Wait for firstboot change to be ready
 + snap changes
 + grep Done
-1    Done    2018-03-31T21:19:54Z  2018-03-31T21:20:13Z  Initialize system state
-3    Done    2018-03-31T21:21:04Z  2018-03-31T21:20:45Z  Refresh "core" snap from "edge" channel
-6    Done    2018-03-31T21:33:12Z  2018-03-31T21:33:20Z  Install "jq" snap
-8    Done    2018-03-31T21:33:21Z  2018-03-31T21:33:23Z  Remove "jq" snap
+1    Done    2018-04-01T04:48:47Z  2018-04-01T04:49:07Z  Initialize system state
+3    Done    2018-04-01T04:49:58Z  2018-04-01T04:49:38Z  Refresh "core" snap from "edge" channel
+6    Done    2018-04-01T05:02:13Z  2018-04-01T05:02:21Z  Install "jq" snap
+8    Done    2018-04-01T05:02:22Z  2018-04-01T05:02:24Z  Remove "jq" snap
 + echo 'Ensure fundamental snaps are still present'
 Ensure fundamental snaps are still present
 + . /home/gopath/src/github.com/snapcore/snapd/tests/lib/names.sh
@@ -743,8 +723,8 @@ Ensure fundamental snaps are still present
 +++ awk '{ print $1 }'
 ++ gadget_name=dragonboard
 +++ snap list
-+++ grep 'kernel$'
 +++ awk '{ print $1 }'
++++ grep 'kernel$'
 ++ kernel_name=dragonboard-kernel
 + for name in '"$gadget_name"' '"$kernel_name"' core
 + snap list dragonboard
@@ -757,7 +737,7 @@ dragonboard-kernel  4.4.0-1087.92  43   stable    canonical  kernel
 + for name in '"$gadget_name"' '"$kernel_name"' core
 + snap list core
 Name  Version    Rev   Tracking  Developer  Notes
-core  16-2.32.2  4362  edge      canonical  core
+core  16-2.32.2  4368  edge      canonical  core
 + disable_refreshes
 + echo 'Ensure jq is available'
 Ensure jq is available
@@ -768,7 +748,7 @@ jq 1.5+dfsg-1 from 'canonical' installed
 Modify state to make it look like the last refresh just happened
 + systemctl stop snapd.socket snapd.service
 ++ date +%Y-%m-%dT%H:%M:%S%:z
-+ jq '.data["last-refresh"] = "2018-03-31T21:33:39+00:00"' /var/lib/snapd/state.json
++ jq '.data["last-refresh"] = "2018-04-01T05:02:44+00:00"' /var/lib/snapd/state.json
 + mv /var/lib/snapd/state.json.new /var/lib/snapd/state.json
 + systemctl start snapd.socket snapd.service
 + echo 'Minimize risk of hitting refresh schedule'
@@ -780,8 +760,8 @@ error: unknown flag `abs-time'
 error: pattern not found, got:
 -----
 .
-2018-03-31 21:33:07 Restoring external:ubuntu-core-16-arm-64:tests/main/...
-2018-03-31 21:33:11 Error restoring external:ubuntu-core-16-arm-64:tests/main/ : 
+2018-04-01 05:02:16 Restoring external:ubuntu-core-16-arm-64:tests/main/...
+2018-04-01 05:02:20 Error restoring external:ubuntu-core-16-arm-64:tests/main/ : 
 -----
 + /home/gopath/src/github.com/snapcore/snapd/tests/lib/prepare-restore.sh --restore-suite
 + set -e
@@ -846,24 +826,24 @@ error: pattern not found, got:
 + systemctl status snapd.service snapd.socket
 ● snapd.service - Snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:40 UTC; 3s ago
- Main PID: 2074 (snapd)
+   Active: active (running) since Sun 2018-04-01 05:02:45 UTC; 7s ago
+ Main PID: 2084 (snapd)
    CGroup: /system.slice/snapd.service
-           └─2074 /usr/lib/snapd/snapd
+           └─2084 /usr/lib/snapd/snapd
 
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Starting Snappy daemon...
-Mar 31 21:33:40 localhost.localdomain snapd[2074]: AppArmor status: apparmor is enabled and all features are available
-Mar 31 21:33:40 localhost.localdomain snapd[2074]: 2018/03/31 21:33:40.353154 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Started Snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Starting Snappy daemon...
+Apr 01 05:02:45 localhost.localdomain snapd[2084]: AppArmor status: apparmor is enabled and all features are available
+Apr 01 05:02:45 localhost.localdomain snapd[2084]: 2018/04/01 05:02:45.496965 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Started Snappy daemon.
 
 ● snapd.socket - Socket activation for snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:40 UTC; 4s ago
+   Active: active (running) since Sun 2018-04-01 05:02:45 UTC; 7s ago
    Listen: /run/snapd.socket (Stream)
            /run/snapd-snap.socket (Stream)
 
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
 + echo ''
 + grep -w jq
 + snap remove jq
@@ -874,24 +854,24 @@ jq removed
 + systemctl status snapd.service snapd.socket
 ● snapd.service - Snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:40 UTC; 6s ago
- Main PID: 2074 (snapd)
+   Active: active (running) since Sun 2018-04-01 05:02:45 UTC; 10s ago
+ Main PID: 2084 (snapd)
    CGroup: /system.slice/snapd.service
-           └─2074 /usr/lib/snapd/snapd
+           └─2084 /usr/lib/snapd/snapd
 
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Starting Snappy daemon...
-Mar 31 21:33:40 localhost.localdomain snapd[2074]: AppArmor status: apparmor is enabled and all features are available
-Mar 31 21:33:40 localhost.localdomain snapd[2074]: 2018/03/31 21:33:40.353154 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Started Snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Starting Snappy daemon...
+Apr 01 05:02:45 localhost.localdomain snapd[2084]: AppArmor status: apparmor is enabled and all features are available
+Apr 01 05:02:45 localhost.localdomain snapd[2084]: 2018/04/01 05:02:45.496965 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Started Snappy daemon.
 
 ● snapd.socket - Socket activation for snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:40 UTC; 6s ago
+   Active: active (running) since Sun 2018-04-01 05:02:45 UTC; 10s ago
    Listen: /run/snapd.socket (Stream)
            /run/snapd-snap.socket (Stream)
 
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
 + echo ''
 + grep -w manifest.yaml
 + snap remove manifest.yaml
@@ -902,24 +882,24 @@ snap "manifest.yaml" is not installed
 + systemctl status snapd.service snapd.socket
 ● snapd.service - Snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:40 UTC; 6s ago
- Main PID: 2074 (snapd)
+   Active: active (running) since Sun 2018-04-01 05:02:45 UTC; 10s ago
+ Main PID: 2084 (snapd)
    CGroup: /system.slice/snapd.service
-           └─2074 /usr/lib/snapd/snapd
+           └─2084 /usr/lib/snapd/snapd
 
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Starting Snappy daemon...
-Mar 31 21:33:40 localhost.localdomain snapd[2074]: AppArmor status: apparmor is enabled and all features are available
-Mar 31 21:33:40 localhost.localdomain snapd[2074]: 2018/03/31 21:33:40.353154 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Started Snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Starting Snappy daemon...
+Apr 01 05:02:45 localhost.localdomain snapd[2084]: AppArmor status: apparmor is enabled and all features are available
+Apr 01 05:02:45 localhost.localdomain snapd[2084]: 2018/04/01 05:02:45.496965 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Started Snappy daemon.
 
 ● snapd.socket - Socket activation for snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:40 UTC; 6s ago
+   Active: active (running) since Sun 2018-04-01 05:02:45 UTC; 10s ago
    Listen: /run/snapd.socket (Stream)
            /run/snapd-snap.socket (Stream)
 
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
 + echo ''
 + grep -w snapcraft.yaml
 + snap remove snapcraft.yaml
@@ -931,15 +911,14 @@ tar: /home/gopath/src/github.com/snapcore/snapd/snapd-state.tar.gz: Cannot open:
 tar: Error is not recoverable: exiting now
 -----
 .
-2018-03-31 21:33:11 Restoring external:ubuntu-core-16-arm-64:tests/main/...
-2018-03-31 21:33:25 Error restoring external:ubuntu-core-16-arm-64:tests/main/ : 
+2018-04-01 05:02:20 Restoring external:ubuntu-core-16-arm-64:tests/main/...
+2018-04-01 05:02:36 Error restoring external:ubuntu-core-16-arm-64:tests/main/ : 
 -----
 + /home/gopath/src/github.com/snapcore/snapd/tests/lib/prepare-restore.sh --restore-suite
 + set -e
 + set -o pipefail
 + . /home/gopath/src/github.com/snapcore/snapd/tests/lib/quiet.sh
 + . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-
 ++ GRUB_EDITENV=grub-editenv
 ++ case "$SPREAD_SYSTEM" in
 + . /home/gopath/src/github.com/snapcore/snapd/tests/lib/dirs.sh
@@ -994,29 +973,29 @@ error: cannot list snaps: cannot communicate with server: Get http://localhost/v
 + systemctl status snapd.service snapd.socket
 ● snapd.service - Snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
-   Active: inactive (dead) since Sat 2018-03-31 21:33:47 UTC; 10s ago
- Main PID: 2074 (code=exited, status=0/SUCCESS)
+   Active: inactive (dead) since Sun 2018-04-01 05:02:56 UTC; 10s ago
+ Main PID: 2084 (code=exited, status=0/SUCCESS)
 
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Starting Snappy daemon...
-Mar 31 21:33:40 localhost.localdomain snapd[2074]: AppArmor status: apparmor is enabled and all features are available
-Mar 31 21:33:40 localhost.localdomain snapd[2074]: 2018/03/31 21:33:40.353154 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Started Snappy daemon.
-Mar 31 21:33:47 localhost.localdomain systemd[1]: Stopping Snappy daemon...
-Mar 31 21:33:47 localhost.localdomain snapd[2074]: 2018/03/31 21:33:47.305011 main.go:79: Exiting on terminated signal.
-Mar 31 21:33:47 localhost.localdomain systemd[1]: Stopped Snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Starting Snappy daemon...
+Apr 01 05:02:45 localhost.localdomain snapd[2084]: AppArmor status: apparmor is enabled and all features are available
+Apr 01 05:02:45 localhost.localdomain snapd[2084]: 2018/04/01 05:02:45.496965 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Started Snappy daemon.
+Apr 01 05:02:56 localhost.localdomain systemd[1]: Stopping Snappy daemon...
+Apr 01 05:02:56 localhost.localdomain snapd[2084]: 2018/04/01 05:02:56.293176 main.go:79: Exiting on terminated signal.
+Apr 01 05:02:56 localhost.localdomain systemd[1]: Stopped Snappy daemon.
 
 ● snapd.socket - Socket activation for snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
-   Active: inactive (dead) since Sat 2018-03-31 21:33:47 UTC; 10s ago
+   Active: inactive (dead) since Sun 2018-04-01 05:02:56 UTC; 10s ago
    Listen: /run/snapd.socket (Stream)
            /run/snapd-snap.socket (Stream)
 
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
-Mar 31 21:33:40 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
-Mar 31 21:33:47 localhost.localdomain systemd[1]: Closed Socket activation for snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
+Apr 01 05:02:45 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
+Apr 01 05:02:56 localhost.localdomain systemd[1]: Closed Socket activation for snappy daemon.
 + systemctl start snapd.service snapd.socket
-+ grep -w dragonboard
 + echo ''
++ grep -w dragonboard
 + snap remove dragonboard
 snap "dragonboard" is not installed
 + for snap in '"$SNAP_MOUNT_DIR"/*'
@@ -1025,26 +1004,26 @@ snap "dragonboard" is not installed
 + systemctl status snapd.service snapd.socket
 ● snapd.service - Snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:58 UTC; 139ms ago
- Main PID: 2235 (snapd)
+   Active: active (running) since Sun 2018-04-01 05:03:07 UTC; 113ms ago
+ Main PID: 2246 (snapd)
    CGroup: /system.slice/snapd.service
-           └─2235 /usr/lib/snapd/snapd
+           └─2246 /usr/lib/snapd/snapd
 
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Starting Snappy daemon...
-Mar 31 21:33:57 localhost.localdomain snapd[2235]: AppArmor status: apparmor is enabled and all features are available
-Mar 31 21:33:57 localhost.localdomain snapd[2235]: 2018/03/31 21:33:57.978503 helpers.go:115: error trying to compare the snap system key: system-key missing on disk
-Mar 31 21:33:58 localhost.localdomain snapd[2235]: 2018/03/31 21:33:58.036351 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
-Mar 31 21:33:58 localhost.localdomain systemd[1]: Started Snappy daemon.
+Apr 01 05:03:07 localhost.localdomain systemd[1]: Starting Snappy daemon...
+Apr 01 05:03:07 localhost.localdomain snapd[2246]: AppArmor status: apparmor is enabled and all features are available
+Apr 01 05:03:07 localhost.localdomain snapd[2246]: 2018/04/01 05:03:07.273793 helpers.go:115: error trying to compare the snap system key: system-key missing on disk
+Apr 01 05:03:07 localhost.localdomain snapd[2246]: 2018/04/01 05:03:07.344925 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
+Apr 01 05:03:07 localhost.localdomain systemd[1]: Started Snappy daemon.
 
 ● snapd.socket - Socket activation for snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:57 UTC; 454ms ago
+   Active: active (running) since Sun 2018-04-01 05:03:06 UTC; 473ms ago
    Listen: /run/snapd.socket (Stream)
            /run/snapd-snap.socket (Stream)
 
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
+Apr 01 05:03:06 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
+Apr 01 05:03:06 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
+Apr 01 05:03:07 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
 + echo ''
 + grep -w dragonboard-kernel
 + snap remove dragonboard-kernel
@@ -1055,26 +1034,26 @@ snap "dragonboard-kernel" is not installed
 + systemctl status snapd.service snapd.socket
 ● snapd.service - Snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:58 UTC; 247ms ago
- Main PID: 2235 (snapd)
+   Active: active (running) since Sun 2018-04-01 05:03:07 UTC; 220ms ago
+ Main PID: 2246 (snapd)
    CGroup: /system.slice/snapd.service
-           └─2235 /usr/lib/snapd/snapd
+           └─2246 /usr/lib/snapd/snapd
 
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Starting Snappy daemon...
-Mar 31 21:33:57 localhost.localdomain snapd[2235]: AppArmor status: apparmor is enabled and all features are available
-Mar 31 21:33:57 localhost.localdomain snapd[2235]: 2018/03/31 21:33:57.978503 helpers.go:115: error trying to compare the snap system key: system-key missing on disk
-Mar 31 21:33:58 localhost.localdomain snapd[2235]: 2018/03/31 21:33:58.036351 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
-Mar 31 21:33:58 localhost.localdomain systemd[1]: Started Snappy daemon.
+Apr 01 05:03:07 localhost.localdomain systemd[1]: Starting Snappy daemon...
+Apr 01 05:03:07 localhost.localdomain snapd[2246]: AppArmor status: apparmor is enabled and all features are available
+Apr 01 05:03:07 localhost.localdomain snapd[2246]: 2018/04/01 05:03:07.273793 helpers.go:115: error trying to compare the snap system key: system-key missing on disk
+Apr 01 05:03:07 localhost.localdomain snapd[2246]: 2018/04/01 05:03:07.344925 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
+Apr 01 05:03:07 localhost.localdomain systemd[1]: Started Snappy daemon.
 
 ● snapd.socket - Socket activation for snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:57 UTC; 562ms ago
+   Active: active (running) since Sun 2018-04-01 05:03:06 UTC; 580ms ago
    Listen: /run/snapd.socket (Stream)
            /run/snapd-snap.socket (Stream)
 
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
+Apr 01 05:03:06 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
+Apr 01 05:03:06 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
+Apr 01 05:03:07 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
 + echo ''
 + grep -w manifest.yaml
 + snap remove manifest.yaml
@@ -1085,26 +1064,26 @@ snap "manifest.yaml" is not installed
 + systemctl status snapd.service snapd.socket
 ● snapd.service - Snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.service; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:58 UTC; 355ms ago
- Main PID: 2235 (snapd)
+   Active: active (running) since Sun 2018-04-01 05:03:07 UTC; 329ms ago
+ Main PID: 2246 (snapd)
    CGroup: /system.slice/snapd.service
-           └─2235 /usr/lib/snapd/snapd
+           └─2246 /usr/lib/snapd/snapd
 
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Starting Snappy daemon...
-Mar 31 21:33:57 localhost.localdomain snapd[2235]: AppArmor status: apparmor is enabled and all features are available
-Mar 31 21:33:57 localhost.localdomain snapd[2235]: 2018/03/31 21:33:57.978503 helpers.go:115: error trying to compare the snap system key: system-key missing on disk
-Mar 31 21:33:58 localhost.localdomain snapd[2235]: 2018/03/31 21:33:58.036351 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
-Mar 31 21:33:58 localhost.localdomain systemd[1]: Started Snappy daemon.
+Apr 01 05:03:07 localhost.localdomain systemd[1]: Starting Snappy daemon...
+Apr 01 05:03:07 localhost.localdomain snapd[2246]: AppArmor status: apparmor is enabled and all features are available
+Apr 01 05:03:07 localhost.localdomain snapd[2246]: 2018/04/01 05:03:07.273793 helpers.go:115: error trying to compare the snap system key: system-key missing on disk
+Apr 01 05:03:07 localhost.localdomain snapd[2246]: 2018/04/01 05:03:07.344925 daemon.go:323: started snapd/2.32.2 (series 16) ubuntu-core/16 (arm64) linux/4.4.0-1087-snapdragon.
+Apr 01 05:03:07 localhost.localdomain systemd[1]: Started Snappy daemon.
 
 ● snapd.socket - Socket activation for snappy daemon
    Loaded: loaded (/lib/systemd/system/snapd.socket; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-03-31 21:33:57 UTC; 670ms ago
+   Active: active (running) since Sun 2018-04-01 05:03:06 UTC; 688ms ago
    Listen: /run/snapd.socket (Stream)
            /run/snapd-snap.socket (Stream)
 
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
-Mar 31 21:33:57 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
+Apr 01 05:03:06 localhost.localdomain systemd[1]: Starting Socket activation for snappy daemon.
+Apr 01 05:03:06 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
+Apr 01 05:03:07 localhost.localdomain systemd[1]: Listening on Socket activation for snappy daemon.
 + echo ''
 + grep -w snapcraft.yaml
 + snap remove snapcraft.yaml
@@ -1116,16 +1095,17 @@ tar: /home/gopath/src/github.com/snapcore/snapd/snapd-state.tar.gz: Cannot open:
 tar: Error is not recoverable: exiting now
 -----
 .
-2018-03-31 21:33:25 Restoring external:ubuntu-core-16-arm-64...
-2018-03-31 21:33:26 Discarding external:ubuntu-core-16-arm-64...
-2018-03-31 21:33:26 Successful tasks: 0
-2018-03-31 21:33:26 Aborted tasks: 182
-2018-03-31 21:33:26 Failed suite prepare: 1
+2018-04-01 05:02:36 Restoring external:ubuntu-core-16-arm-64...
+
+2018-04-01 05:02:37 Discarding external:ubuntu-core-16-arm-64...
+2018-04-01 05:02:37 Successful tasks: 0
+2018-04-01 05:02:37 Aborted tasks: 182
+2018-04-01 05:02:37 Failed suite prepare: 1
     - external:ubuntu-core-16-arm-64:tests/main/
-2018-03-31 21:33:26 Failed suite restore: 2
+2018-04-01 05:02:37 Failed suite restore: 2
     - external:ubuntu-core-16-arm-64:tests/main/
     - external:ubuntu-core-16-arm-64:tests/main/
 error: unsuccessful run
-2018-03-31 21:33:26,152 dragonboard_005 WARNING: Tests failed, rc=1
-2018-03-31 21:33:26,152 dragonboard_005 INFO: END testrun
+2018-04-01 05:02:37,501 dragonboard_005 WARNING: Tests failed, rc=1
+2018-04-01 05:02:37,501 dragonboard_005 INFO: END testrun
 complete
