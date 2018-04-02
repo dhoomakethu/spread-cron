@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 99d2941c-9a6c-4c8b-be82-bc6313622cb5
+JOB_ID: 14e4a14f-cbc9-4ce9-8e12-69f5e36f3f9c
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: cm3
 global_timeout: 36000
@@ -27,6 +27,7 @@ test_data:
         . snappy-qa-jobs/scripts/utils/get_spread.sh
         . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-32:tests/" "" "tests/main/auto-refresh" "-v"
 Showing job data
+This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 ***********************************
 
 * Starting setup phase on cm3-002 *
