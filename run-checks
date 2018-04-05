@@ -11,4 +11,4 @@ cd target || exit 1
 sed 's/SNAP\/conjureup/#SNAP\/conjureup/g' -i tests/main/install-snaps/task.yaml
 # TODO: Remove when is fixed the issue raised on https://forum.snapcraft.io/t/error-installing-the-docker-snap-in-fedora-and-opensuse/1655
 sed 's/SNAP\/docker/#SNAP\/docker/g' -i tests/main/install-snaps/task.yaml
-../bin/spread -v linode:tests/main/install-snaps
+../bin/spread -v google:tests/main/install-snaps
