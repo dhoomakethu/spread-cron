@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 7e1c2d29-f6ad-43d6-828f-a959e8716b3d
+JOB_ID: 32c9c228-df26-416b-904d-801366d830d9
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: cm3
 global_timeout: 36000
@@ -30,24 +30,25 @@ Showing job data
 This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 ***********************************
 
-* Starting setup phase on cm3-001 *
+* Starting setup phase on cm3-002 *
 
 ***********************************
 
 Cleaning up container if it exists...
-Error response from daemon: No such container: cm3001
+Error response from daemon: No such container: cm3002
 
 ***************************************
 
-* Starting provision phase on cm3-001 *
+* Starting provision phase on cm3-002 *
 
 ***************************************
+
 Traceback (most recent call last):
-  File "/srv/testflinger-agent/cm3001/env/bin/snappy-device-agent", line 4, in <module>
+  File "/srv/testflinger-agent/cm3002/env/bin/snappy-device-agent", line 4, in <module>
     __import__('pkg_resources').run_script('snappy-device-agents==0.0.1', 'snappy-device-agent')
-  File "/srv/testflinger-agent/cm3001/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 719, in run_script
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 719, in run_script
     self.require(requires)[0].run_script(script_name, ns)
-  File "/srv/testflinger-agent/cm3001/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1496, in run_script
+  File "/srv/testflinger-agent/cm3002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1496, in run_script
     raise ResolutionError("No script named %r" % script_name)
 pkg_resources.ResolutionError: No script named 'snappy-device-agent'
 complete
