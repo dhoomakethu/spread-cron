@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: ea1f546f-065b-4c09-bb9d-0b7d5af4f935
+JOB_ID: 2550c4b0-95c9-4f80-a43f-972aeaa7e194
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -27,7 +27,6 @@ test_data:
         . snappy-qa-jobs/scripts/utils/get_spread.sh
         . snappy-qa-jobs/scripts/utils/run_spread.sh "{device_ip}" "22" "snapd" "external:ubuntu-core-16-arm-64:tests/" "" "tests/main/auto-refresh,tests/main/interfaces-content" "-v"
 Showing job data
-This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 *******************************************
 
 * Starting setup phase on dragonboard-004 *
@@ -43,17 +42,17 @@ Error response from daemon: No such container: dragonboard004
 
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-05-17 04:41:21,792 dragonboard_004 INFO: BEGIN provision
-2018-05-17 04:41:21,792 dragonboard_004 INFO: Booting Master Image
-2018-05-17 04:41:21,792 dragonboard_004 INFO: Making sure the master image is booted
-2018-05-17 04:41:21,792 dragonboard_004 INFO: Checking if test image booted.
-2018-05-17 04:41:22,048 dragonboard_004 INFO: Checking if master image booted.
-2018-05-17 04:43:28,186 dragonboard_004 INFO: Flashing Test Image
-2018-05-17 04:43:28,620 dragonboard_004 INFO: Running: nc 10.101.50.22 37628| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-05-17 04:55:12,369 dragonboard_004 INFO: Creating Test User
+2018-05-18 04:41:19,896 dragonboard_004 INFO: BEGIN provision
+2018-05-18 04:41:19,896 dragonboard_004 INFO: Booting Master Image
+2018-05-18 04:41:19,896 dragonboard_004 INFO: Making sure the master image is booted
+2018-05-18 04:41:19,896 dragonboard_004 INFO: Checking if test image booted.
+2018-05-18 04:41:20,147 dragonboard_004 INFO: Checking if master image booted.
+2018-05-18 04:43:10,010 dragonboard_004 INFO: Flashing Test Image
+2018-05-18 04:43:10,628 dragonboard_004 INFO: Running: nc 10.101.50.22 55452| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
+2018-05-18 04:55:12,548 dragonboard_004 INFO: Creating Test User
 
-2018-05-17 04:55:14,587 dragonboard_004 ERROR: Failed to write image, cleaning up...
-2018-05-17 04:55:16,207 dragonboard_004 ERROR: exception
+2018-05-18 04:55:14,872 dragonboard_004 ERROR: Failed to write image, cleaning up...
+2018-05-18 04:55:16,480 dragonboard_004 ERROR: exception
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard004/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 59, in _run_control
     cmd, stderr=subprocess.STDOUT, timeout=timeout)
