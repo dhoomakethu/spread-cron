@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 50f36d8c-297c-4c5b-8371-9cbf2bd21e83
+JOB_ID: 63b32b5d-fe3d-4dc8-8124-d61455e67f70
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -43,17 +43,17 @@ Error response from daemon: No such container: dragonboard004
 
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-07-17 19:16:04,279 dragonboard_004 INFO: BEGIN provision
-2018-07-17 19:16:04,280 dragonboard_004 INFO: Booting Master Image
-2018-07-17 19:16:04,280 dragonboard_004 INFO: Making sure the master image is booted
-2018-07-17 19:16:04,280 dragonboard_004 INFO: Checking if test image booted.
-2018-07-17 19:16:04,533 dragonboard_004 INFO: Checking if master image booted.
-2018-07-17 19:17:58,552 dragonboard_004 INFO: Flashing Test Image
-2018-07-17 19:17:59,015 dragonboard_004 INFO: Running: nc 10.101.50.22 47126| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-07-17 19:25:21,949 dragonboard_004 INFO: Creating Test User
+2018-07-18 04:41:04,668 dragonboard_004 INFO: BEGIN provision
+2018-07-18 04:41:04,668 dragonboard_004 INFO: Booting Master Image
+2018-07-18 04:41:04,668 dragonboard_004 INFO: Making sure the master image is booted
+2018-07-18 04:41:04,669 dragonboard_004 INFO: Checking if test image booted.
+2018-07-18 04:41:04,901 dragonboard_004 INFO: Checking if master image booted.
+2018-07-18 04:42:32,051 dragonboard_004 INFO: Flashing Test Image
+2018-07-18 04:42:32,423 dragonboard_004 INFO: Running: nc 10.101.50.22 59131| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
+2018-07-18 04:49:55,087 dragonboard_004 INFO: Creating Test User
 
-2018-07-17 19:25:24,444 dragonboard_004 ERROR: Failed to write image, cleaning up...
-2018-07-17 19:25:26,044 dragonboard_004 ERROR: exception
+2018-07-18 04:49:57,585 dragonboard_004 ERROR: Failed to write image, cleaning up...
+2018-07-18 04:49:59,187 dragonboard_004 ERROR: exception
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard004/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 59, in _run_control
     cmd, stderr=subprocess.STDOUT, timeout=timeout)
