@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: f7c524ca-91d1-4721-a3c3-00731f79ba48
+JOB_ID: c13d7e9c-b21f-4a04-a56a-6cf5cefd0164
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -42,32 +42,30 @@ Error response from daemon: No such container: dragonboard005
 
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-09-04 04:40:50,605 dragonboard_005 INFO: BEGIN provision
-2018-09-04 04:40:50,605 dragonboard_005 INFO: Booting Master Image
-2018-09-04 04:40:50,605 dragonboard_005 INFO: Making sure the master image is booted
-2018-09-04 04:40:50,605 dragonboard_005 INFO: Checking if test image booted.
-2018-09-04 04:40:51,482 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
+2018-09-04 05:40:51,147 dragonboard_005 INFO: BEGIN provision
+2018-09-04 05:40:51,147 dragonboard_005 INFO: Booting Master Image
+2018-09-04 05:40:51,147 dragonboard_005 INFO: Making sure the master image is booted
+2018-09-04 05:40:51,147 dragonboard_005 INFO: Checking if test image booted.
+2018-09-04 05:40:52,172 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
 Warning: Permanently added '10.101.51.15' (ECDSA) to the list of known hosts.
 Warning: The kernel is still using the old partition table.
 The new table will be used at the next reboot or after you
 run partprobe(8) or kpartx(8)
 The operation has completed successfully.
-2018-09-04 04:40:53,159 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sync
+2018-09-04 05:40:54,201 dragonboard_005 INFO: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sync
 Warning: Permanently added '10.101.51.15' (ECDSA) to the list of known hosts.
-2018-09-04 04:40:53,981 dragonboard_005 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 2
+2018-09-04 05:40:54,973 dragonboard_005 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 2
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 = INTEGER: 2
-2018-09-04 04:40:54,100 dragonboard_005 INFO: Running sleep 10
-2018-09-04 04:41:04,120 dragonboard_005 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 1
+2018-09-04 05:40:55,092 dragonboard_005 INFO: Running sleep 10
+2018-09-04 05:41:05,113 dragonboard_005 INFO: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 1
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 = INTEGER: 1
-2018-09-04 04:41:14,248 dragonboard_005 INFO: Checking if master image booted.
-2018-09-04 04:41:32,287 dragonboard_005 INFO: Error checking device state. Forcing reboot...
-2018-09-04 04:41:42,298 dragonboard_005 INFO: Checking if master image booted.
-2018-09-04 04:44:43,802 dragonboard_005 INFO: Flashing Test Image
-2018-09-04 04:44:44,196 dragonboard_005 INFO: Running: nc 10.101.50.22 39071| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-09-04 04:45:31,903 dragonboard_005 INFO: Creating Test User
+2018-09-04 05:41:15,234 dragonboard_005 INFO: Checking if master image booted.
+2018-09-04 05:44:53,204 dragonboard_005 INFO: Flashing Test Image
+2018-09-04 05:44:53,617 dragonboard_005 INFO: Running: nc 10.101.50.22 60351| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
+2018-09-04 05:45:43,899 dragonboard_005 INFO: Creating Test User
 Warning: Permanently added '10.101.51.15' (ECDSA) to the list of known hosts.
-2018-09-04 04:45:34,318 dragonboard_005 INFO: Booting Test Image
-2018-09-04 04:45:34,318 dragonboard_005 INFO: Booting the test image
+2018-09-04 05:45:46,409 dragonboard_005 INFO: Booting Test Image
+2018-09-04 05:45:46,410 dragonboard_005 INFO: Booting the test image
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
 
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
@@ -79,20 +77,21 @@ Number of key(s) added: 1
 Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.15'"
 and check to make sure that only the key(s) you wanted were added.
 
-2018-09-04 04:46:45,989 dragonboard_005 INFO: Checking if test image booted.
-2018-09-04 04:46:46,474 dragonboard_005 INFO: END provision
+2018-09-04 05:46:57,698 dragonboard_005 INFO: Checking if test image booted.
+2018-09-04 05:46:58,178 dragonboard_005 INFO: END provision
 
 ******************************************
+
 * Starting test phase on dragonboard-005 *
 
 ******************************************
 Install python-logstash if you want to use logstash logging
-2018-09-04 04:46:50,577 dragonboard_005 INFO: BEGIN testrun
+2018-09-04 05:47:02,569 dragonboard_005 INFO: BEGIN testrun
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
-Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
+Hit:1 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
 Get:3 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial InRelease [17.6 kB]
 Get:4 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
 Get:5 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial/main amd64 Packages [9825 B]
@@ -100,10 +99,10 @@ Get:6 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [89.7 k
 Get:7 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
 Get:8 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [702 kB]
 Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [276 kB]
-Get:10 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [467 kB]
-Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1087 kB]
+Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1087 kB]
+Get:11 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [467 kB]
 Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [877 kB]
-Fetched 3849 kB in 3s (1054 kB/s)
+Fetched 3849 kB in 3s (1063 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -164,7 +163,7 @@ debconf: falling back to frontend: Readline
 debconf: unable to initialize frontend: Readline
 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7, <> line 24.)
 debconf: falling back to frontend: Teletype
-Fetched 14.0 MB in 4s (3238 kB/s)
+Fetched 14.0 MB in 4s (3408 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14264 files and directories currently installed.)
 Preparing to unpack .../perl-base_5.22.1-9ubuntu0.5_amd64.deb ...
 Unpacking perl-base (5.22.1-9ubuntu0.5) over (5.22.1-9ubuntu0.3) ...
@@ -318,10 +317,10 @@ Refresh core on device
 ++ PASS=ubuntu
 ++ CHANNEL=stable
 ++ CORE_CHANNEL=edge
+++ grep -q -E 'Doing.*Auto-refresh snap.*'
 ++ execute_remote 'snap changes'
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap changes'
-++ grep -q -E 'Doing.*Auto-refresh snap.*'
 ++ '[' -z edge ']'
 ++ '[' stable = edge ']'
 ++ do_core_refresh edge core
@@ -329,6 +328,7 @@ Refresh core on device
 ++ execute_remote 'sudo snap refresh --edge core'
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'sudo snap refresh --edge core'
+2018-09-04T05:50:07Z INFO Waiting for restart...
 snapd is about to reboot the system
 ++ check_refresh edge
 ++ refresh_channel=edge
@@ -345,8 +345,8 @@ snapd is about to reboot the system
 ++ sleep=2
 ++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-++ grep -q -E 'tracking: +edge'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
 Connection to 10.101.51.15 closed by remote host.
 ++ retries=9
 ++ '[' 9 -le 0 ']'
@@ -360,15 +360,15 @@ Connection to 10.101.51.15 closed by remote host.
 ++ sleep 2
 ++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-++ grep -q -E 'tracking: +edge'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
 ++ retries=7
 ++ '[' 7 -le 0 ']'
 ++ sleep 2
 ++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-++ grep -q -E 'tracking: +edge'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
 ++ retries=6
 ++ '[' 6 -le 0 ']'
 ++ sleep 2
@@ -388,8 +388,8 @@ Connection to 10.101.51.15 closed by remote host.
 ++ sleep 2
 ++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
 ++ grep -q -E 'tracking: +edge'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
 ++ retries=3
 ++ '[' 3 -le 0 ']'
 ++ sleep 2
@@ -402,21 +402,20 @@ Connection to 10.101.51.15 closed by remote host.
 ++ sleep 2
 ++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-
-++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
 ++ grep -q -E 'tracking: +edge'
+++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
 ++ retries=1
 ++ '[' 1 -le 0 ']'
 ++ sleep 2
 ++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-++ grep -q -E 'tracking: +edge'
 ++ sshpass -p ubuntu ssh -p 22 -q -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
 ++ retries=0
 ++ '[' 0 -le 0 ']'
 ++ echo 'Timed out reached. Aborting!'
 Timed out reached. Aborting!
 ++ exit 1
-2018-09-04 04:51:05,417 dragonboard_005 WARNING: Tests failed, rc=1
-2018-09-04 04:51:05,418 dragonboard_005 INFO: END testrun
+2018-09-04 05:50:36,521 dragonboard_005 WARNING: Tests failed, rc=1
+2018-09-04 05:50:36,522 dragonboard_005 INFO: END testrun
 complete
