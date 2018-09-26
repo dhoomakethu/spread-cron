@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: b7de40a6-aac8-4d35-85b1-8709bbf67f46
+JOB_ID: de35f96d-8236-4a36-b35d-7a2c9c0bbfcf
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -29,34 +29,33 @@ test_data:
 Showing job data
 This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 *******************************************
-* Starting setup phase on dragonboard-002 *
+* Starting setup phase on dragonboard-003 *
 
 *******************************************
 Cleaning up container if it exists...
-Error response from daemon: No such container: dragonboard002
+Error response from daemon: No such container: dragonboard003
 ***********************************************
-* Starting provision phase on dragonboard-002 *
+* Starting provision phase on dragonboard-003 *
 
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-09-26 04:56:42,270 dragonboard_002 INFO: DEVICE AGENT: BEGIN provision
-2018-09-26 04:56:42,270 dragonboard_002 INFO: DEVICE AGENT: Booting Master Image
-2018-09-26 04:56:42,270 dragonboard_002 INFO: DEVICE AGENT: Making sure the master image is booted
-2018-09-26 04:56:42,270 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
-2018-09-26 04:56:42,514 dragonboard_002 INFO: DEVICE AGENT: Checking if master image booted.
-2018-09-26 04:57:23,049 dragonboard_002 ERROR: DEVICE AGENT: Bad data passed for provisioning
+2018-09-26 05:06:43,329 dragonboard_003 INFO: DEVICE AGENT: BEGIN provision
+2018-09-26 05:06:43,329 dragonboard_003 INFO: DEVICE AGENT: Booting Master Image
+2018-09-26 05:06:43,329 dragonboard_003 INFO: DEVICE AGENT: Making sure the master image is booted
+2018-09-26 05:06:43,329 dragonboard_003 INFO: DEVICE AGENT: Checking if test image booted.
+2018-09-26 05:06:43,546 dragonboard_003 INFO: DEVICE AGENT: Checking if master image booted.
+2018-09-26 05:07:30,169 dragonboard_003 ERROR: DEVICE AGENT: Bad data passed for provisioning
 Traceback (most recent call last):
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
     subprocess.check_output(cmd, stderr=subprocess.STDOUT)
   File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
     **kwargs).stdout
   File "/usr/lib/python3.5/subprocess.py", line 708, in run
     output=stdout, stderr=stderr)
 subprocess.CalledProcessError: Command '['sudo', 'ubuntu-image', '-c', 'stable', '/home/ubuntu/plars/dragon.model', '-o', 'snappy.img']' returned non-zero exit status 1
-
-2018-09-26 04:57:23,050 dragonboard_002 ERROR: DEVICE AGENT: exception
+2018-09-26 05:07:30,170 dragonboard_003 ERROR: DEVICE AGENT: exception
 Traceback (most recent call last):
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
     subprocess.check_output(cmd, stderr=subprocess.STDOUT)
   File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
     **kwargs).stdout
@@ -67,31 +66,31 @@ subprocess.CalledProcessError: Command '['sudo', 'ubuntu-image', '-c', 'stable',
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
     return self._dispatch()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
     result = ingredient.dispatch(self.context)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
     return self._dispatch(context, 0)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
     return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
     return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
     return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
     return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
     retval = command.invoked(context)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
     return func(*args, **kwargs)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/__init__.py", line 44, in invoked
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/__init__.py", line 44, in invoked
     device.provision()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 359, in provision
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 359, in provision
     raise ProvisioningError("Error copying system-user assertion")
 devices.ProvisioningError: Error copying system-user assertion
 Traceback (most recent call last):
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
     subprocess.check_output(cmd, stderr=subprocess.STDOUT)
   File "/usr/lib/python3.5/subprocess.py", line 626, in check_output
     **kwargs).stdout
@@ -102,45 +101,45 @@ subprocess.CalledProcessError: Command '['sudo', 'ubuntu-image', '-c', 'stable',
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/srv/testflinger-agent/dragonboard002/env/bin/snappy-device-agent", line 4, in <module>
+  File "/srv/testflinger-agent/dragonboard003/env/bin/snappy-device-agent", line 4, in <module>
     __import__('pkg_resources').run_script('snappy-device-agents==0.0.1', 'snappy-device-agent')
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 719, in run_script
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 719, in run_script
     self.require(requires)[0].run_script(script_name, ns)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1504, in run_script
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1504, in run_script
     exec(code, namespace, namespace)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/EGG-INFO/scripts/snappy-device-agent", line 25, in <module>
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/EGG-INFO/scripts/snappy-device-agent", line 25, in <module>
     main()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 75, in main
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 75, in main
     Agent().main()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 71, in main
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/snappy_device_agents/cmd.py", line 71, in main
     return AgentCommandRecipe(self).main(argv, exit)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/recipes/__init__.py", line 119, in main
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/recipes/__init__.py", line 119, in main
     retval = bowl.eat(argv)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 254, in eat
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 254, in eat
     self._dispatch_failed()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 310, in _dispatch_failed
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 310, in _dispatch_failed
     ingredient.dispatch_failed(self.context)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 248, in eat
     return self._dispatch()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/core.py", line 298, in _dispatch
     result = ingredient.dispatch(self.context)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 152, in dispatch
     return self._dispatch(context, 0)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
     return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
     return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 179, in _dispatch
     return self._dispatch_None(context, level, retval, command)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 208, in _dispatch_None
     return self._dispatch(context, level + 1)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/guacamole-0.9.2-py3.5.egg/guacamole/ingredients/cmdtree.py", line 165, in _dispatch
     retval = command.invoked(context)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/__init__.py", line 37, in wrapper
     return func(*args, **kwargs)
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/__init__.py", line 44, in invoked
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/__init__.py", line 44, in invoked
     device.provision()
-  File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 359, in provision
+  File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 359, in provision
     raise ProvisioningError("Error copying system-user assertion")
 devices.ProvisioningError: Error copying system-user assertion
 complete
