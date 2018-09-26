@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: de35f96d-8236-4a36-b35d-7a2c9c0bbfcf
+JOB_ID: bdc0be68-7e56-4241-9d6c-1580ecae93e6
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -30,8 +30,8 @@ Showing job data
 This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 *******************************************
 * Starting setup phase on dragonboard-003 *
-
 *******************************************
+
 Cleaning up container if it exists...
 Error response from daemon: No such container: dragonboard003
 ***********************************************
@@ -39,12 +39,12 @@ Error response from daemon: No such container: dragonboard003
 
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-09-26 05:06:43,329 dragonboard_003 INFO: DEVICE AGENT: BEGIN provision
-2018-09-26 05:06:43,329 dragonboard_003 INFO: DEVICE AGENT: Booting Master Image
-2018-09-26 05:06:43,329 dragonboard_003 INFO: DEVICE AGENT: Making sure the master image is booted
-2018-09-26 05:06:43,329 dragonboard_003 INFO: DEVICE AGENT: Checking if test image booted.
-2018-09-26 05:06:43,546 dragonboard_003 INFO: DEVICE AGENT: Checking if master image booted.
-2018-09-26 05:07:30,169 dragonboard_003 ERROR: DEVICE AGENT: Bad data passed for provisioning
+2018-09-26 05:21:45,137 dragonboard_003 INFO: DEVICE AGENT: BEGIN provision
+2018-09-26 05:21:45,138 dragonboard_003 INFO: DEVICE AGENT: Booting Master Image
+2018-09-26 05:21:45,138 dragonboard_003 INFO: DEVICE AGENT: Making sure the master image is booted
+2018-09-26 05:21:45,138 dragonboard_003 INFO: DEVICE AGENT: Checking if test image booted.
+2018-09-26 05:21:45,385 dragonboard_003 INFO: DEVICE AGENT: Checking if master image booted.
+2018-09-26 05:22:28,084 dragonboard_003 ERROR: DEVICE AGENT: Bad data passed for provisioning
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
     subprocess.check_output(cmd, stderr=subprocess.STDOUT)
@@ -53,7 +53,7 @@ Traceback (most recent call last):
   File "/usr/lib/python3.5/subprocess.py", line 708, in run
     output=stdout, stderr=stderr)
 subprocess.CalledProcessError: Command '['sudo', 'ubuntu-image', '-c', 'stable', '/home/ubuntu/plars/dragon.model', '-o', 'snappy.img']' returned non-zero exit status 1
-2018-09-26 05:07:30,170 dragonboard_003 ERROR: DEVICE AGENT: exception
+2018-09-26 05:22:28,085 dragonboard_003 ERROR: DEVICE AGENT: exception
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard003/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
     subprocess.check_output(cmd, stderr=subprocess.STDOUT)
