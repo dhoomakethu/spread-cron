@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 3a9d5ba2-840b-456f-b248-ed4d4800cce4
+JOB_ID: b7de40a6-aac8-4d35-85b1-8709bbf67f46
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -29,33 +29,22 @@ test_data:
 Showing job data
 This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 *******************************************
-
 * Starting setup phase on dragonboard-002 *
+
 *******************************************
 Cleaning up container if it exists...
 Error response from daemon: No such container: dragonboard002
 ***********************************************
-
 * Starting provision phase on dragonboard-002 *
+
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-09-26 04:41:41,307 dragonboard_002 INFO: DEVICE AGENT: BEGIN provision
-2018-09-26 04:41:41,307 dragonboard_002 INFO: DEVICE AGENT: Booting Master Image
-2018-09-26 04:41:41,307 dragonboard_002 INFO: DEVICE AGENT: Making sure the master image is booted
-2018-09-26 04:41:41,307 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
-2018-09-26 04:41:42,474 dragonboard_002 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sgdisk -o /dev/mmcblk1
-Warning: The kernel is still using the old partition table.
-The new table will be used at the next reboot or after you
-run partprobe(8) or kpartx(8)
-The operation has completed successfully.
-2018-09-26 04:41:44,352 dragonboard_002 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sync
-2018-09-26 04:41:45,225 dragonboard_002 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 2
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 2
-2018-09-26 04:41:45,343 dragonboard_002 INFO: DEVICE AGENT: Running sleep 10
-2018-09-26 04:41:55,366 dragonboard_002 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 1
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 1
-2018-09-26 04:42:05,494 dragonboard_002 INFO: DEVICE AGENT: Checking if master image booted.
-2018-09-26 04:43:17,275 dragonboard_002 ERROR: DEVICE AGENT: Bad data passed for provisioning
+2018-09-26 04:56:42,270 dragonboard_002 INFO: DEVICE AGENT: BEGIN provision
+2018-09-26 04:56:42,270 dragonboard_002 INFO: DEVICE AGENT: Booting Master Image
+2018-09-26 04:56:42,270 dragonboard_002 INFO: DEVICE AGENT: Making sure the master image is booted
+2018-09-26 04:56:42,270 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
+2018-09-26 04:56:42,514 dragonboard_002 INFO: DEVICE AGENT: Checking if master image booted.
+2018-09-26 04:57:23,049 dragonboard_002 ERROR: DEVICE AGENT: Bad data passed for provisioning
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
     subprocess.check_output(cmd, stderr=subprocess.STDOUT)
@@ -65,7 +54,7 @@ Traceback (most recent call last):
     output=stdout, stderr=stderr)
 subprocess.CalledProcessError: Command '['sudo', 'ubuntu-image', '-c', 'stable', '/home/ubuntu/plars/dragon.model', '-o', 'snappy.img']' returned non-zero exit status 1
 
-2018-09-26 04:43:17,292 dragonboard_002 ERROR: DEVICE AGENT: exception
+2018-09-26 04:57:23,050 dragonboard_002 ERROR: DEVICE AGENT: exception
 Traceback (most recent call last):
   File "/srv/testflinger-agent/dragonboard002/env/lib/python3.5/site-packages/snappy_device_agents-0.0.1-py3.5.egg/devices/dragonboard/dragonboard.py", line 356, in provision
     subprocess.check_output(cmd, stderr=subprocess.STDOUT)
