@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 2366022a-c24e-4a57-b43a-3e8b7a91cb04
+JOB_ID: 67a7f643-29e5-4089-86f6-4539fd8e84a1
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -29,73 +29,73 @@ test_data:
 Showing job data
 This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 *******************************************
-* Starting setup phase on dragonboard-002 *
 
+* Starting setup phase on dragonboard-005 *
 *******************************************
 Cleaning up container if it exists...
-Error response from daemon: No such container: dragonboard002
+Error response from daemon: No such container: dragonboard005
 ***********************************************
-* Starting provision phase on dragonboard-002 *
 
+* Starting provision phase on dragonboard-005 *
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-10-02 04:41:46,520 dragonboard_002 INFO: DEVICE AGENT: BEGIN provision
-2018-10-02 04:41:46,520 dragonboard_002 INFO: DEVICE AGENT: Booting Master Image
-2018-10-02 04:41:46,520 dragonboard_002 INFO: DEVICE AGENT: Making sure the master image is booted
-2018-10-02 04:41:46,520 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
-2018-10-02 04:41:46,995 dragonboard_002 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sgdisk -o /dev/mmcblk1
+2018-10-02 10:41:38,536 dragonboard_005 INFO: DEVICE AGENT: BEGIN provision
+2018-10-02 10:41:38,536 dragonboard_005 INFO: DEVICE AGENT: Booting Master Image
+2018-10-02 10:41:38,536 dragonboard_005 INFO: DEVICE AGENT: Making sure the master image is booted
+2018-10-02 10:41:38,536 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 10:41:39,391 dragonboard_005 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
 Warning: The kernel is still using the old partition table.
 The new table will be used at the next reboot or after you
 run partprobe(8) or kpartx(8)
 The operation has completed successfully.
-2018-10-02 04:41:48,622 dragonboard_002 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sync
-2018-10-02 04:41:49,091 dragonboard_002 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 2
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 2
-2018-10-02 04:41:49,210 dragonboard_002 INFO: DEVICE AGENT: Running sleep 10
-2018-10-02 04:41:59,233 dragonboard_002 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 1
-iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 1
-2018-10-02 04:42:09,354 dragonboard_002 INFO: DEVICE AGENT: Checking if master image booted.
-2018-10-02 04:46:37,528 dragonboard_002 INFO: DEVICE AGENT: Flashing Test Image
-2018-10-02 04:46:37,906 dragonboard_002 INFO: DEVICE AGENT: Running: nc 10.101.50.22 40465| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-10-02 04:47:17,862 dragonboard_002 INFO: DEVICE AGENT: Creating Test User
-2018-10-02 04:47:20,351 dragonboard_002 INFO: DEVICE AGENT: Booting Test Image
-2018-10-02 04:47:20,352 dragonboard_002 INFO: DEVICE AGENT: Booting the test image
+2018-10-02 10:41:41,220 dragonboard_005 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sync
+2018-10-02 10:41:42,042 dragonboard_005 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 2
+iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 = INTEGER: 2
+2018-10-02 10:41:42,160 dragonboard_005 INFO: DEVICE AGENT: Running sleep 10
+2018-10-02 10:41:52,182 dragonboard_005 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 1
+iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 = INTEGER: 1
+2018-10-02 10:42:02,311 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 10:46:39,035 dragonboard_005 INFO: DEVICE AGENT: Flashing Test Image
+2018-10-02 10:46:39,497 dragonboard_005 INFO: DEVICE AGENT: Running: nc 10.101.50.22 56450| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
+2018-10-02 10:47:14,938 dragonboard_005 INFO: DEVICE AGENT: Creating Test User
+2018-10-02 10:47:17,414 dragonboard_005 INFO: DEVICE AGENT: Booting Test Image
+2018-10-02 10:47:17,415 dragonboard_005 INFO: DEVICE AGENT: Booting the test image
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
 /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
 
 Number of key(s) added: 1
 
-Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.12'"
+Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.15'"
 and check to make sure that only the key(s) you wanted were added.
 
-2018-10-02 04:48:32,245 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
-2018-10-02 04:48:32,727 dragonboard_002 INFO: DEVICE AGENT: END provision
+2018-10-02 10:48:28,922 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 10:48:29,418 dragonboard_005 INFO: DEVICE AGENT: END provision
 ******************************************
 
-* Starting test phase on dragonboard-002 *
+* Starting test phase on dragonboard-005 *
 ******************************************
 Install python-logstash if you want to use logstash logging
-2018-10-02 04:49:05,913 dragonboard_002 INFO: DEVICE AGENT: BEGIN testrun
+2018-10-02 10:49:02,593 dragonboard_005 INFO: DEVICE AGENT: BEGIN testrun
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Get:1 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial InRelease [17.6 kB]
+Hit:1 http://archive.ubuntu.com/ubuntu xenial InRelease
 Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
-Hit:3 http://archive.ubuntu.com/ubuntu xenial InRelease
-Get:4 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
-Get:5 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial/main amd64 Packages [9807 B]
+Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:4 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial InRelease [17.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
 Get:6 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [95.4 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
-Get:8 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [718 kB]
-Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [280 kB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [280 kB]
+Get:8 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial/main amd64 Packages [9807 B]
+Get:9 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [718 kB]
 Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1106 kB]
 Get:11 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [491 kB]
 Get:12 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3744 B]
 Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [888 kB]
 Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.8 kB]
 Get:15 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [8256 B]
-Fetched 3959 kB in 9s (437 kB/s)
+Fetched 3959 kB in 12s (322 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -158,7 +158,7 @@ debconf: falling back to frontend: Readline
 debconf: unable to initialize frontend: Readline
 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7, <> line 25.)
 debconf: falling back to frontend: Teletype
-Fetched 14.2 MB in 10s (1406 kB/s)
+Fetched 14.2 MB in 9s (1487 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14264 files and directories currently installed.)
 Preparing to unpack .../perl-base_5.22.1-9ubuntu0.5_amd64.deb ...
 Unpacking perl-base (5.22.1-9ubuntu0.5) over (5.22.1-9ubuntu0.3) ...
@@ -278,21 +278,21 @@ Your branch is up-to-date with 'origin/master'.
 Cloning into 'snapd'...
 Already on 'master'
 Your branch is up-to-date with 'origin/master'.
-++ INSTANCE_IP=10.101.51.12
+++ INSTANCE_IP=10.101.51.15
 ++ INSTANCE_PORT=22
 ++ USER=ubuntu
 ++ execute_remote 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.12 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
+++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.15 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
 ENTER EXTRAUSERS_GROUP_FILEEXIT EXTRAUSERS_GROUP_FILEENTER EXTRAUSERS_SHADOWGROUP_FILEEXIT EXTRAUSERS_SHADOWGROUP_FILE++ execute_remote 'echo test:ubuntu | sudo chpasswd'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.12 'echo test:ubuntu | sudo chpasswd'
+++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.15 'echo test:ubuntu | sudo chpasswd'
 ++ execute_remote 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.12 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
+++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.15 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
 test ALL=(ALL) NOPASSWD:ALL
-+ . snappy-qa-jobs/scripts/utils/register_device.sh 10.101.51.12 22 test ubuntu sergiocazzolato@yahoo.com.ar
++ . snappy-qa-jobs/scripts/utils/register_device.sh 10.101.51.15 22 test ubuntu sergiocazzolato@yahoo.com.ar
 ++ echo 'Register device'
 Register device
 ++ '[' 5 -ne 5 ']'
-++ DEVICE_IP=10.101.51.12
+++ DEVICE_IP=10.101.51.15
 ++ DEVICE_PORT=22
 ++ USER=test
 ++ PASS=ubuntu
@@ -302,13 +302,13 @@ Register device
 ++ '[' -z ubuntu ']'
 ++ echo 'Registering device (with pass): sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
 Registering device (with pass): sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '.data.auth.users=[]' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )
-++ sshpass -p ubuntu ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 test@10.101.51.12 'sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
+++ sshpass -p ubuntu ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 test@10.101.51.15 'sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
 created user "snappytestaccount1"
-+ . snappy-qa-jobs/scripts/utils/refresh.sh 10.101.51.12 22 test ubuntu stable edge
++ . snappy-qa-jobs/scripts/utils/refresh.sh 10.101.51.15 22 test ubuntu stable edge
 ++ echo 'Refresh core on device'
 Refresh core on device
 ++ '[' 6 -ne 6 ']'
-++ DEVICE_IP=10.101.51.12
+++ DEVICE_IP=10.101.51.15
 ++ DEVICE_PORT=22
 ++ USER=test
 ++ PASS=ubuntu
@@ -316,7 +316,7 @@ Refresh core on device
 ++ CORE_CHANNEL=edge
 ++ execute_remote 'snap changes'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap changes'
 ++ grep -q -E 'Doing.*Auto-refresh snap.*'
 ++ '[' -z edge ']'
 ++ '[' stable = edge ']'
@@ -324,7 +324,7 @@ Refresh core on device
 ++ refresh_channel=edge
 ++ execute_remote 'sudo snap refresh --edge core'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap refresh --edge core'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'sudo snap refresh --edge core'
 snapd is about to reboot the system
 ++ check_refresh edge
 ++ refresh_channel=edge
@@ -333,1549 +333,965 @@ snapd is about to reboot the system
 ++ sleep=2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=29
 ++ '[' 29 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=28
 ++ '[' 28 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=27
 ++ '[' 27 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=26
 ++ '[' 26 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=25
 ++ '[' 25 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=24
 ++ '[' 24 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=23
 ++ '[' 23 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=22
 ++ '[' 22 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=21
 ++ '[' 21 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=20
 ++ '[' 20 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=19
 ++ '[' 19 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=18
 ++ '[' 18 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=17
 ++ '[' 17 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=16
 ++ '[' 16 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=15
 ++ '[' 15 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=14
 ++ '[' 14 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=13
 ++ '[' 13 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=12
 ++ '[' 12 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=11
 ++ '[' 11 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=10
 ++ '[' 10 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=9
 ++ '[' 9 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=8
 ++ '[' 8 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=7
 ++ '[' 7 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=6
 ++ '[' 6 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=5
 ++ '[' 5 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=4
 ++ '[' 4 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ wait_for_ssh 120 2
 ++ retries=120
 ++ sleep=2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=119
 ++ '[' 119 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=118
 ++ '[' 118 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=117
 ++ '[' 117 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=116
 ++ '[' 116 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=115
 ++ '[' 115 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=114
 ++ '[' 114 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=113
 ++ '[' 113 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=112
 ++ '[' 112 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=111
 ++ '[' 111 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=110
 ++ '[' 110 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=109
 ++ '[' 109 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
 ++ retries=108
 ++ '[' 108 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=107
+++ '[' 107 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=106
+++ '[' 106 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=105
+++ '[' 105 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=104
+++ '[' 104 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=103
+++ '[' 103 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=102
+++ '[' 102 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=101
+++ '[' 101 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=100
+++ '[' 100 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=99
+++ '[' 99 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=98
+++ '[' 98 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=97
+++ '[' 97 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=96
+++ '[' 96 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=95
+++ '[' 95 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=94
+++ '[' 94 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=93
+++ '[' 93 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=92
+++ '[' 92 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=91
+++ '[' 91 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=90
+++ '[' 90 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=89
+++ '[' 89 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=88
+++ '[' 88 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=87
+++ '[' 87 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=86
+++ '[' 86 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=85
+++ '[' 85 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=84
+++ '[' 84 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=83
+++ '[' 83 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=82
+++ '[' 82 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=81
+++ '[' 81 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=80
+++ '[' 80 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=79
+++ '[' 79 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=78
+++ '[' 78 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=77
+++ '[' 77 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=76
+++ '[' 76 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=75
+++ '[' 75 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=74
+++ '[' 74 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=73
+++ '[' 73 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=72
+++ '[' 72 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=71
+++ '[' 71 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=70
+++ '[' 70 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=69
+++ '[' 69 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=68
+++ '[' 68 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=67
+++ '[' 67 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=66
+++ '[' 66 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=65
+++ '[' 65 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=64
+++ '[' 64 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=63
+++ '[' 63 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=62
+++ '[' 62 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=61
+++ '[' 61 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=60
+++ '[' 60 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=59
+++ '[' 59 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=58
+++ '[' 58 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=57
+++ '[' 57 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=56
+++ '[' 56 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=55
+++ '[' 55 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=54
+++ '[' 54 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=53
+++ '[' 53 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=52
+++ '[' 52 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=51
+++ '[' 51 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=50
+++ '[' 50 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=49
+++ '[' 49 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=48
+++ '[' 48 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=47
+++ '[' 47 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=46
+++ '[' 46 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=45
+++ '[' 45 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=44
+++ '[' 44 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=43
+++ '[' 43 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=42
+++ '[' 42 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=41
+++ '[' 41 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=40
+++ '[' 40 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=39
+++ '[' 39 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=38
+++ '[' 38 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=37
+++ '[' 37 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=36
+++ '[' 36 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=35
+++ '[' 35 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=34
+++ '[' 34 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=33
+++ '[' 33 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=32
+++ '[' 32 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=31
+++ '[' 31 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=30
+++ '[' 30 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=29
+++ '[' 29 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=28
+++ '[' 28 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=27
+++ '[' 27 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=26
+++ '[' 26 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=25
+++ '[' 25 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=24
+++ '[' 24 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=23
+++ '[' 23 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=22
+++ '[' 22 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=21
+++ '[' 21 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=20
+++ '[' 20 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=19
+++ '[' 19 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=18
+++ '[' 18 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=17
+++ '[' 17 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=16
+++ '[' 16 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=15
+++ '[' 15 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=14
+++ '[' 14 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=13
+++ '[' 13 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=12
+++ '[' 12 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=11
+++ '[' 11 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=10
+++ '[' 10 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=9
+++ '[' 9 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=8
+++ '[' 8 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=7
+++ '[' 7 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=6
+++ '[' 6 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=5
+++ '[' 5 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=4
+++ '[' 4 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=3
+++ '[' 3 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=2
+++ '[' 2 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=1
+++ '[' 1 -le 0 ']'
+++ sleep 2
+++ execute_remote true
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ retries=0
+++ '[' 0 -le 0 ']'
+++ echo 'Timed out waiting for ssh. Aborting!'
+Timed out waiting for ssh. Aborting!
+++ break
 ++ retry_until 'snap info core' 'tracking: +edge' 10 2
 ++ command='snap info core'
 ++ output='tracking: +edge'
 ++ retries=10
 ++ sleep=2
+++ execute_remote 'snap info core'
 ++ grep -q -E 'tracking: +edge'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ retries=9
+++ '[' 9 -le 0 ']'
+++ sleep 2
 ++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap info core'
-++ retry_until 'sudo snap install --devmode jq' 'jq .* installed' 20 10
-++ command='sudo snap install --devmode jq'
-++ output='jq .* installed'
-++ retries=20
-++ sleep=10
-++ execute_remote 'sudo snap install --devmode jq'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
+++ retries=8
+++ '[' 8 -le 0 ']'
+++ sleep 2
+++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
-++ grep -q -E 'jq .* installed'
-error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
-       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
-       [::1]:49683->[::1]:53: read: connection refused
-++ retries=19
-++ '[' 19 -le 0 ']'
-++ sleep 10
-++ execute_remote 'sudo snap install --devmode jq'
+++ grep -q -E 'tracking: +edge'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ retries=7
+++ '[' 7 -le 0 ']'
+++ sleep 2
+++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
-++ grep -q -E 'jq .* installed'
-++ execute_remote 'sudo snap remove jq'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
+++ retries=6
+++ '[' 6 -le 0 ']'
+++ sleep 2
+++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap remove jq'
-jq removed
-+ . snappy-qa-jobs/scripts/utils/run_setup.sh 10.101.51.12 22 test ubuntu ''
-++ echo 'Running setup command'
-Running setup command
-++ '[' 5 -ne 5 ']'
-++ DEVICE_IP=10.101.51.12
-++ DEVICE_PORT=22
-++ USER=test
-++ PASS=ubuntu
-++ SETUP=
-++ '[' -z '' ']'
-++ echo 'No setup command to run'
-No setup command to run
-+ . snappy-qa-jobs/scripts/utils/get_spread.sh
-++ echo 'Getting spread'
-Getting spread
-+++ pwd
-++ export WORKSPACE=/home/ubuntu
-++ WORKSPACE=/home/ubuntu
-++ export SPREAD_DIR=/home/ubuntu/spread
-++ SPREAD_DIR=/home/ubuntu/spread
-++ export PATH=/home/ubuntu/spread:/srv/testflinger-agent/dragonboard002/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-++ PATH=/home/ubuntu/spread:/srv/testflinger-agent/dragonboard002/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-++ '[' -f /home/ubuntu/spread/spread ']'
-++ mkdir -p /home/ubuntu/spread
-++ cd /home/ubuntu/spread
-++ curl -s -O https://niemeyer.s3.amazonaws.com/spread-amd64.tar.gz
-++ tar xzvf spread-amd64.tar.gz
-spread
-++ echo 'Spread downloaded and ready to use'
-Spread downloaded and ready to use
-+ . snappy-qa-jobs/scripts/utils/run_spread.sh 10.101.51.12 22 snapd external:ubuntu-core-16-arm-64:tests/ '' tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks -v
-++ echo 'Running spread'
-Running spread
-++ '[' 7 -ne 7 ']'
-++ export WORKSPACE=/home/ubuntu
-++ WORKSPACE=/home/ubuntu
-++ DEVICE_IP=10.101.51.12
-++ DEVICE_PORT=22
-++ PROJECT_PATH=snapd
-++ SPREAD_TESTS=external:ubuntu-core-16-arm-64:tests/
-++ SPREAD_ENV=
-++ SKIP_TESTS=tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks
-++ SPREAD_PARAMS=-v
-++ '[' -z external:ubuntu-core-16-arm-64:tests/ ']'
-++ '[' '!' -z '' ']'
-++ export SPREAD_EXTERNAL_ADDRESS=10.101.51.12:22
-++ SPREAD_EXTERNAL_ADDRESS=10.101.51.12:22
-+++ which spread
-++ [[ -n /home/ubuntu/spread/spread ]]
-++ echo 'Spread found'
-Spread found
-++ cd snapd
-++ echo 'Moving to manual all the tests to skip: tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks'
-Moving to manual all the tests to skip: tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks
-+++ echo tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks
-+++ tr , ' '
-++ tests_skip='tests/main/auto-refresh tests/main/interfaces-content tests/main/install-sideload tests/main/snap-core-symlinks'
-++ for test in '$tests_skip'
-++ '[' -f tests/main/auto-refresh/task.yaml ']'
-++ cp tests/main/auto-refresh/task.yaml tests/main/auto-refresh/task.yaml.back
-++ echo 'manual: true'
-++ for test in '$tests_skip'
-++ '[' -f tests/main/interfaces-content/task.yaml ']'
-++ cp tests/main/interfaces-content/task.yaml tests/main/interfaces-content/task.yaml.back
-++ echo 'manual: true'
-++ for test in '$tests_skip'
-++ '[' -f tests/main/install-sideload/task.yaml ']'
-++ cp tests/main/install-sideload/task.yaml tests/main/install-sideload/task.yaml.back
-++ echo 'manual: true'
-++ for test in '$tests_skip'
-++ '[' -f tests/main/snap-core-symlinks/task.yaml ']'
-++ cp tests/main/snap-core-symlinks/task.yaml tests/main/snap-core-symlinks/task.yaml.back
-++ echo 'manual: true'
-+++ echo -v
-+++ tr , ' '
-++ spread_params=-v
-++ echo 'Running command: spread -v external:ubuntu-core-16-arm-64:tests/'
-Running command: spread -v external:ubuntu-core-16-arm-64:tests/
-++ spread -v external:ubuntu-core-16-arm-64:tests/
-2018-10-02 04:57:17 Found /home/ubuntu/snapd/spread.yaml.
-2018-10-02 04:57:20 Project content is packed for delivery (3.05MB).
-2018-10-02 04:57:20 Sequence of jobs produced with -seed=1538456240
-2018-10-02 04:57:20 If killed, discard servers with: spread -reuse-pid=812 -discard
-2018-10-02 04:57:20 Allocating external:ubuntu-core-16-arm-64...
-2018-10-02 04:57:20 Waiting for external:ubuntu-core-16-arm-64 to make SSH available at 10.101.51.12:22...
-2018-10-02 04:57:20 Allocated external:ubuntu-core-16-arm-64.
-2018-10-02 04:57:20 Connecting to external:ubuntu-core-16-arm-64...
-2018-10-02 04:57:20 Connected to external:ubuntu-core-16-arm-64 at 10.101.51.12:22.
-2018-10-02 04:57:20 Sending project content to external:ubuntu-core-16-arm-64...
-2018-10-02 04:57:22 Preparing external:ubuntu-core-16-arm-64...
-2018-10-02 04:57:22 Preparing external:ubuntu-core-16-arm-64:tests/main/...
-2018-10-02 04:58:20 Preparing external:ubuntu-core-16-arm-64:tests/main/lxd...
-2018-10-02 04:58:29 Executing external:ubuntu-core-16-arm-64:tests/main/lxd (1/215)...
-2018-10-02 04:58:30 Restoring external:ubuntu-core-16-arm-64:tests/main/lxd...
-2018-10-02 04:58:30 Preparing external:ubuntu-core-16-arm-64:tests/main/degraded...
-2018-10-02 04:58:35 Executing external:ubuntu-core-16-arm-64:tests/main/degraded (2/215)...
-2018-10-02 04:58:35 Restoring external:ubuntu-core-16-arm-64:tests/main/degraded...
-2018-10-02 04:58:35 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control...
-2018-10-02 04:58:55 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control (3/215)...
-2018-10-02 04:59:03 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control...
-2018-10-02 04:59:04 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
-2018-10-02 04:59:11 Executing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd (4/215)...
-2018-10-02 05:02:22 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd) as requested...
-2018-10-02 05:03:51 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
-2018-10-02 05:03:54 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash...
-2018-10-02 05:03:57 Executing external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash (5/215)...
-2018-10-02 05:06:58 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash) as requested...
-2018-10-02 05:08:48 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash...
-2018-10-02 05:08:51 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
-2018-10-02 05:09:09 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade (6/215)...
-2018-10-02 05:09:31 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-10-02 05:10:35 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-10-02 05:11:56 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-10-02 05:12:59 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-10-02 05:14:00 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
-2018-10-02 05:14:00 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
-2018-10-02 05:14:51 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot (7/215)...
-2018-10-02 05:14:52 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot) as requested...
-2018-10-02 05:15:54 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
-2018-10-02 05:15:54 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:initrdimg...
-2018-10-02 05:16:46 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:initrdimg (8/215)...
-2018-10-02 05:16:46 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:initrdimg...
-2018-10-02 05:16:46 Preparing external:ubuntu-core-16-arm-64:tests/main/revert-sideload...
-2018-10-02 05:16:51 Executing external:ubuntu-core-16-arm-64:tests/main/revert-sideload (9/215)...
-2018-10-02 05:17:20 Restoring external:ubuntu-core-16-arm-64:tests/main/revert-sideload...
-2018-10-02 05:17:20 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-switch...
-2018-10-02 05:17:30 Executing external:ubuntu-core-16-arm-64:tests/main/snap-switch (10/215)...
-2018-10-02 05:17:48 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-switch...
-2018-10-02 05:17:49 Preparing external:ubuntu-core-16-arm-64:tests/main/media-sharing...
-2018-10-02 05:18:14 Executing external:ubuntu-core-16-arm-64:tests/main/media-sharing (11/215)...
-2018-10-02 05:18:15 Restoring external:ubuntu-core-16-arm-64:tests/main/media-sharing...
-2018-10-02 05:18:15 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-removable-media...
-2018-10-02 05:18:35 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-removable-media (12/215)...
-2018-10-02 05:18:42 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-removable-media...
-2018-10-02 05:18:43 Preparing external:ubuntu-core-16-arm-64:tests/main/base-snaps...
-2018-10-02 05:18:49 Executing external:ubuntu-core-16-arm-64:tests/main/base-snaps (13/215)...
-2018-10-02 05:19:10 Restoring external:ubuntu-core-16-arm-64:tests/main/base-snaps...
-2018-10-02 05:19:10 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-kvm...
-2018-10-02 05:19:31 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-kvm (14/215)...
-2018-10-02 05:19:39 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-kvm...
-2018-10-02 05:19:40 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-hostname-control...
-2018-10-02 05:20:00 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-hostname-control (15/215)...
-2018-10-02 05:20:08 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-hostname-control...
-2018-10-02 05:20:08 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:common...
-2018-10-02 05:20:37 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:common (16/215)...
-2018-10-02 05:20:52 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:common...
-2018-10-02 05:20:53 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:common...
-2018-10-02 05:21:16 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:common (17/215)...
-2018-10-02 05:22:05 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:common...
-2018-10-02 05:22:05 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-store...
-2018-10-02 05:22:26 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-store (18/215)...
-2018-10-02 05:22:46 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-store...
-2018-10-02 05:22:46 Preparing external:ubuntu-core-16-arm-64:tests/main/snapctl-services...
-2018-10-02 05:22:55 Executing external:ubuntu-core-16-arm-64:tests/main/snapctl-services (19/215)...
-2018-10-02 05:24:44 Restoring external:ubuntu-core-16-arm-64:tests/main/snapctl-services...
-2018-10-02 05:24:44 Preparing external:ubuntu-core-16-arm-64:tests/main/xauth-migration...
-2018-10-02 05:25:43 Executing external:ubuntu-core-16-arm-64:tests/main/xauth-migration (20/215)...
-2018-10-02 05:26:03 Restoring external:ubuntu-core-16-arm-64:tests/main/xauth-migration...
-2018-10-02 05:26:03 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-network...
-2018-10-02 05:26:26 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-network (21/215)...
-2018-10-02 05:26:36 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-network...
-2018-10-02 05:26:37 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-browser-support:allow...
-2018-10-02 05:26:58 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-browser-support:allow (22/215)...
-2018-10-02 05:27:17 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-browser-support:allow...
-2018-10-02 05:27:17 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-bind...
-2018-10-02 05:27:45 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-bind (23/215)...
-2018-10-02 05:27:52 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-network-bind...
-2018-10-02 05:28:00 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-firewall-control...
-2018-10-02 05:28:18 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-firewall-control (24/215)...
-2018-10-02 05:28:29 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-firewall-control...
-2018-10-02 05:28:30 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-common-dirs-undo...
-2018-10-02 05:28:44 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-common-dirs-undo (25/215)...
-2018-10-02 05:29:09 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-common-dirs-undo...
-2018-10-02 05:29:09 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:snap...
-2018-10-02 05:29:18 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:snap (26/215)...
-2018-10-02 05:30:13 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:snap...
-2018-10-02 05:30:13 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-gpio-memory-control...
-2018-10-02 05:30:46 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-gpio-memory-control (27/215)...
-2018-10-02 05:30:46 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-gpio-memory-control...
-2018-10-02 05:30:46 Preparing external:ubuntu-core-16-arm-64:tests/main/refresh-hold...
-2018-10-02 05:30:55 Executing external:ubuntu-core-16-arm-64:tests/main/refresh-hold (28/215)...
-2018-10-02 05:31:00 Restoring external:ubuntu-core-16-arm-64:tests/main/refresh-hold...
-2018-10-02 05:31:00 Preparing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-devmode...
-2018-10-02 05:31:14 Executing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-devmode (29/215)...
-2018-10-02 05:31:45 Restoring external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-devmode...
-2018-10-02 05:31:46 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-mount-observe...
-2018-10-02 05:32:08 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-mount-observe (30/215)...
-2018-10-02 05:32:30 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-mount-observe...
-2018-10-02 05:32:30 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-network-config:core...
-2018-10-02 05:32:45 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-network-config:core (31/215)...
-2018-10-02 05:32:51 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-network-config:core...
-2018-10-02 05:32:52 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe...
-2018-10-02 05:33:06 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe (32/215)...
-2018-10-02 05:33:14 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe...
-2018-10-02 05:33:14 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-service-after-before...
-2018-10-02 05:33:21 Executing external:ubuntu-core-16-arm-64:tests/main/snap-service-after-before (33/215)...
-2018-10-02 05:33:38 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-service-after-before...
-2018-10-02 05:33:38 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:data...
-2018-10-02 05:33:52 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:data (34/215)...
-2018-10-02 05:34:48 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:data...
-2018-10-02 05:34:49 Preparing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-serial-port...
-2018-10-02 05:35:19 Executing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-serial-port (35/215)...
-2018-10-02 05:35:38 Restoring external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-serial-port...
-2018-10-02 05:35:39 Preparing external:ubuntu-core-16-arm-64:tests/main/listing...
-2018-10-02 05:36:19 Executing external:ubuntu-core-16-arm-64:tests/main/listing (36/215)...
-2018-10-02 05:36:36 Restoring external:ubuntu-core-16-arm-64:tests/main/listing...
-2018-10-02 05:36:38 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:snap...
-2018-10-02 05:37:15 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:snap (37/215)...
-2018-10-02 05:37:29 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:snap...
-2018-10-02 05:37:29 Preparing external:ubuntu-core-16-arm-64:tests/main/enable-disable...
-2018-10-02 05:38:05 Executing external:ubuntu-core-16-arm-64:tests/main/enable-disable (38/215)...
-2018-10-02 05:38:17 Restoring external:ubuntu-core-16-arm-64:tests/main/enable-disable...
-2018-10-02 05:38:17 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-device-reg...
-2018-10-02 05:38:24 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-device-reg (39/215)...
-2018-10-02 05:38:24 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-device-reg...
-2018-10-02 05:38:25 Preparing external:ubuntu-core-16-arm-64:tests/main/install-remove-multi...
-2018-10-02 05:38:29 Executing external:ubuntu-core-16-arm-64:tests/main/install-remove-multi (40/215)...
-2018-10-02 05:39:26 Restoring external:ubuntu-core-16-arm-64:tests/main/install-remove-multi...
-2018-10-02 05:39:26 Preparing external:ubuntu-core-16-arm-64:tests/main/debug-confinement...
-2018-10-02 05:39:29 Executing external:ubuntu-core-16-arm-64:tests/main/debug-confinement (41/215)...
-2018-10-02 05:39:29 Restoring external:ubuntu-core-16-arm-64:tests/main/debug-confinement...
-2018-10-02 05:39:29 Preparing external:ubuntu-core-16-arm-64:tests/main/fakestore-install...
-2018-10-02 05:39:35 Executing external:ubuntu-core-16-arm-64:tests/main/fakestore-install (42/215)...
-2018-10-02 05:39:35 Restoring external:ubuntu-core-16-arm-64:tests/main/fakestore-install...
-2018-10-02 05:39:35 Preparing external:ubuntu-core-16-arm-64:tests/main/refresh:strict_remote...
-2018-10-02 05:40:06 Executing external:ubuntu-core-16-arm-64:tests/main/refresh:strict_remote (43/215)...
-2018-10-02 05:40:58 Restoring external:ubuntu-core-16-arm-64:tests/main/refresh:strict_remote...
-2018-10-02 05:40:58 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-apt...
-2018-10-02 05:41:15 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-apt (44/215)...
-2018-10-02 05:41:15 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-apt...
-2018-10-02 05:41:15 Preparing external:ubuntu-core-16-arm-64:tests/main/debug-paths...
-2018-10-02 05:41:20 Executing external:ubuntu-core-16-arm-64:tests/main/debug-paths (45/215)...
-2018-10-02 05:41:21 Restoring external:ubuntu-core-16-arm-64:tests/main/debug-paths...
-2018-10-02 05:41:21 Preparing external:ubuntu-core-16-arm-64:tests/main/core-watchdog...
-2018-10-02 05:41:26 Executing external:ubuntu-core-16-arm-64:tests/main/core-watchdog (46/215)...
-2018-10-02 05:41:32 Restoring external:ubuntu-core-16-arm-64:tests/main/core-watchdog...
-2018-10-02 05:41:32 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-service-timer...
-2018-10-02 05:41:35 Executing external:ubuntu-core-16-arm-64:tests/main/snap-service-timer (47/215)...
-2018-10-02 05:42:05 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-service-timer...
-2018-10-02 05:42:06 Preparing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-strict...
-2018-10-02 05:42:22 Executing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-strict (48/215)...
-2018-10-02 05:42:42 Restoring external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-strict...
-2018-10-02 05:42:42 Preparing external:ubuntu-core-16-arm-64:tests/main/install-socket-activation...
-2018-10-02 05:43:09 Executing external:ubuntu-core-16-arm-64:tests/main/install-socket-activation (49/215)...
-2018-10-02 05:43:10 Restoring external:ubuntu-core-16-arm-64:tests/main/install-socket-activation...
-2018-10-02 05:43:10 Preparing external:ubuntu-core-16-arm-64:tests/main/revert:fake...
-2018-10-02 05:43:21 Executing external:ubuntu-core-16-arm-64:tests/main/revert:fake (50/215)...
-2018-10-02 05:43:21 Restoring external:ubuntu-core-16-arm-64:tests/main/revert:fake...
-2018-10-02 05:43:21 Preparing external:ubuntu-core-16-arm-64:tests/main/refresh:classic_fake...
-2018-10-02 05:43:27 Executing external:ubuntu-core-16-arm-64:tests/main/refresh:classic_fake (51/215)...
-2018-10-02 05:43:27 Restoring external:ubuntu-core-16-arm-64:tests/main/refresh:classic_fake...
-2018-10-02 05:43:27 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-system-observe...
-2018-10-02 05:43:53 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-system-observe (52/215)...
-2018-10-02 05:44:07 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-system-observe...
-2018-10-02 05:44:07 Preparing external:ubuntu-core-16-arm-64:tests/main/snapctl-from-snap...
-2018-10-02 05:44:24 Executing external:ubuntu-core-16-arm-64:tests/main/snapctl-from-snap (53/215)...
-2018-10-02 05:45:09 Restoring external:ubuntu-core-16-arm-64:tests/main/snapctl-from-snap...
-2018-10-02 05:45:09 Preparing external:ubuntu-core-16-arm-64:tests/main/command-chain:reexec0...
-2018-10-02 05:45:30 Executing external:ubuntu-core-16-arm-64:tests/main/command-chain:reexec0 (54/215)...
-2018-10-02 05:45:30 Restoring external:ubuntu-core-16-arm-64:tests/main/command-chain:reexec0...
-2018-10-02 05:45:31 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-gpg-keys...
-2018-10-02 05:45:49 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-gpg-keys (55/215)...
-2018-10-02 05:45:56 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-gpg-keys...
-2018-10-02 05:45:57 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-update-ns...
-2018-10-02 05:46:24 Executing external:ubuntu-core-16-arm-64:tests/main/snap-update-ns (56/215)...
-2018-10-02 05:46:30 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-update-ns...
-2018-10-02 05:46:31 Preparing external:ubuntu-core-16-arm-64:tests/main/revert:remote...
-2018-10-02 05:47:04 Executing external:ubuntu-core-16-arm-64:tests/main/revert:remote (57/215)...
-2018-10-02 05:48:03 Restoring external:ubuntu-core-16-arm-64:tests/main/revert:remote...
-2018-10-02 05:48:03 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-basic...
-2018-10-02 05:48:20 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-basic (58/215)...
-2018-10-02 05:48:54 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-basic...
-2018-10-02 05:48:56 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-timezone-control...
-2018-10-02 05:49:25 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-timezone-control (59/215)...
-2018-10-02 05:49:34 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-timezone-control...
-2018-10-02 05:49:34 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-service-stop-mode-sigkill...
-2018-10-02 05:49:43 Executing external:ubuntu-core-16-arm-64:tests/main/snap-service-stop-mode-sigkill (60/215)...
-2018-10-02 05:51:10 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-service-stop-mode-sigkill...
-2018-10-02 05:52:05 Preparing external:ubuntu-core-16-arm-64:tests/main/server-snap:goServer...
-2018-10-02 05:52:33 Executing external:ubuntu-core-16-arm-64:tests/main/server-snap:goServer (61/215)...
-2018-10-02 05:52:33 Restoring external:ubuntu-core-16-arm-64:tests/main/server-snap:goServer...
-2018-10-02 05:52:33 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-desktop...
-2018-10-02 05:52:49 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-desktop (62/215)...
-2018-10-02 05:53:28 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-desktop...
-2018-10-02 05:53:29 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-home...
-2018-10-02 05:53:49 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-home (63/215)...
-2018-10-02 05:54:13 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-home...
-2018-10-02 05:54:14 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-download...
-2018-10-02 05:54:23 Executing external:ubuntu-core-16-arm-64:tests/main/snap-download (64/215)...
-2018-10-02 05:54:47 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-download...
-2018-10-02 05:54:47 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-timeserver-control...
-2018-10-02 05:55:05 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-timeserver-control (65/215)...
-2018-10-02 05:55:14 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-timeserver-control...
-2018-10-02 05:55:15 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-fan...
-2018-10-02 05:55:23 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-fan (66/215)...
-2018-10-02 05:55:23 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-fan...
-2018-10-02 05:55:23 Preparing external:ubuntu-core-16-arm-64:tests/main/regression-home-snap-root-owned...
-2018-10-02 05:55:45 Executing external:ubuntu-core-16-arm-64:tests/main/regression-home-snap-root-owned (67/215)...
-2018-10-02 05:55:46 Restoring external:ubuntu-core-16-arm-64:tests/main/regression-home-snap-root-owned...
-2018-10-02 05:55:46 Preparing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-jailmode...
-2018-10-02 05:56:07 Executing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-jailmode (68/215)...
-2018-10-02 05:56:28 Restoring external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-jailmode...
-2018-10-02 05:56:28 Preparing external:ubuntu-core-16-arm-64:tests/main/install-cache...
-2018-10-02 05:56:35 Executing external:ubuntu-core-16-arm-64:tests/main/install-cache (69/215)...
-2018-10-02 05:57:11 Restoring external:ubuntu-core-16-arm-64:tests/main/install-cache...
-2018-10-02 05:57:11 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-core-fixup...
-2018-10-02 05:57:19 Executing external:ubuntu-core-16-arm-64:tests/main/snap-core-fixup (70/215)...
-2018-10-02 05:57:25 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-core-fixup...
-2018-10-02 05:57:25 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-run-symlink-error...
-2018-10-02 05:57:29 Executing external:ubuntu-core-16-arm-64:tests/main/snap-run-symlink-error (71/215)...
-2018-10-02 05:57:30 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-run-symlink-error...
-2018-10-02 05:57:30 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks...
-2018-10-02 05:58:11 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks (72/215)...
-2018-10-02 05:58:58 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks...
-2018-10-02 05:59:04 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-locale-control...
-2018-10-02 05:59:14 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-locale-control (73/215)...
-2018-10-02 05:59:14 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-locale-control...
-2018-10-02 05:59:14 Preparing external:ubuntu-core-16-arm-64:tests/main/security-profiles...
-2018-10-02 05:59:19 Executing external:ubuntu-core-16-arm-64:tests/main/security-profiles (74/215)...
-2018-10-02 05:59:44 Restoring external:ubuntu-core-16-arm-64:tests/main/security-profiles...
-2018-10-02 05:59:44 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-discard-ns...
-2018-10-02 06:00:14 Executing external:ubuntu-core-16-arm-64:tests/main/snap-discard-ns (75/215)...
-2018-10-02 06:00:15 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-discard-ns...
-2018-10-02 06:00:15 Preparing external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1...
-2018-10-02 06:00:23 Executing external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1 (76/215)...
-2018-10-02 06:00:37 Restoring external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1...
-2018-10-02 06:00:38 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-disconnect...
-2018-10-02 06:01:00 Executing external:ubuntu-core-16-arm-64:tests/main/snap-disconnect (77/215)...
-2018-10-02 06:01:29 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-disconnect...
-2018-10-02 06:01:30 Preparing external:ubuntu-core-16-arm-64:tests/main/refresh-undo...
-2018-10-02 06:01:37 Executing external:ubuntu-core-16-arm-64:tests/main/refresh-undo (78/215)...
-2018-10-02 06:02:05 Restoring external:ubuntu-core-16-arm-64:tests/main/refresh-undo...
-2018-10-02 06:02:06 Preparing external:ubuntu-core-16-arm-64:tests/main/cmdline...
-2018-10-02 06:02:14 Executing external:ubuntu-core-16-arm-64:tests/main/cmdline (79/215)...
-2018-10-02 06:02:14 Restoring external:ubuntu-core-16-arm-64:tests/main/cmdline...
-2018-10-02 06:02:14 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-get...
-2018-10-02 06:02:49 Executing external:ubuntu-core-16-arm-64:tests/main/snap-get (80/215)...
-2018-10-02 06:03:00 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-get...
-2018-10-02 06:03:01 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-services...
-2018-10-02 06:03:16 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-services (81/215)...
-2018-10-02 06:03:16 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-services...
-2018-10-02 06:03:16 Preparing external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_tools...
-2018-10-02 06:03:22 Executing external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_tools (82/215)...
-2018-10-02 06:03:39 Restoring external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_tools...
-2018-10-02 06:03:40 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-repair...
-2018-10-02 06:03:43 Executing external:ubuntu-core-16-arm-64:tests/main/snap-repair (83/215)...
-2018-10-02 06:03:46 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-repair...
-2018-10-02 06:03:46 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-wait...
-2018-10-02 06:04:05 Executing external:ubuntu-core-16-arm-64:tests/main/snap-wait (84/215)...
-2018-10-02 06:04:10 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-wait...
-2018-10-02 06:04:11 Preparing external:ubuntu-core-16-arm-64:tests/main/snapctl-configure-core...
-2018-10-02 06:04:19 Executing external:ubuntu-core-16-arm-64:tests/main/snapctl-configure-core (85/215)...
-2018-10-02 06:04:51 Restoring external:ubuntu-core-16-arm-64:tests/main/snapctl-configure-core...
-2018-10-02 06:04:53 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-cli...
-2018-10-02 06:05:11 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-cli (86/215)...
-2018-10-02 06:05:12 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-cli...
-2018-10-02 06:05:12 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-run...
-2018-10-02 06:05:45 Executing external:ubuntu-core-16-arm-64:tests/main/snap-run (87/215)...
-2018-10-02 06:05:57 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-run...
-2018-10-02 06:05:57 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-env...
-2018-10-02 06:06:33 Executing external:ubuntu-core-16-arm-64:tests/main/snap-env (88/215)...
-2018-10-02 06:06:34 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-env...
-2018-10-02 06:06:35 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-service...
-2018-10-02 06:06:42 Executing external:ubuntu-core-16-arm-64:tests/main/snap-service (89/215)...
-2018-10-02 06:07:30 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-service...
-2018-10-02 06:07:31 Preparing external:ubuntu-core-16-arm-64:tests/main/layout...
-2018-10-02 06:08:26 Executing external:ubuntu-core-16-arm-64:tests/main/layout (90/215)...
-2018-10-02 06:08:32 Error executing external:ubuntu-core-16-arm-64:tests/main/layout : 
------
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps.sh
-++ seq 2
-+ for i in '$(seq 2)'
-+ '[' 1 -eq 2 ']'
-+ echo 'snap declaring layouts doesn'\''t explode on startup'
-snap declaring layouts doesn't explode on startup
-+ test-snapd-layout.sh -c true
-+ echo 'layout declarations are honored'
-layout declarations are honored
-+ test-snapd-layout.sh -c 'test -d /etc/demo'
-+ test-snapd-layout.sh -c 'test -f /etc/demo.conf'
-+ test-snapd-layout.sh -c 'test -h /etc/demo.cfg'
-++ test-snapd-layout.sh -c 'readlink /etc/demo.cfg'
-++ test-snapd-layout.sh -c 'echo $SNAP_COMMON/etc/demo.conf'
-+ test /var/snap/test-snapd-layout/common/etc/demo.conf = /var/snap/test-snapd-layout/common/etc/demo.conf
-+ test-snapd-layout.sh -c 'test -d /usr/share/demo'
-+ test-snapd-layout.sh -c 'test -d /var/lib/demo'
-+ test-snapd-layout.sh -c 'test -d /var/cache/demo'
-+ test-snapd-layout.sh -c 'test -d /opt/demo'
-+ test-snapd-layout.sh -c 'test -d /bin/very-weird-place'
-+ echo 'layout constructed a mimic using tmpfs as aid (/opt)'
-layout constructed a mimic using tmpfs as aid (/opt)
-++ test-snapd-layout.sh -c 'stat -f /opt -c '\''%T'\'''
-+ '[' tmpfs = tmpfs ']'
-+ echo 'and the tmpfs was mounted with 0755 and root/root user/group to mimic /opt in core'
-and the tmpfs was mounted with 0755 and root/root user/group to mimic /opt in core
-++ test-snapd-layout.sh -c 'stat /opt -c '\''%a'\'''
-+ '[' 755 = 755 ']'
-++ test-snapd-layout.sh -c 'stat /opt -c '\''%u'\'''
-+ '[' 0 = 0 ']'
-++ test-snapd-layout.sh -c 'stat /opt -c '\''%g'\'''
-+ '[' 0 = 0 ']'
-+ echo 'layout constructed a mimic using tmpfs as aid (/var/spool/rsyslog)'
-layout constructed a mimic using tmpfs as aid (/var/spool/rsyslog)
-++ test-snapd-layout.sh -c 'stat -f /var/spool/rsyslog -c '\''%T'\'''
-+ '[' tmpfs = tmpfs ']'
-+ echo 'and the tmpfs was mounted with 0700 and syslog/adm user/group to mimic /var/spool/rsyslog in core'
-and the tmpfs was mounted with 0700 and syslog/adm user/group to mimic /var/spool/rsyslog in core
-++ test-snapd-layout.sh -c 'stat /var/spool/rsyslog -c '\''%a'\'''
-+ '[' 700 = 700 ']'
-++ test-snapd-layout.sh -c 'stat /var/spool/rsyslog -c '\''%u'\'''
-+ '[' 108 = 108 ']'
-++ test-snapd-layout.sh -c 'stat /var/spool/rsyslog -c '\''%g'\'''
-+ '[' 4 = 4 ']'
-+ echo 'layout locations pointing to SNAP_DATA and SNAP_COMMON are writable'
-layout locations pointing to SNAP_DATA and SNAP_COMMON are writable
-+ echo 'and the writes go to the right place in the backing store'
-and the writes go to the right place in the backing store
-+ test-snapd-layout.sh -c 'echo foo-1 > /etc/demo/writable'
-++ test-snapd-layout.sh -c 'cat $SNAP_COMMON/etc/demo/writable'
-+ test foo-1 = foo-1
-+ test-snapd-layout.sh -c 'echo foo-2 > /etc/demo.conf'
-++ test-snapd-layout.sh -c 'cat $SNAP_COMMON/etc/demo.conf'
-+ test foo-2 = foo-2
-+ test-snapd-layout.sh -c 'echo foo-3 > /etc/demo.cfg'
-++ test-snapd-layout.sh -c 'cat $SNAP_COMMON/etc/demo.conf'
-+ test foo-3 = foo-3
-+ test-snapd-layout.sh -c 'echo foo-4 > /var/lib/demo/writable'
-++ test-snapd-layout.sh -c 'cat $SNAP_DATA/var/lib/demo/writable'
-+ test foo-4 = foo-4
-+ test-snapd-layout.sh -c 'echo foo-5 > /var/cache/demo/writable'
-++ test-snapd-layout.sh -c 'cat $SNAP_DATA/var/cache/demo/writable'
-+ test foo-5 = foo-5
-+ echo 'layout locations pointing to SNAP are readable'
-layout locations pointing to SNAP are readable
-+ test-snapd-layout.sh -c 'test -r /usr/share/demo/file'
------
-.
-2018-10-02 06:08:33 Debug output for external:ubuntu-core-16-arm-64:tests/main/layout : 
------
-+ ls -ld /etc
-drwxr-xr-x 77 root root 2355 Oct  2 04:28 /etc
-+ ls -ld /etc/demo
-ls: cannot access '/etc/demo': No such file or directory
-+ :
-+ ls -ld /etc/demo.conf
-ls: cannot access '/etc/demo.conf': No such file or directory
-+ :
-+ ls -ld /etc/demo.cfg
-ls: cannot access '/etc/demo.cfg': No such file or directory
-+ :
-+ '[' 1 = 1 ']'
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/journalctl.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/state.sh
-+++ SNAPD_STATE_PATH=/home/gopath/src/github.com/snapcore/snapd/tests/snapd-state
-+++ SNAPD_STATE_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/snapd-state/snapd-state.tar
-+++ RUNTIME_STATE_PATH=/home/gopath/src/github.com/snapcore/snapd/tests/runtime-state
-+++ SNAPD_ACTIVE_UNITS=/home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/snapd-active-units
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/dirs.sh
-++++ export SNAP_MOUNT_DIR=/snap
-++++ SNAP_MOUNT_DIR=/snap
-++++ export LIBEXECDIR=/usr/lib
-++++ LIBEXECDIR=/usr/lib
-++++ export MEDIA_DIR=/media
-++++ MEDIA_DIR=/media
-++++ case "$SPREAD_SYSTEM" in
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-++++ GRUB_EDITENV=grub-editenv
-++++ case "$SPREAD_SYSTEM" in
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/systemd.sh
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/systems.sh
-++ JOURNALCTL_CURSOR_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/journalctl_cursor
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/state.sh
-++ SNAPD_STATE_PATH=/home/gopath/src/github.com/snapcore/snapd/tests/snapd-state
-++ SNAPD_STATE_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/snapd-state/snapd-state.tar
-++ RUNTIME_STATE_PATH=/home/gopath/src/github.com/snapcore/snapd/tests/runtime-state
-++ SNAPD_ACTIVE_UNITS=/home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/snapd-active-units
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/dirs.sh
-+++ export SNAP_MOUNT_DIR=/snap
-+++ SNAP_MOUNT_DIR=/snap
-+++ export LIBEXECDIR=/usr/lib
-+++ LIBEXECDIR=/usr/lib
-+++ export MEDIA_DIR=/media
-+++ MEDIA_DIR=/media
-+++ case "$SPREAD_SYSTEM" in
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-+++ GRUB_EDITENV=grub-editenv
-+++ case "$SPREAD_SYSTEM" in
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/systemd.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/systems.sh
-+ echo '# journal messages for snapd'
-# journal messages for snapd
-+ get_journalctl_log -u snapd
-+ cursor=
-+ '[' -f /home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/journalctl_cursor ']'
-++ tail -n1 /home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/journalctl_cursor
-+ cursor='s=83f0b23df8924721af74ba9cd440a06e;i=b11d;b=7395957f8a254dca9852153670553a33;m=bd086689;t=57738c41c1541;x=41968c34121b8333'
-+ get_journalctl_log_from_cursor 's=83f0b23df8924721af74ba9cd440a06e;i=b11d;b=7395957f8a254dca9852153670553a33;m=bd086689;t=57738c41c1541;x=41968c34121b8333' -u snapd
-+ cursor='s=83f0b23df8924721af74ba9cd440a06e;i=b11d;b=7395957f8a254dca9852153670553a33;m=bd086689;t=57738c41c1541;x=41968c34121b8333'
-+ shift
-+ '[' -z 's=83f0b23df8924721af74ba9cd440a06e;i=b11d;b=7395957f8a254dca9852153670553a33;m=bd086689;t=57738c41c1541;x=41968c34121b8333' ']'
-+ journalctl -u snapd --cursor 's=83f0b23df8924721af74ba9cd440a06e;i=b11d;b=7395957f8a254dca9852153670553a33;m=bd086689;t=57738c41c1541;x=41968c34121b8333'
--- Logs begin at Tue 2018-10-02 05:49:08 UTC, end at Tue 2018-10-02 06:09:55 UTC. --
-Oct 02 06:09:35 localhost.localdomain snapd[30259]: daemon.go:279: DEBUG: pid=30291;uid=0;socket=/run/snapd.socket;@ PUT /v2/snaps/core/conf 54.507ms 202
-Oct 02 06:09:37 localhost.localdomain snapd[30259]: logger.go:74: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 286\r\nAge: 2653\r\nCache-Control: public, max-age=3600\r\nContent-Type: application/hal+json\r\nDate: Tue, 02 Oct 2018 05:25:24 GMT\r\nServer: gunicorn/19.7.1\r\nSnap-Store-Version: 6\r\nVary: X-Ubuntu-Series\r\nVia: 1.1 juju-7794b8-prod-ols-snap-store-indep-398 (squid/3.5.27)\r\nX-Cache: HIT from juju-7794b8-prod-ols-snap-store-indep-398\r\nX-Cache-Lookup: HIT from juju-7794b8-prod-ols-snap-store-indep-398:3128\r\nX-Request-Id: 23EF86C1B46C0A325DCC01BB5BB30143C4E4D61\r\nX-Vcs-Revision: 24cd277\r\nX-View-Name: snapdevicegw.webapi_search.section_listing\r\n\r\n{\"_embedded\": {\"clickindex:sections\": [{\"name\": \"featured\"}, {\"name\": \"games\"}, {\"name\": \"finance\"}, {\"name\": \"developers\"}, {\"name\": \"social-networking\"}, {\"name\": \"video\"}, {\"name\": \"music\"}, {\"name\": \"productivity\"}, {\"name\": \"utilities\"}, {\"name\": \"graphics\"}, {\"name\": \"server\"}]}}"
-Oct 02 06:09:37 localhost.localdomain snapd[30259]: retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/sections finished after 1 retries, elapsed time=1.576791s, status: 200
-Oct 02 06:09:37 localhost.localdomain snapd[30259]: retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/names?confinement=strict, attempt 1, elapsed time=49µs
-Oct 02 06:09:37 localhost.localdomain snapd[30259]: logger.go:67: DEBUG: > "GET /api/v1/snaps/names?confinement=strict HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.35.2+git954.b1b6b89~ubuntu16.04.1 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1100-snapdragon\r\nAccept: application/hal+json\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
-Oct 02 06:09:38 localhost.localdomain snapd[30259]: logger.go:74: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 74717\r\nAge: 1713\r\nCache-Control: public, max-age=3600\r\nContent-Type: application/hal+json\r\nDate: Tue, 02 Oct 2018 05:41:11 GMT\r\nServer: gunicorn/19.7.1\r\nSnap-Store-Version: 6\r\nVary: X-Ubuntu-Store, X-Ubuntu-Series, X-Ubuntu-Architecture\r\nVia: 1.1 juju-7794b8-prod-ols-snap-store-indep-398 (squid/3.5.27)\r\nX-Cache: HIT from juju-7794b8-prod-ols-snap-store-indep-398\r\nX-Cache-Lookup: HIT from juju-7794b8-prod-ols-snap-store-indep-398:3128\r\nX-Request-Id: 3DDC8926CEB00A325CA001BB5BB304F1C48239F\r\nX-Vcs-Revision: 24cd277\r\nX-View-Name: snapdevicegw.webapi_search.snap_names\r\n\r\n"
-Oct 02 06:09:39 localhost.localdomain snapd[30259]: retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/names?confinement=strict finished after 1 retries, elapsed time=2.018047s, status: 200
-Oct 02 06:09:39 localhost.localdomain snapd[30259]: catalogrefresh.go:75: DEBUG: Catalog refresh succeeded.
-Oct 02 06:09:39 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 122 on Do: Run configure hook of "core" snap
-Oct 02 06:09:39 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 123 on Do: Generate device key
-Oct 02 06:09:39 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 124 on Do: Request device serial
-Oct 02 06:09:40 localhost.localdomain snapd[30259]: logger.go:67: DEBUG: > "POST /api/v1/snaps/auth/request-id HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.35.2+git954.b1b6b89~ubuntu16.04.1 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1100-snapdragon\r\nContent-Length: 0\r\nAccept-Encoding: gzip\r\n\r\n"
-Oct 02 06:09:41 localhost.localdomain snapd[30259]: daemon.go:279: DEBUG: pid=30329;uid=0;socket=/run/snapd.socket;@ POST /v2/snaps 171.239ms 202
-Oct 02 06:09:41 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 125 on Do: Ensure prerequisites for "test-snapd-layout" are available
-Oct 02 06:09:41 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 126 on Do: Prepare snap "/tmp/snapd-sideload-pkg-183531520" (unset)
-Oct 02 06:09:41 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 127 on Do: Mount snap "test-snapd-layout" (unset)
-Oct 02 06:09:41 localhost.localdomain snapd[30259]: logger.go:74: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 59\r\nContent-Type: application/json\r\nDate: Tue, 02 Oct 2018 06:09:41 GMT\r\nServer: gunicorn/19.7.1\r\nSnap-Store-Version: 6\r\nX-Request-Id: 3DDC8926D02A0A325CA001BB5BB30BA4C5313E1\r\nX-Vcs-Revision: 24cd277\r\nX-View-Name: snapdevicegw.webapi_auth.request_id\r\n\r\n{\"request-id\":\"125771386389229030321538460581:1538460581\"}\n"
-Oct 02 06:09:43 localhost.localdomain snapd[30259]: logger.go:67: DEBUG: > "POST /api/v1/snaps/auth/devices HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.35.2+git954.b1b6b89~ubuntu16.04.1 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1100-snapdragon\r\nContent-Length: 1714\r\nContent-Type: application/x.ubuntu.assertion\r\nAccept-Encoding: gzip\r\n\r\ntype: serial-request\nbrand-id: Euf8YO6waprpTXVrREuDw8ODHNIACTwi\ndevice-key:\n    AcbBTQRWhcGAARAAzh/vI8fQjkHlDXXIQyVW0x2yd1iGf5lWY6d3oOAyOLvdkreYCqfN9/iFNhtO\n    TNoHXOyKimfPUCetOR5EsC7/XCoaxZfxiOvfZ3+J0Ojr+RoFpLaGO1lOanMyv5MjdfQejGHKgzPi\n    KwgaLfZfjHFoBNfICYeV7ryBPUp3Es5P0TAvurudE47qHESM0g8kGx4+pem+QKZirdiNB3hE/SBK\n    +7VtBcKbiNxxFpK7yDbO7xacBkp98CZuDamyX+paf//bFxN2AJP4QCQECkRgphH4wg6pr1greZ+s\n    2SFaYnnD2h5Zohc19xdCXTJDS7phbDIHs2IJC86F/sNSYQLYZIVwM4WA5KVSlr/ka+ifJqqZ9hFO\n    fGQQhOMLdR6Og131W2lGmCeiWNSy4aqe8/F/waec8kDFCb8VYidN5cmoQgPJH71bTKNM75W4yJBk\n    8ChPggkePdom5RHZXQq9M5iYmyR2dFY/NDsNYKVL60JsGyJwtLXuOE76KB946reGv/G5V4B1ottp\n    wLmsVkqagTGkNenfMqKbsCcXv6YRxxpoXB5tc2h8k57PcYUvygwrxvR0kNRURBPBjgFxUkR0v5eq\n    QUtQzv1UMW5+j4Q0N5khfbrQ0R9SRZKSWfX0fGzcpUOAYb6L2KTkNnEmEY/CtqbG6iVJs6aIUIFa\n    VNemlqXH1F4P6WUAEQEAAQ==\nmodel: dragonboard\nrequest-id: 125771386389229030321538460581:1538460581\nsign-key-sha3-384: Kyd0w73to910jjcf2TNzV9QIV9A6d5mv2rbgMywOXBTNYjHiiZsqCVSaLnJ9sx9A\n\nAcLBUgQAAQoABgUCW7MLpQAArmYQAJ9ezo2w66R3ZEVyWyScguIybseBE409oRbjvPHWGlmrVvM4\nBLGqu+JmV1KcgwSxYep4UyhuG904L8YM9BxWgeCJLobpxymB6Zpx08Z+iqZw2fmTSzcg25BxEvD0\n29Qa7uCn3i4pG3zOYO9UU8HvR1UFIAv/1HFjEwN4MJNeI1ROz1LxGJnwUpAoXDuUSywciLqQ+JSp\nn7fn7LCUPM15Msb6ZvmLYFJmW8NrtZ5kHqdIiMUYjRwLOb8wak9L6BKgEkBmxneL4J+eDVxbiXf2\nw0fMQEAEm34aCcfGD6zgM3eLdlWO/s9DMFjsDKJq6LczbWvkFc+3qwDUxstvj+PeG0fYB1bkO9SU\nqcZnrZJGcq1Xh9bxF0oP12v1md9ce6AbUxA15Y6McK2V3s5NaJlYnVED76SH7a+IDbH+sSdN6BF/\nwN5W2fzznATh7wu77NUTsWZIfai9oiZl3ZYdLcDHsq4w2jvSUXmEZTQHtrhkd15YndAlXqI+IYgf\nCgLl0pMRFzK2AUQuIjghUgNj19Af+/PfGtEoP0eStQsK0wNffWPEvCiPLmglstS+SiEV7Vl9BJKq\ndaGLiE+HzFnxcKf6SirP/021kOq4vYRIcqEXptm43BWbRyNUGLrKFmMUvBK2gLrVoRz3Qmh6GYuo\nmkTvHjTpj2NeL
-Oct 02 06:09:43 localhost.localdomain snapd[30259]: 6FZcd7ZALx6G/0P\n"
-Oct 02 06:09:43 localhost.localdomain snapd[30259]: logger.go:74: DEBUG: < "HTTP/1.1 403 FORBIDDEN\r\nContent-Length: 330\r\nContent-Type: application/json\r\nDate: Tue, 02 Oct 2018 06:09:43 GMT\r\nServer: gunicorn/19.7.1\r\nSnap-Store-Version: 6\r\nX-Request-Id: 3DDC8926D02A0A325CA001BB5BB30BA5C531469\r\nX-Vcs-Revision: 24cd277\r\nX-View-Name: snapdevicegw.webapi_auth.device_registration\r\n\r\n{\"error_list\":[{\"code\":\"device-registration-forbidden\",\"message\":\"Cannot process serial request for device with brand \\\"Euf8YO6waprpTXVrREuDw8ODHNIACTwi\\\" and model \\\"dragonboard\\\"\"}],\"errors\":[\"Cannot process serial request for device with brand \\\"Euf8YO6waprpTXVrREuDw8ODHNIACTwi\\\" and model \\\"dragonboard\\\"\"],\"result\":\"error\"}\n"
-Oct 02 06:09:43 localhost.localdomain snapd[30259]: task.go:303: DEBUG: 2018-10-02T06:09:43Z ERROR cannot deliver device serial request: Cannot process serial request for device with brand "Euf8YO6waprpTXVrREuDw8ODHNIACTwi" and model "dragonboard"
-Oct 02 06:09:46 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 128 on Do: Copy snap "test-snapd-layout" data
-Oct 02 06:09:46 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 129 on Do: Setup snap "test-snapd-layout" (unset) security profiles
-Oct 02 06:09:47 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 130 on Do: Make snap "test-snapd-layout" (unset) available to the system
-Oct 02 06:09:47 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 131 on Do: Automatically connect eligible plugs and slots of snap "test-snapd-layout"
-Oct 02 06:09:48 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 132 on Do: Set automatic aliases for snap "test-snapd-layout"
-Oct 02 06:09:48 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 133 on Do: Setup snap "test-snapd-layout" aliases
-Oct 02 06:09:48 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 134 on Do: Run install hook of "test-snapd-layout" snap if present
-Oct 02 06:09:48 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 135 on Do: Start snap "test-snapd-layout" (unset) services
-Oct 02 06:09:48 localhost.localdomain snapd[30259]: taskrunner.go:418: DEBUG: Running task 136 on Do: Run configure hook of "test-snapd-layout" snap if present
-Oct 02 06:09:48 localhost.localdomain snapd[30259]: daemon.go:279: DEBUG: pid=30329;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps?snaps=test-snapd-layout 7.27ms 200
-+ echo '# apparmor denials '
-# apparmor denials 
-+ dmesg --ctime
-+ grep DENIED
-[Tue Oct  2 06:09:49 2018] audit: type=1400 audit(1538460589.241:29528): apparmor="DENIED" operation="open" profile="snap-update-ns.test-snapd-layout" name="/dev/urandom" pid=30499 comm="3" requested_mask="r" denied_mask="r" fsuid=0 ouid=0
-+ echo '# seccomp denials (kills) '
-# seccomp denials (kills) 
-+ dmesg --ctime
-+ grep type=1326
-+ true
-+ echo '# snap interfaces'
-# snap interfaces
-+ snap interfaces
-Slot                      Plug
-:account-control          -
-:alsa                     -
-:autopilot-introspection  -
-:bluetooth-control        -
-:broadcom-asic-control    -
-:browser-support          -
-:camera                   -
-:can-bus                  -
-:cifs-mount               -
-:classic-support          -
-:core-support             -
-:cpu-control              -
-:daemon-notify            -
-:dcdbas-control           -
-:docker-support           -
-:dvb                      -
-:firewall-control         -
-:framebuffer              -
-:fuse-support             -
-:gpg-keys                 -
-:gpg-public-keys          -
-:gpio-memory-control      -
-:greengrass-support       -
-:hardware-observe         -
-:hardware-random-control  -
-:hardware-random-observe  -
-:home                     -
-:hostname-control         -
-:io-ports-control         -
-:joystick                 -
-:kernel-module-control    -
-:kubernetes-support       -
-:kvm                      -
-:log-observe              -
-:lxd-support              -
-:mount-observe            -
-:netlink-audit            -
-:netlink-connector        -
-:network                  -
-:network-bind             -
-:network-control          -
-:network-observe          -
-:network-setup-control    -
-:network-setup-observe    -
-:opengl                   -
-:openvswitch-support      -
-:physical-memory-control  -
-:physical-memory-observe  -
-:ppp                      -
-:process-control          -
-:raw-usb                  -
-:removable-media          -
-:shutdown                 -
-:snapd-control            -
-:ssh-keys                 -
-:ssh-public-keys          -
-:system-observe           -
-:system-trace             -
-:time-control             -
-:timeserver-control       -
-:timezone-control         -
-:tpm                      -
-:uhid                     -
-+ echo '# tasks executed on system'
-# tasks executed on system
-+ cat /home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/runs
-external:ubuntu-core-16-arm-64:tests/main/lxd external:ubuntu-core-16-arm-64:tests/main/degraded external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:initrdimg external:ubuntu-core-16-arm-64:tests/main/revert-sideload external:ubuntu-core-16-arm-64:tests/main/snap-switch external:ubuntu-core-16-arm-64:tests/main/media-sharing external:ubuntu-core-16-arm-64:tests/main/interfaces-removable-media external:ubuntu-core-16-arm-64:tests/main/base-snaps external:ubuntu-core-16-arm-64:tests/main/interfaces-kvm external:ubuntu-core-16-arm-64:tests/main/interfaces-hostname-control external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:common external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:common external:ubuntu-core-16-arm-64:tests/main/parallel-install-store external:ubuntu-core-16-arm-64:tests/main/snapctl-services external:ubuntu-core-16-arm-64:tests/main/xauth-migration external:ubuntu-core-16-arm-64:tests/main/interfaces-network external:ubuntu-core-16-arm-64:tests/main/interfaces-browser-support:allow external:ubuntu-core-16-arm-64:tests/main/interfaces-network-bind external:ubuntu-core-16-arm-64:tests/main/interfaces-firewall-control external:ubuntu-core-16-arm-64:tests/main/parallel-install-common-dirs-undo external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:snap external:ubuntu-core-16-arm-64:tests/main/interfaces-gpio-memory-control external:ubuntu-core-16-arm-64:tests/main/refresh-hold external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-devmode external:ubuntu-core-16-arm-64:tests/main/interfaces-mount-observe external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-network-config:core external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe external:ubuntu-core-16-arm-64:tests/main/snap-service-after-before external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:data external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-serial-port external:ubuntu-core-16-arm-64:tests/main/listing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:snap external:ubuntu-core-16-arm-64:tests/main/enable-disable external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-device-reg external:ubuntu-core-16-arm-64:tests/main/install-remove-multi external:ubuntu-core-16-arm-64:tests/main/debug-confinement external:ubuntu-core-16-arm-64:tests/main/fakestore-install external:ubuntu-core-16-arm-64:tests/main/refresh:strict_remote external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-apt external:ubuntu-core-16-arm-64:tests/main/debug-paths external:ubuntu-core-16-arm-64:tests/main/core-watchdog external:ubuntu-core-16-arm-64:tests/main/snap-service-timer external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-strict external:ubuntu-core-16-arm-64:tests/main/install-socket-activation external:ubuntu-core-16-arm-64:tests/main/revert:fake external:ubuntu-core-16-arm-64:tests/main/refresh:classic_fake external:ubuntu-core-16-arm-64:tests/main/interfaces-system-observe external:ubuntu-core-16-arm-64:tests/main/snapctl-from-snap external:ubuntu-core-16-arm-64:tests/main/command-chain:reexec0 external:ubuntu-core-16-arm-64:tests/main/interfaces-gpg-keys external:ubuntu-core-16-arm-64:tests/main/snap-update-ns external:ubuntu-core-16-arm-64:tests/main/revert:remote external:ubuntu-core-16-arm-64:tests/main/parallel-install-basic external:ubuntu-core-16-arm-64:tests/main/interfaces-timezone-control external:ubuntu-core-16-arm-64:tests/main/snap-service-stop-mode-sigkill external:ubuntu-core-16-arm-64:tests/main/server-snap:goServer external:ubuntu-core-16-arm-64:tests/main/parallel-install-desktop external:ubuntu-core-16-arm-64:tests/main/interfaces-home external:ubuntu-core-16-arm-64:tests/main/snap-download external:ubuntu-core-16-arm-64:tests/main/interfaces-timeserver-control external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-fan external:ubuntu-core-16-arm-64:tests/main/regression-home-snap-root-owned external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-jailmode external:ubuntu-core-16-arm-64:tests/main/install-cache external:ubuntu-core-16-arm-64:tests/main/snap-core-fixup external:ubuntu-core-16-arm-64:tests/main/snap-run-symlink-error external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks external:ubuntu-core-16-arm-64:tests/main/interfaces-locale-control external:ubuntu-core-16-arm-64:tests/main/security-profiles external:ubuntu-core-16-arm-64:tests/main/snap-discard-ns external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1 external:ubuntu-core-16-arm-64:tests/main/snap-disconnect external:ubuntu-core-16-arm-64:tests/main/refresh-undo external:ubuntu-core-16-arm-64:tests/main/cmdline external:ubuntu-core-16-arm-64:tests/main/snap-get external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-services external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_tools external:ubuntu-core-16-arm-64:tests/main/snap-repair external:ubuntu-core-16-arm-64:tests/main/snap-wait external:ubuntu-core-16-arm-64:tests/main/snapctl-configure-core external:ubuntu-core-16-arm-64:tests/main/interfaces-cli external:ubuntu-core-16-arm-64:tests/main/snap-run external:ubuntu-core-16-arm-64:tests/main/snap-env external:ubuntu-core-16-arm-64:tests/main/snap-service external:ubuntu-core-16-arm-64:tests/main/layout
------
-.
-2018-10-02 06:08:33 Restoring external:ubuntu-core-16-arm-64:tests/main/layout...
-2018-10-02 06:08:33 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-multi-service-failing...
-2018-10-02 06:08:40 Executing external:ubuntu-core-16-arm-64:tests/main/snap-multi-service-failing (91/215)...
-2018-10-02 06:08:40 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-multi-service-failing...
-2018-10-02 06:08:40 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted...
-2018-10-02 06:08:45 Executing external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted (92/215)...
-2018-10-02 06:09:03 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted...
-2018-10-02 06:09:03 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-gpg-public-keys...
-2018-10-02 06:09:19 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-gpg-public-keys (93/215)...
-2018-10-02 06:09:26 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-gpg-public-keys...
-2018-10-02 06:09:27 Preparing external:ubuntu-core-16-arm-64:tests/main/change-errors...
-2018-10-02 06:09:33 Executing external:ubuntu-core-16-arm-64:tests/main/change-errors (94/215)...
-2018-10-02 06:09:34 Restoring external:ubuntu-core-16-arm-64:tests/main/change-errors...
-2018-10-02 06:09:34 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-alsa...
-2018-10-02 06:09:51 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-alsa (95/215)...
-2018-10-02 06:10:00 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-alsa...
-2018-10-02 06:10:01 Preparing external:ubuntu-core-16-arm-64:tests/main/find-private...
-2018-10-02 06:10:08 Executing external:ubuntu-core-16-arm-64:tests/main/find-private (96/215)...
-2018-10-02 06:10:10 Restoring external:ubuntu-core-16-arm-64:tests/main/find-private...
-2018-10-02 06:10:10 Preparing external:ubuntu-core-16-arm-64:tests/main/refresh:strict_fake...
-2018-10-02 06:10:14 Executing external:ubuntu-core-16-arm-64:tests/main/refresh:strict_fake (97/215)...
-2018-10-02 06:10:14 Restoring external:ubuntu-core-16-arm-64:tests/main/refresh:strict_fake...
-2018-10-02 06:10:14 Preparing external:ubuntu-core-16-arm-64:tests/main/security-dev-input-event-denied...
-2018-10-02 06:10:32 Executing external:ubuntu-core-16-arm-64:tests/main/security-dev-input-event-denied (98/215)...
-2018-10-02 06:10:32 Restoring external:ubuntu-core-16-arm-64:tests/main/security-dev-input-event-denied...
-2018-10-02 06:10:32 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-joystick...
-2018-10-02 06:10:51 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-joystick (99/215)...
-2018-10-02 06:10:59 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-joystick...
-2018-10-02 06:11:00 Preparing external:ubuntu-core-16-arm-64:tests/main/refresh:classic_remote...
-2018-10-02 06:11:08 Executing external:ubuntu-core-16-arm-64:tests/main/refresh:classic_remote (100/215)...
-2018-10-02 06:11:08 Restoring external:ubuntu-core-16-arm-64:tests/main/refresh:classic_remote...
-2018-10-02 06:11:08 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-logs...
-2018-10-02 06:11:46 Executing external:ubuntu-core-16-arm-64:tests/main/snap-logs (101/215)...
-2018-10-02 06:11:58 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-logs...
-2018-10-02 06:11:58 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-empty-content-attr...
-2018-10-02 06:12:59 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-empty-content-attr (102/215)...
-2018-10-02 06:13:04 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content-empty-content-attr...
-2018-10-02 06:13:04 Preparing external:ubuntu-core-16-arm-64:tests/main/core-snap-not-test-test...
-2018-10-02 06:13:20 Executing external:ubuntu-core-16-arm-64:tests/main/core-snap-not-test-test (103/215)...
-2018-10-02 06:13:21 Restoring external:ubuntu-core-16-arm-64:tests/main/core-snap-not-test-test...
-2018-10-02 06:13:21 Preparing external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec0...
-2018-10-02 06:13:25 Executing external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec0 (104/215)...
-2018-10-02 06:13:40 Restoring external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec0...
-2018-10-02 06:13:40 Preparing external:ubuntu-core-16-arm-64:tests/main/system-core-alias...
-2018-10-02 06:13:49 Executing external:ubuntu-core-16-arm-64:tests/main/system-core-alias (105/215)...
-2018-10-02 06:13:55 Restoring external:ubuntu-core-16-arm-64:tests/main/system-core-alias...
-2018-10-02 06:13:55 Preparing external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot...
-2018-10-02 06:13:58 Executing external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot (106/215)...
-2018-10-02 06:17:15 Restoring external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot...
-2018-10-02 06:17:15 Preparing external:ubuntu-core-16-arm-64:tests/main/known...
-2018-10-02 06:17:21 Executing external:ubuntu-core-16-arm-64:tests/main/known (107/215)...
-2018-10-02 06:17:21 Restoring external:ubuntu-core-16-arm-64:tests/main/known...
-2018-10-02 06:17:21 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-bluetooth-control...
-2018-10-02 06:17:38 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-bluetooth-control (108/215)...
-2018-10-02 06:17:44 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-bluetooth-control...
-2018-10-02 06:17:44 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-uhid...
-2018-10-02 06:18:07 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-uhid (109/215)...
-2018-10-02 06:18:11 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-uhid...
-2018-10-02 06:18:11 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-browser-support:disallow...
-2018-10-02 06:18:37 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-browser-support:disallow (110/215)...
-2018-10-02 06:18:46 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-browser-support:disallow...
-2018-10-02 06:18:46 Preparing external:ubuntu-core-16-arm-64:tests/main/proxy...
-2018-10-02 06:18:53 Executing external:ubuntu-core-16-arm-64:tests/main/proxy (111/215)...
-2018-10-02 06:18:59 Restoring external:ubuntu-core-16-arm-64:tests/main/proxy...
-2018-10-02 06:19:00 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-network-config:system...
-2018-10-02 06:19:03 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-network-config:system (112/215)...
-2018-10-02 06:19:09 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-network-config:system...
-2018-10-02 06:19:09 Preparing external:ubuntu-core-16-arm-64:tests/main/systemd-service...
-2018-10-02 06:19:12 Executing external:ubuntu-core-16-arm-64:tests/main/systemd-service (113/215)...
-2018-10-02 06:19:45 Restoring external:ubuntu-core-16-arm-64:tests/main/systemd-service...
-2018-10-02 06:19:45 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-info...
-2018-10-02 06:21:07 Executing external:ubuntu-core-16-arm-64:tests/main/snap-info (114/215)...
-2018-10-02 06:21:21 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-info...
-2018-10-02 06:21:22 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-upower-observe...
-2018-10-02 06:22:24 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-upower-observe (115/215)...
-2018-10-02 06:22:32 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-upower-observe...
-2018-10-02 06:22:33 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-ssh-public-keys...
-2018-10-02 06:23:05 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-ssh-public-keys (116/215)...
-2018-10-02 06:23:11 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-ssh-public-keys...
-2018-10-02 06:23:12 Preparing external:ubuntu-core-16-arm-64:tests/main/cgroup-freezer...
-2018-10-02 06:23:32 Executing external:ubuntu-core-16-arm-64:tests/main/cgroup-freezer (117/215)...
-2018-10-02 06:23:33 Restoring external:ubuntu-core-16-arm-64:tests/main/cgroup-freezer...
-2018-10-02 06:23:33 Preparing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups:kmsg...
-2018-10-02 06:23:40 Executing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups:kmsg (118/215)...
-2018-10-02 06:24:05 Restoring external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups:kmsg...
-2018-10-02 06:24:05 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-set...
-2018-10-02 06:24:31 Executing external:ubuntu-core-16-arm-64:tests/main/snap-set (119/215)...
-2018-10-02 06:24:44 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-set...
-2018-10-02 06:24:44 Preparing external:ubuntu-core-16-arm-64:tests/main/searching...
-2018-10-02 06:24:55 Executing external:ubuntu-core-16-arm-64:tests/main/searching (120/215)...
-2018-10-02 06:25:02 Restoring external:ubuntu-core-16-arm-64:tests/main/searching...
-2018-10-02 06:25:02 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-observe...
-2018-10-02 06:25:18 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-observe (121/215)...
-2018-10-02 06:25:25 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-observe...
-2018-10-02 06:25:25 Preparing external:ubuntu-core-16-arm-64:tests/main/abort...
-2018-10-02 06:25:32 Executing external:ubuntu-core-16-arm-64:tests/main/abort (122/215)...
-2018-10-02 06:26:04 Restoring external:ubuntu-core-16-arm-64:tests/main/abort...
-2018-10-02 06:26:04 Preparing external:ubuntu-core-16-arm-64:tests/main/install-store-laaaarge...
-2018-10-02 06:26:15 Executing external:ubuntu-core-16-arm-64:tests/main/install-store-laaaarge (123/215)...
-2018-10-02 06:26:37 Restoring external:ubuntu-core-16-arm-64:tests/main/install-store-laaaarge...
-2018-10-02 06:26:38 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-control-ip-netns...
-2018-10-02 06:27:09 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-control-ip-netns (124/215)...
-2018-10-02 06:27:10 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-network-control-ip-netns...
-2018-10-02 06:27:21 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks-misbehaving...
-2018-10-02 06:27:24 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks-misbehaving (125/215)...
-2018-10-02 06:27:38 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks-misbehaving...
-2018-10-02 06:27:39 Preparing external:ubuntu-core-16-arm-64:tests/main/unhandled-task...
-2018-10-02 06:27:51 Executing external:ubuntu-core-16-arm-64:tests/main/unhandled-task (126/215)...
-2018-10-02 06:27:59 Restoring external:ubuntu-core-16-arm-64:tests/main/unhandled-task...
-2018-10-02 06:27:59 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-classic...
-2018-10-02 06:28:08 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-classic (127/215)...
-2018-10-02 06:30:55 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-classic...
-2018-10-02 06:30:56 Preparing external:ubuntu-core-16-arm-64:tests/main/econnreset...
-2018-10-02 06:31:12 Executing external:ubuntu-core-16-arm-64:tests/main/econnreset (128/215)...
-2018-10-02 06:31:24 Restoring external:ubuntu-core-16-arm-64:tests/main/econnreset...
-2018-10-02 06:31:24 Preparing external:ubuntu-core-16-arm-64:tests/main/security-udev-input-subsystem...
-2018-10-02 06:31:46 Executing external:ubuntu-core-16-arm-64:tests/main/security-udev-input-subsystem (129/215)...
-2018-10-02 06:31:47 Restoring external:ubuntu-core-16-arm-64:tests/main/security-udev-input-subsystem...
-2018-10-02 06:31:47 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-writablepaths...
-2018-10-02 06:32:01 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-writablepaths (130/215)...
-2018-10-02 06:32:03 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-writablepaths...
-2018-10-02 06:32:04 Preparing external:ubuntu-core-16-arm-64:tests/main/auto-aliases...
-2018-10-02 06:32:07 Executing external:ubuntu-core-16-arm-64:tests/main/auto-aliases (131/215)...
-2018-10-02 06:32:35 Restoring external:ubuntu-core-16-arm-64:tests/main/auto-aliases...
-2018-10-02 06:32:35 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-debug-get-base-declaration...
-2018-10-02 06:32:43 Executing external:ubuntu-core-16-arm-64:tests/main/snap-debug-get-base-declaration (132/215)...
-2018-10-02 06:32:43 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-debug-get-base-declaration...
-2018-10-02 06:32:43 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1...
-2018-10-02 06:33:02 Executing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1 (133/215)...
-2018-10-02 06:33:03 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1...
-2018-10-02 06:33:03 Preparing external:ubuntu-core-16-arm-64:tests/main/install-closed-channel...
-2018-10-02 06:33:10 Executing external:ubuntu-core-16-arm-64:tests/main/install-closed-channel (134/215)...
-2018-10-02 06:33:29 Restoring external:ubuntu-core-16-arm-64:tests/main/install-closed-channel...
-2018-10-02 06:33:30 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-log-observe...
-2018-10-02 06:33:50 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-log-observe (135/215)...
-2018-10-02 06:34:06 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-log-observe...
-2018-10-02 06:34:06 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-connector...
-2018-10-02 06:34:25 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-connector (136/215)...
-2018-10-02 06:34:33 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-connector...
-2018-10-02 06:34:33 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-userd-desktop-app-autostart...
-2018-10-02 06:34:41 Executing external:ubuntu-core-16-arm-64:tests/main/snap-userd-desktop-app-autostart (137/215)...
-2018-10-02 06:34:55 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-userd-desktop-app-autostart...
-2018-10-02 06:34:56 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-process-control...
-2018-10-02 06:35:18 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-process-control (138/215)...
-2018-10-02 06:35:24 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-process-control...
-2018-10-02 06:35:25 Preparing external:ubuntu-core-16-arm-64:tests/main/user-data-handling...
-2018-10-02 06:35:34 Executing external:ubuntu-core-16-arm-64:tests/main/user-data-handling (139/215)...
-2018-10-02 06:36:21 Restoring external:ubuntu-core-16-arm-64:tests/main/user-data-handling...
-2018-10-02 06:36:22 Preparing external:ubuntu-core-16-arm-64:tests/main/remove-errors...
-2018-10-02 06:36:25 Executing external:ubuntu-core-16-arm-64:tests/main/remove-errors (140/215)...
-2018-10-02 06:36:48 Restoring external:ubuntu-core-16-arm-64:tests/main/remove-errors...
-2018-10-02 06:36:48 Preparing external:ubuntu-core-16-arm-64:tests/main/base-snaps-refresh...
-2018-10-02 06:36:56 Executing external:ubuntu-core-16-arm-64:tests/main/base-snaps-refresh (141/215)...
-2018-10-02 06:37:29 Restoring external:ubuntu-core-16-arm-64:tests/main/base-snaps-refresh...
-2018-10-02 06:37:29 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control...
-2018-10-02 06:37:59 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control (142/215)...
-2018-10-02 06:38:29 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control...
-2018-10-02 06:38:29 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-control...
-2018-10-02 06:39:00 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-control (143/215)...
-2018-10-02 06:39:19 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-network-control...
-2018-10-02 06:39:20 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-readme...
-2018-10-02 06:39:29 Executing external:ubuntu-core-16-arm-64:tests/main/snap-readme (144/215)...
-2018-10-02 06:39:29 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-readme...
-2018-10-02 06:39:30 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mimic...
-2018-10-02 06:39:56 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mimic (145/215)...
-2018-10-02 06:40:06 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mimic...
-2018-10-02 06:40:06 Preparing external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_service...
-2018-10-02 06:40:18 Executing external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_service (146/215)...
-2018-10-02 06:41:05 Restoring external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_service...
-2018-10-02 06:41:05 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-audit...
-2018-10-02 06:41:22 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-audit (147/215)...
-2018-10-02 06:41:28 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-audit...
-2018-10-02 06:41:28 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-kernel-module-control...
-2018-10-02 06:42:02 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-kernel-module-control (148/215)...
-2018-10-02 06:42:24 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-kernel-module-control...
-2018-10-02 06:42:25 Preparing external:ubuntu-core-16-arm-64:tests/main/core16-base...
-2018-10-02 06:42:41 Executing external:ubuntu-core-16-arm-64:tests/main/core16-base (149/215)...
-2018-10-02 06:44:32 Restoring external:ubuntu-core-16-arm-64:tests/main/core16-base...
-2018-10-02 06:44:33 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-common-dirs...
-2018-10-02 06:44:48 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-common-dirs (150/215)...
-2018-10-02 06:46:40 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-common-dirs...
-2018-10-02 06:46:41 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-os-release...
-2018-10-02 06:46:47 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-os-release (151/215)...
-2018-10-02 06:46:47 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-os-release...
-2018-10-02 06:46:47 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:kernelimg...
-2018-10-02 06:46:52 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:kernelimg (152/215)...
-2018-10-02 06:46:52 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:kernelimg...
-2018-10-02 06:46:53 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-random-observe...
-2018-10-02 06:47:12 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-random-observe (153/215)...
-2018-10-02 06:47:22 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-random-observe...
-2018-10-02 06:47:22 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:data...
-2018-10-02 06:47:52 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:data (154/215)...
-2018-10-02 06:48:06 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:data...
-2018-10-02 06:48:06 Preparing external:ubuntu-core-16-arm-64:tests/main/prefer...
-2018-10-02 06:48:24 Executing external:ubuntu-core-16-arm-64:tests/main/prefer (155/215)...
-2018-10-02 06:48:39 Restoring external:ubuntu-core-16-arm-64:tests/main/prefer...
-2018-10-02 06:48:39 Preparing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups:uinput...
-2018-10-02 06:48:50 Executing external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups:uinput (156/215)...
-2018-10-02 06:49:11 Restoring external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups:uinput...
-2018-10-02 06:49:11 Preparing external:ubuntu-core-16-arm-64:tests/main/command-chain:reexec1...
-2018-10-02 06:49:34 Executing external:ubuntu-core-16-arm-64:tests/main/command-chain:reexec1 (157/215)...
-2018-10-02 06:49:35 Restoring external:ubuntu-core-16-arm-64:tests/main/command-chain:reexec1...
-2018-10-02 06:49:35 Preparing external:ubuntu-core-16-arm-64:tests/main/snapctl...
-2018-10-02 06:50:41 Executing external:ubuntu-core-16-arm-64:tests/main/snapctl (158/215)...
-2018-10-02 06:50:42 Restoring external:ubuntu-core-16-arm-64:tests/main/snapctl...
-2018-10-02 06:50:42 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-bluez...
-2018-10-02 06:51:02 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-bluez (159/215)...
-2018-10-02 06:51:47 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-bluez...
-2018-10-02 06:51:47 Preparing external:ubuntu-core-16-arm-64:tests/main/appstream-id...
-2018-10-02 06:52:25 Executing external:ubuntu-core-16-arm-64:tests/main/appstream-id (160/215)...
-2018-10-02 06:52:36 Restoring external:ubuntu-core-16-arm-64:tests/main/appstream-id...
-2018-10-02 06:52:36 Preparing external:ubuntu-core-16-arm-64:tests/main/security-setuid-root...
-2018-10-02 06:53:10 Executing external:ubuntu-core-16-arm-64:tests/main/security-setuid-root (161/215)...
-2018-10-02 06:53:10 Restoring external:ubuntu-core-16-arm-64:tests/main/security-setuid-root...
-2018-10-02 06:53:11 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-setup-observe...
-2018-10-02 06:53:33 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-network-setup-observe (162/215)...
-2018-10-02 06:53:51 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-network-setup-observe...
-2018-10-02 06:53:52 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-connectivity-check...
-2018-10-02 06:54:07 Executing external:ubuntu-core-16-arm-64:tests/main/snap-connectivity-check (163/215)...
-2018-10-02 06:54:09 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-connectivity-check...
-2018-10-02 06:54:09 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-connect...
-2018-10-02 06:54:29 Executing external:ubuntu-core-16-arm-64:tests/main/snap-connect (164/215)...
-2018-10-02 06:55:33 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-connect...
-2018-10-02 06:55:33 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-ssh-keys...
-2018-10-02 06:56:10 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-ssh-keys (165/215)...
-2018-10-02 06:56:17 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-ssh-keys...
-2018-10-02 06:56:18 Preparing external:ubuntu-core-16-arm-64:tests/main/alias...
-2018-10-02 06:56:43 Executing external:ubuntu-core-16-arm-64:tests/main/alias (166/215)...
-2018-10-02 06:56:50 Restoring external:ubuntu-core-16-arm-64:tests/main/alias...
-2018-10-02 06:56:51 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec0...
-2018-10-02 06:57:10 Executing external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec0 (167/215)...
-2018-10-02 06:57:11 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec0...
-2018-10-02 06:57:12 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-dvb...
-2018-10-02 06:57:35 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-dvb (168/215)...
-2018-10-02 06:57:42 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-dvb...
-2018-10-02 06:57:43 Preparing external:ubuntu-core-16-arm-64:tests/main/revert-devmode:remote...
-2018-10-02 06:58:10 Executing external:ubuntu-core-16-arm-64:tests/main/revert-devmode:remote (169/215)...
-2018-10-02 06:59:18 Restoring external:ubuntu-core-16-arm-64:tests/main/revert-devmode:remote...
-2018-10-02 06:59:18 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-fuse_support...
-2018-10-02 06:59:53 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-fuse_support (170/215)...
-2018-10-02 07:00:02 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-fuse_support...
-2018-10-02 07:00:02 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-service-stop-mode...
-2018-10-02 07:00:14 Executing external:ubuntu-core-16-arm-64:tests/main/snap-service-stop-mode (171/215)...
-2018-10-02 07:02:37 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-service-stop-mode...
-2018-10-02 07:02:37 Preparing external:ubuntu-core-16-arm-64:tests/main/op-remove-retry...
-2018-10-02 07:02:43 Executing external:ubuntu-core-16-arm-64:tests/main/op-remove-retry (172/215)...
-2018-10-02 07:03:09 Restoring external:ubuntu-core-16-arm-64:tests/main/op-remove-retry...
-2018-10-02 07:03:10 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-interface...
-2018-10-02 07:03:14 Executing external:ubuntu-core-16-arm-64:tests/main/snap-interface (173/215)...
-2018-10-02 07:03:32 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-interface...
-2018-10-02 07:03:32 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-daemon-notify...
-2018-10-02 07:03:59 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-daemon-notify (174/215)...
-2018-10-02 07:04:22 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-daemon-notify...
-2018-10-02 07:04:22 Preparing external:ubuntu-core-16-arm-64:tests/main/server-snap:pythonServer...
-2018-10-02 07:05:04 Executing external:ubuntu-core-16-arm-64:tests/main/server-snap:pythonServer (175/215)...
-2018-10-02 07:05:04 Restoring external:ubuntu-core-16-arm-64:tests/main/server-snap:pythonServer...
-2018-10-02 07:05:05 Preparing external:ubuntu-core-16-arm-64:tests/main/i18n...
-2018-10-02 07:05:20 Executing external:ubuntu-core-16-arm-64:tests/main/i18n (176/215)...
-2018-10-02 07:05:20 Restoring external:ubuntu-core-16-arm-64:tests/main/i18n...
-2018-10-02 07:05:20 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-raw-usb...
-2018-10-02 07:05:40 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-raw-usb (177/215)...
-2018-10-02 07:05:49 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-raw-usb...
-2018-10-02 07:05:49 Preparing external:ubuntu-core-16-arm-64:tests/main/revert-devmode:fake...
-2018-10-02 07:05:59 Executing external:ubuntu-core-16-arm-64:tests/main/revert-devmode:fake (178/215)...
-2018-10-02 07:05:59 Restoring external:ubuntu-core-16-arm-64:tests/main/revert-devmode:fake...
-2018-10-02 07:05:59 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-create-user...
-2018-10-02 07:06:06 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-create-user (179/215)...
-2018-10-02 07:06:06 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-create-user...
-2018-10-02 07:06:06 Preparing external:ubuntu-core-16-arm-64:tests/main/debug-sandbox...
-2018-10-02 07:06:11 Executing external:ubuntu-core-16-arm-64:tests/main/debug-sandbox (180/215)...
-2018-10-02 07:06:12 Restoring external:ubuntu-core-16-arm-64:tests/main/debug-sandbox...
-2018-10-02 07:06:13 Preparing external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:remote...
-2018-10-02 07:06:37 Executing external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:remote (181/215)...
-2018-10-02 07:06:56 Restoring external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:remote...
-2018-10-02 07:06:56 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-sideload...
-2018-10-02 07:07:08 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-sideload (182/215)...
-2018-10-02 07:07:58 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-sideload...
-2018-10-02 07:07:59 Preparing external:ubuntu-core-16-arm-64:tests/main/classic-confinement-not-supported...
-2018-10-02 07:08:13 Executing external:ubuntu-core-16-arm-64:tests/main/classic-confinement-not-supported (183/215)...
-2018-10-02 07:08:18 Restoring external:ubuntu-core-16-arm-64:tests/main/classic-confinement-not-supported...
-2018-10-02 07:08:19 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-random-control...
-2018-10-02 07:08:37 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-random-control (184/215)...
-2018-10-02 07:08:49 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-random-control...
-2018-10-02 07:08:50 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-framebuffer...
-2018-10-02 07:09:12 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-framebuffer (185/215)...
-2018-10-02 07:09:32 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-framebuffer...
-2018-10-02 07:09:32 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-service-refresh-mode...
-2018-10-02 07:09:43 Executing external:ubuntu-core-16-arm-64:tests/main/snap-service-refresh-mode (186/215)...
-2018-10-02 07:12:06 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-service-refresh-mode...
-2018-10-02 07:12:06 Preparing external:ubuntu-core-16-arm-64:tests/main/security-devpts...
-2018-10-02 07:12:12 Executing external:ubuntu-core-16-arm-64:tests/main/security-devpts (187/215)...
-2018-10-02 07:12:33 Restoring external:ubuntu-core-16-arm-64:tests/main/security-devpts...
-2018-10-02 07:12:34 Preparing external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:fake...
-2018-10-02 07:12:48 Executing external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:fake (188/215)...
-2018-10-02 07:12:48 Restoring external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:fake...
-2018-10-02 07:12:48 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-layout...
-2018-10-02 07:12:58 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-layout (189/215)...
-2018-10-02 07:13:19 Error executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-layout : 
------
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps.sh
-+ echo 'Install the regular snap'
-Install the regular snap
-+ install_local test-snapd-layout
-+ local SNAP_NAME=test-snapd-layout
-+ shift
-++ make_snap test-snapd-layout
-++ local SNAP_NAME=test-snapd-layout
-++ shift
-++ local SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap
-++ local SNAP_DIR
-+++ dirname /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap
-++ SNAP_DIR=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout
-++ '[' '!' -f /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap ']'
-++ '[' -f /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap ']'
-++ echo /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap
-+ SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap
-+ snap install --dangerous /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap
-test-snapd-layout 1.0 installed
-+ devmode=
-+ [[ ubuntu-core-16-arm-64 = ubuntu-* ]]
-+ devmode=--devmode
-+ echo 'Sideload the parallel installed snap'
-Sideload the parallel installed snap
-+ install_local_as test-snapd-layout test-snapd-layout_foo --devmode
-+ local snap=test-snapd-layout
-+ local name=test-snapd-layout_foo
-+ shift 2
-+ install_local test-snapd-layout --name test-snapd-layout_foo --devmode
-+ local SNAP_NAME=test-snapd-layout
-+ shift
-++ make_snap test-snapd-layout
-++ local SNAP_NAME=test-snapd-layout
-++ shift
-++ local SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap
-++ local SNAP_DIR
-+++ dirname /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap
-++ SNAP_DIR=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout
-++ '[' '!' -f /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap ']'
-++ '[' -f /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap ']'
-++ echo /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap
-+ SNAP_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap
-+ snap install --dangerous --name test-snapd-layout_foo --devmode /home/gopath/src/github.com/snapcore/snapd/tests/lib/snaps/test-snapd-layout/test-snapd-layout_1.0_all.snap
-test-snapd-layout_foo 1.0 installed
-+ for name in test-snapd-layout test-snapd-layout_foo
-+ rm -rf /etc/demo /etc/demo.conf /etc/demo.cfg
-+ echo 'snap declaring layouts doesn'\''t explode on startup'
-snap declaring layouts doesn't explode on startup
-+ test-snapd-layout.sh -c true
-+ echo 'layout declarations are honored'
-layout declarations are honored
-+ test-snapd-layout.sh -c 'test -d /etc/demo'
-+ test-snapd-layout.sh -c 'test -f /etc/demo.conf'
-+ test-snapd-layout.sh -c 'test -h /etc/demo.cfg'
-++ test-snapd-layout.sh -c 'readlink /etc/demo.cfg'
-++ test-snapd-layout.sh -c 'echo /var/snap/$SNAP_NAME/common/etc/demo.conf'
-+ test /var/snap/test-snapd-layout/common/etc/demo.conf = /var/snap/test-snapd-layout/common/etc/demo.conf
-+ test-snapd-layout.sh -c 'test -d /usr/share/demo'
-+ test-snapd-layout.sh -c 'test -d /var/lib/demo'
-+ test-snapd-layout.sh -c 'test -d /var/cache/demo'
-+ test-snapd-layout.sh -c 'test -d /opt/demo'
-+ test-snapd-layout.sh -c 'test -d /bin/very-weird-place'
-+ echo 'layout locations pointing to SNAP_DATA and SNAP_COMMON of test-snapd-layout are writable'
-layout locations pointing to SNAP_DATA and SNAP_COMMON of test-snapd-layout are writable
-+ echo 'and the writes go to the right place in the backing store'
-and the writes go to the right place in the backing store
-+ test-snapd-layout.sh -c 'echo test-snapd-layout foo-1 > /etc/demo/writable'
-+ test-snapd-layout.sh -c 'cat $SNAP_COMMON/etc/demo/writable'
-+ MATCH 'test-snapd-layout foo-1'
-+ test-snapd-layout.sh -c 'echo test-snapd-layout foo-2 > /etc/demo.conf'
-+ test-snapd-layout.sh -c 'cat $SNAP_COMMON/etc/demo.conf'
-+ MATCH 'test-snapd-layout foo-2'
-+ test-snapd-layout.sh -c 'echo test-snapd-layout foo-3 > /etc/demo.cfg'
-+ test-snapd-layout.sh -c 'cat $SNAP_COMMON/etc/demo.conf'
-+ MATCH 'test-snapd-layout foo-3'
-+ test-snapd-layout.sh -c 'echo test-snapd-layout foo-4 > /var/lib/demo/writable'
-+ test-snapd-layout.sh -c 'cat $SNAP_DATA/var/lib/demo/writable'
-+ MATCH 'test-snapd-layout foo-4'
-+ test-snapd-layout.sh -c 'echo test-snapd-layout foo-5 > /var/cache/demo/writable'
-+ test-snapd-layout.sh -c 'cat $SNAP_DATA/var/cache/demo/writable'
-+ MATCH 'test-snapd-layout foo-5'
-+ echo 'layout locations pointing to test-snapd-layout $SNAP are readable'
-layout locations pointing to test-snapd-layout $SNAP are readable
-+ test-snapd-layout.sh -c 'test -r /usr/share/demo/file'
------
-.
-2018-10-02 07:13:19 Debug output for external:ubuntu-core-16-arm-64:tests/main/parallel-install-layout : 
------
-+ '[' 1 = 1 ']'
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/journalctl.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/state.sh
-+++ SNAPD_STATE_PATH=/home/gopath/src/github.com/snapcore/snapd/tests/snapd-state
-+++ SNAPD_STATE_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/snapd-state/snapd-state.tar
-+++ RUNTIME_STATE_PATH=/home/gopath/src/github.com/snapcore/snapd/tests/runtime-state
-+++ SNAPD_ACTIVE_UNITS=/home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/snapd-active-units
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/dirs.sh
-++++ export SNAP_MOUNT_DIR=/snap
-++++ SNAP_MOUNT_DIR=/snap
-++++ export LIBEXECDIR=/usr/lib
-++++ LIBEXECDIR=/usr/lib
-++++ export MEDIA_DIR=/media
-++++ MEDIA_DIR=/media
-++++ case "$SPREAD_SYSTEM" in
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-++++ GRUB_EDITENV=grub-editenv
-++++ case "$SPREAD_SYSTEM" in
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/systemd.sh
-+++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/systems.sh
-++ JOURNALCTL_CURSOR_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/journalctl_cursor
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/state.sh
-++ SNAPD_STATE_PATH=/home/gopath/src/github.com/snapcore/snapd/tests/snapd-state
-++ SNAPD_STATE_FILE=/home/gopath/src/github.com/snapcore/snapd/tests/snapd-state/snapd-state.tar
-++ RUNTIME_STATE_PATH=/home/gopath/src/github.com/snapcore/snapd/tests/runtime-state
-++ SNAPD_ACTIVE_UNITS=/home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/snapd-active-units
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/dirs.sh
-+++ export SNAP_MOUNT_DIR=/snap
-+++ SNAP_MOUNT_DIR=/snap
-+++ export LIBEXECDIR=/usr/lib
-+++ LIBEXECDIR=/usr/lib
-+++ export MEDIA_DIR=/media
-+++ MEDIA_DIR=/media
-+++ case "$SPREAD_SYSTEM" in
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-+++ GRUB_EDITENV=grub-editenv
-+++ case "$SPREAD_SYSTEM" in
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/systemd.sh
-++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/systems.sh
-+ echo '# journal messages for snapd'
-# journal messages for snapd
-+ get_journalctl_log -u snapd
-+ cursor=
-+ '[' -f /home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/journalctl_cursor ']'
-++ tail -n1 /home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/journalctl_cursor
-+ cursor='s=83f0b23df8924721af74ba9cd440a06e;i=1070f;b=7395957f8a254dca9852153670553a33;m=1a44ef9c2;t=57739ab62a87b;x=4ca80074aaa5ca74'
-+ get_journalctl_log_from_cursor 's=83f0b23df8924721af74ba9cd440a06e;i=1070f;b=7395957f8a254dca9852153670553a33;m=1a44ef9c2;t=57739ab62a87b;x=4ca80074aaa5ca74' -u snapd
-+ cursor='s=83f0b23df8924721af74ba9cd440a06e;i=1070f;b=7395957f8a254dca9852153670553a33;m=1a44ef9c2;t=57739ab62a87b;x=4ca80074aaa5ca74'
-+ shift
-+ '[' -z 's=83f0b23df8924721af74ba9cd440a06e;i=1070f;b=7395957f8a254dca9852153670553a33;m=1a44ef9c2;t=57739ab62a87b;x=4ca80074aaa5ca74' ']'
-+ journalctl -u snapd --cursor 's=83f0b23df8924721af74ba9cd440a06e;i=1070f;b=7395957f8a254dca9852153670553a33;m=1a44ef9c2;t=57739ab62a87b;x=4ca80074aaa5ca74'
--- Logs begin at Tue 2018-10-02 06:53:35 UTC, end at Tue 2018-10-02 07:14:41 UTC. --
-Oct 02 07:14:16 localhost.localdomain snapd[2554]: daemon.go:279: DEBUG: pid=2586;uid=0;socket=/run/snapd.socket;@ PUT /v2/snaps/system/conf 240.705ms 202
-Oct 02 07:14:17 localhost.localdomain snapd[2554]: logger.go:74: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 286\r\nAge: 2933\r\nCache-Control: public, max-age=3600\r\nContent-Type: application/hal+json\r\nDate: Tue, 02 Oct 2018 06:25:24 GMT\r\nServer: gunicorn/19.7.1\r\nSnap-Store-Version: 6\r\nVary: X-Ubuntu-Series\r\nVia: 1.1 juju-7794b8-prod-ols-snap-store-indep-398 (squid/3.5.27)\r\nX-Cache: HIT from juju-7794b8-prod-ols-snap-store-indep-398\r\nX-Cache-Lookup: HIT from juju-7794b8-prod-ols-snap-store-indep-398:3128\r\nX-Request-Id: 2E3BB355D3380A325DCF01BB5BB30F53C51F6D8\r\nX-Vcs-Revision: 24cd277\r\nX-View-Name: snapdevicegw.webapi_search.section_listing\r\n\r\n{\"_embedded\": {\"clickindex:sections\": [{\"name\": \"featured\"}, {\"name\": \"games\"}, {\"name\": \"finance\"}, {\"name\": \"developers\"}, {\"name\": \"social-networking\"}, {\"name\": \"video\"}, {\"name\": \"music\"}, {\"name\": \"productivity\"}, {\"name\": \"utilities\"}, {\"name\": \"graphics\"}, {\"name\": \"server\"}]}}"
-Oct 02 07:14:17 localhost.localdomain snapd[2554]: retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/sections finished after 1 retries, elapsed time=1.499237s, status: 200
-Oct 02 07:14:17 localhost.localdomain snapd[2554]: retry.go:40: DEBUG: Retrying https://api.snapcraft.io/api/v1/snaps/names?confinement=strict, attempt 1, elapsed time=89µs
-Oct 02 07:14:17 localhost.localdomain snapd[2554]: logger.go:67: DEBUG: > "GET /api/v1/snaps/names?confinement=strict HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.35.2+git954.b1b6b89~ubuntu16.04.1 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1100-snapdragon\r\nAccept: application/hal+json\r\nX-Ubuntu-Architecture: arm64\r\nX-Ubuntu-Classic: false\r\nX-Ubuntu-Series: 16\r\nX-Ubuntu-Wire-Protocol: 1\r\nAccept-Encoding: gzip\r\n\r\n"
-Oct 02 07:14:18 localhost.localdomain snapd[2554]: logger.go:74: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 74717\r\nAge: 1968\r\nCache-Control: public, max-age=3600\r\nContent-Type: application/hal+json\r\nDate: Tue, 02 Oct 2018 06:41:34 GMT\r\nServer: gunicorn/19.7.1\r\nSnap-Store-Version: 6\r\nVary: X-Ubuntu-Store, X-Ubuntu-Series, X-Ubuntu-Architecture\r\nVia: 1.1 juju-7794b8-prod-ols-snap-store-indep-398 (squid/3.5.27)\r\nX-Cache: HIT from juju-7794b8-prod-ols-snap-store-indep-398\r\nX-Cache-Lookup: HIT from juju-7794b8-prod-ols-snap-store-indep-398:3128\r\nX-Request-Id: 3DDC8926EAFC0A325DCC01BB5BB31319C6B3C66\r\nX-Vcs-Revision: 24cd277\r\nX-View-Name: snapdevicegw.webapi_search.snap_names\r\n\r\n"
-Oct 02 07:14:19 localhost.localdomain snapd[2554]: retry.go:52: DEBUG: The retry loop for https://api.snapcraft.io/api/v1/snaps/names?confinement=strict finished after 1 retries, elapsed time=1.796726s, status: 200
-Oct 02 07:14:19 localhost.localdomain snapd[2554]: catalogrefresh.go:75: DEBUG: Catalog refresh succeeded.
-Oct 02 07:14:19 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 122 on Do: Run configure hook of "core" snap
-Oct 02 07:14:19 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 123 on Do: Generate device key
-Oct 02 07:14:19 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 124 on Do: Request device serial
-Oct 02 07:14:19 localhost.localdomain snapd[2554]: logger.go:67: DEBUG: > "POST /api/v1/snaps/auth/request-id HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.35.2+git954.b1b6b89~ubuntu16.04.1 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1100-snapdragon\r\nContent-Length: 0\r\nAccept-Encoding: gzip\r\n\r\n"
-Oct 02 07:14:20 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 125 on Do: Run configure hook of "core" snap
-Oct 02 07:14:20 localhost.localdomain snapd[2554]: daemon.go:279: DEBUG: pid=2597;uid=0;socket=/run/snapd.socket;@ PUT /v2/snaps/system/conf 115.722ms 202
-Oct 02 07:14:21 localhost.localdomain snapd[2554]: daemon.go:279: DEBUG: pid=2613;uid=0;socket=/run/snapd.socket;@ POST /v2/snaps 335.23ms 202
-Oct 02 07:14:21 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 126 on Do: Ensure prerequisites for "test-snapd-layout" are available
-Oct 02 07:14:21 localhost.localdomain snapd[2554]: logger.go:74: DEBUG: < "HTTP/1.1 200 OK\r\nContent-Length: 56\r\nContent-Type: application/json\r\nDate: Tue, 02 Oct 2018 07:14:20 GMT\r\nServer: gunicorn/19.7.1\r\nSnap-Store-Version: 6\r\nX-Request-Id: 3DDC8926D39E0A325CA001BB5BB31ACCC6EF2DA\r\nX-Vcs-Revision: 24cd277\r\nX-View-Name: snapdevicegw.webapi_auth.request_id\r\n\r\n{\"request-id\":\"340809861317593641538464460:1538464460\"}\n"
-Oct 02 07:14:21 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 127 on Do: Prepare snap "/tmp/snapd-sideload-pkg-624386035" (unset)
-Oct 02 07:14:21 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 128 on Do: Mount snap "test-snapd-layout" (unset)
-Oct 02 07:14:22 localhost.localdomain snapd[2554]: logger.go:67: DEBUG: > "POST /api/v1/snaps/auth/devices HTTP/1.1\r\nHost: api.snapcraft.io\r\nUser-Agent: snapd/2.35.2+git954.b1b6b89~ubuntu16.04.1 (series 16; testing) ubuntu-core/16 (arm64) linux/4.4.0-1100-snapdragon\r\nContent-Length: 1711\r\nContent-Type: application/x.ubuntu.assertion\r\nAccept-Encoding: gzip\r\n\r\ntype: serial-request\nbrand-id: Euf8YO6waprpTXVrREuDw8ODHNIACTwi\ndevice-key:\n    AcbBTQRWhcGAARAAzh/vI8fQjkHlDXXIQyVW0x2yd1iGf5lWY6d3oOAyOLvdkreYCqfN9/iFNhtO\n    TNoHXOyKimfPUCetOR5EsC7/XCoaxZfxiOvfZ3+J0Ojr+RoFpLaGO1lOanMyv5MjdfQejGHKgzPi\n    KwgaLfZfjHFoBNfICYeV7ryBPUp3Es5P0TAvurudE47qHESM0g8kGx4+pem+QKZirdiNB3hE/SBK\n    +7VtBcKbiNxxFpK7yDbO7xacBkp98CZuDamyX+paf//bFxN2AJP4QCQECkRgphH4wg6pr1greZ+s\n    2SFaYnnD2h5Zohc19xdCXTJDS7phbDIHs2IJC86F/sNSYQLYZIVwM4WA5KVSlr/ka+ifJqqZ9hFO\n    fGQQhOMLdR6Og131W2lGmCeiWNSy4aqe8/F/waec8kDFCb8VYidN5cmoQgPJH71bTKNM75W4yJBk\n    8ChPggkePdom5RHZXQq9M5iYmyR2dFY/NDsNYKVL60JsGyJwtLXuOE76KB946reGv/G5V4B1ottp\n    wLmsVkqagTGkNenfMqKbsCcXv6YRxxpoXB5tc2h8k57PcYUvygwrxvR0kNRURBPBjgFxUkR0v5eq\n    QUtQzv1UMW5+j4Q0N5khfbrQ0R9SRZKSWfX0fGzcpUOAYb6L2KTkNnEmEY/CtqbG6iVJs6aIUIFa\n    VNemlqXH1F4P6WUAEQEAAQ==\nmodel: dragonboard\nrequest-id: 340809861317593641538464460:1538464460\nsign-key-sha3-384: Kyd0w73to910jjcf2TNzV9QIV9A6d5mv2rbgMywOXBTNYjHiiZsqCVSaLnJ9sx9A\n\nAcLBUgQAAQoABgUCW7MazQAAV+YQAEosl8P/rWgRrC00Y+Zqa/Ks04ifdaQ/X2E5Lb7myGl17zJG\n1lycyTemoJlCWcy6HMFNsg+aZOr7KDc2TMVuxf+iOywrJDoW9hI4Tij0J6HIJwOCsAfMgnFLNf5b\nS0rtb8wH3aKLwMaenKTb8plNMgXyox4jHYRJlMLRRUC3hyBIQsppmNrzy+xMb05wnqWyQoQIYyDd\n9x4+CSMQF9v6/f8UMhpDiCwrEESv6XEET2yGZc/RQjgiO4wprzQDaoaxwBr9aW2PwdXXyCDX9tAl\njpfei4jGo8HPFE6AaRdPedoN/qOdzsqRjZlo0eQmxi686h/XODBy9Db6Y53ywpSok09zXlZVrfr6\nzLE0GWWc8oqDdHDem1XHgIxCW4jBgG8EuUtOh15YinYd3NkrL/PT0e7yF9wTVMe17Mb/Z40LpDu/\nAoPTqX6CFmXtv/ErQCXWq8z1fh3GNeMK4S2WOPl+QhNZhOyRrhZvywJaFnZ6MopwM81RWP07LN3V\nrL6fwZmYOh/zKXjQXtxeg5WuvD+jl0HWHDlEkGDGfzkkump7moK4XHs8b1ST2qfeZCCgHxTQRIQU\nZW5K29zw/31WYbEsw2M17LKsp5giEOuRr3EVAuzaAko/HX3DOcWmn9uZcfxFXKwPa6lN2twIN/Cf\nLJm8FLXnnUcTFi03
-Oct 02 07:14:22 localhost.localdomain snapd[2554]: fXcBcvgx5g4C\n"
-Oct 02 07:14:22 localhost.localdomain snapd[2554]: logger.go:74: DEBUG: < "HTTP/1.1 403 FORBIDDEN\r\nContent-Length: 330\r\nContent-Type: application/json\r\nDate: Tue, 02 Oct 2018 07:14:22 GMT\r\nServer: gunicorn/19.7.1\r\nSnap-Store-Version: 6\r\nX-Request-Id: 3DDC8926D39E0A325CA001BB5BB31ACCC6EF387\r\nX-Vcs-Revision: 24cd277\r\nX-View-Name: snapdevicegw.webapi_auth.device_registration\r\n\r\n{\"error_list\":[{\"code\":\"device-registration-forbidden\",\"message\":\"Cannot process serial request for device with brand \\\"Euf8YO6waprpTXVrREuDw8ODHNIACTwi\\\" and model \\\"dragonboard\\\"\"}],\"errors\":[\"Cannot process serial request for device with brand \\\"Euf8YO6waprpTXVrREuDw8ODHNIACTwi\\\" and model \\\"dragonboard\\\"\"],\"result\":\"error\"}\n"
-Oct 02 07:14:22 localhost.localdomain snapd[2554]: task.go:303: DEBUG: 2018-10-02T07:14:22Z ERROR cannot deliver device serial request: Cannot process serial request for device with brand "Euf8YO6waprpTXVrREuDw8ODHNIACTwi" and model "dragonboard"
-Oct 02 07:14:27 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 129 on Do: Copy snap "test-snapd-layout" data
-Oct 02 07:14:27 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 130 on Do: Setup snap "test-snapd-layout" (unset) security profiles
-Oct 02 07:14:27 localhost.localdomain snapd[2554]: cmd_linux.go:133: DEBUG: exe doesn't have snap mount dir prefix: "/usr/lib/snapd/snapd" vs "/snap"
-Oct 02 07:14:29 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 131 on Do: Make snap "test-snapd-layout" (unset) available to the system
-Oct 02 07:14:29 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 132 on Do: Automatically connect eligible plugs and slots of snap "test-snapd-layout"
-Oct 02 07:14:30 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 133 on Do: Set automatic aliases for snap "test-snapd-layout"
-Oct 02 07:14:30 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 134 on Do: Setup snap "test-snapd-layout" aliases
-Oct 02 07:14:30 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 135 on Do: Run install hook of "test-snapd-layout" snap if present
-Oct 02 07:14:30 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 136 on Do: Start snap "test-snapd-layout" (unset) services
-Oct 02 07:14:30 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 137 on Do: Run configure hook of "test-snapd-layout" snap if present
-Oct 02 07:14:31 localhost.localdomain snapd[2554]: daemon.go:279: DEBUG: pid=2613;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps?snaps=test-snapd-layout 5.307ms 200
-Oct 02 07:14:31 localhost.localdomain snapd[2554]: daemon.go:279: DEBUG: pid=2778;uid=0;socket=/run/snapd.socket;@ POST /v2/snaps 307.173ms 202
-Oct 02 07:14:31 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 138 on Do: Ensure prerequisites for "test-snapd-layout_foo" are available
-Oct 02 07:14:31 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 139 on Do: Prepare snap "/tmp/snapd-sideload-pkg-289096778" (unset)
-Oct 02 07:14:32 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 140 on Do: Mount snap "test-snapd-layout_foo" (unset)
-Oct 02 07:14:34 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 141 on Do: Copy snap "test-snapd-layout_foo" data
-Oct 02 07:14:34 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 142 on Do: Setup snap "test-snapd-layout_foo" (unset) security profiles
-Oct 02 07:14:35 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 143 on Do: Make snap "test-snapd-layout_foo" (unset) available to the system
-Oct 02 07:14:35 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 144 on Do: Automatically connect eligible plugs and slots of snap "test-snapd-layout_foo"
-Oct 02 07:14:35 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 145 on Do: Set automatic aliases for snap "test-snapd-layout_foo"
-Oct 02 07:14:36 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 146 on Do: Setup snap "test-snapd-layout_foo" aliases
-Oct 02 07:14:36 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 147 on Do: Run install hook of "test-snapd-layout_foo" snap if present
-Oct 02 07:14:36 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 148 on Do: Start snap "test-snapd-layout_foo" (unset) services
-Oct 02 07:14:36 localhost.localdomain snapd[2554]: taskrunner.go:418: DEBUG: Running task 149 on Do: Run configure hook of "test-snapd-layout_foo" snap if present
-Oct 02 07:14:36 localhost.localdomain snapd[2554]: daemon.go:279: DEBUG: pid=2778;uid=0;socket=/run/snapd.socket;@ GET /v2/snaps?snaps=test-snapd-layout_foo 5.465ms 200
-+ echo '# apparmor denials '
-# apparmor denials 
-+ dmesg --ctime
-+ grep DENIED
-[Tue Oct  2 07:14:36 2018] audit: type=1400 audit(1538464477.075:32256): apparmor="DENIED" operation="open" profile="snap-update-ns.test-snapd-layout" name="/dev/urandom" pid=2943 comm="3" requested_mask="r" denied_mask="r" fsuid=0 ouid=0
-+ echo '# seccomp denials (kills) '
-# seccomp denials (kills) 
-+ dmesg --ctime
-+ grep type=1326
-+ true
-+ echo '# snap interfaces'
-# snap interfaces
-+ snap interfaces
-Slot                      Plug
-:account-control          -
-:alsa                     -
-:autopilot-introspection  -
-:bluetooth-control        -
-:broadcom-asic-control    -
-:browser-support          -
-:camera                   -
-:can-bus                  -
-:cifs-mount               -
-:classic-support          -
-:core-support             -
-:cpu-control              -
-:daemon-notify            -
-:dcdbas-control           -
-:docker-support           -
-:dvb                      -
-:firewall-control         -
-:framebuffer              -
-:fuse-support             -
-:gpg-keys                 -
-:gpg-public-keys          -
-:gpio-memory-control      -
-:greengrass-support       -
-:hardware-observe         -
-:hardware-random-control  -
-:hardware-random-observe  -
-:home                     -
-:hostname-control         -
-:io-ports-control         -
-:joystick                 -
-:kernel-module-control    -
-:kubernetes-support       -
-:kvm                      -
-:log-observe              -
-:lxd-support              -
-:mount-observe            -
-:netlink-audit            -
-:netlink-connector        -
-:network                  -
-:network-bind             -
-:network-control          -
-:network-observe          -
-:network-setup-control    -
-:network-setup-observe    -
-:opengl                   -
-:openvswitch-support      -
-:physical-memory-control  -
-:physical-memory-observe  -
-:ppp                      -
-:process-control          -
-:raw-usb                  -
-:removable-media          -
-:shutdown                 -
-:snapd-control            -
-:ssh-keys                 -
-:ssh-public-keys          -
-:system-observe           -
-:system-trace             -
-:time-control             -
-:timeserver-control       -
-:timezone-control         -
-:tpm                      -
-:uhid                     -
-+ echo '# tasks executed on system'
-# tasks executed on system
-+ cat /home/gopath/src/github.com/snapcore/snapd/tests/runtime-state/runs
-external:ubuntu-core-16-arm-64:tests/main/lxd external:ubuntu-core-16-arm-64:tests/main/degraded external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd external:ubuntu-core-16-arm-64:tests/main/failover:rclocalcrash external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:initrdimg external:ubuntu-core-16-arm-64:tests/main/revert-sideload external:ubuntu-core-16-arm-64:tests/main/snap-switch external:ubuntu-core-16-arm-64:tests/main/media-sharing external:ubuntu-core-16-arm-64:tests/main/interfaces-removable-media external:ubuntu-core-16-arm-64:tests/main/base-snaps external:ubuntu-core-16-arm-64:tests/main/interfaces-kvm external:ubuntu-core-16-arm-64:tests/main/interfaces-hostname-control external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:common external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:common external:ubuntu-core-16-arm-64:tests/main/parallel-install-store external:ubuntu-core-16-arm-64:tests/main/snapctl-services external:ubuntu-core-16-arm-64:tests/main/xauth-migration external:ubuntu-core-16-arm-64:tests/main/interfaces-network external:ubuntu-core-16-arm-64:tests/main/interfaces-browser-support:allow external:ubuntu-core-16-arm-64:tests/main/interfaces-network-bind external:ubuntu-core-16-arm-64:tests/main/interfaces-firewall-control external:ubuntu-core-16-arm-64:tests/main/parallel-install-common-dirs-undo external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:snap external:ubuntu-core-16-arm-64:tests/main/interfaces-gpio-memory-control external:ubuntu-core-16-arm-64:tests/main/refresh-hold external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-devmode external:ubuntu-core-16-arm-64:tests/main/interfaces-mount-observe external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-network-config:core external:ubuntu-core-16-arm-64:tests/main/interfaces-network-observe external:ubuntu-core-16-arm-64:tests/main/snap-service-after-before external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces-content:data external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-serial-port external:ubuntu-core-16-arm-64:tests/main/listing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:snap external:ubuntu-core-16-arm-64:tests/main/enable-disable external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-device-reg external:ubuntu-core-16-arm-64:tests/main/install-remove-multi external:ubuntu-core-16-arm-64:tests/main/debug-confinement external:ubuntu-core-16-arm-64:tests/main/fakestore-install external:ubuntu-core-16-arm-64:tests/main/refresh:strict_remote external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-apt external:ubuntu-core-16-arm-64:tests/main/debug-paths external:ubuntu-core-16-arm-64:tests/main/core-watchdog external:ubuntu-core-16-arm-64:tests/main/snap-service-timer external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-strict external:ubuntu-core-16-arm-64:tests/main/install-socket-activation external:ubuntu-core-16-arm-64:tests/main/revert:fake external:ubuntu-core-16-arm-64:tests/main/refresh:classic_fake external:ubuntu-core-16-arm-64:tests/main/interfaces-system-observe external:ubuntu-core-16-arm-64:tests/main/snapctl-from-snap external:ubuntu-core-16-arm-64:tests/main/command-chain:reexec0 external:ubuntu-core-16-arm-64:tests/main/interfaces-gpg-keys external:ubuntu-core-16-arm-64:tests/main/snap-update-ns external:ubuntu-core-16-arm-64:tests/main/revert:remote external:ubuntu-core-16-arm-64:tests/main/parallel-install-basic external:ubuntu-core-16-arm-64:tests/main/interfaces-timezone-control external:ubuntu-core-16-arm-64:tests/main/snap-service-stop-mode-sigkill external:ubuntu-core-16-arm-64:tests/main/server-snap:goServer external:ubuntu-core-16-arm-64:tests/main/parallel-install-desktop external:ubuntu-core-16-arm-64:tests/main/interfaces-home external:ubuntu-core-16-arm-64:tests/main/snap-download external:ubuntu-core-16-arm-64:tests/main/interfaces-timeserver-control external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-fan external:ubuntu-core-16-arm-64:tests/main/regression-home-snap-root-owned external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups-jailmode external:ubuntu-core-16-arm-64:tests/main/install-cache external:ubuntu-core-16-arm-64:tests/main/snap-core-fixup external:ubuntu-core-16-arm-64:tests/main/snap-run-symlink-error external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks external:ubuntu-core-16-arm-64:tests/main/interfaces-locale-control external:ubuntu-core-16-arm-64:tests/main/security-profiles external:ubuntu-core-16-arm-64:tests/main/snap-discard-ns external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec1 external:ubuntu-core-16-arm-64:tests/main/snap-disconnect external:ubuntu-core-16-arm-64:tests/main/refresh-undo external:ubuntu-core-16-arm-64:tests/main/cmdline external:ubuntu-core-16-arm-64:tests/main/snap-get external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-services external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_tools external:ubuntu-core-16-arm-64:tests/main/snap-repair external:ubuntu-core-16-arm-64:tests/main/snap-wait external:ubuntu-core-16-arm-64:tests/main/snapctl-configure-core external:ubuntu-core-16-arm-64:tests/main/interfaces-cli external:ubuntu-core-16-arm-64:tests/main/snap-run external:ubuntu-core-16-arm-64:tests/main/snap-env external:ubuntu-core-16-arm-64:tests/main/snap-service external:ubuntu-core-16-arm-64:tests/main/layout external:ubuntu-core-16-arm-64:tests/main/snap-multi-service-failing external:ubuntu-core-16-arm-64:tests/main/snap-remove-not-mounted external:ubuntu-core-16-arm-64:tests/main/interfaces-gpg-public-keys external:ubuntu-core-16-arm-64:tests/main/change-errors external:ubuntu-core-16-arm-64:tests/main/interfaces-alsa external:ubuntu-core-16-arm-64:tests/main/find-private external:ubuntu-core-16-arm-64:tests/main/refresh:strict_fake external:ubuntu-core-16-arm-64:tests/main/security-dev-input-event-denied external:ubuntu-core-16-arm-64:tests/main/interfaces-joystick external:ubuntu-core-16-arm-64:tests/main/refresh:classic_remote external:ubuntu-core-16-arm-64:tests/main/snap-logs external:ubuntu-core-16-arm-64:tests/main/interfaces-content-empty-content-attr external:ubuntu-core-16-arm-64:tests/main/core-snap-not-test-test external:ubuntu-core-16-arm-64:tests/main/writable-areas:reexec0 external:ubuntu-core-16-arm-64:tests/main/system-core-alias external:ubuntu-core-16-arm-64:tests/main/prepare-image-uboot external:ubuntu-core-16-arm-64:tests/main/known external:ubuntu-core-16-arm-64:tests/main/interfaces-bluetooth-control external:ubuntu-core-16-arm-64:tests/main/interfaces-uhid external:ubuntu-core-16-arm-64:tests/main/interfaces-browser-support:disallow external:ubuntu-core-16-arm-64:tests/main/proxy external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-network-config:system external:ubuntu-core-16-arm-64:tests/main/systemd-service external:ubuntu-core-16-arm-64:tests/main/snap-info external:ubuntu-core-16-arm-64:tests/main/interfaces-upower-observe external:ubuntu-core-16-arm-64:tests/main/interfaces-ssh-public-keys external:ubuntu-core-16-arm-64:tests/main/cgroup-freezer external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups:kmsg external:ubuntu-core-16-arm-64:tests/main/snap-set external:ubuntu-core-16-arm-64:tests/main/searching external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-observe external:ubuntu-core-16-arm-64:tests/main/abort external:ubuntu-core-16-arm-64:tests/main/install-store-laaaarge external:ubuntu-core-16-arm-64:tests/main/interfaces-network-control-ip-netns external:ubuntu-core-16-arm-64:tests/main/interfaces-hooks-misbehaving external:ubuntu-core-16-arm-64:tests/main/unhandled-task external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-classic external:ubuntu-core-16-arm-64:tests/main/econnreset external:ubuntu-core-16-arm-64:tests/main/security-udev-input-subsystem external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-writablepaths external:ubuntu-core-16-arm-64:tests/main/auto-aliases external:ubuntu-core-16-arm-64:tests/main/snap-debug-get-base-declaration external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec1 external:ubuntu-core-16-arm-64:tests/main/install-closed-channel external:ubuntu-core-16-arm-64:tests/main/interfaces-log-observe external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-connector external:ubuntu-core-16-arm-64:tests/main/snap-userd-desktop-app-autostart external:ubuntu-core-16-arm-64:tests/main/interfaces-process-control external:ubuntu-core-16-arm-64:tests/main/user-data-handling external:ubuntu-core-16-arm-64:tests/main/remove-errors external:ubuntu-core-16-arm-64:tests/main/base-snaps-refresh external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control external:ubuntu-core-16-arm-64:tests/main/interfaces-network-control external:ubuntu-core-16-arm-64:tests/main/snap-readme external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mimic external:ubuntu-core-16-arm-64:tests/main/try-snap-goes-away:test_snapd_service external:ubuntu-core-16-arm-64:tests/main/interfaces-netlink-audit external:ubuntu-core-16-arm-64:tests/main/interfaces-kernel-module-control external:ubuntu-core-16-arm-64:tests/main/core16-base external:ubuntu-core-16-arm-64:tests/main/parallel-install-common-dirs external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-os-release external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-uboot:kernelimg external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-random-observe external:ubuntu-core-16-arm-64:tests/main/interfaces-content-mkdir-writable:data external:ubuntu-core-16-arm-64:tests/main/prefer external:ubuntu-core-16-arm-64:tests/main/security-device-cgroups:uinput external:ubuntu-core-16-arm-64:tests/main/command-chain:reexec1 external:ubuntu-core-16-arm-64:tests/main/snapctl external:ubuntu-core-16-arm-64:tests/main/interfaces-bluez external:ubuntu-core-16-arm-64:tests/main/appstream-id external:ubuntu-core-16-arm-64:tests/main/security-setuid-root external:ubuntu-core-16-arm-64:tests/main/interfaces-network-setup-observe external:ubuntu-core-16-arm-64:tests/main/snap-connectivity-check external:ubuntu-core-16-arm-64:tests/main/snap-connect external:ubuntu-core-16-arm-64:tests/main/interfaces-ssh-keys external:ubuntu-core-16-arm-64:tests/main/alias external:ubuntu-core-16-arm-64:tests/main/snap-run-hook:reexec0 external:ubuntu-core-16-arm-64:tests/main/interfaces-dvb external:ubuntu-core-16-arm-64:tests/main/revert-devmode:remote external:ubuntu-core-16-arm-64:tests/main/interfaces-fuse_support external:ubuntu-core-16-arm-64:tests/main/snap-service-stop-mode external:ubuntu-core-16-arm-64:tests/main/op-remove-retry external:ubuntu-core-16-arm-64:tests/main/snap-interface external:ubuntu-core-16-arm-64:tests/main/interfaces-daemon-notify external:ubuntu-core-16-arm-64:tests/main/server-snap:pythonServer external:ubuntu-core-16-arm-64:tests/main/i18n external:ubuntu-core-16-arm-64:tests/main/interfaces-raw-usb external:ubuntu-core-16-arm-64:tests/main/revert-devmode:fake external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-create-user external:ubuntu-core-16-arm-64:tests/main/debug-sandbox external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:remote external:ubuntu-core-16-arm-64:tests/main/parallel-install-sideload external:ubuntu-core-16-arm-64:tests/main/classic-confinement-not-supported external:ubuntu-core-16-arm-64:tests/main/interfaces-hardware-random-control external:ubuntu-core-16-arm-64:tests/main/interfaces-framebuffer external:ubuntu-core-16-arm-64:tests/main/snap-service-refresh-mode external:ubuntu-core-16-arm-64:tests/main/security-devpts external:ubuntu-core-16-arm-64:tests/main/refresh-devmode:fake external:ubuntu-core-16-arm-64:tests/main/parallel-install-layout
------
-.
-2018-10-02 07:13:19 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-layout...
-2018-10-02 07:13:19 Preparing external:ubuntu-core-16-arm-64:tests/main/refresh-amend...
-2018-10-02 07:13:31 Executing external:ubuntu-core-16-arm-64:tests/main/refresh-amend (190/215)...
-2018-10-02 07:14:00 Restoring external:ubuntu-core-16-arm-64:tests/main/refresh-amend...
-2018-10-02 07:14:01 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-circular...
-2018-10-02 07:14:11 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-content-circular (191/215)...
-2018-10-02 07:15:11 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-content-circular...
-2018-10-02 07:15:11 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-system-key...
-2018-10-02 07:15:32 Executing external:ubuntu-core-16-arm-64:tests/main/snap-system-key (192/215)...
-2018-10-02 07:16:31 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-system-key...
-2018-10-02 07:16:32 Preparing external:ubuntu-core-16-arm-64:tests/main/catalog-update...
-2018-10-02 07:16:46 Executing external:ubuntu-core-16-arm-64:tests/main/catalog-update (193/215)...
-2018-10-02 07:16:51 Restoring external:ubuntu-core-16-arm-64:tests/main/catalog-update...
-2018-10-02 07:16:51 Preparing external:ubuntu-core-16-arm-64:tests/main/known-remote...
-2018-10-02 07:16:58 Executing external:ubuntu-core-16-arm-64:tests/main/known-remote (194/215)...
-2018-10-02 07:17:00 Restoring external:ubuntu-core-16-arm-64:tests/main/known-remote...
-2018-10-02 07:17:00 Preparing external:ubuntu-core-16-arm-64:tests/main/snap-service-watchdog...
-2018-10-02 07:17:06 Executing external:ubuntu-core-16-arm-64:tests/main/snap-service-watchdog (195/215)...
-2018-10-02 07:17:27 Restoring external:ubuntu-core-16-arm-64:tests/main/snap-service-watchdog...
-2018-10-02 07:17:28 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control-with-manage...
-2018-10-02 07:17:41 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control-with-manage (196/215)...
-2018-10-02 07:17:41 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-snapd-control-with-manage...
-2018-10-02 07:17:42 Preparing external:ubuntu-core-16-arm-64:tests/main/install-refresh-remove-hooks...
-2018-10-02 07:17:47 Executing external:ubuntu-core-16-arm-64:tests/main/install-refresh-remove-hooks (197/215)...
-2018-10-02 07:18:51 Restoring external:ubuntu-core-16-arm-64:tests/main/install-refresh-remove-hooks...
-2018-10-02 07:18:52 Preparing external:ubuntu-core-16-arm-64:tests/main/security-apparmor...
-2018-10-02 07:19:17 Executing external:ubuntu-core-16-arm-64:tests/main/security-apparmor (198/215)...
-2018-10-02 07:19:18 Restoring external:ubuntu-core-16-arm-64:tests/main/security-apparmor...
-2018-10-02 07:19:18 Preparing external:ubuntu-core-16-arm-64:tests/main/validate-container-failures...
-2018-10-02 07:19:27 Executing external:ubuntu-core-16-arm-64:tests/main/validate-container-failures (199/215)...
-2018-10-02 07:19:27 Restoring external:ubuntu-core-16-arm-64:tests/main/validate-container-failures...
-2018-10-02 07:19:28 Preparing external:ubuntu-core-16-arm-64:tests/main/op-remove...
-2018-10-02 07:19:33 Executing external:ubuntu-core-16-arm-64:tests/main/op-remove (200/215)...
-2018-10-02 07:20:34 Restoring external:ubuntu-core-16-arm-64:tests/main/op-remove...
-2018-10-02 07:20:34 Preparing external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces...
-2018-10-02 07:21:00 Executing external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces (201/215)...
-2018-10-02 07:22:39 Restoring external:ubuntu-core-16-arm-64:tests/main/parallel-install-interfaces...
-2018-10-02 07:22:40 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-udev...
-2018-10-02 07:23:17 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-udev (202/215)...
-2018-10-02 07:23:21 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-udev...
-2018-10-02 07:23:22 Restoring external:ubuntu-core-16-arm-64:tests/main/...
-2018-10-02 07:23:25 Preparing external:ubuntu-core-16-arm-64:tests/regression/...
-2018-10-02 07:23:47 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1607796...
-2018-10-02 07:24:13 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1607796 (203/215)...
-2018-10-02 07:24:13 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1607796...
-2018-10-02 07:24:13 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1764977...
-2018-10-02 07:24:21 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1764977 (204/215)...
-2018-10-02 07:24:31 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1764977...
-2018-10-02 07:24:31 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1665004...
-2018-10-02 07:24:59 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1665004 (205/215)...
-2018-10-02 07:25:00 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1665004...
-2018-10-02 07:25:00 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1599891...
-2018-10-02 07:25:08 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1599891 (206/215)...
-2018-10-02 07:25:08 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1599891...
-2018-10-02 07:25:08 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1732555...
-2018-10-02 07:25:26 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1732555 (207/215)...
-2018-10-02 07:25:27 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1732555...
-2018-10-02 07:25:27 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1618683...
-2018-10-02 07:25:53 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1618683 (208/215)...
-2018-10-02 07:25:54 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1618683...
-2018-10-02 07:25:54 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1641885...
-2018-10-02 07:26:14 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1641885 (209/215)...
-2018-10-02 07:26:14 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1641885...
-2018-10-02 07:26:14 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1615113...
-2018-10-02 07:26:43 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1615113 (210/215)...
-2018-10-02 07:26:43 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1615113...
-2018-10-02 07:26:43 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1667385:devmode...
-2018-10-02 07:27:11 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1667385:devmode (211/215)...
-2018-10-02 07:27:14 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1667385:devmode...
-2018-10-02 07:27:15 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1693042...
-2018-10-02 07:27:23 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1693042 (212/215)...
-2018-10-02 07:27:27 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1693042...
-2018-10-02 07:27:28 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1667385:jailmode...
-2018-10-02 07:27:43 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1667385:jailmode (213/215)...
-2018-10-02 07:27:47 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1667385:jailmode...
-2018-10-02 07:27:47 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1606277...
-2018-10-02 07:28:15 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1606277 (214/215)...
-2018-10-02 07:28:15 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1606277...
-2018-10-02 07:28:16 Preparing external:ubuntu-core-16-arm-64:tests/regression/lp-1630479...
-2018-10-02 07:28:47 Executing external:ubuntu-core-16-arm-64:tests/regression/lp-1630479 (215/215)...
-2018-10-02 07:28:48 Restoring external:ubuntu-core-16-arm-64:tests/regression/lp-1630479...
-2018-10-02 07:28:48 Restoring external:ubuntu-core-16-arm-64:tests/regression/...
-2018-10-02 07:28:56 Restoring external:ubuntu-core-16-arm-64...
-2018-10-02 07:28:57 Discarding external:ubuntu-core-16-arm-64...
-2018-10-02 07:28:57 Successful tasks: 213
-2018-10-02 07:28:57 Aborted tasks: 0
-2018-10-02 07:28:57 Failed tasks: 2
-    - external:ubuntu-core-16-arm-64:tests/main/layout
-    - external:ubuntu-core-16-arm-64:tests/main/parallel-install-layout
-error: unsuccessful run
-2018-10-02 07:28:57,252 dragonboard_002 WARNING: DEVICE AGENT: Tests failed, rc=1
-2018-10-02 07:28:57,252 dragonboard_002 INFO: DEVICE AGENT: END testrun
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
+++ retries=5
+++ '[' 5 -le 0 ']'
+++ sleep 2
+++ execute_remote 'snap info core'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
+++ retries=4
+++ '[' 4 -le 0 ']'
+++ sleep 2
+++ execute_remote 'snap info core'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
+++ retries=3
+++ '[' 3 -le 0 ']'
+++ sleep 2
+++ execute_remote 'snap info core'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
+++ retries=2
+++ '[' 2 -le 0 ']'
+++ sleep 2
+++ execute_remote 'snap info core'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ grep -q -E 'tracking: +edge'
+++ retries=1
+++ '[' 1 -le 0 ']'
+++ sleep 2
+++ execute_remote 'snap info core'
+++ '[' -z ubuntu ']'
+++ grep -q -E 'tracking: +edge'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
+++ retries=0
+++ '[' 0 -le 0 ']'
+++ echo 'Timed out reached. Aborting!'
+Timed out reached. Aborting!
+++ exit 1
+2018-10-02 11:04:28,909 dragonboard_005 WARNING: DEVICE AGENT: Tests failed, rc=1
+2018-10-02 11:04:28,951 dragonboard_005 INFO: DEVICE AGENT: END testrun
 complete
