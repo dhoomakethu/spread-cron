@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 67a7f643-29e5-4089-86f6-4539fd8e84a1
+JOB_ID: 985012e9-c2ff-43a1-9fab-7758ea3665cf
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -29,8 +29,8 @@ test_data:
 Showing job data
 This job is currently waiting on a node to become available. You will see no further output until the job starts running.
 *******************************************
-
 * Starting setup phase on dragonboard-005 *
+
 *******************************************
 Cleaning up container if it exists...
 Error response from daemon: No such container: dragonboard005
@@ -39,63 +39,137 @@ Error response from daemon: No such container: dragonboard005
 * Starting provision phase on dragonboard-005 *
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-10-02 10:41:38,536 dragonboard_005 INFO: DEVICE AGENT: BEGIN provision
-2018-10-02 10:41:38,536 dragonboard_005 INFO: DEVICE AGENT: Booting Master Image
-2018-10-02 10:41:38,536 dragonboard_005 INFO: DEVICE AGENT: Making sure the master image is booted
-2018-10-02 10:41:38,536 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
-2018-10-02 10:41:39,391 dragonboard_005 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sgdisk -o /dev/mmcblk1
-Warning: The kernel is still using the old partition table.
-The new table will be used at the next reboot or after you
-run partprobe(8) or kpartx(8)
-The operation has completed successfully.
-2018-10-02 10:41:41,220 dragonboard_005 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.15 sudo sync
-2018-10-02 10:41:42,042 dragonboard_005 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 2
+2018-10-02 11:41:41,869 dragonboard_005 INFO: DEVICE AGENT: BEGIN provision
+2018-10-02 11:41:41,869 dragonboard_005 INFO: DEVICE AGENT: Booting Master Image
+2018-10-02 11:41:41,869 dragonboard_005 INFO: DEVICE AGENT: Making sure the master image is booted
+2018-10-02 11:41:41,869 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:41:44,871 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:41:47,871 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:41:47,872 dragonboard_005 WARNING: DEVICE AGENT: Device is in an unknown state, attempting to recover
+2018-10-02 11:41:47,872 dragonboard_005 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 2
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 = INTEGER: 2
-2018-10-02 10:41:42,160 dragonboard_005 INFO: DEVICE AGENT: Running sleep 10
-2018-10-02 10:41:52,182 dragonboard_005 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 1
+2018-10-02 11:41:47,990 dragonboard_005 INFO: DEVICE AGENT: Running sleep 10
+2018-10-02 11:41:58,017 dragonboard_005 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 i 1
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.5 = INTEGER: 1
-2018-10-02 10:42:02,311 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
-2018-10-02 10:46:39,035 dragonboard_005 INFO: DEVICE AGENT: Flashing Test Image
-2018-10-02 10:46:39,497 dragonboard_005 INFO: DEVICE AGENT: Running: nc 10.101.50.22 56450| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-10-02 10:47:14,938 dragonboard_005 INFO: DEVICE AGENT: Creating Test User
-2018-10-02 10:47:17,414 dragonboard_005 INFO: DEVICE AGENT: Booting Test Image
-2018-10-02 10:47:17,415 dragonboard_005 INFO: DEVICE AGENT: Booting the test image
+2018-10-02 11:42:08,146 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:42:11,155 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:42:11,156 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:42:24,166 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:42:27,175 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:42:27,176 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:42:40,182 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:42:43,191 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:42:43,192 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:42:56,201 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:42:59,211 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:42:59,212 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:43:12,216 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:43:15,223 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:43:15,224 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:43:28,234 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:43:31,243 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:43:31,244 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:43:44,246 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:43:47,255 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:43:47,256 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:44:00,266 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:44:03,275 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:44:03,276 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:44:16,290 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:44:19,299 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:44:19,300 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:44:32,304 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:44:35,311 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:44:35,312 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:44:48,321 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:44:51,331 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:44:51,332 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:45:04,342 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:45:07,351 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:45:07,352 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:45:20,361 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:45:23,371 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:45:23,372 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:45:36,380 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:45:39,387 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:45:39,388 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:45:52,398 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:45:55,407 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:45:55,408 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:46:08,418 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:46:11,427 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:46:11,428 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:46:24,437 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:46:27,443 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:46:27,444 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:46:40,453 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:46:43,463 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:46:43,464 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 11:46:56,474 dragonboard_005 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 11:46:59,483 dragonboard_005 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
+2018-10-02 11:46:59,484 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
+
+
+            There was an unrecoverable error while running this stage. Your job
+            has been automatically resubmitted back to the queue.
+            Resubmitting job: 985012e9-c2ff-43a1-9fab-7758ea3665cf
+*******************************************
+* Starting setup phase on dragonboard-002 *
+
+*******************************************
+Cleaning up container if it exists...
+Error response from daemon: No such container: dragonboard002
+***********************************************
+
+* Starting provision phase on dragonboard-002 *
+***********************************************
+Install python-logstash if you want to use logstash logging
+2018-10-02 13:06:54,950 dragonboard_002 INFO: DEVICE AGENT: BEGIN provision
+2018-10-02 13:06:54,950 dragonboard_002 INFO: DEVICE AGENT: Booting Master Image
+2018-10-02 13:06:54,950 dragonboard_002 INFO: DEVICE AGENT: Making sure the master image is booted
+2018-10-02 13:06:54,950 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 13:06:55,252 dragonboard_002 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-02 13:10:40,732 dragonboard_002 INFO: DEVICE AGENT: Flashing Test Image
+2018-10-02 13:10:41,272 dragonboard_002 INFO: DEVICE AGENT: Running: nc 10.101.50.22 59182| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
+2018-10-02 13:11:18,861 dragonboard_002 INFO: DEVICE AGENT: Creating Test User
+2018-10-02 13:11:21,228 dragonboard_002 INFO: DEVICE AGENT: Booting Test Image
+2018-10-02 13:11:21,228 dragonboard_002 INFO: DEVICE AGENT: Booting the test image
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
 /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
 
 Number of key(s) added: 1
 
-Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.15'"
+Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.12'"
 and check to make sure that only the key(s) you wanted were added.
 
-2018-10-02 10:48:28,922 dragonboard_005 INFO: DEVICE AGENT: Checking if test image booted.
-2018-10-02 10:48:29,418 dragonboard_005 INFO: DEVICE AGENT: END provision
+2018-10-02 13:12:32,466 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-02 13:12:32,946 dragonboard_002 INFO: DEVICE AGENT: END provision
 ******************************************
 
-* Starting test phase on dragonboard-005 *
+* Starting test phase on dragonboard-002 *
 ******************************************
 Install python-logstash if you want to use logstash logging
-2018-10-02 10:49:02,593 dragonboard_005 INFO: DEVICE AGENT: BEGIN testrun
+2018-10-02 13:13:08,121 dragonboard_002 INFO: DEVICE AGENT: BEGIN testrun
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://archive.ubuntu.com/ubuntu xenial InRelease
-Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
-Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
-Get:4 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial InRelease [17.6 kB]
-Get:5 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Get:2 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial InRelease [17.6 kB]
+Hit:3 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:4 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:5 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial/main amd64 Packages [9807 B]
 Get:6 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [95.4 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [280 kB]
-Get:8 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial/main amd64 Packages [9807 B]
-Get:9 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [718 kB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:8 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [718 kB]
+Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [280 kB]
 Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1106 kB]
 Get:11 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [491 kB]
 Get:12 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3744 B]
 Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [888 kB]
 Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.8 kB]
 Get:15 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [8256 B]
-Fetched 3959 kB in 12s (322 kB/s)
+Fetched 3959 kB in 9s (439 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -158,7 +232,7 @@ debconf: falling back to frontend: Readline
 debconf: unable to initialize frontend: Readline
 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7, <> line 25.)
 debconf: falling back to frontend: Teletype
-Fetched 14.2 MB in 9s (1487 kB/s)
+Fetched 14.2 MB in 9s (1474 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14264 files and directories currently installed.)
 Preparing to unpack .../perl-base_5.22.1-9ubuntu0.5_amd64.deb ...
 Unpacking perl-base (5.22.1-9ubuntu0.5) over (5.22.1-9ubuntu0.3) ...
@@ -278,21 +352,21 @@ Your branch is up-to-date with 'origin/master'.
 Cloning into 'snapd'...
 Already on 'master'
 Your branch is up-to-date with 'origin/master'.
-++ INSTANCE_IP=10.101.51.15
+++ INSTANCE_IP=10.101.51.12
 ++ INSTANCE_PORT=22
 ++ USER=ubuntu
 ++ execute_remote 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.15 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
+++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.12 'sudo adduser --extrausers --quiet --disabled-password --gecos '\'''\'' test'
 ENTER EXTRAUSERS_GROUP_FILEEXIT EXTRAUSERS_GROUP_FILEENTER EXTRAUSERS_SHADOWGROUP_FILEEXIT EXTRAUSERS_SHADOWGROUP_FILE++ execute_remote 'echo test:ubuntu | sudo chpasswd'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.15 'echo test:ubuntu | sudo chpasswd'
+++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.12 'echo test:ubuntu | sudo chpasswd'
 ++ execute_remote 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
-++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.15 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
+++ ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 ubuntu@10.101.51.12 'echo '\''test ALL=(ALL) NOPASSWD:ALL'\'' | sudo tee /etc/sudoers.d/create-user-test'
 test ALL=(ALL) NOPASSWD:ALL
-+ . snappy-qa-jobs/scripts/utils/register_device.sh 10.101.51.15 22 test ubuntu sergiocazzolato@yahoo.com.ar
++ . snappy-qa-jobs/scripts/utils/register_device.sh 10.101.51.12 22 test ubuntu sergiocazzolato@yahoo.com.ar
 ++ echo 'Register device'
 Register device
 ++ '[' 5 -ne 5 ']'
-++ DEVICE_IP=10.101.51.15
+++ DEVICE_IP=10.101.51.12
 ++ DEVICE_PORT=22
 ++ USER=test
 ++ PASS=ubuntu
@@ -302,13 +376,13 @@ Register device
 ++ '[' -z ubuntu ']'
 ++ echo 'Registering device (with pass): sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
 Registering device (with pass): sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '.data.auth.users=[]' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )
-++ sshpass -p ubuntu ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 test@10.101.51.15 'sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
+++ sshpass -p ubuntu ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 22 test@10.101.51.12 'sudo snap create-user sergiocazzolato@yahoo.com.ar ||         ( sudo snap install jq;         sudo cp /var/lib/snapd/state.json /var/lib/snapd/state.json.bak;         sudo cat /var/lib/snapd/state.json.bak | jq -r '\''.data.auth.users=[]'\'' | sudo tee /var/lib/snapd/state.json > /dev/null;         sudo systemctl stop snapd.service snapd.socket;         sudo systemctl start snapd.service snapd.socket;         sudo snap create-user sergiocazzolato@yahoo.com.ar;         sudo snap remove jq )'
 created user "snappytestaccount1"
-+ . snappy-qa-jobs/scripts/utils/refresh.sh 10.101.51.15 22 test ubuntu stable edge
++ . snappy-qa-jobs/scripts/utils/refresh.sh 10.101.51.12 22 test ubuntu stable edge
 ++ echo 'Refresh core on device'
 Refresh core on device
 ++ '[' 6 -ne 6 ']'
-++ DEVICE_IP=10.101.51.15
+++ DEVICE_IP=10.101.51.12
 ++ DEVICE_PORT=22
 ++ USER=test
 ++ PASS=ubuntu
@@ -316,15 +390,15 @@ Refresh core on device
 ++ CORE_CHANNEL=edge
 ++ execute_remote 'snap changes'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap changes'
 ++ grep -q -E 'Doing.*Auto-refresh snap.*'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
 ++ '[' -z edge ']'
 ++ '[' stable = edge ']'
 ++ do_core_refresh edge core
 ++ refresh_channel=edge
 ++ execute_remote 'sudo snap refresh --edge core'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'sudo snap refresh --edge core'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap refresh --edge core'
 snapd is about to reboot the system
 ++ check_refresh edge
 ++ refresh_channel=edge
@@ -333,965 +407,644 @@ snapd is about to reboot the system
 ++ sleep=2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=29
 ++ '[' 29 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=28
 ++ '[' 28 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=27
 ++ '[' 27 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=26
 ++ '[' 26 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=25
 ++ '[' 25 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=24
 ++ '[' 24 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=23
 ++ '[' 23 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=22
 ++ '[' 22 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=21
 ++ '[' 21 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=20
 ++ '[' 20 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=19
 ++ '[' 19 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=18
 ++ '[' 18 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=17
 ++ '[' 17 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=16
 ++ '[' 16 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=15
 ++ '[' 15 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=14
 ++ '[' 14 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=13
 ++ '[' 13 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=12
 ++ '[' 12 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=11
 ++ '[' 11 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=10
 ++ '[' 10 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=9
 ++ '[' 9 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=8
 ++ '[' 8 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=7
 ++ '[' 7 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=6
 ++ '[' 6 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=5
 ++ '[' 5 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=4
 ++ '[' 4 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ wait_for_ssh 120 2
 ++ retries=120
 ++ sleep=2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=119
 ++ '[' 119 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=118
 ++ '[' 118 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=117
 ++ '[' 117 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=116
 ++ '[' 116 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=115
 ++ '[' 115 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=114
 ++ '[' 114 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=113
 ++ '[' 113 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=112
 ++ '[' 112 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=111
 ++ '[' 111 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=110
 ++ '[' 110 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=109
 ++ '[' 109 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retries=108
 ++ '[' 108 -le 0 ']'
 ++ sleep 2
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=107
-++ '[' 107 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=106
-++ '[' 106 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=105
-++ '[' 105 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=104
-++ '[' 104 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=103
-++ '[' 103 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=102
-++ '[' 102 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=101
-++ '[' 101 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=100
-++ '[' 100 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=99
-++ '[' 99 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=98
-++ '[' 98 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=97
-++ '[' 97 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=96
-++ '[' 96 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=95
-++ '[' 95 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=94
-++ '[' 94 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=93
-++ '[' 93 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=92
-++ '[' 92 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=91
-++ '[' 91 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=90
-++ '[' 90 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=89
-++ '[' 89 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=88
-++ '[' 88 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=87
-++ '[' 87 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=86
-++ '[' 86 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=85
-++ '[' 85 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=84
-++ '[' 84 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=83
-++ '[' 83 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=82
-++ '[' 82 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=81
-++ '[' 81 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=80
-++ '[' 80 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=79
-++ '[' 79 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=78
-++ '[' 78 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=77
-++ '[' 77 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=76
-++ '[' 76 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=75
-++ '[' 75 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=74
-++ '[' 74 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=73
-++ '[' 73 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=72
-++ '[' 72 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=71
-++ '[' 71 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=70
-++ '[' 70 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=69
-++ '[' 69 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=68
-++ '[' 68 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=67
-++ '[' 67 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=66
-++ '[' 66 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=65
-++ '[' 65 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=64
-++ '[' 64 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=63
-++ '[' 63 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=62
-++ '[' 62 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=61
-++ '[' 61 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=60
-++ '[' 60 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=59
-++ '[' 59 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=58
-++ '[' 58 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=57
-++ '[' 57 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=56
-++ '[' 56 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=55
-++ '[' 55 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=54
-++ '[' 54 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=53
-++ '[' 53 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=52
-++ '[' 52 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=51
-++ '[' 51 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=50
-++ '[' 50 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=49
-++ '[' 49 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=48
-++ '[' 48 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=47
-++ '[' 47 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=46
-++ '[' 46 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=45
-++ '[' 45 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=44
-++ '[' 44 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=43
-++ '[' 43 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=42
-++ '[' 42 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=41
-++ '[' 41 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=40
-++ '[' 40 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=39
-++ '[' 39 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=38
-++ '[' 38 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=37
-++ '[' 37 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=36
-++ '[' 36 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=35
-++ '[' 35 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=34
-++ '[' 34 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=33
-++ '[' 33 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=32
-++ '[' 32 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=31
-++ '[' 31 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=30
-++ '[' 30 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=29
-++ '[' 29 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=28
-++ '[' 28 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=27
-++ '[' 27 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=26
-++ '[' 26 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=25
-++ '[' 25 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=24
-++ '[' 24 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=23
-++ '[' 23 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=22
-++ '[' 22 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=21
-++ '[' 21 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=20
-++ '[' 20 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=19
-++ '[' 19 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=18
-++ '[' 18 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=17
-++ '[' 17 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=16
-++ '[' 16 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=15
-++ '[' 15 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=14
-++ '[' 14 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=13
-++ '[' 13 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=12
-++ '[' 12 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=11
-++ '[' 11 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=10
-++ '[' 10 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=9
-++ '[' 9 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=8
-++ '[' 8 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=7
-++ '[' 7 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=6
-++ '[' 6 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=5
-++ '[' 5 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=4
-++ '[' 4 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=3
-++ '[' 3 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=2
-++ '[' 2 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=1
-++ '[' 1 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 true
-++ retries=0
-++ '[' 0 -le 0 ']'
-++ echo 'Timed out waiting for ssh. Aborting!'
-Timed out waiting for ssh. Aborting!
-++ break
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retry_until 'snap info core' 'tracking: +edge' 10 2
 ++ command='snap info core'
 ++ output='tracking: +edge'
 ++ retries=10
 ++ sleep=2
-++ execute_remote 'snap info core'
 ++ grep -q -E 'tracking: +edge'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ retries=9
-++ '[' 9 -le 0 ']'
-++ sleep 2
 ++ execute_remote 'snap info core'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ grep -q -E 'tracking: +edge'
-++ retries=8
-++ '[' 8 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap info core'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap info core'
+++ retry_until 'sudo snap install --devmode jq' 'jq .* installed' 20 10
+++ command='sudo snap install --devmode jq'
+++ output='jq .* installed'
+++ retries=20
+++ sleep=10
+++ execute_remote 'sudo snap install --devmode jq'
 ++ '[' -z ubuntu ']'
-++ grep -q -E 'tracking: +edge'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ retries=7
-++ '[' 7 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap info core'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:46067->[::1]:53: read: connection refused
+++ retries=19
+++ '[' 19 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ grep -q -E 'tracking: +edge'
-++ retries=6
-++ '[' 6 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap info core'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+++ execute_remote 'sudo snap remove jq'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ grep -q -E 'tracking: +edge'
-++ retries=5
-++ '[' 5 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap info core'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ grep -q -E 'tracking: +edge'
-++ retries=4
-++ '[' 4 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap info core'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ grep -q -E 'tracking: +edge'
-++ retries=3
-++ '[' 3 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap info core'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ grep -q -E 'tracking: +edge'
-++ retries=2
-++ '[' 2 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap info core'
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ grep -q -E 'tracking: +edge'
-++ retries=1
-++ '[' 1 -le 0 ']'
-++ sleep 2
-++ execute_remote 'snap info core'
-++ '[' -z ubuntu ']'
-++ grep -q -E 'tracking: +edge'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.15 'snap info core'
-++ retries=0
-++ '[' 0 -le 0 ']'
-++ echo 'Timed out reached. Aborting!'
-Timed out reached. Aborting!
-++ exit 1
-2018-10-02 11:04:28,909 dragonboard_005 WARNING: DEVICE AGENT: Tests failed, rc=1
-2018-10-02 11:04:28,951 dragonboard_005 INFO: DEVICE AGENT: END testrun
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap remove jq'
+jq removed
++ . snappy-qa-jobs/scripts/utils/run_setup.sh 10.101.51.12 22 test ubuntu ''
+++ echo 'Running setup command'
+Running setup command
+++ '[' 5 -ne 5 ']'
+++ DEVICE_IP=10.101.51.12
+++ DEVICE_PORT=22
+++ USER=test
+++ PASS=ubuntu
+++ SETUP=
+++ '[' -z '' ']'
+++ echo 'No setup command to run'
+No setup command to run
++ . snappy-qa-jobs/scripts/utils/get_spread.sh
+++ echo 'Getting spread'
+Getting spread
++++ pwd
+++ export WORKSPACE=/home/ubuntu
+++ WORKSPACE=/home/ubuntu
+++ export SPREAD_DIR=/home/ubuntu/spread
+++ SPREAD_DIR=/home/ubuntu/spread
+++ export PATH=/home/ubuntu/spread:/srv/testflinger-agent/dragonboard002/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/home/ubuntu/spread:/srv/testflinger-agent/dragonboard002/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ '[' -f /home/ubuntu/spread/spread ']'
+++ mkdir -p /home/ubuntu/spread
+++ cd /home/ubuntu/spread
+++ curl -s -O https://niemeyer.s3.amazonaws.com/spread-amd64.tar.gz
+++ tar xzvf spread-amd64.tar.gz
+spread
+++ echo 'Spread downloaded and ready to use'
+Spread downloaded and ready to use
++ . snappy-qa-jobs/scripts/utils/run_spread.sh 10.101.51.12 22 snapd external:ubuntu-core-16-arm-64:tests/ '' tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks -v
+++ echo 'Running spread'
+Running spread
+++ '[' 7 -ne 7 ']'
+++ export WORKSPACE=/home/ubuntu
+++ WORKSPACE=/home/ubuntu
+++ DEVICE_IP=10.101.51.12
+++ DEVICE_PORT=22
+++ PROJECT_PATH=snapd
+++ SPREAD_TESTS=external:ubuntu-core-16-arm-64:tests/
+++ SPREAD_ENV=
+++ SKIP_TESTS=tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks
+++ SPREAD_PARAMS=-v
+++ '[' -z external:ubuntu-core-16-arm-64:tests/ ']'
+++ '[' '!' -z '' ']'
+++ export SPREAD_EXTERNAL_ADDRESS=10.101.51.12:22
+++ SPREAD_EXTERNAL_ADDRESS=10.101.51.12:22
++++ which spread
+++ [[ -n /home/ubuntu/spread/spread ]]
+++ echo 'Spread found'
+Spread found
+++ cd snapd
+++ echo 'Moving to manual all the tests to skip: tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks'
+Moving to manual all the tests to skip: tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks
++++ echo tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks
++++ tr , ' '
+++ tests_skip='tests/main/auto-refresh tests/main/interfaces-content tests/main/install-sideload tests/main/snap-core-symlinks'
+++ for test in '$tests_skip'
+++ '[' -f tests/main/auto-refresh/task.yaml ']'
+++ cp tests/main/auto-refresh/task.yaml tests/main/auto-refresh/task.yaml.back
+++ echo 'manual: true'
+++ for test in '$tests_skip'
+++ '[' -f tests/main/interfaces-content/task.yaml ']'
+++ cp tests/main/interfaces-content/task.yaml tests/main/interfaces-content/task.yaml.back
+++ echo 'manual: true'
+++ for test in '$tests_skip'
+++ '[' -f tests/main/install-sideload/task.yaml ']'
+++ cp tests/main/install-sideload/task.yaml tests/main/install-sideload/task.yaml.back
+++ echo 'manual: true'
+++ for test in '$tests_skip'
+++ '[' -f tests/main/snap-core-symlinks/task.yaml ']'
+++ cp tests/main/snap-core-symlinks/task.yaml tests/main/snap-core-symlinks/task.yaml.back
+++ echo 'manual: true'
++++ echo -v
++++ tr , ' '
+++ spread_params=-v
+++ echo 'Running command: spread -v external:ubuntu-core-16-arm-64:tests/'
+Running command: spread -v external:ubuntu-core-16-arm-64:tests/
+++ spread -v external:ubuntu-core-16-arm-64:tests/
+2018-10-02 13:19:39 Found /home/ubuntu/snapd/spread.yaml.
+2018-10-02 13:19:42 Project content is packed for delivery (3.05MB).
+2018-10-02 13:19:42 Sequence of jobs produced with -seed=1538486382
+2018-10-02 13:19:42 If killed, discard servers with: spread -reuse-pid=813 -discard
+2018-10-02 13:19:42 Allocating external:ubuntu-core-16-arm-64...
+2018-10-02 13:19:42 Waiting for external:ubuntu-core-16-arm-64 to make SSH available at 10.101.51.12:22...
+2018-10-02 13:19:42 Allocated external:ubuntu-core-16-arm-64.
+2018-10-02 13:19:42 Connecting to external:ubuntu-core-16-arm-64...
+2018-10-02 13:19:42 Connected to external:ubuntu-core-16-arm-64 at 10.101.51.12:22.
+2018-10-02 13:19:42 Sending project content to external:ubuntu-core-16-arm-64...
+2018-10-02 13:19:43 Preparing external:ubuntu-core-16-arm-64...
+2018-10-02 13:19:44 Preparing external:ubuntu-core-16-arm-64:tests/main/...
+2018-10-02 13:20:47 Preparing external:ubuntu-core-16-arm-64:tests/main/lxd...
+2018-10-02 13:20:58 Executing external:ubuntu-core-16-arm-64:tests/main/lxd (1/215)...
+2018-10-02 13:20:59 Restoring external:ubuntu-core-16-arm-64:tests/main/lxd...
+2018-10-02 13:21:00 Preparing external:ubuntu-core-16-arm-64:tests/main/degraded...
+2018-10-02 13:21:05 Executing external:ubuntu-core-16-arm-64:tests/main/degraded (2/215)...
+2018-10-02 13:21:05 Restoring external:ubuntu-core-16-arm-64:tests/main/degraded...
+2018-10-02 13:21:05 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control...
+2018-10-02 13:21:23 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control (3/215)...
+2018-10-02 13:21:33 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control...
+2018-10-02 13:21:33 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
+2018-10-02 13:22:26 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot (4/215)...
+2018-10-02 13:22:27 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot) as requested...
+2018-10-02 13:23:31 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
+2018-10-02 13:23:31 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
+2018-10-02 13:24:47 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade (5/215)...
+2018-10-02 13:25:11 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
+2018-10-02 13:26:10 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
+
+2018-10-02 13:26:12 Error executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade : 
+-----
+mesg: ttyname failed: Inappropriate ioctl for device
++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
+++ GRUB_EDITENV=grub-editenv
+++ case "$SPREAD_SYSTEM" in
++ '[' 0 '!=' 0 ']'
++ snap list
++ awk '/^core / {print($3)}'
++ '[' -f curChg ']'
++ case $SPREAD_REBOOT in
+++ cat prevBoot
++ cmd='snap install --dangerous /var/lib/snapd/snaps/core_5615.snap'
+++ eval snap install --dangerous /var/lib/snapd/snaps/core_5615.snap --no-wait
++++ snap install --dangerous /var/lib/snapd/snaps/core_5615.snap --no-wait
++ chg_id=15
++ echo 15
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ echo 'Ensure the test snap still runs'
+Ensure the test snap still runs
++ test-snapd-tools.echo hello
++ MATCH hello
++ echo 'Ensure the bootloader is correct before reboot'
+Ensure the bootloader is correct before reboot
++ readlink /snap/core/current
+++ cat prevBoot
+++ cat nextBoot
++ test 5615 '!=' x1
+++ bootenv snap_try_core
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ sed 's/^snap_try_core=//'
+++ fw_printenv snap_try_core
+++ cat nextBoot
++ test core_x1.snap = core_x1.snap
+++ bootenv snap_mode
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ sed 's/^snap_mode=//'
+++ fw_printenv snap_mode
++ test try = try
++ echo 'Ensure the device is scheduled for auto-reboot'
+Ensure the device is scheduled for auto-reboot
+++ dbus-send --print-reply --type=method_call --system --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.DBus.Properties.Get string:org.freedesktop.login1.Manager string:ScheduledShutdown
++ output='method return time=1538486793.809144 sender=:1.1 -> destination=:1.6 serial=35 reply_serial=2
+   variant       struct {
+         string "reboot"
+         uint64 1538487393456511
+      }'
++ echo method return time=1538486793.809144 sender=:1.1 '->' destination=:1.6 serial=35 reply_serial=2 variant struct '{' string '"reboot"' uint64 1538487393456511 '}'
++ MATCH 'string "reboot"'
++ REBOOT
+<REBOOT>
+
+mesg: ttyname failed: Inappropriate ioctl for device
++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
+++ GRUB_EDITENV=grub-editenv
+++ case "$SPREAD_SYSTEM" in
++ '[' 1 '!=' 0 ']'
++ echo 'Waiting for snapd to clean snap_mode'
+Waiting for snapd to clean snap_mode
+++ bootenv snap_mode
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ sed 's/^snap_mode=//'
+++ fw_printenv snap_mode
+## Error: "snap_mode" not defined
++ '[' '' '!=' '' ']'
++ echo 'Ensure the bootloader is correct after reboot'
+Ensure the bootloader is correct after reboot
+++ bootenv snap_core
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ sed 's/^snap_core=//'
+++ fw_printenv snap_core
+++ cat nextBoot
++ test core_x1.snap = core_x1.snap
+++ bootenv snap_try_core
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ fw_printenv snap_try_core
+++ sed 's/^snap_try_core=//'
+## Error: "snap_try_core" not defined
++ test '' = ''
+++ bootenv snap_mode
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ sed 's/^snap_mode=//'
+++ fw_printenv snap_mode
+## Error: "snap_mode" not defined
++ test '' = ''
++ snap list
++ awk '/^core / {print($3)}'
++ '[' -f curChg ']'
+++ cat curChg
++ snap watch 15
++ rm -f curChg
++ case $SPREAD_REBOOT in
++ cmd='snap revert core'
+++ eval snap revert core --no-wait
++++ snap revert core --no-wait
++ chg_id=17
++ echo 17
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ grep -q 'Waiting for system reboot'
++ journalctl -b -u snapd
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ sleep 1
++ journalctl -b -u snapd
++ grep -q 'Waiting for system reboot'
++ echo 'Ensure the test snap still runs'
+Ensure the test snap still runs
++ test-snapd-tools.echo hello
++ MATCH hello
++ echo 'Ensure the bootloader is correct before reboot'
+Ensure the bootloader is correct before reboot
++ readlink /snap/core/current
+++ cat prevBoot
+++ cat nextBoot
++ test x1 '!=' 5615
+++ bootenv snap_try_core
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ sed 's/^snap_try_core=//'
+++ fw_printenv snap_try_core
+++ cat nextBoot
++ test core_5615.snap = core_5615.snap
+++ bootenv snap_mode
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ sed 's/^snap_mode=//'
+++ fw_printenv snap_mode
++ test try = try
++ echo 'Ensure the device is scheduled for auto-reboot'
+Ensure the device is scheduled for auto-reboot
+++ dbus-send --print-reply --type=method_call --system --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.DBus.Properties.Get string:org.freedesktop.login1.Manager string:ScheduledShutdown
++ output='method return time=1538486798.456598 sender=:1.2 -> destination=:1.6 serial=35 reply_serial=2
+   variant       struct {
+         string "reboot"
+         uint64 1538487397382888
+      }'
++ echo method return time=1538486798.456598 sender=:1.2 '->' destination=:1.6 serial=35 reply_serial=2 variant struct '{' string '"reboot"' uint64 1538487397382888 '}'
++ MATCH 'string "reboot"'
++ REBOOT
+<REBOOT>
+
++ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
+++ GRUB_EDITENV=grub-editenv
+++ case "$SPREAD_SYSTEM" in
++ '[' 2 '!=' 0 ']'
++ echo 'Waiting for snapd to clean snap_mode'
+Waiting for snapd to clean snap_mode
+++ bootenv snap_mode
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ sed 's/^snap_mode=//'
+++ fw_printenv snap_mode
++ '[' try '!=' '' ']'
++ sleep 1
+++ bootenv snap_mode
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ sed 's/^snap_mode=//'
+++ fw_printenv snap_mode
+Cannot access MTD device /boot/uboot/uboot.env: No such file or directory
++ '[' '' '!=' '' ']'
++ echo 'Ensure the bootloader is correct after reboot'
+Ensure the bootloader is correct after reboot
+++ bootenv snap_core
+++ '[' 1 -eq 0 ']'
+++ command -v grub-editenv
+++ fw_printenv snap_core
+++ sed 's/^snap_core=//'
+Cannot access MTD device /boot/uboot/uboot.env: No such file or directory
+++ cat nextBoot
++ test '' = core_5615.snap
+-----
+.
+2018-10-02 13:26:12 Error debugging external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade : sudo: unknown uid 1001: who are you?
+2018-10-02 13:26:12 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
+2018-10-02 13:26:12 Error restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade : sudo: unknown uid 1001: who are you?
+2018-10-02 13:26:12 Restoring external:ubuntu-core-16-arm-64:tests/main/...
+2018-10-02 13:26:12 Error restoring external:ubuntu-core-16-arm-64:tests/main/ : sudo: unknown uid 1001: who are you?
+2018-10-02 13:26:12 Restoring external:ubuntu-core-16-arm-64...
+2018-10-02 13:26:12 Error restoring external:ubuntu-core-16-arm-64 : sudo: unknown uid 1001: who are you?
+2018-10-02 13:26:12 Discarding external:ubuntu-core-16-arm-64...
+2018-10-02 13:26:12 Successful tasks: 4
+2018-10-02 13:26:12 Aborted tasks: 210
+2018-10-02 13:26:12 Failed tasks: 1
+    - external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade
+2018-10-02 13:26:12 Failed task restore: 1
+    - external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade
+2018-10-02 13:26:12 Failed suite restore: 1
+    - external:ubuntu-core-16-arm-64:tests/main/
+2018-10-02 13:26:12 Failed project restore: 1
+    - external:ubuntu-core-16-arm-64:project
+error: unsuccessful run
+2018-10-02 13:26:12,533 dragonboard_002 WARNING: DEVICE AGENT: Tests failed, rc=1
+2018-10-02 13:26:12,534 dragonboard_002 INFO: DEVICE AGENT: END testrun
 complete
