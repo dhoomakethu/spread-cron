@@ -5,7 +5,7 @@ Deleting test flinger data
 Creating job for snapd using a device
 Running testflinger client
 Submitting job to testflinger
-JOB_ID: 1419ebf8-718f-408f-bb91-32870fbeb369
+JOB_ID: 4fd17b93-0be5-4eca-b73b-50176d3c259d
 Print job: /var/snap/testflinger-cli/current/job.yaml 
 job_queue: dragonboard
 global_timeout: 36000
@@ -38,33 +38,32 @@ Cleaning up container if it exists...
 Error response from daemon: No such container: dragonboard002
 
 ***********************************************
+
 * Starting provision phase on dragonboard-002 *
 
 ***********************************************
 Install python-logstash if you want to use logstash logging
-2018-10-08 07:45:30,982 dragonboard_002 INFO: DEVICE AGENT: BEGIN provision
-2018-10-08 07:45:30,982 dragonboard_002 INFO: DEVICE AGENT: Booting Master Image
-2018-10-08 07:45:30,982 dragonboard_002 INFO: DEVICE AGENT: Making sure the master image is booted
-2018-10-08 07:45:30,982 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
-2018-10-08 07:45:31,915 dragonboard_002 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sgdisk -o /dev/mmcblk1
+2018-10-08 11:12:20,290 dragonboard_002 INFO: DEVICE AGENT: BEGIN provision
+2018-10-08 11:12:20,290 dragonboard_002 INFO: DEVICE AGENT: Booting Master Image
+2018-10-08 11:12:20,290 dragonboard_002 INFO: DEVICE AGENT: Making sure the master image is booted
+2018-10-08 11:12:20,290 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-08 11:12:21,430 dragonboard_002 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sgdisk -o /dev/mmcblk1
 Warning: The kernel is still using the old partition table.
 The new table will be used at the next reboot or after you
 run partprobe(8) or kpartx(8)
 The operation has completed successfully.
-2018-10-08 07:45:37,198 dragonboard_002 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sync
-2018-10-08 07:45:37,967 dragonboard_002 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 2
+2018-10-08 11:12:24,365 dragonboard_002 INFO: DEVICE AGENT: Running ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@10.101.51.12 sudo sync
+2018-10-08 11:12:24,986 dragonboard_002 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 2
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 2
-2018-10-08 07:45:38,085 dragonboard_002 INFO: DEVICE AGENT: Running sleep 10
-2018-10-08 07:45:48,129 dragonboard_002 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 1
+2018-10-08 11:12:25,102 dragonboard_002 INFO: DEVICE AGENT: Running sleep 10
+2018-10-08 11:12:35,124 dragonboard_002 INFO: DEVICE AGENT: Running snmpset -c private -v1 10.101.48.13 .1.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 i 1
 iso.3.6.1.4.1.318.1.1.12.3.3.1.1.4.2 = INTEGER: 1
-2018-10-08 07:45:58,257 dragonboard_002 INFO: DEVICE AGENT: Checking if master image booted.
-2018-10-08 07:46:16,295 dragonboard_002 INFO: DEVICE AGENT: Error checking device state. Forcing reboot...
-2018-10-08 07:46:26,305 dragonboard_002 INFO: DEVICE AGENT: Checking if master image booted.
-2018-10-08 07:49:28,879 dragonboard_002 INFO: DEVICE AGENT: Flashing Test Image
-2018-10-08 07:49:29,284 dragonboard_002 INFO: DEVICE AGENT: Running: nc 10.101.50.22 40000| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
-2018-10-08 07:50:05,453 dragonboard_002 INFO: DEVICE AGENT: Creating Test User
-2018-10-08 07:50:07,977 dragonboard_002 INFO: DEVICE AGENT: Booting Test Image
-2018-10-08 07:50:07,978 dragonboard_002 INFO: DEVICE AGENT: Booting the test image
+2018-10-08 11:12:45,244 dragonboard_002 INFO: DEVICE AGENT: Checking if master image booted.
+2018-10-08 11:16:48,248 dragonboard_002 INFO: DEVICE AGENT: Flashing Test Image
+2018-10-08 11:16:48,613 dragonboard_002 INFO: DEVICE AGENT: Running: nc 10.101.50.22 38728| gunzip| sudo dd of=/dev/mmcblk1 bs=16M
+2018-10-08 11:17:26,645 dragonboard_002 INFO: DEVICE AGENT: Creating Test User
+2018-10-08 11:17:28,949 dragonboard_002 INFO: DEVICE AGENT: Booting Test Image
+2018-10-08 11:17:28,949 dragonboard_002 INFO: DEVICE AGENT: Booting the test image
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
 
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
@@ -75,35 +74,36 @@ Number of key(s) added: 1
 Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' -o 'UserKnownHostsFile=/dev/null' 'ubuntu@10.101.51.12'"
 and check to make sure that only the key(s) you wanted were added.
 
-2018-10-08 07:51:20,125 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
-2018-10-08 07:51:20,612 dragonboard_002 INFO: DEVICE AGENT: END provision
+2018-10-08 11:18:40,257 dragonboard_002 INFO: DEVICE AGENT: Checking if test image booted.
+2018-10-08 11:18:40,741 dragonboard_002 INFO: DEVICE AGENT: END provision
+
 ******************************************
 
 * Starting test phase on dragonboard-002 *
 
 ******************************************
 Install python-logstash if you want to use logstash logging
-2018-10-08 07:51:24,354 dragonboard_002 INFO: DEVICE AGENT: BEGIN testrun
+2018-10-08 11:18:44,720 dragonboard_002 INFO: DEVICE AGENT: BEGIN testrun
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://archive.ubuntu.com/ubuntu xenial InRelease
-Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
 Get:3 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial InRelease [17.6 kB]
 Get:4 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
-Get:5 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial/main amd64 Packages [9804 B]
-Get:6 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [95.4 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
-Get:8 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [717 kB]
-Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [280 kB]
-Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1106 kB]
-Get:11 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [491 kB]
-Get:12 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3744 B]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [95.4 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [717 kB]
+Get:8 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [280 kB]
+Get:9 http://ppa.launchpad.net/checkbox-dev/ppa/ubuntu xenial/main amd64 Packages [9809 B]
+Get:10 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [491 kB]
+Get:11 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3744 B]
+Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1106 kB]
 Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [888 kB]
 Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.8 kB]
 Get:15 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [7965 B]
 Get:16 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [8532 B]
-Fetched 3967 kB in 3s (1043 kB/s)
+Fetched 3967 kB in 3s (1136 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -166,7 +166,7 @@ debconf: falling back to frontend: Readline
 debconf: unable to initialize frontend: Readline
 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7, <> line 25.)
 debconf: falling back to frontend: Teletype
-Fetched 14.2 MB in 3s (4169 kB/s)
+Fetched 14.2 MB in 4s (3452 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14264 files and directories currently installed.)
 Preparing to unpack .../perl-base_5.22.1-9ubuntu0.5_amd64.deb ...
 Unpacking perl-base (5.22.1-9ubuntu0.5) over (5.22.1-9ubuntu0.3) ...
@@ -324,8 +324,8 @@ Refresh core on device
 ++ CORE_CHANNEL=edge
 ++ execute_remote 'snap changes'
 ++ '[' -z ubuntu ']'
-++ grep -q -E 'Doing.*Auto-refresh snap.*'
 ++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap changes'
+++ grep -q -E 'Doing.*Auto-refresh snap.*'
 ++ '[' -z edge ']'
 ++ '[' stable = edge ']'
 ++ do_core_refresh edge core
@@ -552,45 +552,15 @@ snapd is about to reboot the system
 ++ execute_remote true
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
-++ retries=111
-++ '[' 111 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
-++ retries=110
-++ '[' 110 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
-++ retries=109
-++ '[' 109 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
-++ retries=108
-++ '[' 108 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
-++ retries=107
-++ '[' 107 -le 0 ']'
-++ sleep 2
-++ execute_remote true
-++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 true
 ++ retry_until 'snap info core' 'tracking: +edge' 10 2
 ++ command='snap info core'
 ++ output='tracking: +edge'
 ++ retries=10
 ++ sleep=2
 ++ execute_remote 'snap info core'
-++ grep -q -E 'tracking: +edge'
 ++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'snap info core'
+++ grep -q -E 'tracking: +edge'
 ++ retry_until 'sudo snap install --devmode jq' 'jq .* installed' 20 10
 ++ command='sudo snap install --devmode jq'
 ++ output='jq .* installed'
@@ -598,639 +568,207 @@ snapd is about to reboot the system
 ++ sleep=10
 ++ execute_remote 'sudo snap install --devmode jq'
 ++ '[' -z ubuntu ']'
+++ grep -q -E 'jq .* installed'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:41353->[::1]:53: read: connection refused
+++ retries=19
+++ '[' 19 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
 ++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
 ++ grep -q -E 'jq .* installed'
-++ execute_remote 'sudo snap remove jq'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:58139->[::1]:53: read: connection refused
+++ retries=18
+++ '[' 18 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
 ++ '[' -z ubuntu ']'
-++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap remove jq'
-jq removed
-+ . snappy-qa-jobs/scripts/utils/run_setup.sh 10.101.51.12 22 test ubuntu ''
-++ echo 'Running setup command'
-Running setup command
-++ '[' 5 -ne 5 ']'
-++ DEVICE_IP=10.101.51.12
-++ DEVICE_PORT=22
-++ USER=test
-++ PASS=ubuntu
-++ SETUP=
-++ '[' -z '' ']'
-++ echo 'No setup command to run'
-No setup command to run
-+ . snappy-qa-jobs/scripts/utils/get_spread.sh
-++ echo 'Getting spread'
-Getting spread
-+++ pwd
-++ export WORKSPACE=/home/ubuntu
-++ WORKSPACE=/home/ubuntu
-++ export SPREAD_DIR=/home/ubuntu/spread
-++ SPREAD_DIR=/home/ubuntu/spread
-++ export PATH=/home/ubuntu/spread:/srv/testflinger-agent/dragonboard002/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-++ PATH=/home/ubuntu/spread:/srv/testflinger-agent/dragonboard002/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-++ '[' -f /home/ubuntu/spread/spread ']'
-++ mkdir -p /home/ubuntu/spread
-++ cd /home/ubuntu/spread
-++ curl -s -O https://niemeyer.s3.amazonaws.com/spread-amd64.tar.gz
-++ tar xzvf spread-amd64.tar.gz
-spread
-++ echo 'Spread downloaded and ready to use'
-Spread downloaded and ready to use
-+ . snappy-qa-jobs/scripts/utils/run_spread.sh 10.101.51.12 22 snapd external:ubuntu-core-16-arm-64:tests/ '' tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks -v
-++ echo 'Running spread'
-Running spread
-++ '[' 7 -ne 7 ']'
-++ export WORKSPACE=/home/ubuntu
-++ WORKSPACE=/home/ubuntu
-++ DEVICE_IP=10.101.51.12
-++ DEVICE_PORT=22
-++ PROJECT_PATH=snapd
-++ SPREAD_TESTS=external:ubuntu-core-16-arm-64:tests/
-++ SPREAD_ENV=
-++ SKIP_TESTS=tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks
-++ SPREAD_PARAMS=-v
-++ '[' -z external:ubuntu-core-16-arm-64:tests/ ']'
-++ '[' '!' -z '' ']'
-++ export SPREAD_EXTERNAL_ADDRESS=10.101.51.12:22
-++ SPREAD_EXTERNAL_ADDRESS=10.101.51.12:22
-+++ which spread
-++ [[ -n /home/ubuntu/spread/spread ]]
-++ echo 'Spread found'
-Spread found
-++ cd snapd
-++ echo 'Moving to manual all the tests to skip: tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks'
-Moving to manual all the tests to skip: tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks
-+++ echo tests/main/auto-refresh,tests/main/interfaces-content,tests/main/install-sideload,tests/main/snap-core-symlinks
-+++ tr , ' '
-++ tests_skip='tests/main/auto-refresh tests/main/interfaces-content tests/main/install-sideload tests/main/snap-core-symlinks'
-++ for test in '$tests_skip'
-++ '[' -f tests/main/auto-refresh/task.yaml ']'
-++ cp tests/main/auto-refresh/task.yaml tests/main/auto-refresh/task.yaml.back
-++ echo 'manual: true'
-++ for test in '$tests_skip'
-++ '[' -f tests/main/interfaces-content/task.yaml ']'
-++ cp tests/main/interfaces-content/task.yaml tests/main/interfaces-content/task.yaml.back
-++ echo 'manual: true'
-++ for test in '$tests_skip'
-++ '[' -f tests/main/install-sideload/task.yaml ']'
-++ cp tests/main/install-sideload/task.yaml tests/main/install-sideload/task.yaml.back
-++ echo 'manual: true'
-++ for test in '$tests_skip'
-++ '[' -f tests/main/snap-core-symlinks/task.yaml ']'
-++ cp tests/main/snap-core-symlinks/task.yaml tests/main/snap-core-symlinks/task.yaml.back
-++ echo 'manual: true'
-+++ echo -v
-+++ tr , ' '
-++ spread_params=-v
-++ echo 'Running command: spread -v external:ubuntu-core-16-arm-64:tests/'
-Running command: spread -v external:ubuntu-core-16-arm-64:tests/
-++ spread -v external:ubuntu-core-16-arm-64:tests/
-2018-10-08 08:03:06 Found /home/ubuntu/snapd/spread.yaml.
-2018-10-08 08:03:09 Project content is packed for delivery (3.08MB).
-2018-10-08 08:03:09 Sequence of jobs produced with -seed=1538985789
-2018-10-08 08:03:09 If killed, discard servers with: spread -reuse-pid=811 -discard
-2018-10-08 08:03:09 Allocating external:ubuntu-core-16-arm-64...
-2018-10-08 08:03:09 Waiting for external:ubuntu-core-16-arm-64 to make SSH available at 10.101.51.12:22...
-2018-10-08 08:03:09 Allocated external:ubuntu-core-16-arm-64.
-2018-10-08 08:03:09 Connecting to external:ubuntu-core-16-arm-64...
-2018-10-08 08:03:09 Connected to external:ubuntu-core-16-arm-64 at 10.101.51.12:22.
-2018-10-08 08:03:09 Sending project content to external:ubuntu-core-16-arm-64...
-2018-10-08 08:03:11 Preparing external:ubuntu-core-16-arm-64...
-2018-10-08 08:03:11 Preparing external:ubuntu-core-16-arm-64:tests/main/...
-2018-10-08 08:04:06 Preparing external:ubuntu-core-16-arm-64:tests/main/lxd...
-2018-10-08 08:04:21 Executing external:ubuntu-core-16-arm-64:tests/main/lxd (1/222)...
-2018-10-08 08:04:22 Restoring external:ubuntu-core-16-arm-64:tests/main/lxd...
-2018-10-08 08:04:22 Preparing external:ubuntu-core-16-arm-64:tests/main/degraded...
-2018-10-08 08:04:27 Executing external:ubuntu-core-16-arm-64:tests/main/degraded (2/222)...
-2018-10-08 08:04:27 Restoring external:ubuntu-core-16-arm-64:tests/main/degraded...
-2018-10-08 08:04:27 Preparing external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control...
-2018-10-08 08:04:59 Executing external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control (3/222)...
-2018-10-08 08:05:14 Restoring external:ubuntu-core-16-arm-64:tests/main/interfaces-broadcom-asic-control...
-2018-10-08 08:05:14 Preparing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
-2018-10-08 08:05:21 Executing external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd (4/222)...
-2018-10-08 08:08:38 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd) as requested...
-2018-10-08 08:11:40 Restoring external:ubuntu-core-16-arm-64:tests/main/failover:emptysystemd...
-2018-10-08 08:11:43 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
-2018-10-08 08:12:27 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot (5/222)...
-2018-10-08 08:12:28 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot) as requested...
-2018-10-08 08:13:37 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-reboot...
-2018-10-08 08:13:37 Preparing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
-2018-10-08 08:15:01 Executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade (6/222)...
-2018-10-08 08:15:24 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-10-08 08:16:26 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-10-08 08:17:46 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-10-08 08:18:46 Rebooting on external:ubuntu-core-16-arm-64 (external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade) as requested...
-2018-10-08 08:18:48 Error executing external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade : 
------
-mesg: ttyname failed: Inappropriate ioctl for device
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-++ GRUB_EDITENV=grub-editenv
-++ case "$SPREAD_SYSTEM" in
-+ '[' 0 '!=' 0 ']'
-+ snap list
-+ awk '/^core / {print($3)}'
-+ '[' -f curChg ']'
-+ case "$SPREAD_REBOOT" in
-++ cat prevBoot
-+ cmd='snap install --dangerous /var/lib/snapd/snaps/core_5683.snap'
-++ eval snap install --dangerous /var/lib/snapd/snaps/core_5683.snap --no-wait
-+++ snap install --dangerous /var/lib/snapd/snaps/core_5683.snap --no-wait
-+ chg_id=16
-+ echo 16
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ grep -q 'Waiting for system reboot'
-+ journalctl -b -u snapd
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ echo 'Ensure the test snap still runs'
-Ensure the test snap still runs
-+ test-snapd-tools.echo hello
-+ MATCH hello
-+ echo 'Ensure the bootloader is correct before reboot'
-Ensure the bootloader is correct before reboot
-+ readlink /snap/core/current
-++ cat prevBoot
-++ cat nextBoot
-+ test 5683 '!=' x1
-++ bootenv snap_try_core
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_try_core=//'
-++ fw_printenv snap_try_core
-++ cat nextBoot
-+ test core_x1.snap = core_x1.snap
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ sed 's/^snap_mode=//'
-++ command -v grub-editenv
-++ fw_printenv snap_mode
-+ test try = try
-+ echo 'Ensure the device is scheduled for auto-reboot'
-Ensure the device is scheduled for auto-reboot
-++ dbus-send --print-reply --type=method_call --system --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.DBus.Properties.Get string:org.freedesktop.login1.Manager string:ScheduledShutdown
-+ output='method return time=1538986616.609641 sender=:1.1 -> destination=:1.6 serial=35 reply_serial=2
-   variant       struct {
-         string "reboot"
-         uint64 1538987216090473
-      }'
-+ echo 'method return time=1538986616.609641 sender=:1.1 -> destination=:1.6 serial=35 reply_serial=2
-   variant       struct {
-         string "reboot"
-         uint64 1538987216090473
-      }'
-+ MATCH 'string "reboot"'
-+ REBOOT
-<REBOOT>
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:46499->[::1]:53: read: connection refused
+++ retries=17
+++ '[' 17 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:56786->[::1]:53: read: connection refused
+++ retries=16
+++ '[' 16 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:33896->[::1]:53: read: connection refused
+++ retries=15
+++ '[' 15 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:49207->[::1]:53: read: connection refused
+++ retries=14
+++ '[' 14 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:59239->[::1]:53: read: connection refused
+++ retries=13
+++ '[' 13 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ grep -q -E 'jq .* installed'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:43068->[::1]:53: read: connection refused
+++ retries=12
+++ '[' 12 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:55344->[::1]:53: read: connection refused
+++ retries=11
+++ '[' 11 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ grep -q -E 'jq .* installed'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:52010->[::1]:53: read: connection refused
+++ retries=10
+++ '[' 10 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:36951->[::1]:53: read: connection refused
+++ retries=9
+++ '[' 9 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ grep -q -E 'jq .* installed'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:60998->[::1]:53: read: connection refused
+++ retries=8
+++ '[' 8 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:41600->[::1]:53: read: connection refused
+++ retries=7
+++ '[' 7 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:47591->[::1]:53: read: connection refused
+++ retries=6
+++ '[' 6 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:32899->[::1]:53: read: connection refused
+++ retries=5
+++ '[' 5 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:45877->[::1]:53: read: connection refused
+++ retries=4
+++ '[' 4 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ grep -q -E 'jq .* installed'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:46351->[::1]:53: read: connection refused
+++ retries=3
+++ '[' 3 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:32977->[::1]:53: read: connection refused
+++ retries=2
+++ '[' 2 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ grep -q -E 'jq .* installed'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:46728->[::1]:53: read: connection refused
+++ retries=1
+++ '[' 1 -le 0 ']'
+++ sleep 10
+++ execute_remote 'sudo snap install --devmode jq'
+++ '[' -z ubuntu ']'
+++ sshpass -p ubuntu ssh -p 22 -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no test@10.101.51.12 'sudo snap install --devmode jq'
+++ grep -q -E 'jq .* installed'
 
-mesg: ttyname failed: Inappropriate ioctl for device
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-++ GRUB_EDITENV=grub-editenv
-++ case "$SPREAD_SYSTEM" in
-+ '[' 1 '!=' 0 ']'
-+ echo 'Waiting for snapd to clean snap_mode'
-Waiting for snapd to clean snap_mode
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_mode=//'
-++ fw_printenv snap_mode
-## Error: "snap_mode" not defined
-+ '[' '' '!=' '' ']'
-+ echo 'Ensure the bootloader is correct after reboot'
-Ensure the bootloader is correct after reboot
-++ bootenv snap_core
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ fw_printenv snap_core
-++ sed 's/^snap_core=//'
-++ cat nextBoot
-+ test core_x1.snap = core_x1.snap
-++ bootenv snap_try_core
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ fw_printenv snap_try_core
-++ sed 's/^snap_try_core=//'
-## Error: "snap_try_core" not defined
-+ test '' = ''
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ fw_printenv snap_mode
-++ sed 's/^snap_mode=//'
-## Error: "snap_mode" not defined
-+ test '' = ''
-+ snap list
-+ awk '/^core / {print($3)}'
-+ '[' -f curChg ']'
-++ cat curChg
-+ snap watch 16
-+ rm -f curChg
-+ case "$SPREAD_REBOOT" in
-+ cmd='snap revert core'
-++ eval snap revert core --no-wait
-+++ snap revert core --no-wait
-+ chg_id=18
-+ echo 18
-+ grep -q 'Waiting for system reboot'
-+ journalctl -b -u snapd
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ echo 'Ensure the test snap still runs'
-Ensure the test snap still runs
-+ test-snapd-tools.echo hello
-+ MATCH hello
-+ echo 'Ensure the bootloader is correct before reboot'
-Ensure the bootloader is correct before reboot
-+ readlink /snap/core/current
-++ cat prevBoot
-++ cat nextBoot
-+ test x1 '!=' 5683
-++ bootenv snap_try_core
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_try_core=//'
-++ fw_printenv snap_try_core
-++ cat nextBoot
-+ test core_5683.snap = core_5683.snap
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_mode=//'
-++ fw_printenv snap_mode
-+ test try = try
-+ echo 'Ensure the device is scheduled for auto-reboot'
-Ensure the device is scheduled for auto-reboot
-++ dbus-send --print-reply --type=method_call --system --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.DBus.Properties.Get string:org.freedesktop.login1.Manager string:ScheduledShutdown
-+ output='method return time=1538986678.989937 sender=:1.2 -> destination=:1.6 serial=35 reply_serial=2
-   variant       struct {
-         string "reboot"
-         uint64 1538987277850792
-      }'
-+ echo 'method return time=1538986678.989937 sender=:1.2 -> destination=:1.6 serial=35 reply_serial=2
-   variant       struct {
-         string "reboot"
-         uint64 1538987277850792
-      }'
-+ MATCH 'string "reboot"'
-+ REBOOT
-<REBOOT>
-
-mesg: ttyname failed: Inappropriate ioctl for device
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-++ GRUB_EDITENV=grub-editenv
-++ case "$SPREAD_SYSTEM" in
-+ '[' 2 '!=' 0 ']'
-+ echo 'Waiting for snapd to clean snap_mode'
-Waiting for snapd to clean snap_mode
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_mode=//'
-++ fw_printenv snap_mode
-## Error: "snap_mode" not defined
-+ '[' '' '!=' '' ']'
-+ echo 'Ensure the bootloader is correct after reboot'
-Ensure the bootloader is correct after reboot
-++ bootenv snap_core
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_core=//'
-++ fw_printenv snap_core
-++ cat nextBoot
-+ test core_5683.snap = core_5683.snap
-++ bootenv snap_try_core
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ fw_printenv snap_try_core
-++ sed 's/^snap_try_core=//'
-## Error: "snap_try_core" not defined
-+ test '' = ''
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_mode=//'
-++ fw_printenv snap_mode
-## Error: "snap_mode" not defined
-+ test '' = ''
-+ snap list
-+ awk '/^core / {print($3)}'
-+ '[' -f curChg ']'
-++ cat curChg
-+ snap watch 18
-+ rm -f curChg
-+ case "$SPREAD_REBOOT" in
-++ cat prevBoot
-+ cmd='snap install --dangerous /var/lib/snapd/snaps/core_5683.snap'
-++ eval snap install --dangerous /var/lib/snapd/snaps/core_5683.snap --no-wait
-+++ snap install --dangerous /var/lib/snapd/snaps/core_5683.snap --no-wait
-+ chg_id=20
-+ echo 20
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ echo 'Ensure the test snap still runs'
-Ensure the test snap still runs
-+ test-snapd-tools.echo hello
-+ MATCH hello
-+ echo 'Ensure the bootloader is correct before reboot'
-Ensure the bootloader is correct before reboot
-+ readlink /snap/core/current
-++ cat prevBoot
-++ cat nextBoot
-+ test 5683 '!=' x2
-++ bootenv snap_try_core
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_try_core=//'
-++ fw_printenv snap_try_core
-++ cat nextBoot
-+ test core_x2.snap = core_x2.snap
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_mode=//'
-++ fw_printenv snap_mode
-+ test try = try
-+ echo 'Ensure the device is scheduled for auto-reboot'
-Ensure the device is scheduled for auto-reboot
-++ dbus-send --print-reply --type=method_call --system --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.DBus.Properties.Get string:org.freedesktop.login1.Manager string:ScheduledShutdown
-+ output='method return time=1538986759.108935 sender=:1.1 -> destination=:1.80 serial=479 reply_serial=2
-   variant       struct {
-         string "reboot"
-         uint64 1538987358087122
-      }'
-+ echo 'method return time=1538986759.108935 sender=:1.1 -> destination=:1.80 serial=479 reply_serial=2
-   variant       struct {
-         string "reboot"
-         uint64 1538987358087122
-      }'
-+ MATCH 'string "reboot"'
-+ REBOOT
-<REBOOT>
-
-mesg: ttyname failed: Inappropriate ioctl for device
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-++ GRUB_EDITENV=grub-editenv
-++ case "$SPREAD_SYSTEM" in
-+ '[' 3 '!=' 0 ']'
-+ echo 'Waiting for snapd to clean snap_mode'
-Waiting for snapd to clean snap_mode
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_mode=//'
-++ fw_printenv snap_mode
-## Error: "snap_mode" not defined
-+ '[' '' '!=' '' ']'
-+ echo 'Ensure the bootloader is correct after reboot'
-Ensure the bootloader is correct after reboot
-++ bootenv snap_core
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ fw_printenv snap_core
-++ sed 's/^snap_core=//'
-++ cat nextBoot
-+ test core_x2.snap = core_x2.snap
-++ bootenv snap_try_core
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_try_core=//'
-++ fw_printenv snap_try_core
-## Error: "snap_try_core" not defined
-+ test '' = ''
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ sed 's/^snap_mode=//'
-++ fw_printenv snap_mode
-## Error: "snap_mode" not defined
-+ test '' = ''
-+ snap list
-+ awk '/^core / {print($3)}'
-+ '[' -f curChg ']'
-++ cat curChg
-+ snap watch 20
-+ rm -f curChg
-+ case "$SPREAD_REBOOT" in
-+ cmd='snap revert core'
-++ eval snap revert core --no-wait
-+++ snap revert core --no-wait
-+ chg_id=22
-+ echo 22
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ sleep 1
-+ journalctl -b -u snapd
-+ grep -q 'Waiting for system reboot'
-+ echo 'Ensure the test snap still runs'
-Ensure the test snap still runs
-+ test-snapd-tools.echo hello
-+ MATCH hello
-+ echo 'Ensure the bootloader is correct before reboot'
-Ensure the bootloader is correct before reboot
-+ readlink /snap/core/current
-++ cat prevBoot
-++ cat nextBoot
-+ test x2 '!=' 5683
-++ bootenv snap_try_core
-++ '[' 1 -eq 0 ']'
-++ sed 's/^snap_try_core=//'
-++ command -v grub-editenv
-++ fw_printenv snap_try_core
-++ cat nextBoot
-+ test core_5683.snap = core_5683.snap
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ fw_printenv snap_mode
-++ sed 's/^snap_mode=//'
-+ test try = try
-+ echo 'Ensure the device is scheduled for auto-reboot'
-Ensure the device is scheduled for auto-reboot
-++ dbus-send --print-reply --type=method_call --system --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.DBus.Properties.Get string:org.freedesktop.login1.Manager string:ScheduledShutdown
-+ output='method return time=1538986768.308615 sender=:1.1 -> destination=:1.6 serial=35 reply_serial=2
-   variant       struct {
-         string "reboot"
-         uint64 1538987366663622
-      }'
-+ echo 'method return time=1538986768.308615 sender=:1.1 -> destination=:1.6 serial=35 reply_serial=2
-   variant       struct {
-         string "reboot"
-         uint64 1538987366663622
-      }'
-+ MATCH 'string "reboot"'
-+ REBOOT
-<REBOOT>
-
-+ . /home/gopath/src/github.com/snapcore/snapd/tests/lib/boot.sh
-++ GRUB_EDITENV=grub-editenv
-++ case "$SPREAD_SYSTEM" in
-+ '[' 4 '!=' 0 ']'
-+ echo 'Waiting for snapd to clean snap_mode'
-Waiting for snapd to clean snap_mode
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ sed 's/^snap_mode=//'
-++ command -v grub-editenv
-++ fw_printenv snap_mode
-+ '[' try '!=' '' ']'
-+ sleep 1
-++ bootenv snap_mode
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ fw_printenv snap_mode
-++ sed 's/^snap_mode=//'
-Cannot access MTD device /boot/uboot/uboot.env: No such file or directory
-+ '[' '' '!=' '' ']'
-+ echo 'Ensure the bootloader is correct after reboot'
-Ensure the bootloader is correct after reboot
-++ bootenv snap_core
-++ '[' 1 -eq 0 ']'
-++ command -v grub-editenv
-++ fw_printenv snap_core
-++ sed 's/^snap_core=//'
-Cannot access MTD device /boot/uboot/uboot.env: No such file or directory
-++ cat nextBoot
-+ test '' = core_5683.snap
------
-.
-2018-10-08 08:18:48 Error debugging external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade : sudo: unknown uid 1001: who are you?
-2018-10-08 08:18:48 Restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade...
-2018-10-08 08:18:48 Error restoring external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade : sudo: unknown uid 1001: who are you?
-2018-10-08 08:18:48 Restoring external:ubuntu-core-16-arm-64:tests/main/...
-2018-10-08 08:18:48 Error restoring external:ubuntu-core-16-arm-64:tests/main/ : sudo: unknown uid 1001: who are you?
-2018-10-08 08:18:48 Restoring external:ubuntu-core-16-arm-64...
-2018-10-08 08:18:48 Error restoring external:ubuntu-core-16-arm-64 : sudo: unknown uid 1001: who are you?
-2018-10-08 08:18:48 Discarding external:ubuntu-core-16-arm-64...
-2018-10-08 08:18:48 Successful tasks: 5
-2018-10-08 08:18:48 Aborted tasks: 216
-2018-10-08 08:18:48 Failed tasks: 1
-    - external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade
-2018-10-08 08:18:48 Failed task restore: 1
-    - external:ubuntu-core-16-arm-64:tests/main/ubuntu-core-upgrade
-2018-10-08 08:18:48 Failed suite restore: 1
-    - external:ubuntu-core-16-arm-64:tests/main/
-2018-10-08 08:18:48 Failed project restore: 1
-    - external:ubuntu-core-16-arm-64:project
-error: unsuccessful run
-2018-10-08 08:18:48,793 dragonboard_002 WARNING: DEVICE AGENT: Tests failed, rc=1
-2018-10-08 08:18:48,793 dragonboard_002 INFO: DEVICE AGENT: END testrun
+error: cannot install "jq": Post https://api.snapcraft.io/v2/snaps/refresh:
+       dial tcp: lookup api.snapcraft.io on [::1]:53: read udp
+       [::1]:59087->[::1]:53: read: connection refused
+++ retries=0
+++ '[' 0 -le 0 ']'
+++ echo 'Timed out reached. Aborting!'
+Timed out reached. Aborting!
+++ exit 1
+2018-10-08 11:28:49,989 dragonboard_002 WARNING: DEVICE AGENT: Tests failed, rc=1
+2018-10-08 11:28:49,989 dragonboard_002 INFO: DEVICE AGENT: END testrun
 complete
